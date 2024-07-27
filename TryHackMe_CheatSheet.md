@@ -4,6 +4,7 @@
 - John The Ripper  
   `john --wordlist=/usr/share/wordlists/rockyou.txt "Hashファイル名" --format=暗号方式`  
   `john "Hashファイル名" --show` クラック済み結果を表示（もしくは`/home/kali/.john/.john.pot`に解析結果がある）
+  `john --list=formats` 全フォーマット形式を表示
 # BookMark
 - [CrackStation](https://crackstation.net/)
 - [hashes.com](https://hashes.com/en/decrypt/hash)
