@@ -22,3 +22,23 @@ This process is called a dictionary attack and John the Ripper, or John as it's 
 ## Setting up John the Ripper
 ### Setting Up John The Ripper
 John the Ripper is supported on many different Operating Systems, not just Linux Distributions. As a note before we go through this, there are multiple versions of John, the standard "core" distribution, as well as multiple community editions- which extend the feature set of the original John distribution. The most popular of these distributions is the "Jumbo John"- which we will be using specific features of later.
+
+### Parrot, Kali and AttackBox
+If you're using Parrot OS, Kali Linux or TryHackMe's own AttackBox- you should already have Jumbo John installed. You can double check this by typing john into the terminal. You should be met with a usage guide for john, with the first line reading: "John the Ripper 1.9.0-jumbo-1" or similar with a different version number. If not, you can use sudo apt install john to install it.
+
+### Blackarch
+If you're using Blackarch, or the Blackarch repositories you may or may not have Jumbo John installed, to check if you do, use the command `pacman -Qe | grep "john"` You should be met with an output similar to "john 1.9.0.jumbo1-5" or similar with a different version number. If you do not have it installed, you can simply use `pacman -S john` to install it.
+
+### Building from Source for Linux
+If you wish to build the package from source to meet your system requirements, you can do this in five fairly straightforward steps. Further advice on the installation process and how to configure your build from source can be found here.  
+1. Use `git clone https://github.com/openwall/john -b bleeding-jumbo john` to clone the jumbo john repository to your current working
+2. Then `cd john/src/` to change your current directory to where the source code is.  
+3. Once you're in this directory, use `./configure` to check the required dependencies and options that have been configured.  
+4. If you're happy with this output, and have installed any required dependencies that are needed, use `make -s clean && make -sj4` to build a binary of john. This binary will be in the above run directory, which you can change to with `cd ../run`  
+5. You can test this binary using ./john --test
+
+### Installing on Windows
+To install Jumbo John the Ripper on Windows, you just need to download and install the zipped binary for either 64 bit systems or for 32 bit systems.
+
+
+## Wordlists
