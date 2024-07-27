@@ -106,3 +106,4 @@ You can acquire NTHash/NTLM hashes by dumping the SAM database on a Windows mach
 
 
 ----------------------------------------Answer the questions below----------------------------------------  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_2.png" width="50%" height="50%">
