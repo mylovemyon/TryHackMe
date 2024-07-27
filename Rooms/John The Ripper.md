@@ -87,4 +87,4 @@ When you are telling john to use formats, if you're dealing with a standard hash
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the cracked value of hash1.txt?  
-<img src="https://github.com/mylovemyon/TryHackMe/blob/main/Rooms/Images/John%20The%20Ripper.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper.png" width="50%" height="50%">
