@@ -78,8 +78,9 @@ UPDATE: As of Kali 2020.2, hashcat 6.0 will run on the CPU without --force. I st
 I'll provide the hashes. Crack them. You can choose how. You'll need to use online tools, Hashcat, and/or John the Ripper. Remember the restrictions on online rainbow tables. Don't be afraid to use the hints. Rockyou or online tools should be enough to find all of these.
 
 ----------------------------------------Answer the questions below----------------------------------------  
-Crack this hash: $2a$06$7yoU3Ng8dHTXphAg913cyO6Bjs3K5lBnwq5FJyA6d01pMSrddr1ZG
-![]
+Crack this hash: $2a$06$7yoU3Ng8dHTXphAg913cyO6Bjs3K5lBnwq5FJyA6d01pMSrddr1ZG  
+<img src="https://github.com/mylovemyon/TryHackMe/blob/main/Rooms/Images/Hashing%20-%20Crypto%20101.png" width="50%" height="50%">
+
 
 ## Hashing for integrity checking
 ### Integrity Checking
