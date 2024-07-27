@@ -1,2 +1,5 @@
+# Command
+
 # BookMark
-[CrackStation](https://crackstation.net/),[hashes.com](https://hashes.com/en/decrypt/hash)
+- [CrackStation](https://crackstation.net/)
+- [hashes.com](https://hashes.com/en/decrypt/hash)
