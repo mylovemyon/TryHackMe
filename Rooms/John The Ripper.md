@@ -19,4 +19,6 @@ Even though the algorithm itself is not feasibly reversible. That doesn't mean t
 This process is called a dictionary attack and John the Ripper, or John as it's commonly shortened to, is a tool to allow you to conduct fast brute force attacks on a large array of different hash types.
 
 
-###
+## Setting up John the Ripper
+### Setting Up John The Ripper
+John the Ripper is supported on many different Operating Systems, not just Linux Distributions. As a note before we go through this, there are multiple versions of John, the standard "core" distribution, as well as multiple community editions- which extend the feature set of the original John distribution. The most popular of these distributions is the "Jumbo John"- which we will be using specific features of later.
