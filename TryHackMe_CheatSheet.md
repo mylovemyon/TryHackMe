@@ -7,3 +7,4 @@
 # BookMark
 - [CrackStation](https://crackstation.net/)
 - [hashes.com](https://hashes.com/en/decrypt/hash)
+- [hash_identifier](https://hashes.com/en/tools/hash_identifier)
