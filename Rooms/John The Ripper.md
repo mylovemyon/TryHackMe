@@ -84,3 +84,6 @@ Example Usage:
 john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt  
 A Note on Formats:  
 When you are telling john to use formats, if you're dealing with a standard hash type, e.g. md5 as in the example above, you have to prefix it with `raw-` to tell john you're just dealing with a standard hash type, though this doesn't always apply. To check if you need to add the prefix or not, you can list all of John's formats using `john --list=formats` and either check manually, or grep for your hash type using something like `john --list=formats | grep -iF "md5"`.
+
+----------------------------------------Answer the questions below----------------------------------------
+What is the cracked value of hash1.txt?
