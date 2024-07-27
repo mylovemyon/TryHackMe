@@ -79,7 +79,7 @@ I'll provide the hashes. Crack them. You can choose how. You'll need to use onli
 
 ----------------------------------------Answer the questions below----------------------------------------  
 Crack this hash: $2a$06$7yoU3Ng8dHTXphAg913cyO6Bjs3K5lBnwq5FJyA6d01pMSrddr1ZG  
-<img src="https://github.com/mylovemyon/TryHackMe/blob/main/Rooms/Images/Hashing%20-%20Crypto%20101.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Hashing%20-%20Crypto%20101.png" width="50%" height="50%">
 
 
 ## Hashing for integrity checking
