@@ -50,3 +50,22 @@ On Parrot, Kali and TryHackMe's AttackBox- you can find a series of amazing word
 
 ### RockYou
 For all of the tasks in this room, we will be using the infamous rockyou.txt wordlist- which is a very large common password wordlist, obtained from a data breach on a website called rockyou.com in 2009. If you are not using any of the above distributions, you can get the rockyou.txt wordlist from the SecLists repository under the `/Passwords/Leaked-Databases` subsection. You may need to extract it from .tar.gz format, using `tar xvzf rockyou.txt.tar.gz.`
+
+
+## Cracking Basic Hashes
+### Cracking Basic Hashes
+There are multiple ways to use John the Ripper to crack simple hashes, we're going to walk through a few, before moving on to cracking some ourselves.
+
+### John Basic Syntax
+The basic syntax of John the Ripper commands is as follows. We will cover the specific options and modifiers used as we use them.  
+`john [options] [path to file]`  
+`john` - Invokes the John the Ripper program  
+`[path to file]` - The file containing the hash you're trying to crack, if it's in the same directory you won't need to name a path, just the file.
+
+### Automatic Cracking
+John has built-in features to detect what type of hash it's being given, and to select appropriate rules and formats to crack it for you, this isn't always the best idea as it can be unreliable- but if you can't identify what hash type you're working with and just want to try cracking it, it can be a good option! To do this we use the following syntax:  
+`john --wordlist=[path to wordlist] [path to file]`
+`--wordlist=` - Specifies using wordlist mode, reading from the file that you supply in the following path...  
+`[path to wordlist]` - The path to the wordlist you're using, as described in the previous task.  
+Example Usage:  
+john --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
