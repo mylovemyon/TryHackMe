@@ -1,5 +1,7 @@
 # TryHackMe
 ## Rooms
+- Encryption - Crypto 101  
+  [RsaCtfTool](https://github.com/Ganapati/RsaCtfTool), [rsatool](https://github.com/ius/rsatool)
 - Hashing - Crypto 101  
   `hashid`でハッシュ識別, `JohnTheRipper`でクラック, [CrackStation](https://crackstation.net/)・[hashes.com](https://hashes.com/en/decrypt/hash)でクラック  
   Linuxのパスワードが保存される/etc/shadowの標準フォーマットは`$format$rounds$salt$hash`、$formatでHash形式が分かる。  
