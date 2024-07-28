@@ -1,4 +1,4 @@
-# Command
+# Tools
 - hashid  
   `hashid --john "Hashファイル名"`（--johnで、JohnTheRipperのFormat形式も確認できる）
 - John The Ripper  
@@ -7,7 +7,7 @@
   - `john --list=formats` 全フォーマット形式を表示
   - `--format=Raw-MD5` MD５ハッシュ, `--format=nt` NTハッシュ
   - `unshadow /etc/passwd /etc/shadow` Johnで /etc/passwd をクラックする際のフォーマット作成
-- Linux
+# Linux
   - `$format$rounds$salt$hash` /etc/shadowにフォーマット、`$format`でハッシュ種別が分かる。
 # BookMark
 - [CrackStation](https://crackstation.net/)
