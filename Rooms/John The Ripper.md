@@ -136,6 +136,9 @@ root:$6$2nwjN454g.dv4HN/$m9Z/r2xVfweYVkrr.v5Ft8Ws3/YYksfNwq96UL1FX0OJjY1L6l.DS3K
 We're then able to feed the output from unshadow, in our example use case called "unshadowed.txt" directly into John. We should not need to specify a mode here as we have made the input specifically for John, however in some cases you will need to specify the format as we have done previously using: `--format=sha512crypt`  
 `john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt unshadowed.txt`
 
+### Practical
+Now, see if you can follow the process to crack the password hash of the root user that is provided in the "etchashes.txt" file. Good luck!
+
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the root password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_3.png" width="75%" height="75%">  
