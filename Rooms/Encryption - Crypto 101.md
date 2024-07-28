@@ -63,3 +63,10 @@ The key variables that you need to know about for RSA in CTFs are p, q, m, n, e,
 “p” and “q” are large prime numbers, “n” is the product of p and q.  
 The public key is n and e, the private key is n and d.  
 “m” is used to represent the message (in plaintext) and “c” represents the ciphertext (encrypted text).
+
+### CTFs involving RSA
+Crypto CTF challenges often present you with a set of these values, and you need to break the encryption and decrypt a message to retrieve the flag.  
+There’s a lot more maths to RSA, and it gets quite complicated fairly quickly. If you want to learn the maths behind it, I recommend reading MuirlandOracle’s blog post here: https://muirlandoracle.co.uk/2020/01/29/rsa-encryption/.
+
+
+## Establishing Keys Using Asymmetric Cryptography
