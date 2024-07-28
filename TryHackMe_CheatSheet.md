@@ -8,7 +8,7 @@
   - `--format=Raw-MD5` MD５ハッシュ, `--format=nt` NTハッシュ
   - `unshadow /etc/passwd /etc/shadow` Johnで /etc/passwd をクラックする際のフォーマット作成
 - Linux
-  - `$format$rounds$salt$hash` /etc/shadowにあるパスワードフォーマット
+  - `$format$rounds$salt$hash` /etc/shadowにフォーマット、`$format`でハッシュ種別が分かる。
 # BookMark
 - [CrackStation](https://crackstation.net/)
 - [hashes.com](https://hashes.com/en/decrypt/hash)
