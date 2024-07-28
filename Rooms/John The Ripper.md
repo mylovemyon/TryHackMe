@@ -88,7 +88,7 @@ When you are telling john to use formats, if you're dealing with a standard hash
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the cracked value of hash1.txt?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_1.png" width="50%" height="50%">
-
+MD5でクラック成功！
 
 
 ## Cracking Windows Authentication Hashes
@@ -101,6 +101,7 @@ A little bit of history, the NT designation for Windows products originally mean
 You can acquire NTHash/NTLM hashes by dumping the SAM database on a Windows machine, by using a tool like Mimikatz or from the Active Directory database: NTDS.dit. You may not have to crack the hash to continue privilege escalation- as you can often conduct a "pass the hash" attack instead, but sometimes hash cracking is a viable option if there is a weak password policy.
 
 ----------------------------------------Answer the questions below----------------------------------------  
+What is the cracked value of this password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_2.png" width="50%" height="50%">
 
 
