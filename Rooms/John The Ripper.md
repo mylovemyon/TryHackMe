@@ -142,3 +142,17 @@ yescriptはPasswordCrackに強いらしく、実際にRockyou.txtで辞書攻撃
 今回は事前に知っているパスワード一つを使用して、Johnでクラックしてみた。（Johnはyescriptをサポートしていないらしく、crypt総当たり攻撃しないといけない）
 
 ## Single Crack Mode
+### Single Crack Mode
+So far we've been using John's wordlist mode to deal with brute forcing simple., and not so simple hashes. But John also has another mode, called Single Crack mode. In this mode, John uses only the information provided in the username, to try and work out possible passwords heuristically, by slightly changing the letters and numbers contained within the username.
+
+### Word Mangling
+The best way to show what Single Crack mode is,  and what word mangling is, is to actually go through an example:  
+If we take the username: Markus  
+Some possible passwords could be:  
+Markus1, Markus2, Markus3 (etc.)  
+MArkus, MARkus, MARKus (etc.)  
+Markus!, Markus$, Markus* (etc.)  
+This technique is called word mangling. John is building it's own dictionary based on the information that it has been fed and uses a set of rules called "mangling rules" which define how it can mutate the word it started with to generate a wordlist based off of relevant factors for the target you're trying to crack. This is exploiting how poor passwords can be based off of information about the username, or the service they're logging into.
+
+### GECOS
+John's implementation of word mangling also features compatibility with the Gecos fields of the UNIX operating system, and other UNIX-like operating systems such as Linux. So what are Gecos? Remember in the last task where we were looking at the entries of both /etc/shadow and /etc/passwd? Well if you look closely You can see that each field is seperated by a colon ":". Each one of the fields that these records are split into are called Gecos fields. John can take information stored in those records, such as full name and home directory name to add in to the wordlist it generates when cracking /etc/shadow hashes with single crack mode.
