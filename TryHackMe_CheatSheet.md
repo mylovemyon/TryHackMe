@@ -1,4 +1,4 @@
-# Tools
+## Tools
 - hashid  
   `hashid --john "Hashファイル名"`（--johnで、JohnTheRipperのFormat形式も確認できる）
 - John The Ripper  
@@ -7,9 +7,12 @@
   - `john --list=formats` 全フォーマット形式を表示
   - `--format=Raw-MD5` MD５ハッシュ, `--format=nt` NTハッシュ
   - `sudo unshadow /etc/passwd /etc/shadow` Johnで /etc/passwd をクラックする際のフォーマット作成
-# Linux
-  - `$format$rounds$salt$hash` /etc/shadowのフォーマット、`$format`でハッシュ種別が分かる。
-# BookMark
+## Linux
+### Command
+- `sed -i '1s/^/文字列' ファイル名` ファイルの１行目（`1s`）先頭に文字列を追加（改行なし）
+### Preference
+- `$format$rounds$salt$hash` /etc/shadowのフォーマット、`$format`でハッシュ種別が分かる。
+## BookMark
 - [CrackStation](https://crackstation.net/)
 - [hashes.com](https://hashes.com/en/decrypt/hash)
 - [hash_identifier](https://hashes.com/en/tools/hash_identifier)
