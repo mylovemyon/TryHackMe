@@ -256,6 +256,14 @@ Similarly to the unshadow tool that we used previously, we're going to be using 
 Example Usage  
 zip2john zipfile.zip > zip_hash.txt
 
+### Cracking
+We're then able to take the file we output from zip2john in our example use case called "zip_hash.txt" and, as we did with unshadow, feed it directly into John as we have made the input specifically for it.  
+`john --wordlist=/usr/share/wordlists/rockyou.txt zip_hash.txt`
+
+### Practical
+Now have a go at cracking the attached "secure" zip file!
+
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the contents of the flag inside the zip file?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_6.png" width="50%" height="50%">  
+zip2johnでJohnでパスワードを出力した後、Johnでクラック成功！
