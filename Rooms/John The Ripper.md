@@ -178,3 +178,11 @@ From:
 1efee03cdcb96d90ad48ccc7b8666033  
 To  
 mike:1efee03cdcb96d90ad48ccc7b8666033  
+
+### Practical
+Now you're familiar with the Syntax for John's single crack mode, download the attached hash and crack it, assuming that the user it belongs to is called "Joker".
+
+----------------------------------------Answer the questions below----------------------------------------  
+What is Joker's password?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_5.png" width="50%" height="50%">  
+a
