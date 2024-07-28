@@ -320,3 +320,7 @@ Now I'd like you to crack the hash of the id_rsa file that's attached to this ta
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the SSH private key password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_8.png" width="50%" height="50%">  
+
+
+## Further Reading
+Thank you for completing this room on John the Ripper! I hope you've learnt a lot along the way. I'm sure by now you understand the basic principles and the pattern that there is to using John with even the most obscure supported hashes. I'd recommend checking out the Openwall Wiki [here](https://www.openwall.com/john/) for more information about using John, and advice, updates or news about the tool.
