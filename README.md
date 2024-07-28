@@ -1,9 +1,9 @@
 # TryHackMe
 ## Rooms
 - Hashing - Crypto 101  
-  hashid, JohnTheRipper, [CrackStation](https://crackstation.net/), [hashes.com](https://hashes.com/en/decrypt/hash)
-- John The Ripper
-  [SecLists](https://github.com/danielmiessler/SecLists), 
+  `hashid`でハッシュ識別, `JohnTheRipper`で辞書攻撃, [CrackStation](https://crackstation.net/)・[hashes.com](https://hashes.com/en/decrypt/hash)のようなWebサイトでもクラック可
+- John The Ripper  
+  [SecLists](https://github.com/danielmiessler/SecLists), [hash_identifier](https://hashes.com/en/tools/hash_identifier)というWebサイトでハッシュ識別
 ## Modules
 - [Cryptography](https://tryhackme.com/module/cryptography)  
   Hashing - Crypto 101 | John The Ripper | Encription - Cripto 101
