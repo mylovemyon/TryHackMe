@@ -210,10 +210,17 @@ Now this does meet the password complexity requirements, however as an attacker 
 Custom rules are defined in the `john.conf` file, usually located in `/etc/john/john.conf` if you have installed John using a package manager or built from source with make and in /opt/john/john.conf on the TryHackMe Attackbox.  
 Let's go over the syntax of these custom rules, using the example above as our target pattern. Note that there is a massive level of granular control that you can define in these rules, I would suggest taking a look at the wiki [here](https://www.openwall.com/john/doc/RULES.shtml) in order to get a full view of the types of modifier you can use, as well as more examples of rule implementation.  
 The first line:  
-[List.Rules:THMRules] - Is used to define the name of your rule, this is what you will use to call your custom rule as a John argument.  
+`[List.Rules:THMRules]` - Is used to define the name of your rule, this is what you will use to call your custom rule as a John argument.  
 We then use a regex style pattern match to define where in the word will be modified, again- we will only cover the basic and most common modifiers here:  
-Az - Takes the word and appends it with the characters you define  
-A0 - Takes the word and prepends it with the characters you define  
-c - Capitalises the character positionally  
+`Az` - Takes the word and appends it with the characters you define  
+`A0` - Takes the word and prepends it with the characters you define  
+`c` - Capitalises the character positionally  
 These can be used in combination to define where and what in the word you want to modify.  
-Lastly, we then need to define what characters should be appended, prepended or otherwise included, we do this by adding character sets in square brackets [ ] in the order they should be used. These directly follow the modifier patterns inside of double quotes " ". Here are some common examples:  
+Lastly, we then need to define what characters should be appended, prepended or otherwise included, we do this by adding character sets in square brackets `[ ]` in the order they should be used. These directly follow the modifier patterns inside of double quotes `" "`. Here are some common examples:  
+`[0-9]` - Will include numbers 0-9  
+`[0]` - Will include only the number 0  
+`[A-z]` - Will include both upper and lowercase  
+`[A-Z]` - Will include only uppercase letters  
+`[a-z]` - Will include only lowercase letters  
+`[a]` - Will include only a  
+`[!£$%@]` - Will include the symbols !£$%@
