@@ -302,7 +302,7 @@ Okay, okay I hear you, no more file archives! Fine! Let's explore one more use o
 
 ### SSH2John
 Who could have guessed it, another conversion tool? Well, that's what working with John is all about. As the name suggests ssh2john converts the id_rsa private key that you use to login to the SSH session into hash format that john can work with. Jokes aside, it's another beautiful example of John's versatility. The syntax is about what you'd expect. Note that if you don't have ssh2john installed, you can use ssh2john.py, which is located in the /opt/john/ssh2john.py. If you're doing this, replace the `ssh2john` command with python3 /opt/ssh2john.py or on Kali, `python /usr/share/john/ssh2john.py`.  
-`ssh2john [id_rsa private key file] > [output file]`
+`ssh2john [id_rsa private key file] > [output file]`  
 `ssh2john` - Invokes the ssh2john tool  
 `[id_rsa private key file]` - The path to the id_rsa file you wish to get the hash of  
 `>` - This is the output director, we're using this to send the output from this file to the...  
