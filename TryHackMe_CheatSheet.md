@@ -6,7 +6,7 @@
   - `john "Hashファイル名" --show` クラック済み結果を表示（もしくは`/home/kali/.john/.john.pot`に解析結果がある）
   - `john --list=formats` 全フォーマット形式を表示
   - `--format=Raw-MD5` MD５ハッシュ, `--format=nt` NTハッシュ
-  - `unshadow /etc/passwd /etc/shadow` Johnで /etc/passwd をクラックする際のフォーマット作成
+  - `sudo unshadow /etc/passwd /etc/shadow` Johnで /etc/passwd をクラックする際のフォーマット作成
 # Linux
   - `$format$rounds$salt$hash` /etc/shadowのフォーマット、`$format`でハッシュ種別が分かる。
 # BookMark
