@@ -224,3 +224,15 @@ Lastly, we then need to define what characters should be appended, prepended or 
 `[a-z]` - Will include only lowercase letters  
 `[a]` - Will include only a  
 `[!£$%@]` - Will include the symbols !£$%@
+
+Putting this all together, in order to generate a wordlist from the rules that would match the example password "Polopassword1!" (assuming the word polopassword was in our wordlist) we would create a rule entry that looks like this:  
+`[List.Rules:PoloPassword]
+cAz"[0-9] [!£$%@]"`
+In order to:  
+Capitalise the first  letter - `c`  
+Append to the end of the word - `Az`  
+A number in the range 0-9 - `[0-9]`  
+Followed by a symbol that is one of `[!£$%@]`  
+As a note I find it helpful to talk out the patterns if you're writing a rule- as shown above, the same applies to writing RegEx patterns too.  
+Jumbo John already comes with a large list of custom rules, which contain modifiers for use almost all cases. If you get stuck, try looking at those rules [around line 678] if your syntax isn't working properly.  
+Now, time for you to have a go!
