@@ -185,6 +185,12 @@ Now you're familiar with the Syntax for John's single crack mode, download the a
 ----------------------------------------Answer the questions below----------------------------------------  
 What is Joker's password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_5.png" width="50%" height="50%">  
-今回は辞書攻撃でなく、ユーザ名に類似してるであろうパスワードをSingleモードでクラックする。
-hashidでハッシュフォーマットを識別した後、JohnでSingleモードでクラックするためにSedコマンドでファイルの形式を変更する。
+今回は辞書攻撃でなく、ユーザ名に類似してるであろうパスワードをSingleクラックモードでクラックする。  
+hashidでハッシュフォーマットを識別した後、JohnでSingleクラックモードでクラックするためにSedコマンドでファイルの形式を変更する。  
 無事MD5でクラック成功！
+
+
+## Custom Rules
+### What are Custom Rules?
+As we journeyed through our exploration of what John can do in Single Crack Mode- you may have some ideas about what some good mangling patterns would be, or what patterns your passwords often use- that could be replicated with a certain mangling pattern. The good news is you can define your own sets of rules, which John will use to dynamically create passwords. This is especially useful when you know more information about the password structure of whatever your target is.
+
