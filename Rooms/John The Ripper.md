@@ -87,7 +87,7 @@ When you are telling john to use formats, if you're dealing with a standard hash
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the cracked value of hash1.txt?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_1.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_1.png" width="50%" height="50%">  
 MD5でクラック成功！
 
 
@@ -132,4 +132,8 @@ We're then able to feed the output from unshadow, in our example use case called
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the root password?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_3.png" width="75%" height="75%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_3.png" width="75%" height="75%">  
+`$6`はSHA512なのでそれでクラック成功！
+
+
+## Single Crack Mode
