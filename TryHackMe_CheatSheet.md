@@ -7,6 +7,8 @@
   - `john --list=formats` 全フォーマット形式を表示
   - `--format=Raw-MD5` MD５ハッシュ, `--format=nt` NTハッシュ
   - `unshadow /etc/passwd /etc/shadow` Johnで /etc/passwd をクラックする際のフォーマット作成
+- Linux
+  - `$format$rounds$salt$hash` /etc/shadowにあるパスワードフォーマット
 # BookMark
 - [CrackStation](https://crackstation.net/)
 - [hashes.com](https://hashes.com/en/decrypt/hash)
