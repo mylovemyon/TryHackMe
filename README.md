@@ -5,7 +5,7 @@
   Linuxのパスワードが保存される/etc/shadowの標準フォーマットは`$format$rounds$salt$hash`、$formatでHash形式が分かる。  
 - John The Ripper  
   `john`によるWordlistsを使用したMD5/NTLMクラック・Wordlistsを使用しないSingleCrackMode  
-  `zip2john`, `rar2john`  
+  `zip2john`, `rar2john`, `ssh2john`  
   `/etc/john/john.conf`でCustomルールの確認・作成・Wordlistsの拡張  
   `unshadow`による/etc/passwdと/etc/shadowのCombine   
   [hash_identifier](https://hashes.com/en/tools/hash_identifier)というWebサイトでハッシュ識別, [SecLists](https://github.com/danielmiessler/SecLists), 
