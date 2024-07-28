@@ -137,8 +137,8 @@ What is the root password?
 
 おまけ  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_4.png" width="50%" height="50%">  
-KaliLinuxのユーザ「Kali」をCrackChallenge！Shadowファイルを確認すると「$y」で、これは「yescript」らしい。
-yescriptはOfflinePasswordCrackに強いらしく、実際にRockyou.txtで辞書攻撃してみてもめちゃめちゃ時間がかかった。（クラックできなかった）  
-今回は事前に知っているパスワード一つを使用して、Johnでクラックしてみた。（Johnはyescriptをサポートしていないらしく、crypt総当たり攻撃をした）
+KaliLinuxのユーザ「Kali」をCrackChallenge！Shadowファイルを確認すると「$y」で、これは「yescript」らしい。  
+yescriptはPasswordCrackに強いらしく、実際にRockyou.txtで辞書攻撃してみてもめちゃめちゃ時間がかかった。（クラックできなかった）  
+今回は事前に知っているパスワード一つを使用して、Johnでクラックしてみた。（Johnはyescriptをサポートしていないらしく、crypt総当たり攻撃しないといけない）
 
 ## Single Crack Mode
