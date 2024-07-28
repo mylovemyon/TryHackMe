@@ -185,4 +185,6 @@ Now you're familiar with the Syntax for John's single crack mode, download the a
 ----------------------------------------Answer the questions below----------------------------------------  
 What is Joker's password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_5.png" width="50%" height="50%">  
-a
+今回は辞書攻撃でなく、ユーザ名に類似してるであろうパスワードをSingleモードでクラックする。
+hashidでハッシュフォーマットを識別した後、JohnでSingleモードでクラックするためにSedコマンドでファイルの形式を変更する。
+無事MD5でクラック成功！
