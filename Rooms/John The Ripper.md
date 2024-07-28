@@ -226,13 +226,36 @@ Lastly, we then need to define what characters should be appended, prepended or 
 `[!£$%@]` - Will include the symbols !£$%@
 
 Putting this all together, in order to generate a wordlist from the rules that would match the example password "Polopassword1!" (assuming the word polopassword was in our wordlist) we would create a rule entry that looks like this:  
-`[List.Rules:PoloPassword]
-cAz"[0-9] [!£$%@]"`
+`[List.Rules:PoloPassword]`  
+`cAz"[0-9] [!£$%@]"`  
 In order to:  
 Capitalise the first  letter - `c`  
 Append to the end of the word - `Az`  
 A number in the range 0-9 - `[0-9]`  
 Followed by a symbol that is one of `[!£$%@]`  
+
+### Using Custom Rules
+We could then call this custom rule as a John argument using the  `--rule=PoloPassword` flag.  
+As a full command: `john --wordlist=[path to wordlist] --rule=PoloPassword [path to file]`  
 As a note I find it helpful to talk out the patterns if you're writing a rule- as shown above, the same applies to writing RegEx patterns too.  
 Jumbo John already comes with a large list of custom rules, which contain modifiers for use almost all cases. If you get stuck, try looking at those rules [around line 678] if your syntax isn't working properly.  
 Now, time for you to have a go!
+
+
+## Cracking Password Protected Zip Files
+### Cracking a Password Protected Zip File
+Yes! You read that right. We can use John to crack the password on password protected Zip files. Again, we're going to be using a separate part of the john suite of tools to convert the zip file into a format that John will understand, but for all intents and purposes, we're going to be using the syntax that you're already pretty familiar with by now.
+
+### Zip2John
+Similarly to the unshadow tool that we used previously, we're going to be using the zip2john tool to convert the zip file into a hash format that John is able to understand, and hopefully crack. The basic usage is like this:  
+`zip2john [options] [zip file] > [output file]`  
+`[options]` - Allows you to pass specific checksum options to zip2john, this shouldn't often be necessary  
+`[zip file]` - The path to the zip file you wish to get the hash of  
+`>` - This is the output director, we're using this to send the output from this file to the...  
+`[output file]` - This is the file that will store the output from  
+Example Usage  
+zip2john zipfile.zip > zip_hash.txt
+
+----------------------------------------Answer the questions below----------------------------------------  
+What is the contents of the flag inside the zip file?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_6.png" width="50%" height="50%">  
