@@ -150,6 +150,7 @@ KaliLinuxのユーザ「Kali」をCrackChallenge！Shadowファイルを確認�
 yescriptはPasswordCrackに強いらしく、実際にRockyou.txtで辞書攻撃してみてもめちゃめちゃ時間がかかった。（クラックできなかった）  
 今回は事前に知っているパスワード一つを使用して、Johnでクラックしてみた。（Johnはyescriptをサポートしていないらしく、crypt総当たり攻撃しないといけない）
 
+
 ## Single Crack Mode
 ### Single Crack Mode
 So far we've been using John's wordlist mode to deal with brute forcing simple., and not so simple hashes. But John also has another mode, called Single Crack mode. In this mode, John uses only the information provided in the username, to try and work out possible passwords heuristically, by slightly changing the letters and numbers contained within the username.
@@ -266,4 +267,26 @@ Now have a go at cracking the attached "secure" zip file!
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the contents of the flag inside the zip file?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_6.png" width="50%" height="50%">  
-zip2johnでJohnでパスワードを出力した後、Johnでクラック成功！
+zip2johnでパスワードを出力した後、Johnでクラック成功！
+
+
+## Cracking Password Protected RAR Archives
+### Cracking a Password Protected RAR Archive
+We can use a similar process to the one we used in the last task to obtain the password for rar archives. If you aren't familiar, rar archives are compressed files created by the Winrar archive manager. Just like zip files they compress a wide variety of folders and files.
+
+### Rar2John
+Almost identical to the zip2john tool that we just used, we're going to use the rar2john tool to convert the rar file into a hash format that John is able to understand. The basic syntax is as follows:  
+`rar2john [rar file] > [output file]`  
+`rar2john` - Invokes the rar2john tool  
+`[rar file]` - The path to the rar file you wish to get the hash of  
+`>` - This is the output director, we're using this to send the output from this file to the...  
+`[output file]` - This is the file that will store the output from  
+Example Usage  
+rar2john rarfile.rar > rar_hash.txt
+
+### Cracking
+Once again, we're then able to take the file we output from rar2john in our example use case called "rar_hash.txt" and, as we did with zip2john we can feed it directly into John..  
+`john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt`  
+
+`Practical`
+Now have a go at cracking the attached "secure" rar file!
