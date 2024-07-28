@@ -290,3 +290,7 @@ Once again, we're then able to take the file we output from rar2john in our exam
 
 `Practical`
 Now have a go at cracking the attached "secure" rar file!
+
+----------------------------------------Answer the questions below----------------------------------------  
+What is the contents of the flag inside the zip file?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_7.png" width="50%" height="50%">  
