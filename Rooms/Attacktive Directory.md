@@ -69,3 +69,13 @@ Nmapで3389が開いているのを確認したため、`-sC`でスクリプト�
 [User List](https://raw.githubusercontent.com/Sq00ky/attacktive-directory-tools/master/userlist.txt)をWgetして「`./kerbrute userenum -d ドメイン名 --dc ターゲットIP Wordlists名`」でドメイン内のユーザを発見する。  
 wordlistは70000以上あったのでめっちゃ時間かかるので、途中で中断。  
 問題で聞かれている怪しいユーザは、svc-admin と backup らしい。
+
+
+## Abusing Kerberos
+### Introduction
+After the enumeration of user accounts is finished, we can attempt to abuse a feature within Kerberos with an attack method called `ASREPRoasting`. ASReproasting occurs when a user account has the privilege "Does not require Pre-Authentication" set. This means that the account does not need to provide valid identification before requesting a Kerberos Ticket on the specified user account.
+
+### Retrieving Kerberos Tickets
+[Impacket](https://github.com/fortra/impacket) has a tool called "GetNPUsers.py" (located in impacket/examples/GetNPUsers.py) that will allow us to query ASReproastable accounts from the Key Distribution Center. The only thing that's necessary to query accounts is a valid set of usernames which we enumerated previously via Kerbrute.  
+Remember:  Impacket may also need you to use a python version >=3.7. In the AttackBox you can do this by running your command with `python3.9 /opt/impacket/examples/GetNPUsers.py`.
+
