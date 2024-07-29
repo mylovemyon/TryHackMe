@@ -26,7 +26,7 @@ If you are having issues installing Bloodhound and Neo4j, try issuing the follow
 `apt update && apt upgrade`  
 If you are having issues with Impacket, reach out to the TryHackMe Discord for help!
 
-impacketはKali上でFindしてみると何個かあったのでデフォルトであるっぽい？
+impacketはKali上でFindしてみると何個かあったのでデフォルトであるっぽい？  
 bloodhoundはないので、`sudo apt install bloodhound`でインストール（自動でneo4jもインストールしてくれる）
 
 
@@ -63,4 +63,9 @@ For this box, a modified [User List](https://raw.githubusercontent.com/Sq00ky/at
 What notable account is discovered?   
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_2.png" width="50%" height="50%">  
 Nmapで3389が開いているのを確認したため、`-sC`でスクリプトスキャンするとドメインを確認できた。  
-これからKerbruteを使用して直接マシンに接続するため、名前解決を行えるように「`sudo sed -i '$a10.10.253.185 spookysec.local' /etc/hosts`」を実行
+これからKerbruteを使用して直接マシンに接続するため名前解決を行えるように  
+「`sudo sed -i '$a10.10.253.185 spookysec.local' /etc/hosts`」を実行しHOSTSファイルを編集。
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_3.png" width="50%" height="50%">  
+[User List](https://raw.githubusercontent.com/Sq00ky/attacktive-directory-tools/master/userlist.txt)をWgetして「`./kerbrute userenum -d ドメイン名 --dc ターゲットIP Wordlists名`」でドメイン内のユーザを発見する。  
+wordlistは70000以上あったのでめっちゃ時間かかるので、途中で中断。  
+問題で聞かれている怪しいユーザは、svc-admin と backup らしい。
