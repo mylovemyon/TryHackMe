@@ -1,4 +1,6 @@
 ## Tools
+- enum4linux  
+  「`enum4linux` IPアドレス」
 - gpg  
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
 - hashid  
