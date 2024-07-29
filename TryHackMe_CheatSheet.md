@@ -1,9 +1,9 @@
 ## Tools
-- enum4linux  
+- enum4linux  (kaliにDefault)  
   「`enum4linux` IPアドレス」
-- gpg  
+- gpg (kaliにDefault)  
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
-- hashid  
+- hashid (kaliにDefault)   
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperのフォーマットも確認できる）
 - John The Ripper  
   - 「`john` --wordlist=/usr/share/wordlists/rockyou.txt "Hashファイル" --format=Hash方式」  
