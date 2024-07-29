@@ -1,7 +1,8 @@
 # TryHackMe
 ## Rooms
 - Encryption - Crypto 101  
-  `ssh-keygen`, SSH秘密鍵の権限は所有者のみだけの読みまたは書きこみ権限でないとSSH実行できない, `[RsaCtfTool](https://github.com/Ganapati/RsaCtfTool), [rsatool](https://github.com/ius/rsatool)
+  `ssh-keygen`, `ssh2john`, `gpg`, SSH秘密鍵の権限は600か700でないとSSH鍵認証できない,
+  [RsaCtfTool](https://github.com/Ganapati/RsaCtfTool), [rsatool](https://github.com/ius/rsatool)
 - Hashing - Crypto 101  
   `hashid`でハッシュ識別, `JohnTheRipper`でクラック, [CrackStation](https://crackstation.net/)・[hashes.com](https://hashes.com/en/decrypt/hash)でクラック  
   Linuxのパスワードが保存される/etc/shadowの標準フォーマットは`$format$rounds$salt$hash`、$formatでHash形式が分かる。  
