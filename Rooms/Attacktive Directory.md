@@ -26,5 +26,14 @@ If you are having issues installing Bloodhound and Neo4j, try issuing the follow
 `apt update && apt upgrade`  
 If you are having issues with Impacket, reach out to the TryHackMe Discord for help!
 
+impacketはKali上でFindしてみると何個かあったのでデフォルトであるっぽい？
+bloodhoundはないので、`sudo apt install bloodhound`でインストール（自動でneo4jもインストールしてくれる）
+
 
 ## Welcome to Attacktive Directory
+### Welcome to Attacktive Directory
+Welcome Dear User!  
+Thank you for doing my first room. I originally created this room for my final project in my Cyber Security degree program back in 2019. Since then, I've gone on to make several other rooms, even a Network for THM. In May 2021, I made the decision to renovate this room and make it more guided and less challenge based so there are more learning opportunities for others. I hope you enjoy it.  
+Love,
+
+[Spools](https://twitter.com/NekoS3c)
