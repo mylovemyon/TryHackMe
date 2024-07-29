@@ -1,5 +1,5 @@
 ## Tools
-- gpg
+- gpg  
   「`gpg` --import "GPG鍵"」→「`gpg` -d "メッセージファイル"」
 - hashid  
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperのフォーマットも確認できる）
