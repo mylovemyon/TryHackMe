@@ -17,7 +17,8 @@
     - 上記３つを実行後、「`john` --wordlist=/usr/share/wordlists/rockyou.txt "出力ファイル"」でクラック可能
   - 「john --single "Hashファイル" --format=Hash方式」SingleCrackモード（あんま使わん）  
     Hashファイルは`文字列:ハッシュ`形式。文字列を変換しながらHashクラックを行う。
-  - 「sudo `unshadow` /etc/passwd /etc/shadow」Johnで /etc/shadow をクラックする際のフォーマット作成
+  - 「sudo `unshadow` /etc/passwd /etc/shadow」  
+    Johnで /etc/shadow をクラックするためのフォーマット作成
 - kerbrute (kali×)
   - install
     [GitHub](https://github.com/ropnop/kerbrute)上のReleaseからLinuxバイナリをインストール
