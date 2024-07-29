@@ -1,6 +1,6 @@
 ## Tools
 - gpg  
-  「`gpg` --import "GPG鍵"」→「`gpg` -d "メッセージファイル"」
+  「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」
 - hashid  
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperのフォーマットも確認できる）
 - John The Ripper  
