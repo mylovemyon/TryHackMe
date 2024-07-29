@@ -18,7 +18,9 @@
   - 「john --single "Hashファイル" --format=Hash方式」SingleCrackモード（あんま使わん）  
     Hashファイルは`文字列:ハッシュ`形式。文字列を変換しながらHashクラックを行う。
   - 「sudo `unshadow` /etc/passwd /etc/shadow」Johnで /etc/shadow をクラックする際のフォーマット作成
-- kerbrute (kali×)  
+- kerbrute (kali×)
+  - install
+    [GitHub](https://github.com/ropnop/kerbrute)上のReleaseからLinuxバイナリをインストール
 - SSH  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
   - sshkeygen
