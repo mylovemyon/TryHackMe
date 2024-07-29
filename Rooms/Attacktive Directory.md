@@ -26,7 +26,7 @@ If you are having issues installing Bloodhound and Neo4j, try issuing the follow
 `apt update && apt upgrade`  
 If you are having issues with Impacket, reach out to the TryHackMe Discord for help!
 
-impacketはKali上でFindしてみると何個かあったのでデフォルトであるっぽい？  
+impacketはKaliでは、`/usr/share/doc/python3-impacket/examples`内にデフォルトであった（パスも通ってる）  
 bloodhoundはないので、`sudo apt install bloodhound`でインストール（自動でneo4jもインストールしてくれる）
 
 
