@@ -14,6 +14,8 @@
   - 「john --single "Hashファイル名" --format=Hash方式」SingleCrackモード（あんま使わん）  
     Hashファイルは`文字列:ハッシュ`形式。文字列を変換しながらHashクラックを行う。
   - 「sudo `unshadow` /etc/passwd /etc/shadow」Johnで /etc/shadow をクラックする際のフォーマット作成
+- SSH  
+  SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
 ## Linux
 ### Command
 - 「`sed` -i '1s/^/文字列' ファイル名」 ファイルの１行目（`1s`）先頭に文字列を追加（改行なし）
@@ -23,3 +25,4 @@
 - [CrackStation](https://crackstation.net/)
 - [hashes.com](https://hashes.com/en/decrypt/hash)
 - [hash_identifier](https://hashes.com/en/tools/hash_identifier)
+- [SecLists](https://github.com/danielmiessler/SecLists)
