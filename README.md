@@ -1,6 +1,6 @@
 # TryHackMe
 ## Rooms
-- Attacktive Directory
+- Attacktive Directory  
   `enum4linux`でのDomain名取得, ADのデフォルトのTLDは`.local`,  Kerbrute
 - Encryption - Crypto 101  
   `ssh-keygen`, `ssh2john`でSSH秘密鍵のパスワードをJohnで解析するために抽出, `gpg`コマンド  
