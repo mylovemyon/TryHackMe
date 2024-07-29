@@ -42,9 +42,13 @@ Basic enumeration starts out with an nmap scan. Nmap is a relatively complex uti
 For more information on nmap, check out the [nmap room](https://tryhackme.com/room/furthernmap).
 Notes: Flags for each user account are available for submission. You can retrieve the flags for user accounts via RDP (Note: the login format is spookysec.local\User at the Window's login prompt) and Administrator via Evil-WinRM.
 
-----------------------------------------Answer the questions below----------------------------------------  
-- What is the NetBIOS-Domain Name of the machine?  
+----------------------------------------Answer the questions below--------------------------------------------------  
+What is the NetBIOS-Domain Name of the machine?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_1.png" width="50%" height="50%">  
 `enum4linux IPアドレス`でスキャンして確認できた。  
-- What invalid TLD do people commonly use for their Active Directory Domain?  
+
+What invalid TLD do people commonly use for their Active Directory Domain?  
 `.local`
+
+
+##  Enumerating Users via Kerberos
