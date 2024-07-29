@@ -1,11 +1,11 @@
 ## Tools
-- enum4linux  (kaliのDefault〇)  
+- enum4linux  (kali〇)  
   「`enum4linux` IPアドレス」
-- gpg (kaliのDefault〇)  
+- gpg (kali〇)  
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
-- hashid (kaliのDefault〇)   
+- hashid (kali〇)   
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperのフォーマットも確認できる）
-- John The Ripper  (kaliのDefault〇)  
+- John The Ripper  (kali〇)  
   - 「`john` --wordlist=/usr/share/wordlists/rockyou.txt "Hashファイル" --format=Hash方式」  
     「`john` "Hashファイル名" --show」クラック済み結果を表示（もしくは`/home/kali/.john/.john.pot`に解析結果がある）
   - 「`john` --list=formats」全フォーマットを表示  
@@ -18,7 +18,7 @@
   - 「john --single "Hashファイル" --format=Hash方式」SingleCrackモード（あんま使わん）  
     Hashファイルは`文字列:ハッシュ`形式。文字列を変換しながらHashクラックを行う。
   - 「sudo `unshadow` /etc/passwd /etc/shadow」Johnで /etc/shadow をクラックする際のフォーマット作成
-- kerbrute (kaliのDefault×)  
+- kerbrute (kali×)  
 - SSH  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
   - sshkeygen
