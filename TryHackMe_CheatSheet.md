@@ -20,8 +20,9 @@
   - 「sudo `unshadow` /etc/passwd /etc/shadow」  
     Johnで /etc/shadow をクラックするためのフォーマット作成
 - kerbrute (kali×)
-  - install
+  - install  
     [GitHub](https://github.com/ropnop/kerbrute)上のReleaseからLinuxバイナリをインストール
+    - 「./kerbrute userenum -d ドメイン名 --dc ターゲットIP Wordlists名」Domainユーザの発見
 - SSH  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
   - sshkeygen
