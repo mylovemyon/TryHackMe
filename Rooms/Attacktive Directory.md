@@ -56,6 +56,11 @@ What invalid TLD do people commonly use for their Active Directory Domain?
 A whole host of other services are running, including Kerberos. Kerberos is a key authentication service within Active Directory. With this port open, we can use a tool called [Kerbrute](https://github.com/ropnop/kerbrute/releases) (by Ronnie Flathers @ropnop) to brute force discovery of users, passwords and even password spray!  
 Note: Several users have informed me that the latest version of Kerbrute does not contain the UserEnum flag in Kerbrute, if that is the case with the version you have selected, try a older version!
 
-
 ### Enumeration:
 For this box, a modified [User List](https://raw.githubusercontent.com/Sq00ky/attacktive-directory-tools/master/userlist.txt) and [Password List](https://raw.githubusercontent.com/Sq00ky/attacktive-directory-tools/master/passwordlist.txt) will be used to cut down on time of enumeration of users and password hash cracking. It is NOT recommended to brute force credentials due to account lockout policies that we cannot enumerate on the domain controller.
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+What notable account is discovered?   
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_2.png" width="50%" height="50%">  
+Nmapで3389が開いているのを確認したため、`-sC`でスクリプトスキャンするとドメインを確認できた。  
+これからKerbruteを使用して直接マシンに接続するため、名前解決を行えるように「`sudo sed -i '$a10.10.253.185 spookysec.local' /etc/hosts`」を実行
