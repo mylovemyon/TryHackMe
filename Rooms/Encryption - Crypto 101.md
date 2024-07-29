@@ -115,6 +115,25 @@ In order to use a private SSH key, the permissions must be set up correctly othe
 ### Using SSH keys to get a better shell
 SSH keys are an excellent way to “upgrade” a reverse shell, assuming the user has login enabled (www-data normally does not, but regular users and root will). Leaving an SSH key in authorized_keys on a box can be a useful backdoor, and you don't need to deal with any of the issues of unstabilised reverse shells like Control-C or lack of tab completion.
 
-----------------------------------------Answer the questions below----------------------------------------
+----------------------------------------Answer the questions below----------------------------------------  
 Crack the password with John The Ripper and rockyou, what's the passphrase for the key?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Encryption%20-%20Crypto%20101_1.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Encryption%20-%20Crypto%20101_1.png" width="50%" height="50%">  
+ssh2johnでSSH秘密鍵をJohnでクラックできるように整形し、その後Johnでクラック成功！
+
+
+## Explaining Diffie Hellman Key Exchange
+### What is Key Exchange?
+Key exchange allows 2 people/parties to establish a set of common cryptographic keys without an observer being able to get these keys. Generally, to establish common symmetric keys.
+
+### How does Diffie Hellman Key Exchange work?
+Alice and Bob want to talk securely. They want to establish a common key, so they can use symmetric cryptography, but they don’t want to use key exchange with asymmetric cryptography. This is where DH Key Exchange comes in.  
+Alice and Bob both have secrets that they generate, let’s call these A and B. They also have some common material that’s public, let’s call this C.  
+We need to make some assumptions. Firstly, whenever we combine secrets/material it’s impossible or very very difficult to separate. Secondly, the order that they're combined in doesn’t matter.  
+Alice and Bob will combine their secrets with the common material, and form AC and BC. They will then send these to each other, and combine that with their secrets to form two identical keys, both ABC. Now they can use this key to communicate.
+
+### Extra Resources
+An excellent video if you want a visual explanation is available here. https://www.youtube.com/watch?v=NmM9HA2MQGI  
+DH Key Exchange is often used alongside RSA public key cryptography, to prove the identity of the person you’re talking to with digital signing. This prevents someone from attacking the connection with a man-in-the-middle attack by pretending to be Bob.
+
+
+## PGP, GPG and AES
