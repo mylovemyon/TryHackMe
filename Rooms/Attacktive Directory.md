@@ -63,10 +63,8 @@ For this box, a modified [User List](https://raw.githubusercontent.com/Sq00ky/at
 What notable account is discovered?   
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_2.png" width="50%" height="50%">  
 Nmapで3389が開いているのを確認したため、`-sC`でスクリプトスキャンするとドメインを確認できた。  
-これからKerbruteを使用して直接マシンに接続するため名前解決を行えるように  
-「`sudo sed -i '$a10.10.253.185 spookysec.local' /etc/hosts`」を実行しHOSTSファイルを編集。
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_3.png" width="50%" height="50%">  
-[User List](https://raw.githubusercontent.com/Sq00ky/attacktive-directory-tools/master/userlist.txt)をWgetして「`./kerbrute userenum -d ドメイン名 --dc ターゲットIP Wordlists名`」でドメイン内のユーザを発見する。  
+[User List](https://raw.githubusercontent.com/Sq00ky/attacktive-directory-tools/master/userlist.txt)をWgetして「`./kerbrute userenum -d ドメイン名 --dc ドメコンIP Wordlists名`」でドメイン内のユーザを発見できる。  
 wordlistは70000以上あったのでめっちゃ時間かかるので、途中で中断。  
 問題で聞かれている怪しいユーザは、svc-admin と backup らしい。
 
@@ -79,3 +77,8 @@ After the enumeration of user accounts is finished, we can attempt to abuse a fe
 [Impacket](https://github.com/fortra/impacket) has a tool called "GetNPUsers.py" (located in impacket/examples/GetNPUsers.py) that will allow us to query ASReproastable accounts from the Key Distribution Center. The only thing that's necessary to query accounts is a valid set of usernames which we enumerated previously via Kerbrute.  
 Remember:  Impacket may also need you to use a python version >=3.7. In the AttackBox you can do this by running your command with `python3.9 /opt/impacket/examples/GetNPUsers.py`.
 
+----------------------------------------Answer the questions below--------------------------------------------------  
+We have two user accounts that we could potentially query a ticket from. Which user account can you query a ticket from with no password?  
+`svc-admin`  
+Now crack the hash with the modified password list provided, what is the user accounts password?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_4.png" width="100%" height="100%">  
