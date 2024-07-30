@@ -85,3 +85,14 @@ Now crack the hash with the modified password list provided, what is the user ac
 `python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名`で
 事前認証(AS-req)が無効であるユーザのTGTチケットを取得することができた。  
 その後、 [Password List](https://raw.githubusercontent.com/Sq00ky/attacktive-directory-tools/master/passwordlist.txt)をWgetして、Johnでクラック成功！
+
+
+## Back to the Basics
+### Enumeration:
+With a user's account credentials we now have significantly more access within the domain. We can now attempt to enumerate any shares that the domain controller may be giving out.
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+What utility can we use to map remote SMB shares?  
+There is one particular share that we have access to that contains a text file. Which share is it?  
+Decoding the contents of the file, what is the full contents?
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_5.png" width="50%" height="50%">  
