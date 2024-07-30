@@ -1,9 +1,12 @@
 ## Tools
 - enum4linux  (kali〇)  
+  Perl製    
   「`enum4linux` IPアドレス」
 - gpg (kali〇)  
+  ELF
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
-- hashid (kali〇)   
+- hashid (kali〇)  
+  Python製
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperのフォーマットも確認できる）
 - John The Ripper  (kali〇)  
   - 「`john` --wordlist=/usr/share/wordlists/rockyou.txt "Hashファイル" --format=Hash方式」  
@@ -19,10 +22,15 @@
     Hashファイルは`文字列:ハッシュ`形式。文字列を変換しながらHashクラックを行う。
   - 「sudo `unshadow` /etc/passwd /etc/shadow」  
     Johnで /etc/shadow をクラックするためのフォーマット作成
+- impacket(Kali〇)
+  Kaliではデフォルト
+  - GetNPUsers  
+   「`python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名`」
+   で`ASREPRoast`（事前認証が必要でないユーザのチケットを取得）を
 - kerbrute (kali×)
   - install  
     [GitHub](https://github.com/ropnop/kerbrute)上のReleaseからLinuxバイナリをインストール
-    - 「./kerbrute userenum -d ドメイン名 --dc ターゲットIP Wordlists名」Domainユーザの発見
+  - 「./kerbrute userenum -d ドメイン名 --dc ターゲットIP Wordlists名」Domainユーザの発見
 - SSH  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
   - sshkeygen
