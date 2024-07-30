@@ -19,11 +19,12 @@
     Hashファイルは`文字列:ハッシュ`形式。文字列を変換しながらHashクラックを行う。
   - 「sudo `unshadow` /etc/passwd /etc/shadow」  
     Johnで /etc/shadow をクラックするためのフォーマット作成
-- impacket(Kali〇, python)  
+- impacket (Kali〇, python)  
   `impacket-〇〇`以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる。
   - GetNPUsers  
-   「`impacket-GetNPusers -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名`」
-   で`ASREPRoast`（事前認証が必要でないユーザのチケットを取得）を
+   「`impacket-GetNPusers -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名`」  
+   で`ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTチケットを取得できる）を実行。  
+   取得したTGTチケットを「john --wordlist=Wordlist名 チケットファイル」でクラックできる。
 - kerbrute (kali×)
   - install  
     [GitHub](https://github.com/ropnop/kerbrute)上のReleaseからLinuxバイナリをインストール
