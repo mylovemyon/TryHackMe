@@ -93,8 +93,11 @@ With a user's account credentials we now have significantly more access within t
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 What utility can we use to map remote SMB shares?  
-There is one particular share that we have access to that contains a text file. Which share is it?
-Decoding the contents of the file, what is the full contents?  
+There is one particular share that we have access to that contains a text file. Which share is it?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_5.png" width="75%" height="75%">  
-「`smbclient -L IPアドレス or FQDN -U ユーザ名%パスワード`」でShareを一覧確認できる。（-Lオプション）  
-「`smbclient //IPアドレス/共有名 -U ユーザ名%パスワード`」で共有にアクセス、怪しいファイルを発見・ダウンロードできた。
+「`smbclient -L IPアドレス or FQDN -U ユーザ名%パスワード`」でShareを列挙できる。（-Lオプション）  
+「`smbclient //IPアドレス/共有名 -U ユーザ名%パスワード`」で共有にアクセス、怪しいファイルを発見・ダウンロードできた。  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_6.png" width="50%" height="50%">  
+ちなみに「`smbmap -H IPアドレス -u ユーザ名 -p パスワード`」でもShareの列挙ができる。  
+Decoding the contents of the file, what is the full contents?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_7.png" width="75%" height="75%">  
