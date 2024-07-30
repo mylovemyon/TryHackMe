@@ -1,12 +1,12 @@
 ## Tools
 - enum4linux  (kali〇)  
-  Perl製    
+  Perl    
   「`enum4linux` IPアドレス」
 - gpg (kali〇)  
-  ELF
+  ELF  
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
 - hashid (kali〇)  
-  Python製
+  Python  
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperのフォーマットも確認できる）
 - John The Ripper  (kali〇)  
   - 「`john` --wordlist=/usr/share/wordlists/rockyou.txt "Hashファイル" --format=Hash方式」  
