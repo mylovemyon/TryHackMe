@@ -30,6 +30,7 @@
 ### Command
 - 「`sed` -i '1s/^/文字列' ファイル名」 ファイルの１行目（`1s`）先頭に文字列を追加（改行なし）
 ### Preference
+- 「`sudo sed -i '$a10.10.253.185 spookysec.local' /etc/hosts`」を実行しHOSTSファイルを編集。
 - `$format$rounds$salt$hash` /etc/shadowのフォーマット、`$format`でハッシュ種別が分かる。
 ## BookMark
 - [CrackStation](https://crackstation.net/)
