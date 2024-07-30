@@ -79,7 +79,7 @@ Remember:  Impacket may also need you to use a python version >=3.7. In the Atta
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 We have two user accounts that we could potentially query a ticket from. Which user account can you query a ticket from with no password?  
-`svc-admin`  
+`svc-admin`が怪しいらしい。  
 Now crack the hash with the modified password list provided, what is the user accounts password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_4.png" width="100%" height="100%">  
 `python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名`で
@@ -93,6 +93,8 @@ With a user's account credentials we now have significantly more access within t
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 What utility can we use to map remote SMB shares?  
-There is one particular share that we have access to that contains a text file. Which share is it?  
+There is one particular share that we have access to that contains a text file. Which share is it?
 Decoding the contents of the file, what is the full contents?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_5.png" width="75%" height="75%">  
+「`smbclient -L IPアドレス or FQDN -U ユーザ名%パスワード`」でShareを一覧確認できる。（-Lオプション）  
+「`smbclient //IPアドレス/共有名 -U ユーザ名%パスワード`」で共有にアクセス、怪しいファイルを発見・ダウンロードできた。
