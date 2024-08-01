@@ -102,3 +102,13 @@ There is one particular share that we have access to that contains a text file. 
 Decoding the contents of the file, what is the full contents?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_7.png" width="75%" height="75%">  
 エンコードされてぽいので、Cybercherfの「Magic」でそれっぽいのを探してみるとBase64で文字列を発見した。
+
+
+## Elevating Privileges within the Domain
+Now that we have new user account credentials, we may have more privileges on the system than before. The username of the account "backup" gets us thinking. What is this the backup account to?  
+Well, it is the backup account for the Domain Controller. This account has a unique permission that allows all Active Directory changes to be synced with this user account. This includes password hashes  
+Knowing this, we can use another tool within Impacket called "secretsdump.py". This will allow us to retrieve all of the password hashes that this user account (that is synced with the domain controller) has to offer. Exploiting this, we will effectively have full control over the AD Domain.
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+What method allowed us to dump NTDS.DIT?  
+`DRSUAPI`  
