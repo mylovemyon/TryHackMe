@@ -101,3 +101,4 @@ There is one particular share that we have access to that contains a text file. 
 ちなみに「`smbmap -H IPアドレス -u ユーザ名 -p パスワード`」でもShareの列挙ができる。  
 Decoding the contents of the file, what is the full contents?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_7.png" width="75%" height="75%">  
+エンコードされてぽいので、Cybercherfの「Magic」でそれっぽいのを探してみるとBase64で文字列を発見した。
