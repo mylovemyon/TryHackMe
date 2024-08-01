@@ -1,4 +1,6 @@
 ## Tools
+- CyberChef  
+  「Magic」可読可能な文字列に変換してくれる
 - enum4linux  (kali〇, Perl)  
   「`enum4linux` IPアドレス」
 - gpg (kali〇, ELF)    
@@ -20,15 +22,20 @@
   - 「sudo `unshadow` /etc/passwd /etc/shadow」  
     Johnで /etc/shadow をクラックするためのフォーマット作成
 - impacket (Kali〇, python)  
-  `impacket-〇〇`以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる。
+  `impacket-〇〇`以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる
   - GetNPUsers  
    「`impacket-GetNPusers` -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名」  
-   で`ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTチケットを取得できる）を実行。  
-   取得したTGTチケットを「john --wordlist=Wordlist名 Ticketファイル」でクラックできる。
+   で`ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTチケットを取得できる）を実行  
+   取得したTGTチケットを「john --wordlist=Wordlist名 Ticketファイル」でクラックできる
 - kerbrute (kali×)
   - install  
     [GitHub](https://github.com/ropnop/kerbrute)上のReleaseからLinuxバイナリをインストール
   - 「`./kerbrute` userenum -d ドメイン名 --dc ターゲットIP Wordlists名」Domainユーザの発見
+- smbclient (kali〇, ELF)  
+  「`smbcleint` -L IPアドレス or FQDN -U ユーザ名%パスワード」共有フォルダの列挙  
+  「`smbclient` //IPアドレス/共有名 -U ユーザ名%パスワード」共有フォルダにアクセス
+- smbmap  
+  「`smbmap` -H IPアドレス -u ユーザ名 -p パスワード」共有フォルダの列挙（smbclientと比べフォルダ権限まで確認できる）
 - SSH  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
   - sshkeygen
@@ -36,8 +43,8 @@
 ### Command
 - 「`sed` -i '1s/^/文字列' ファイル名」 ファイルの１行目（`1s`）先頭に文字列を追加（改行なし）
 ### Preference
-- 「`sudo sed -i '$a10.10.253.185 spookysec.local' /etc/hosts`」を実行しHOSTSファイルを編集。
-- `$format$rounds$salt$hash` /etc/shadowのフォーマット、`$format`でハッシュ種別が分かる。
+- 「`sudo sed -i '$a10.10.253.185 spookysec.local' /etc/hosts`」を実行しHOSTSファイルを編集
+- `$format$rounds$salt$hash` /etc/shadowのフォーマット、`$format`でハッシュ種別が分かる
 ## BookMark
 - [CrackStation](https://crackstation.net/)
 - [hashes.com](https://hashes.com/en/decrypt/hash)
