@@ -112,3 +112,6 @@ Knowing this, we can use another tool within Impacket called "secretsdump.py". T
 ----------------------------------------Answer the questions below--------------------------------------------------  
 What method allowed us to dump NTDS.DIT?  
 `DRSUAPI`  
+（DRSUAPI）はADオブジェクトのReplicationに使用されるRPCプロトコル。  
+ちなみに「ntds.dit」はADのアカウントクレデンシャルが格納されている。  
+What is the Administrators NTLM hash?  
