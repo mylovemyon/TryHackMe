@@ -1,7 +1,11 @@
 # TryHackMe
 ## Rooms
 - Attacktive Directory  
-  `enum4linux`でのDomain名取得, ADのデフォルトのTLDは`.local`,  Kerbrute
+  `enum4linux`でのDomain名取得, ADのデフォルトのTLDは`.local`  
+  `Kerbrute`によるWordlistを用いたドメイン内ユーザの列挙  
+  `impacket-GetNPUsers`によるASREPRoasting（事前認証を必要としないユーザのTGTチケットを取得する攻撃）からのチケットハッシュをJohnでクラック  
+  `smbclient`や`smbmap`によるShareの列挙・接続  
+  `secretsdump`による`DRSUAPI`を介したドメイン内ユーザのNTLM・Kerberosキーの取得
 - Encryption - Crypto 101  
   `ssh-keygen`, `ssh2john`でSSH秘密鍵のパスワードをJohnで解析するために抽出, `gpg`コマンド  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない, [RsaCtfTool](https://github.com/Ganapati/RsaCtfTool), [rsatool](https://github.com/ius/rsatool)
