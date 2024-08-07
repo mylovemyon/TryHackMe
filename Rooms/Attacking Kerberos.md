@@ -29,8 +29,21 @@ The AS-REQ step in Kerberos authentication starts when a user requests a TGT fro
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_1.png" width="50%" height="50%">
 
 ### Service Ticket Contents - 
-
 To understand how Kerberos authentication works you first need to understand what these tickets contain and how they're validated. A service ticket contains two portions: the service provided portion and the user-provided portion. I'll break it down into what each portion contains.
 - Service Portion: User Details, Session Key, Encrypts the ticket with the service account NTLM hash.
 - User Portion: Validity Timestamp, Session Key, Encrypts with the TGT session key.
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_2.png" width="50%" height="50%">
+
+### Kerberos Authentication Overview -
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_3.png" width="50%" height="50%">  
+AS-REQ - 1.) The client requests an Authentication Ticket or Ticket Granting Ticket (TGT).  
+AS-REP - 2.) The Key Distribution Center verifies the client and sends back an encrypted TGT.  
+TGS-REQ - 3.) The client sends the encrypted TGT to the Ticket Granting Server (TGS) with the Service Principal Name (SPN) of the service the client wants to access.  
+TGS-REP - 4.) The Key Distribution Center (KDC) verifies the TGT of the user and that the user has access to the service, then sends a valid session key for the service to the client.  
+AP-REQ - 5.) The client requests the service and sends the valid session key to prove the user has access.  
+AP-REP - 6.) The service grants access
+
+### Kerberos Tickets Overview - 
+The main ticket you will receive is a ticket-granting ticket (TGT). These can come in various forms, such as a .kirbi for Rubeus and .ccache for Impacket. A ticket is typically base64 encoded and can be used for multiple attacks.  
+The ticket-granting ticket is only used to get service tickets from the KDC. When requesting a TGT from the KDC, the user will authenticate with their credentials to the KDC and request a ticket. The server will validate the credentials, create a TGT and encrypt it using the krbtgt key. The encrypted TGT and a session key will be sent to the user.  
+When the user needs to request a service ticket, they will send the TGT and the session key to the KDC, along with the service principal name (SPN) of the service they wish to access. The KDC will validate the TGT and session key. If they are correct, the KDC will grant the user a service ticket, which can be used to authenticate to the corresponding service.
