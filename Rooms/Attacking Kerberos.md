@@ -47,3 +47,12 @@ AP-REP - 6.) The service grants access
 The main ticket you will receive is a ticket-granting ticket (TGT). These can come in various forms, such as a .kirbi for Rubeus and .ccache for Impacket. A ticket is typically base64 encoded and can be used for multiple attacks.  
 The ticket-granting ticket is only used to get service tickets from the KDC. When requesting a TGT from the KDC, the user will authenticate with their credentials to the KDC and request a ticket. The server will validate the credentials, create a TGT and encrypt it using the krbtgt key. The encrypted TGT and a session key will be sent to the user.  
 When the user needs to request a service ticket, they will send the TGT and the session key to the KDC, along with the service principal name (SPN) of the service they wish to access. The KDC will validate the TGT and session key. If they are correct, the KDC will grant the user a service ticket, which can be used to authenticate to the corresponding service.
+
+### Attack Privilege Requirements -
+- Kerbrute Enumeration - No domain access required 
+- Pass the Ticket - Access as a user to the domain required
+- Kerberoasting - Access as any user required
+- AS-REP Roasting - Access as any user required
+- Golden Ticket - Full domain compromise (domain admin) required 
+- Silver Ticket - Service hash required 
+- Skeleton Key - Full domain compromise (domain admin) required
