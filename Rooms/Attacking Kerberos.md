@@ -108,8 +108,11 @@ Before password spraying with Rubeus, you need to add the domain controller doma
 Be mindful of how you use this attack as it may lock you out of the network depending on the account lockout policies.
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
-`Rubeus`はWindows用のツールらしい（GitHubからソースコードをとってコンパイルして使わんといかん、メンディー）
-Which domain admin do we get a ticket for when harvesting tickets?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_7.png" width="50%" height="50%">  
+`Rubeus`はWindows用のツールらしい（GitHubからソースコードをとってコンパイルして使わんといかん、メンディー）  
+SSHでWindowsにログインして攻撃した。（RubeusはPost-Exploitation用っぽい）  
 Which domain controller do we get a ticket for when harvesting tickets?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_8.png" width="50%" height="50%">  
+「`Rubeus.exe harvest /intercal:30`」で、30秒間のTGTチケット収集結果を確認すると、「CONTROLLER-1」が確認できた。  
+Which domain admin do we get a ticket for when harvesting tickets?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_7.png" width="50%" height="50%">  
+
