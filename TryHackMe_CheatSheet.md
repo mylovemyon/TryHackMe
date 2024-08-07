@@ -27,14 +27,14 @@
    「`impacket-GetNPusers` -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名」  
    で`ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTチケットを取得できる）を実行  
    取得したTGTチケットを「john --wordlist=Wordlist名 Ticketファイル」でクラックできる
-- [kerbrute](https://github.com/ropnop/kerbrute) (kali×)
+- [kerbrute](https://github.com/ropnop/kerbrute) (kali×, Go)
   - install  
     GitHub上のReleaseからLinuxバイナリをインストール
   - 「`./kerbrute` userenum -d ドメイン名 --dc ターゲットIP Wordlists名」Domainユーザの発見
 - smbclient (kali〇, ELF)  
   「`smbcleint` -L IPアドレス or FQDN -U ユーザ名%パスワード」共有フォルダの列挙  
   「`smbclient` //IPアドレス/共有名 -U ユーザ名%パスワード」共有フォルダにアクセス
-- smbmap (kali〇, python)  
+- [smbmap](https://github.com/ShawnDEvans/smbmap) (kali〇, python)  
   「`smbmap` -H IPアドレス -u ユーザ名 -p パスワード」共有フォルダの列挙（smbclientと比べフォルダ権限まで確認できる）
 - SSH  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
