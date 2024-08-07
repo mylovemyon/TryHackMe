@@ -115,8 +115,19 @@ What method allowed us to dump NTDS.DIT?
 （DRSUAPI）はADオブジェクトのReplicationに使用されるRPCプロトコル。  
 ちなみに「`ntds.dit`」はADのアカウントクレデンシャルが格納されている。  
 What is the Administrators NTLM hash?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_8.png" width="75%" height="75%">  
-「`impacket-secretsdump -justdc ドメイン名/ユーザ名:パスワード@IPアドレス`」で`ntds.dit`を介したドメインユーザのパスワードハッシュの列挙ができる。
-
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_8.png" width="50%" height="50%">  
+「`impacket-secretsdump -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス`」で`ntds.dit`を介したドメインユーザのパスワードハッシュの列挙ができる。  
+AdministratorのNTハッシュも無事取得した！
 
 ##  Flag Submission Panel
+### Flag Submission Panel
+Submit the flags for each user account. They can be located on each user's desktop.  
+If you enjoyed this box, you may also enjoy my [blog post](https://blog.spookysec.net/kerberos-abuse/)!
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_9.png" width="75%" height="75%">  
+AdministratorのNTハッシュを使用して、`evil-winrm`でWinRMアクセスをする。  
+svc-admin  
+backup  
+Administrator  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_10.png" width="75%" height="75%">
