@@ -4,7 +4,7 @@
 - [enum4linux](https://github.com/CiscoCXSecurity/enum4linux)  (kali〇, Perl)  
   「`enum4linux` IPアドレス」
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
-  「`evil-winrm -i IPアドレス -u ユーザ名 -H NTハッシュ`」でWinRM経由でログインできる。
+  「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」でWinRM経由でログインできる。
 - gpg (kali〇, ELF)    
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
 - [hashid](https://github.com/psypanda/hashID) (kali〇, python)  
