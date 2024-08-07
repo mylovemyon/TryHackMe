@@ -26,3 +26,11 @@ Kerberos is the default authentication service for Microsoft Windows domains. It
 
 ### AS-REQ w/ Pre-Authentication In Detail - 
 The AS-REQ step in Kerberos authentication starts when a user requests a TGT from the KDC. In order to validate the user and create a TGT for the user, the KDC must follow these exact steps. The first step is for the user to encrypt a timestamp NT hash and send it to the AS. The KDC attempts to decrypt the timestamp using the NT hash from the user, if successful the KDC will issue a TGT as well as a session key for the user.
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_1.png" width="50%" height="50%">
+
+### Service Ticket Contents - 
+
+To understand how Kerberos authentication works you first need to understand what these tickets contain and how they're validated. A service ticket contains two portions: the service provided portion and the user-provided portion. I'll break it down into what each portion contains.
+- Service Portion: User Details, Session Key, Encrypts the ticket with the service account NTLM hash.
+- User Portion: Validity Timestamp, Session Key, Encrypts with the TGT session key.
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_2.png" width="50%" height="50%">
