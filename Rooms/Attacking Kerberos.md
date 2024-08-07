@@ -80,4 +80,5 @@ Enumerating users allows you to know which user accounts are on the target domai
 ----------------------------------------Answer the questions below--------------------------------------------------  
 How many total users do we enumerate?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_4.png" width="50%" height="50%">  
-User.txtを使って列挙をすると、10個のユーザを確認
+「`./kerburute userenum -d ドメイン名 --dc ドメコンIP Wordlist名 -o 出力ファイル`」で列挙をすると、10個のユーザを確認！  
+（名前解決のための`/etc/hosts`ファイルを編集していない場合、`--dc`オプションはIPアドレスが必須になる。）
