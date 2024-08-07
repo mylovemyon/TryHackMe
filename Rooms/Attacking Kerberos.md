@@ -129,3 +129,5 @@ I have already taken the time to put Rubeus on the machine for you, it is locate
 copy the hash onto your attacker machine and put it into a .txt file so we can crack it with hashcat  
 I have created a modified rockyou wordlist in order to speed up the process download it [here](https://github.com/Cryilllic/Active-Directory-Wordlists/blob/master/Pass.txt)  
 3.) `hashcat -m 13100 -a 0 hash.txt Pass.txt` - now crack that hash
+
+### 
