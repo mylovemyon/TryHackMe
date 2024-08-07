@@ -1,13 +1,13 @@
 ## Tools
 - CyberChef  
   「Magic」可読可能な文字列に変換してくれる
-- enum4linux  (kali〇, Perl)  
+- [enum4linux](https://github.com/CiscoCXSecurity/enum4linux)  (kali〇, Perl)  
   「`enum4linux` IPアドレス」
 - gpg (kali〇, ELF)    
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
-- hashid (kali〇, python)  
+- [hashid](https://github.com/psypanda/hashID) (kali〇, python)  
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperのフォーマットも確認できる）
-- John The Ripper  (kali〇, C)  
+- [John The Ripper](https://github.com/openwall/john)  (kali〇, C)  
   - 「`john` --wordlist=/usr/share/wordlists/rockyou.txt "Hashファイル" --format=Hash方式」  
     「`john` "Hashファイル名" --show」クラック済み結果を表示（もしくは`/home/kali/.john/.john.pot`に解析結果がある）
   - 「`john` --list=formats」全フォーマットを表示  
