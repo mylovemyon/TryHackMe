@@ -78,6 +78,6 @@ Enumerating users allows you to know which user accounts are on the target domai
 3.) `./kerbrute userenum --dc CONTROLLER.local -d CONTROLLER.local User.txt` - This will brute force user accounts from a domain controller using a supplied wordlist
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
-How many total users do we enumerate?
+How many total users do we enumerate?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_4.png" width="50%" height="50%">  
 User.txtを使って列挙をすると、10個のユーザを確認
