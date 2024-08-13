@@ -152,7 +152,7 @@ After cracking the service account password there are various ways of exfiltrati
 ----------------------------------------Answer the questions below--------------------------------------------------  
 What is the HTTPService Password?  
 What is the SQLService Password?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_10.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_10.png" width="100%" height="100%">  
 「`Rubeus.exe kerberoast /nowrap`」でSPNを持つユーザを取得できた。（`/nowrap` はチケットを改行なしで出力）  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_11.png" width="50%" height="50%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_12.png" width="100%" height="100%">  
