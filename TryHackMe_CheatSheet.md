@@ -1,12 +1,14 @@
 ## Tools
 - CyberChef  
   「Magic」可読可能な文字列に変換してくれる
-- [enum4linux](https://github.com/CiscoCXSecurity/enum4linux)  (kali〇, Perl)  
+- [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) (kali〇, Perl)  
   「`enum4linux` IPアドレス」
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
   「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」でWinRM経由でログインできる。
 - gpg (kali〇, ELF)    
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
+- [hashcat](https://github.com/hashcat/hashcat) (kali〇, C)
+  
 - [hashID](https://github.com/psypanda/hashID) (kali〇, python)  
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperでのフォーマットも確認できる）
 - [impacket](https://github.com/fortra/impacket) (Kali〇, python)  
@@ -23,7 +25,7 @@
   - secretsdump  
     「`impacket-secretsdump` -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス -outputfile 出力ファイル名」  
     でDCSync権限を持つドメインユーザを使用して、各ドメインユーザのNTハッシュやKerberosキーをダンプできる。
-- [John the Ripper](https://github.com/openwall/john)  (kali〇, C)  
+- [John the Ripper](https://github.com/openwall/john) (kali〇, C)  
   - 「`john` --wordlist=/usr/share/wordlists/rockyou.txt "Hashファイル" --format=Hash方式」  
     「`john` "Hashファイル名" --show」クラック済み結果を表示（もしくは`/home/kali/.john/.john.pot`に解析結果がある）
   - 「`john` --list=formats」全フォーマットを表示  
