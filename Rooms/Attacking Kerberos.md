@@ -204,3 +204,20 @@ What is the User's Password?
 
 
 ## Pass the Ticket w/ mimikatz
+Mimikatz is a very popular and powerful post-exploitation tool most commonly used for dumping user credentials inside of an active directory network however we'll be using mimikatz in order to dump a TGT from LSASS memory  
+This will only be an overview of how the pass the ticket attacks work as THM does not currently support networks but I challenge you to configure this on your own network.  
+You can run this attack on the given machine however you will be escalating from a domain admin to a domain admin because of the way the domain controller is set up.
+
+### Pass the Ticket Overview - 
+Pass the ticket works by dumping the TGT from the LSASS memory of the machine. The Local Security Authority Subsystem Service (LSASS) is a memory process that stores credentials on an active directory server and can store Kerberos ticket along with other credential types to act as the gatekeeper and accept or reject the credentials provided. You can dump the Kerberos Tickets from the LSASS memory just like you can dump hashes. When you dump the tickets with mimikatz it will give us a .kirbi ticket which can be used to gain domain admin if a domain admin ticket is in the LSASS memory. This attack is great for privilege escalation and lateral movement if there are unsecured domain service account tickets laying around. The attack allows you to escalate to domain admin if you dump a domain admin's ticket and then impersonate that ticket using mimikatz PTT attack allowing you to act as that domain admin. You can think of a pass the ticket attack like reusing an existing ticket were not creating or destroying any tickets here were simply reusing an existing ticket from another user on the domain and impersonating that ticket.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_20.png" width="50%" height="50%">
+
+### Prepare Mimikatz & Dump Tickets - 
+You will need to run the command prompt as an administrator: use the same credentials as you did to get into the machine. If you don't have an elevated command prompt mimikatz will not work properly.  
+1.) cd Downloads - navigate to the directory mimikatz is in  
+2.) `mimikatz.exe` - run mimikatz  
+3.) `privilege::debug` - Ensure this outputs `[output '20' OK]` if it does not that means you do not have the administrator privileges to properly run mimikatz
+4.) `sekurlsa::tickets /export` - this will export all of the .kirbi tickets into the directory that you are currently in  
+At this step you can also use the base 64 encoded tickets from Rubeus that we harvested earlier  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_21.png" width="50%" height="50%">  
+When looking for which ticket to impersonate I would recommend looking for an administrator ticket from the krbtgt just like the one outlined in red above.
