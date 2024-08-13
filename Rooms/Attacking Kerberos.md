@@ -153,7 +153,7 @@ After cracking the service account password there are various ways of exfiltrati
 What is the HTTPService Password?  
 What is the SQLService Password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_10.png" width="50%" height="50%">  
-「`Rubeus.exe kerberoast /nowrap`」でSPNを持つユーザを取得できた。（`/nowrap` はチケットを改行なしで出力）  
+「`Rubeus.exe kerberoast /nowrap /outfie:出力ファイル名`」でSPNを持つユーザを取得できた。（`/nowrap` はチケットを改行なしで出力）  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_11.png" width="50%" height="50%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_12.png" width="100%" height="100%">  
 「`scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス`」でRubeus出力を取得し  
@@ -192,3 +192,6 @@ Use the same wordlist that you downloaded in task 4
 Which User is vulnerable to AS-REP Roasting?  
 What is the User's Password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_16.png" width="50%" height="50%">  
+「`Rubeus.exe asreproast /format:hashcat /outfile:出力ファイル名`」で事前認証が無効のユーザのTGTチケットを取得できた。
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_17.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_18.png" width="50%" height="50%">  
