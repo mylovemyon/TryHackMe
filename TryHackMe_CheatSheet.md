@@ -41,12 +41,18 @@
   - install  
     GitHub上のReleaseからLinuxバイナリをインストール
   - 「`./kerbrute` userenum -d ドメイン名 --dc ドメコンIP Wordlists名 -o 出力ファイル名」Domainユーザの列挙
-- [Rubeus](https://github.com/GhostPack/Rubeus) (kali×, C#)
+- [Rubeus](https://github.com/GhostPack/Rubeus) (kali×, C#)  
+  攻撃対象のWindowsマシンで実行する、Post-Exploitationのイメージ  
+  - 「`Rubeus.exe` harvest /interval:秒数」指定した秒数間、TGSを収集する  
+  - 「`Rubeus.exe` kerberoast /nowrap /outfile:出力ファイル」  
+    Kerberoasting（取得したユーザのSPNに対応したアカウントのTGSを取得できる）を実行（nowrapは改行なしで結果出力）  
+    TGSは「`hashcat` -a 0 -m 13100 TGSファイル Passwordリスト」でクラックできる（JohnではTGSをサポートしてない）
+  - 「`Rubeus.exe `」
 - smbclient (kali〇, ELF)  
   「`smbcleint` -L IPアドレス or FQDN -U ユーザ名%パスワード」共有フォルダの列挙  
   「`smbclient` //IPアドレス/共有名 -U ユーザ名%パスワード」共有フォルダにアクセス
-- [smbmap](https://github.com/ShawnDEvans/smbmap) (kali〇, python)  
-  「`SMBMap` -H IPアドレス -u ユーザ名 -p パスワード」共有フォルダの列挙（smbclientと比べフォルダ権限まで確認できる）
+- [SMBMap](https://github.com/ShawnDEvans/smbmap) (kali〇, python)  
+  「`smbmap` -H IPアドレス -u ユーザ名 -p パスワード」共有フォルダの列挙（smbclientと比べフォルダ権限まで確認できる）
 - SSH  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
   - sshkeygen
