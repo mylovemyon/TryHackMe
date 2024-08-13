@@ -183,3 +183,12 @@ During pre-authentication, the users hash will be used to encrypt a timestamp th
 Use the same wordlist that you downloaded in task 4  
 3.) `hashcat -m 18200 hash.txt Pass.txt` - crack those hashes! Rubeus AS-REP Roasting uses hashcat mode 18200  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_15.png" width="50%" height="50%">  
+
+### AS-REP Roasting Mitigations - 
+- Have a strong password policy. With a strong password, the hashes will take longer to crack making this attack less effective
+- Don't turn off Kerberos Pre-Authentication unless it's necessary there's almost no other way to completely mitigate this attack other than keeping Pre-Authentication on.
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+Which User is vulnerable to AS-REP Roasting?  
+What is the User's Password?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_16.png" width="50%" height="50%">  
