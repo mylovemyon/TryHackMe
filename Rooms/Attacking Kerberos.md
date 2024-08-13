@@ -1,4 +1,4 @@
-## Introduction
+![image](https://github.com/user-attachments/assets/47c4d084-df5e-4f17-8297-1cb870863a41)## Introduction
 ﻿﻿﻿This room will cover all of the basics of attacking Kerberos the windows ticket-granting service; we'll cover the following:  
 - Initial enumeration using tools like Kerbrute and Rubeus
 - Kerberoasting
@@ -153,3 +153,6 @@ After cracking the service account password there are various ways of exfiltrati
 What is the HTTPService Password?  
 What is the SQLService Password?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_10.png" width="50%" height="50%">  
+「`Rubeus.exe kerberoast /nowrap`」でSPNを持つユーザを取得できた。（/nowrap はチケットを改行なしで出力）  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_11.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_12.png" width="50%" height="50%">  
