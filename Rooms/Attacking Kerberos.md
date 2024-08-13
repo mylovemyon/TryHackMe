@@ -216,8 +216,19 @@ Pass the ticket works by dumping the TGT from the LSASS memory of the machine. T
 You will need to run the command prompt as an administrator: use the same credentials as you did to get into the machine. If you don't have an elevated command prompt mimikatz will not work properly.  
 1.) cd Downloads - navigate to the directory mimikatz is in  
 2.) `mimikatz.exe` - run mimikatz  
-3.) `privilege::debug` - Ensure this outputs `[output '20' OK]` if it does not that means you do not have the administrator privileges to properly run mimikatz
+3.) `privilege::debug` - Ensure this outputs `[output '20' OK]` if it does not that means you do not have the administrator privileges to properly run mimikatz  
 4.) `sekurlsa::tickets /export` - this will export all of the .kirbi tickets into the directory that you are currently in  
 At this step you can also use the base 64 encoded tickets from Rubeus that we harvested earlier  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_21.png" width="50%" height="50%">  
 When looking for which ticket to impersonate I would recommend looking for an administrator ticket from the krbtgt just like the one outlined in red above.
+
+### Pass the Ticket w/ Mimikatz
+Now that we have our ticket ready we can now perform a pass the ticket attack to gain domain admin privileges.  
+1.) `kerberos::ptt <ticket>` - run this command inside of mimikatz with the ticket that you harvested from earlier. It will cache and impersonate the given ticket  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_22.png" width="50%" height="50%">  
+2.) `klist` - Here were just verifying that we successfully impersonated the ticket by listing our cached tickets.  
+We will not be using mimikatz for the rest of the attack.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_23.png" width="50%" height="50%">  
+3.) You now have impersonated the ticket giving you the same rights as the TGT you're impersonating. To verify this we can look at the admin share.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_24.png" width="50%" height="50%">  
+Note that this is only a POC to understand how to pass the ticket and gain domain admin the way that you approach passing the ticket may be different based on what kind of engagement you're in so do not take this as a definitive guide of how to run this attack.
