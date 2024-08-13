@@ -152,7 +152,7 @@ After cracking the service account password there are various ways of exfiltrati
 ----------------------------------------Answer the questions below--------------------------------------------------  
 What is the HTTPService Password?  
 What is the SQLService Password?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_10.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_10.png" width="50%" height="50%">  
 「`Rubeus.exe kerberoast /nowrap`」でSPNを持つユーザを取得できた。（`/nowrap` はチケットを改行なしで出力）  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_11.png" width="50%" height="50%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_12.png" width="100%" height="100%">  
@@ -172,3 +172,14 @@ I have already compiled and put Rubeus on the machine.
 ### AS-REP Roasting Overview - 
 During pre-authentication, the users hash will be used to encrypt a timestamp that the domain controller will attempt to decrypt to validate that the right hash is being used and is not replaying a previous request. After validating the timestamp the KDC will then issue a TGT for the user. If pre-authentication is disabled you can request any authentication data for any user and the KDC will return an encrypted TGT that can be cracked offline because the KDC skips the step of validating that the user is really who they say that they are.
 
+### Dumping KRBASREP5 Hashes w/ Rubeus -
+1.) cd Downloads - navigate to the directory Rubeus is in  
+2.) `Rubeus.exe` asreproast - This will run the AS-REP roast command looking for vulnerable users and then dump found vulnerable user hashes.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_14.png" width="50%" height="50%">  
+
+### Crack those Hashes w/ hashcat - 
+1.) Transfer the hash from the target machine over to your attacker machine and put the hash into a txt file  
+2.) Insert 23$ after $krb5asrep$ so that the first line will be $krb5asrep$23$User.....  
+Use the same wordlist that you downloaded in task 4  
+3.) `hashcat -m 18200 hash.txt Pass.txt` - crack those hashes! Rubeus AS-REP Roasting uses hashcat mode 18200  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_15.png" width="50%" height="50%">  
