@@ -257,4 +257,12 @@ A golden ticket attack works by dumping the ticket-granting ticket of any user o
 
  ### Create a Golden/Silver Ticket - 
 ﻿1.) `Kerberos::golden /user:Administrator /domain:controller.local /sid: /krbtgt: /id:` - This is the command for creating a golden ticket to create a silver ticket simply put a service NTLM hash into the krbtgt slot, the sid of the service account into sid, and change the id to 1103.
-I'll show you a demo of creating a golden ticket it is up to you to create a silver ticket.
+I'll show you a demo of creating a golden ticket it is up to you to create a silver ticket.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_26.png" width="50%" height="50%">
+
+### Use the Golden/Silver Ticket to access other machines -
+﻿1.) misc::cmd - this will open a new elevated command prompt with the given ticket in mimikatz.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_27.png" width="50%" height="50%">  
+2.) Access machines that you want, what you can access will depend on the privileges of the user that you decided to take the ticket from however if you took the ticket from krbtgt you have access to the ENTIRE network hence the name golden ticket; however, silver tickets only have access to those that the user has access to if it is a domain admin it can almost access the entire network however it is slightly less elevated from a golden ticket.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_28.png" width="50%" height="50%">  
+This attack will not work without other machines on the domain however I challenge you to configure this on your own network and try out these attacks.
