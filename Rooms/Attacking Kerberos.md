@@ -85,6 +85,11 @@ How many total users do we enumerate?
 
 
 ## Harvesting & Brute-Forcing Tickets w/ Rubeus
+- To start this task you will need to RDP or SSH into the machine your credentials are -
+  - Username: Administrator
+  - Password: P@$$W0rd
+  - Domain: controller.local
+
 Rubeus is a powerful tool for attacking Kerberos. Rubeus is an adaptation of the kekeo tool and developed by HarmJ0y the very well known active directory guru.  
 Rubeus has a wide variety of attacks and features that allow it to be a very versatile tool for attacking Kerberos. Just some of the many tools and attacks include overpass the hash, ticket requests and renewals, ticket management, ticket extraction, harvesting, pass the ticket, AS-REP Roasting, and Kerberoasting.  
 The tool has way too many attacks and features for me to cover all of them so I'll be covering only the ones I think are most crucial to understand how to attack Kerberos however I encourage you to research and learn more about Rubeus and its whole host of attacks and features here - https://github.com/GhostPack/Rubeus  
@@ -261,7 +266,7 @@ I'll show you a demo of creating a golden ticket it is up to you to create a sil
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_26.png" width="75%" height="75%">
 
 ### Use the Golden/Silver Ticket to access other machines -
-﻿1.) misc::cmd - this will open a new elevated command prompt with the given ticket in mimikatz.  
+﻿1.) `misc::cmd` - this will open a new elevated command prompt with the given ticket in mimikatz.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_27.png" width="50%" height="50%">  
 2.) Access machines that you want, what you can access will depend on the privileges of the user that you decided to take the ticket from however if you took the ticket from krbtgt you have access to the ENTIRE network hence the name golden ticket; however, silver tickets only have access to those that the user has access to if it is a domain admin it can almost access the entire network however it is slightly less elevated from a golden ticket.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_28.png" width="25%" height="25%">  
@@ -269,9 +274,14 @@ This attack will not work without other machines on the domain however I challen
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 What is the SQLService NTLM Hash?  
-What is the SQLService NTLM Hash?  
+What is the Administrator NTLM Hash?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_29.png" width="50%" height="50%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_30.png" width="50%" height="50%">  
 Mimikatz上で「`lsadump::lsa /inject /name:ユーザ名`」でNTハッシュを取得できる  
-ちなみに「lsadump::dcsync /ドメイン名 /all /csv」でドメイン内の全ユーザのNTハッシュを確認できる  
+ちなみに「`lsadump::dcsync /ドメイン名 /all /csv`」でドメイン内の全ユーザのNTハッシュを確認できる  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_31.png" width="50%" height="50%">  
+
+おまけ  
+「`impacket-secretsdump -just-dc-ntlm ドメイン名/ユーザ名:パスワード@IPアドレス -outputfile 出力ファイル名`」でも  
+DCSync権限を持つユーザを使用したドメイン内ユーザのNTハッシュの取得もできる    
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_32.png" width="75%" height="75%">  
