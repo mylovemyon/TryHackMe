@@ -8,7 +8,6 @@
 - gpg (kali〇, ELF)    
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
 - [hashcat](https://github.com/hashcat/hashcat) (kali〇, C)
-  
 - [hashID](https://github.com/psypanda/hashID) (kali〇, python)  
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperでのフォーマットも確認できる）
 - [impacket](https://github.com/fortra/impacket) (Kali〇, python)  
