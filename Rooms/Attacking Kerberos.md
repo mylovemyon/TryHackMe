@@ -111,7 +111,7 @@ Be mindful of how you use this attack as it may lock you out of the network depe
 SSHでWindowsにログインして攻撃した。（RubeusはPost-Exploitation用っぽい）  
 Which domain controller do we get a ticket for when harvesting tickets?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_8.png" width="50%" height="50%">  
-「`Rubeus.exe harvest /intercal:30`」で、30秒間のTGTチケット収集結果を確認すると、「CONTROLLER-1」が確認できた。  
+「`Rubeus.exe harvest /intercal:30`」で、30秒間のTGSチケット収集結果を確認すると、「CONTROLLER-1」が確認できた。  
 Which domain admin do we get a ticket for when harvesting tickets?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_7.png" width="50%" height="50%">  
 同様に。「Administrator」がAdminとして確認できた。
