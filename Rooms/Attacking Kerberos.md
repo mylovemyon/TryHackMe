@@ -200,4 +200,7 @@ What is the User's Password?
 
 ちなみに「`impacket-GetNPUsers ドメイン名/ -no-pass -dc-ip IPアドレス -userfile ユーザリスト -outputfile 出力ファイル`」でも、事前認証無効ユーザのTGTを取得できた。  
 「`-userfile`」では、Kerbruteで列挙したユーザを使用した。
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_18.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_19.png" width="100%" height="100%">  
+
+
+## Pass the Ticket w/ mimikatz
