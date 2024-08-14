@@ -1,0 +1,12 @@
+## Introduction
+Cyber security careers are becoming more in demand and offer [high salaries](https://tryhackme.com/resources/blog/cyber-security-salary-career-options).There are many different jobs within the security industry, from offensive pentesting (hacking machines and reporting on vulnerabilities) to defensive security (defending against and investigating cyberattacks).
+Why get a career in cyber:  
+- High Pay - jobs in security have high starting salaries
+- Exciting - work can include legally hacking systems or defending against cyber attacks
+- Be in demand - there are over 3.5 million unfilled cyber positions
+
+This room helps you break into cyber security by providing information about various cyber security roles; it also links to different learning paths that you can use to start building your cyber skills.
+
+
+## Security Analyst
+Security analysts are integral to constructing security measures across organisations to protect the company from attacks. Analysts explore and evaluate company networks to uncover actionable data and recommendations for engineers to develop preventative measures. This job role requires working with various stakeholders to gain an understanding of security requirements and the security landscape.
