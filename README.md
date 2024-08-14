@@ -32,7 +32,8 @@
   `zip2john`, `rar2john`, `ssh2john` らを使用したZIPやRAR・SSH秘密鍵のパスワードをJohnで解析するために抽出  
   `/etc/john/john.conf`でCustomルールの確認・作成・Wordlistsの拡張  
   `unshadow`による/etc/passwdと/etc/shadowのCombine   
-  [hash_identifier](https://hashes.com/en/tools/hash_identifier)というWebサイトでハッシュ識別, [SecLists](https://github.com/danielmiessler/SecLists), 
+  [hash_identifier](https://hashes.com/en/tools/hash_identifier)というWebサイトでハッシュ識別, [SecLists](https://github.com/danielmiessler/SecLists)
+- Web Application Security
 ## Modules
 - [Cryptography](https://tryhackme.com/module/cryptography)  
   Hashing - Crypto 101 | John The Ripper | Encription - Cripto 101
