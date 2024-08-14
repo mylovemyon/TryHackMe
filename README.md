@@ -3,7 +3,7 @@
 - Attacktive Directory  
   `enum4linux`でのDomain名取得, ADのデフォルトのTLDは`.local`  
   `Kerbrute`によるWordlistを用いたドメイン内ユーザの列挙  
-  `impacket-GetNPUsers`によるASREPRoasting（事前認証を必要としないユーザのTGTチケットを取得する攻撃）からのチケットハッシュをJohnでクラック
+  `impacket-GetNPUsers`によるASREPRoasting（事前認証を必要としないユーザのTGTチケットを取得する攻撃）からのチケットハッシュをJohnでクラック  
   `impacket-secretsdump`による`DRSUAPI`を介したドメイン内ユーザのNTLM・Kerberosキーの取得  
   `smbclient`や`smbmap`によるShareの列挙・接続  
   `Evil-WinRM`によるWinRM接続
