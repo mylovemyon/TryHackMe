@@ -19,4 +19,20 @@ You will see that GoBuster scans the website with each word in the list, finding
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Offensive%20Security_2.png" width="50%" height="50%">  
 Step 3) Hack the bank  
 You should have found a secret bank transfer page that allows you to transfer money between accounts at the bank (/bank-transfer). Type the hidden page into the FakeBank website on the machine.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Offensive%20Security_3.mp4" width="50%" height="50%">  
+This page allows an attacker to steal money from any bank account, which is a critical risk for the bank. As an ethical hacker, you would (with permission) find vulnerabilities in their application and report them to the bank to fix before a hacker exploits them.  
+Transfer $2000 from the bank account 2276, to your account (account number 8881).  
+
+
+## Careers in cyber security
+### How can I start learning?
+People often wonder how others become hackers (security consultants) or defenders (security analysts fighting cybercrime), and the answer is simple. Break it down, learn an area of cyber security you're interested in, and regularly practice using hands-on exercises. Build a habit of learning a little bit each day on TryHackMe, and you'll acquire the knowledge to get your first job in the industry.  
+Trust us; you can do it! Just take a look at some people who have used TryHackMe to get their first security job:  
+- Paul went from a construction worker to a security engineer. [Read more](https://tryhackme.com/resources/blog/construction-worker-to-security-engineer-how-paul-used-tryhackme-to-land-his-first-job-in-security).
+- Kassandra went from a music teacher to a security professional. [Read more](https://tryhackme.com/resources/blog/the-teacher-becomes-the-student).
+- Brandon used TryHackMe while at school to get his first job in cyber. [Read more](https://tryhackme.com/resources/blog/brandons-success-story).
+
+### What careers are there?
+The cyber careers room goes into more depth about the different careers in cyber. However, here is a short description of a few offensive security roles:  
+- Penetration Tester - Responsible for testing technology products for finding exploitable security vulnerabilities.
+- Red Teamer - Plays the role of an adversary, attacking an organization and providing feedback from an enemy's perspective.
+- Security Engineer - Design, monitor, and maintain security controls, networks, and systems to help prevent cyberattacks.
