@@ -5,6 +5,8 @@
   「`enum4linux` IPアドレス」
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
   「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」でWinRM経由でログインできる。
+- [GoBuster](https://github.com/OJ/gobuster) (kali×, Go)  
+  「`gobuster` -u URL -w wordlist dir」URL配下のコンテンツをWordlistを用いて探索
 - gpg (kali〇, ELF)    
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
 - [hashcat](https://github.com/hashcat/hashcat) (kali〇, C)  
