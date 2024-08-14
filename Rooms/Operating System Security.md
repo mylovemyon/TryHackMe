@@ -57,7 +57,7 @@ Some types of malicious programs attack availability. One such example is ransom
 
 
 ## Practical Example of OS Security
-In one typical attack, the attacker seeks to gain access to a remote system. We can accomplish this attack by tricking the target into running a malicious file or by obtaining a username and a password. We will focus on the latter. After discovering a username, we will try to “guess” the password; furthermore, we will try to escalate our privileges to a system administrator. This account is called `root` on Android, Apple, and Linux systems. While, on MS Windows systems, this account is called `administrator`. The accounts `root` and `administrator` have complete unrestricted access to a system.
+In one typical attack, the attacker seeks to gain access to a remote system. We can accomplish this attack by tricking the target into running a malicious file or by obtaining a username and a password. We will focus on the latter. After discovering a username, we will try to “guess” the password; furthermore, we will try to escalate our privileges to a system administrator. This account is called `root` on Android, Apple, and Linux systems. While, on MS Windows systems, this account is called `administrator`. The accounts `root` and `administrator` have complete unrestricted access to a system.  
 We will cover the following Linux commands and explain them throughout this task.
 - whoami
 - ssh USERNAME@MACHINE_IP
