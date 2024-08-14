@@ -54,3 +54,31 @@ Weak file permissions make it easy for the adversary to attack confidentiality a
 The last example we will consider is the case of malicious programs. Depending on the type of malicious program, it can attack confidentiality, integrity, and availability.  
 Some types of malicious programs, such as Trojan horses, give the attacker access to your system. Consequently, the attacker would be able to read your files or even modify them.  
 Some types of malicious programs attack availability. One such example is ransomware. Ransomware is a malicious program that encrypts the user's files. Encryption makes the file(s) unreadable without knowing the encryption password; in other words, the files become gibberish without decryption (reversing the encryption). The attacker offers the user the ability to restore availability, i.e., regain access to their original files: they would give them the encryption password if the user is willing to pay the “ransom.”
+
+
+## Practical Example of OS Security
+In one typical attack, the attacker seeks to gain access to a remote system. We can accomplish this attack by tricking the target into running a malicious file or by obtaining a username and a password. We will focus on the latter. After discovering a username, we will try to “guess” the password; furthermore, we will try to escalate our privileges to a system administrator. This account is called `root` on Android, Apple, and Linux systems. While, on MS Windows systems, this account is called `administrator`. The accounts `root` and `administrator` have complete unrestricted access to a system.
+We will cover the following Linux commands and explain them throughout this task.
+- whoami
+- ssh USERNAME@MACHINE_IP
+- ls
+- cat FILENAME
+- history
+
+We were hired to check the security of a certain company. When we visited our client’s office, we noticed a sticky note with two words: `sammie` and `dragon` on one of the screens. Let’s see if `dragon` is Sammie’s password on the target machine MACHINE_IP. From the AttackBox’s terminal, we will try to log in to Sammie’s account by executing ssh sammie@MACHINE_IP. The remote system will ask you to provide `sammie`’s password, `dragon`.  
+The first time we connect to a server over SSH, we will get a warning about the server’s authenticity and SSH key. We need to answer “Are you sure you want to continue connecting (yes/no)?” with yes.  
+Please note the following when entering the password over SSH. When you log in via SSH, you won't see that you are typing the password. In other words, when you are typing the SSH password, you won't see stars, dots, or any indicator on the screen that the password is being typed. However, the system still receives the password you are entering.  
+The interaction on the AttackBox’s terminal is shown below.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Operating%20System%20Security_1.png" width="50%" height="50%">  
+Amazing! It worked! Let’s confirm that we are logged in as Sammie using the `whoami` (who am I?) command, which should return `sammie`.  
+To list the files in the current directory, we can use `ls`, short for list. This command will show all the files in the current directory unless they are hidden.  
+If you want to display the contents of any text file, you can use the command `cat FILENAME`, short for concatenate. This command will print the contents of the file on the screen.  
+In the terminal below, we see the usage of the four commands: `ssh`, `whoami`, `ls`, and `cat`. Please follow along from the AttackBox’s terminal.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Operating%20System%20Security_2.png" width="50%" height="50%">  
+In our brief introduction to Linux, the last command that we will cover is `history`. This command prints the commands used by the user.  
+We have learned about two other usernames that can access the attached machine. They are:  
+johnny  
+linda  
+We know that both of these users have little regard for cybersecurity best practices. We can use several ways to guess the passwords for these two users. Here we list two approaches:
+- If you are not logged in as `sammie` or any other user, you can use `ssh johnny@MACHINE_IP` and manually try one password after the next to see which password works for `johnny`.
+- If you are logged in as `sammie` or any other user, you can use `su - johnny` and manually try one password after the next to see which password works for `johnny`.
