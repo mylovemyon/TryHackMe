@@ -38,5 +38,7 @@
   Hashing - Crypto 101 | John The Ripper | Encription - Cripto 101
 - [Introduction to Cyber Security](https://tryhackme.com/module/introduction-to-cyber-security)  
   Intro to Offensive Security | Intro to Defensive Security | Careers in Cyber
+- [Introduction to Offensive Security](https://tryhackme.com/module/introduction-to-offensive-security)  
+  Web Application Security | Operating System Security | Network Security
 - [Threat Emulation](https://tryhackme.com/module/threat-emulation-old)  
   Attacktive Directory | Attacking Kerberos
