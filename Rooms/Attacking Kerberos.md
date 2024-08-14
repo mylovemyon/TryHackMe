@@ -285,3 +285,44 @@ Mimikatz上で「`lsadump::lsa /inject /name:ユーザ名`」でNTハッシュ�
 「`impacket-secretsdump -just-dc-ntlm ドメイン名/ユーザ名:パスワード@IPアドレス -outputfile 出力ファイル名`」でも  
 DCSync権限を持つユーザを使用したドメイン内ユーザのNTハッシュの取得もできる    
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_32.png" width="75%" height="75%">  
+
+
+## Kerberos Backdoors w/ mimikatz
+Along with maintaining access using golden and silver tickets mimikatz has one other trick up its sleeves when it comes to attacking Kerberos. Unlike the golden and silver ticket attacks a Kerberos backdoor is much more subtle because it acts similar to a rootkit by implanting itself into the memory of the domain forest allowing itself access to any of the machines with a master password.  
+The Kerberos backdoor works by implanting a skeleton key that abuses the way that the AS-REQ validates encrypted timestamps. A skeleton key only works using Kerberos RC4 encryption.  
+The default hash for a mimikatz skeleton key is 60BA4FCADC466C7A033C178194C03DF6 which makes the password -"mimikatz"  
+This will only be an overview section and will not require you to do anything on the machine however I encourage you to continue yourself and add other machines and test using skeleton keys with mimikatz.
+
+### Skeleton Key Overview -
+The skeleton key works by abusing the AS-REQ encrypted timestamps as I said above, the timestamp is encrypted with the users NT hash. The domain controller then tries to decrypt this timestamp with the users NT hash, once a skeleton key is implanted the domain controller tries to decrypt the timestamp using both the user NT hash and the skeleton key NT hash allowing you access to the domain forest.
+
+### Preparing Mimikatz - 
+1.) cd Downloads && `mimikatz.exe` - Navigate to the directory mimikatz is in and run mimikatz  
+2.) `privilege::debug` - This should be a standard for running mimikatz as mimikatz needs local administrator access  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_33.png" width="50%" height="50%">
+
+### Installing the Skeleton Key w/ mimikatz -
+1.) `misc::skeleton` - Yes! that's it but don't underestimate this small command it is very powerful  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_34.png" width="50%" height="50%">
+
+### Accessing the forest - 
+The default credentials will be: "mimikatz"
+example: `net use c:\\DOMAIN-CONTROLLER\admin$ /user:Administrator mimikatz` - The share will now be accessible without the need for the Administrators password  
+example: `dir \\Desktop-1\c$ /user:Machine1 mimikatz` - access the directory of Desktop-1 without ever knowing what users have access to Desktop-1  
+The skeleton key will not persist by itself because it runs in the memory, it can be scripted or persisted using other tools and techniques however that is out of scope for this room.
+
+
+## Conclusion
+We've gone through everything from the initial enumeration of Kerberos, dumping tickets, pass the ticket attacks, kerberoasting, AS-REP roasting, implanting skeleton keys, and golden/silver tickets. I encourage you to go out and do some more research on these different types of attacks and really find what makes them tick and find the multitude of different tools and frameworks out there designed for attacking Kerberos as well as active directory as a whole.  
+You should now have the basic knowledge to go into an engagement and be able to use Kerberos as an attack vector for both exploitations as well as privilege escalation.  
+Know that you have the knowledge needed to attack Kerberos I encourage you to configure your own active directory lab on your network and try out these attacks on your own to really get an understanding of how these attacks work.
+
+### Resources -
+https://medium.com/@t0pazg3m/pass-the-ticket-ptt-attack-in-mimikatz-and-a-gotcha-96a5805e257a
+https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/as-rep-roasting-using-rubeus-and-hashcat
+https://posts.specterops.io/kerberoasting-revisited-d434351bd4d1
+https://www.harmj0y.net/blog/redteaming/not-a-security-boundary-breaking-forest-trusts/
+https://www.varonis.com/blog/kerberos-authentication-explained/
+https://www.blackhat.com/docs/us-14/materials/us-14-Duckwall-Abusing-Microsoft-Kerberos-Sorry-You-Guys-Don't-Get-It-wp.pdf
+https://www.sans.org/cyber-security-summit/archives/file/summit-archive-1493862736.pdf
+https://www.redsiege.com/wp-content/uploads/2020/04/20200430-kerb101.pdf
