@@ -33,6 +33,8 @@
   `/etc/john/john.conf`でCustomルールの確認・作成・Wordlistsの拡張  
   `unshadow`による/etc/passwdと/etc/shadowのCombine   
   [hash_identifier](https://hashes.com/en/tools/hash_identifier)というWebサイトでハッシュ識別, [SecLists](https://github.com/danielmiessler/SecLists)
+- Operating System Security  
+  NCSCの[100,000 most common passwords](https://www.ncsc.gov.uk/blog-post/passwords-passwords-everywhere)
 - Web Application Security
 ## Modules
 - [Cryptography](https://tryhackme.com/module/cryptography)  
