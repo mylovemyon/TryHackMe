@@ -3,14 +3,19 @@
 - Attacktive Directory  
   `enum4linux`でのDomain名取得, ADのデフォルトのTLDは`.local`  
   `Kerbrute`によるWordlistを用いたドメイン内ユーザの列挙  
-  `impacket-GetNPUsers`によるASREPRoasting（事前認証を必要としないユーザのTGTチケットを取得する攻撃）からのチケットハッシュをJohnでクラック  
+  `impacket-GetNPUsers`によるASREPRoasting（事前認証を必要としないユーザのTGTチケットを取得する攻撃）  
   `impacket-secretsdump`による`DRSUAPI`を介したドメイン内ユーザのNTLM・Kerberosキーの取得  
+  TGT（$krb5asrep）をJohnでクラック  
   `smbclient`や`smbmap`によるShareの列挙・接続  
   `Evil-WinRM`によるWinRM接続
-- Atacking Kerberos
+- Atacking Kerberos  
   Kerberosの仕組み  
   `Kerbrute`によるWordlistを用いたドメイン内ユーザの列挙  
-  `Rubeus`によるTGTの収集、BruteForce・PasswordSpray、Kerberoasting
+  `Rubeus`によるTGTの収集、BruteForce・PasswordSpray、Kerberoasting、ASREPRoasting  
+  `impacket-GetUseSPNs`によるKerberoasting（取得したユーザのSPNに対応したアカウントのTGSを取得できる）  
+  `impacket-GetNPUsers`によるASREPRoasting（事前認証を必要としないユーザのTGTを取得する攻撃）  
+  TGS（$krb5tgs）をHashcatでクラック（Johnではクラック不可）、TGT（$krb5asrep）をJohnやHashcatでクラック  
+  `mimikatz`による「Pass the Ticket」、「Golden/Silver Ticket」、「Skeleton Key」
 - Encryption - Crypto 101  
   `ssh-keygen`, `ssh2john`でSSH秘密鍵のパスワードをJohnで解析するために抽出, `gpg`コマンド  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない, [RsaCtfTool](https://github.com/Ganapati/RsaCtfTool), [rsatool](https://github.com/ius/rsatool)
