@@ -23,6 +23,7 @@
 - Hashing - Crypto 101  
   `hashID`でハッシュ識別, `JohntheRipper`でクラック, [CrackStation](https://crackstation.net/)・[hashes.com](https://hashes.com/en/decrypt/hash)でクラック  
   Linuxのパスワードが保存される/etc/shadowの標準フォーマットは`$format$rounds$salt$hash`、$formatでHash形式が分かる。
+- Intro to Defensive Security
 - Intro to Offensive Security  
   `GoBuster`によるWeb探索
 - John the Ripper  
