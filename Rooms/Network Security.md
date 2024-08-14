@@ -13,6 +13,7 @@ On the other hand, we have software security solutions. Common examples are:
 
 According to the [Cost of a Data Breach Report 2021](https://newsroom.ibm.com/2021-07-28-IBM-Report-Cost-of-a-Data-Breach-Hits-Record-High-During-Pandemic) by IBM Security, a data breach in 2021 cost a company $4.24 million per incident on average, in comparison with $3.86 million in 2020. The average cost changes with the sector and the country. For example, the average total cost for a data breach was $9.23 million for the healthcare sector, while $3.79 million for the education sector.
 
+
 ## Methodology
 Every “operation” requires some form of planning to achieve success. If you are interested in wildlife photography, you cannot just grab a camera and head to the jungle unless you don’t care about the outcome. For a safe and successful wildlife photography tour, you would need to learn more about the animals you want to shoot with your camera. This includes the habits of the animals and the dangers to avoid. The same would apply to a military operation against a target or breaking into a target network.
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_1.png" width="50%" height="50%">  
@@ -27,3 +28,23 @@ Breaking into a target network usually includes a number of steps. According to 
 
 Another analogy would be a thief interested in a target house. The thief will spend some time learning about the target house, who lives there, when they leave, and when they return home. The thief will determine whether they have security cameras and alarm systems. Once enough information has been gathered, the thief will plan the best entrance strategy. Physical theft planning and execution resemble, in a way, the malicious attack that aims to break into a network and steal data.  
 In the next task, we will carry out a practical example of the Cyber Kill Chain.
+
+
+## Practical Example of Network Security
+The first step of our attack is `Recon`; we can speed up our reconnaissance activities using different tools that gather information about the various aspects related to the target. For simplicity, we will use a single tool in this task, Nmap, short for Network Mapper. Nmap is a network scanner that helps us discover running machines and any programs running on them that are visible to the outside world. The IP address of the target is MACHINE_IP. We can scan it by running nmap MACHINE_IP at the terminal prompt.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_2.png" width="50%" height="50%">  
+We just discovered three services running:
+1. FTP server: FTP stands for File Transfer Protocol and is used to transfer files between machines.
+2. SSH server: SSH stands for Secure Shell and is used for secure remote login. In other words, it allows you to execute commands on a remote system securely.
+3. HTTP server: HTTP stands for Hypertext Transfer Protocol and is used for the web. Whenever you are browsing the web, you are using HTTP or HTTPS. HTTPS is the secure (encrypted) version of HTTP.
+
+You can also notice that Nmap reports on whether the host is up based on whether it receives any response from it. This is useful to know when no ports are open or accessible.  
+Let’s try to gather more information about the FTP server.
+1. We will connect to the target FTP server by typing on the AttackBox’s terminal `ftp MACHINE_IP`.
+2. Next, we will try to log in using the login anonymous to see if this FTP server supports `anonymous` logins. To our luck, it worked.
+3. We try to see the files available using the command `ls`, short for list. We get a list of the filenames along with their details.
+4. If you are curious about any file, you can download it using `get filename`. I wonder what the file `secret.txt` contains, so let’s download it using `get secret.txt`.
+5. Once you download the files, type `exit` or `bye` to quit the FTP client.
+
+The above interaction with the FTP server is shown in the terminal output below.
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_3.png" width="50%" height="50%">  
