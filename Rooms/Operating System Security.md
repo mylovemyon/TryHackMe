@@ -82,3 +82,11 @@ linda
 We know that both of these users have little regard for cybersecurity best practices. We can use several ways to guess the passwords for these two users. Here we list two approaches:
 - If you are not logged in as `sammie` or any other user, you can use `ssh johnny@MACHINE_IP` and manually try one password after the next to see which password works for `johnny`.
 - If you are logged in as `sammie` or any other user, you can use `su - johnny` and manually try one password after the next to see which password works for `johnny`.
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+Based on the top 7 passwords, let’s try to find Johnny’s password. What is the password for the user `johnny`?  
+Once you are logged in as Johnny, use the command `history` to check the commands that Johnny has typed. We expect Johnny to have mistakenly typed the `root` password instead of a command. What is the root password?  
+While logged in as Johnny, use the command `su - root` to switch to the `root` account. Display the contents of the file `flag.txt` in the root directory. What is the content of the file?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Operating%20System%20Security_3.png" width="50%" height="50%">  
+johnのPasswordは「abc123」と簡単に推測できるものだった。  
+Historyコマンドで「su - root」のパスワードである「happyHack!NG」を発見したので、Rootにログインできた。
