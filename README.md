@@ -32,5 +32,7 @@
 ## Modules
 - [Cryptography](https://tryhackme.com/module/cryptography)  
   Hashing - Crypto 101 | John The Ripper | Encription - Cripto 101
+- [Introduction to Cyber Security](https://tryhackme.com/module/introduction-to-cyber-security)  
+  Intro to Offensive Security | Intro to Defensive Security | Careers in Cyber
 - [Threat Emulation](https://tryhackme.com/module/threat-emulation-old)  
   Attacktive Directory | Attacking Kerberos
