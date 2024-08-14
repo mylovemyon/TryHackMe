@@ -8,7 +8,7 @@
 - gpg (kali〇, ELF)    
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
 - [hashcat](https://github.com/hashcat/hashcat) (kali〇, C)  
-  「`hashcat -a 0 -m 値 Hashファイル Wordlist`」  
+  「`hashcat` -a 0 -m 値 Hashファイル Wordlist」  
   「-a 0 」は辞書攻撃、「-m 値」はハッシュ形式（-m 13100 は「$krb5tgs」、-m 18200 は「$krb5asrep」）
 - [hashID](https://github.com/psypanda/hashID) (kali〇, python)  
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperでのフォーマットも確認できる）
@@ -44,6 +44,11 @@
   - install  
     GitHub上のReleaseからLinuxバイナリをインストール
   - 「`./kerbrute` userenum -d ドメイン名 --dc ドメコンIP Wordlists名 -o 出力ファイル名」Domainユーザの列挙
+- [mimikatz](https://github.com/gentilkiwi/mimikatz) (kali〇, C)  
+  「privilege::debug」→「[output '20' OK]」でAdministrator権限を確認
+  - Pass the Ticket  
+    「sekurlsa::tickets /export」.kiribiチケットが現在地にエクスポート  
+    「kerberos::ptt .kiribiチケット名」→「klist」でキャッシュされたチケットを表示で攻撃の成功を確認
 - [Rubeus](https://github.com/GhostPack/Rubeus) (kali×, C#)  
   攻撃対象のWindowsマシンで実行する、Post-Exploitationのイメージ  
   - 「`Rubeus.exe` harvest /interval:秒数」指定した秒数間、TGTを収集する  
