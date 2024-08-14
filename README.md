@@ -17,6 +17,7 @@
   `impacket-secretsdump`によるDCSync攻撃での全ドメインユーザのNTハッシュの取得  
   TGS（$krb5tgs）をHashcatでクラック（Johnではクラック不可）、TGT（$krb5asrep）をJohnやHashcatでクラック  
   `mimikatz`による「Pass the Ticket」、「Golden/Silver Ticket」、「Skeleton Key」
+- Careers in Cyber
 - Encryption - Crypto 101  
   `ssh-keygen`, `ssh2john`でSSH秘密鍵のパスワードをJohnで解析するために抽出, `gpg`コマンド  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない, [RsaCtfTool](https://github.com/Ganapati/RsaCtfTool), [rsatool](https://github.com/ius/rsatool)
