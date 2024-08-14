@@ -7,7 +7,9 @@
   「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」でWinRM経由でログインできる。
 - gpg (kali〇, ELF)    
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
-- [hashcat](https://github.com/hashcat/hashcat) (kali〇, C)
+- [hashcat](https://github.com/hashcat/hashcat) (kali〇, C)  
+  「`hashcat -a 0 -m 値 Hashファイル Wordlist`」  
+  「-a 0 」は辞書攻撃、「-m 値」はハッシュ形式（-m 13100 は「$krb5tgs」、-m 18200 は「$krb5asrep」）
 - [hashID](https://github.com/psypanda/hashID) (kali〇, python)  
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperでのフォーマットも確認できる）
 - [impacket](https://github.com/fortra/impacket) (Kali〇, python)  
@@ -51,6 +53,8 @@
   - 「`Rubeus.exe` asreproast /format:hashcat /outfile:出力ファイル」  
     ASREPRoast（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
     ASREPは「`hashcat` -a 0 -m 18200 ASREPファイル Passwordリスト」でクラックできる（Johnでもクラックできる）
+- scp (kali〇, ELF)  
+  「scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス」リモート先からダウンロード
 - smbclient (kali〇, ELF)  
   「`smbcleint` -L IPアドレス or FQDN -U ユーザ名%パスワード」共有フォルダの列挙  
   「`smbclient` //IPアドレス/共有名 -U ユーザ名%パスワード」共有フォルダにアクセス
