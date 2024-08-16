@@ -52,6 +52,6 @@
   Attacktive Directory | Attacking Kerberos
 
 
-## Learing Paths
+## Learning Paths
 - [Introdution to Cyber Security](https://tryhackme.com/path/outline/introtocyber)  
   [Introduction to Cyber Security](https://tryhackme.com/module/introduction-to-cyber-security) | [Introduction to Offensive Security](https://tryhackme.com/module/introduction-to-offensive-security) | [Introduction to Defensive Security](https://tryhackme.com/module/introduction-to-defensive-security)
