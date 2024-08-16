@@ -38,6 +38,8 @@
 - Operating System Security  
   `history`コマンドによるPassword窃取、NCSCの[100,000 most common passwords](https://www.ncsc.gov.uk/blog-post/passwords-passwords-everywhere)
 - Web Application Security
+
+
 ## Modules
 - [Cryptography](https://tryhackme.com/module/cryptography)  
   Hashing - Crypto 101 | John The Ripper | Encription - Cripto 101
@@ -47,3 +49,8 @@
   Web Application Security | Operating System Security | Network Security
 - [Threat Emulation](https://tryhackme.com/module/threat-emulation-old)  
   Attacktive Directory | Attacking Kerberos
+
+
+## Learing Paths
+- [Introdution to Cyber Security](https://tryhackme.com/path/outline/introtocyber)
+  [Introduction to Cyber Security](https://tryhackme.com/module/introduction-to-cyber-security) | [Introduction to Offensive Security](https://tryhackme.com/module/introduction-to-offensive-security) |
