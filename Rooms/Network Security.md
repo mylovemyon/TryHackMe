@@ -50,7 +50,7 @@ The above interaction with the FTP server is shown in the terminal output below.
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_3.png" width="50%" height="50%">  
 Looking at the files, we notice six files: three txt files, two epub files, and one sh file. The first two extensions are for text files and ebooks, while the sh extension indicates that the file is a shell script. A shell script usually contains a group of commands that needs to be performed repetitively.  
 After we downloaded the file secret.txt with the FTP command `get secret.txt` and exited the FTP client using exit, we returned to the terminal. Let’s display the contents of the file secret.txt using `cat secret.txt`.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_4.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_4.png" width="25%" height="25%">  
 We have kept the password hidden so you can try it for yourself. Repeat the above steps till you can display the contents of secret.txt and use it to answer the first question in this task.  
 It must be the password of one of the accounts unintentionally copied to a public FTP server. Let’s try it to see if it works with the root account. The root account has full privileges on a Linux system, meaning that it can read and write any file and install and remove any program. At the terminal, we type `ssh root@MACHINE_IP`. We will be asked for the password, so let’s try the password we discovered in the FTP server.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_5.png" width="50%" height="50%">  
@@ -59,7 +59,7 @@ Congratulations! You now have complete control over the target server. Let’s c
 2. `ls` to list the files. We notice a flag.txt.
 3. Use `cat flag.txt` to answer the second question in this task.
 
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_6.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_6.png" width="25%" height="25%">
 
 Because we are logged in as root, we have full access to all files, including other users’ files. Let’s try this out. We executed the following Linux commands:  
 1. `cd /home` to go to the directory containing all the users’ home directories. `cd` is short for change directory.
@@ -69,7 +69,7 @@ Because we are logged in as root, we have full access to all files, including ot
 5. `ls` shows that `librarian` has a single file `flag.txt`.
 6. We can print the text file contents using `cat flag.txt. Use this to answer the third question in this task.
 
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_7.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_7.png" width="25%" height="25%">
 
 Let’s summarize what we have done in this task to get `root` access on the target system of IP address MACHINE_IP:  
 1. We used `nmap` to learn about the running services.
