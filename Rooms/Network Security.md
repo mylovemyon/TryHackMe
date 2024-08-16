@@ -84,4 +84,4 @@ What is the content of the flag.txt in the /root directory?
 What is the content of the flag.txt in the /home/librarian directory?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_8.png" width="40%" height="40%">
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_9.png" width="40%" height="40%">  
-上記の要領で、FTPのAnonymousログオンでRootPassword発見、SSHログインでフラグを発見
+上記の要領と同じように「`ftp IPアドレス -a`」でAnonymousログオンでRootパスワード発見、SSHログインでフラグを発見
