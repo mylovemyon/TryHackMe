@@ -41,7 +41,7 @@ We just discovered three services running:
 You can also notice that Nmap reports on whether the host is up based on whether it receives any response from it. This is useful to know when no ports are open or accessible.  
 Let’s try to gather more information about the FTP server.
 1. We will connect to the target FTP server by typing on the AttackBox’s terminal `ftp MACHINE_IP`.
-2. Next, we will try to log in using the login anonymous to see if this FTP server supports `anonymous` logins. To our luck, it worked.
+2. Next, we will try to log in using the login `anonymous` to see if this FTP server supports anonymous logins. To our luck, it worked.
 3. We try to see the files available using the command `ls`, short for list. We get a list of the filenames along with their details.
 4. If you are curious about any file, you can download it using `get filename`. I wonder what the file `secret.txt` contains, so let’s download it using `get secret.txt`.
 5. Once you download the files, type `exit` or `bye` to quit the FTP client.
@@ -77,3 +77,9 @@ Let’s summarize what we have done in this task to get `root` access on the tar
 3. We discovered a file containing the root password mistakenly copied to a public folder.
 4. We used the password we found, allowing us to log in successfully.
 5. We gained access to all the users’ files.
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+What is the password in the secret.txt file?  
+What is the content of the flag.txt in the /root directory?  
+What is the content of the flag.txt in the /home/librarian directory?
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_8.png" width="25%" height="25%">
