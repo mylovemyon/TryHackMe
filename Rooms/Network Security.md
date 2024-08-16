@@ -59,11 +59,21 @@ Congratulations! You now have complete control over the target server. Let’s c
 2. `ls` to list the files. We notice a flag.txt.
 3. Use `cat flag.txt` to answer the second question in this task.
 
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_6.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_6.png" width="50%" height="50%">
+
 Because we are logged in as root, we have full access to all files, including other users’ files. Let’s try this out. We executed the following Linux commands:  
 1. `cd /home` to go to the directory containing all the users’ home directories. `cd` is short for change directory.
-2. We run ls while in /home. We notice librarian is one of the users on the system. However, we have system administrator (root) privileges to check the contents of his home folder.
-3. cd librarian to go to the user’s directory.
-4. pwd to confirm that we are at /home/librarian.
-5. ls shows that librarian has a single file flag.txt.
-6. We can print the text file contents using cat flag.txt. Use this to answer the third question in this task.
+2. We run `ls` while in `/home`. We notice `librarian` is one of the users on the system. However, we have system administrator (`root`) privileges to check the contents of his home folder.
+3. `cd librarian` to go to the user’s directory.
+4. `pwd` to confirm that we are at `/home/librarian`.
+5. `ls` shows that `librarian` has a single file `flag.txt`.
+6. We can print the text file contents using `cat flag.txt. Use this to answer the third question in this task.
+
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_7.png" width="50%" height="50%">
+
+Let’s summarize what we have done in this task to get `root` access on the target system of IP address MACHINE_IP:  
+1. We used `nmap` to learn about the running services.
+2. We connected to the FTP server to learn more about its configuration.
+3. We discovered a file containing the root password mistakenly copied to a public folder.
+4. We used the password we found, allowing us to log in successfully.
+5. We gained access to all the users’ files.
