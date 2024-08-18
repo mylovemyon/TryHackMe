@@ -43,7 +43,7 @@
     - 「`ssh2john` SSH秘密鍵ファイル名 > 出力ファイル名」johnで解析できるようにSSH秘密鍵を抽出
     - 上記３つを実行後、「`john` --wordlist=/usr/share/wordlists/rockyou.txt 出力ファイル名」でクラック可能
   - 「john --single Hashファイル --format=Hash方式」SingleCrackモード（あんま使わん）  
-    Hashファイルは`文字列:ハッシュ`形式。文字列を変換しながらHashクラックを行う。
+    Hashファイルは「文字列:ハッシュ」形式。文字列を変換しながらHashクラックを行う。
   - 「sudo `unshadow` /etc/passwd /etc/shadow」  
     Johnで /etc/shadow をクラックするためのフォーマット作成
 - [Kerbrute](https://github.com/ropnop/kerbrute) (kali×, Go)
