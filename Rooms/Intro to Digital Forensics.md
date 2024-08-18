@@ -43,9 +43,24 @@ You can download the attached file to your local machine for inspection; however
 ### Document Metadata
 When you create a text file, TXT, some metadata gets saved by the Operating System, such as file creation date and last modification date. However, much information gets kept within the file’s metadata when you use a more advanced editor, such as MS Word. There are various ways to read the file metadata; you might open them within their official viewer/editor or use a suitable forensic tool. Note that exporting the file to other formats, such as PDF, would maintain most of the metadata of the original document, depending on the PDF writer used.  
 Let’s see what we can learn from the PDF file. We can try to read the metadata using the program `pdfinfo`. Pdfinfo displays various metadata related to a PDF file, such as title, subject, author, creator, and creation date. (The AttackBox already has pdfinfo installed; however, if you are using Kali Linux and don’t have pdfinfo installed, you can install it using `sudo apt install poppler-utils`.) Consider the following example of using `pdfinfo DOCUMENT.pdf`.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_1.png" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_1.png" width="25%" height="25%">
+
 ----------------------------------------Answer the questions below--------------------------------------------------  
 Using pdfinfo, find out the author of the attached PDF file, ransom-letter.pdf.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_2.png" width="25%" height="25%">  
 「Author」の行で「Ann Gree Shepherd」と確認！
 
+### Photo EXIF Data
+EXIF stands for Exchangeable Image File Format; it is a standard for saving metadata to image files. Whenever you take a photo with your smartphone or with your digital camera, plenty of information gets embedded in the image. The following are examples of metadata that can be found in the original digital images:
+- Camera model / Smartphone model
+- Date and time of image capture
+- Photo settings such as focal length, aperture, shutter speed, and ISO settings
+
+Because smartphones are equipped with a GPS sensor, finding GPS coordinates embedded in the image is highly probable. The GPS coordinates, i.e., latitude and longitude, would generally show the place where the photo was taken.　　
+There are many online and offline tools to read the EXIF data from images. One command-line tool is `exiftool`. ExifTool is used to read and write metadata in various file types, such as JPEG images. (The AttackBox already has exiftool installed; however, if you are using Kali Linux and don’t have exiftool installed, you can install it using `sudo apt install libimage-exiftool-perl`.) In the following terminal window, we executed `exiftool IMAGE.jpg` to read all the EXIF data embedded in this image.
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_3.png" width="25%" height="25%">  
+If you take the above coordinates and search one of the online maps, you will learn more about this location. Searching [Microsoft Bing Maps](https://www.bing.com/maps) or [Google Maps](https://www.google.com/maps) for `51 deg 30' 51.90" N, 0 deg 5' 38.73" W` reveals the street where the photo was taken. Note that for the search to work, we had to replace deg with ° and remove the extra white space. In other words, we typed `51°30'51.9"N 0°05'38.7"W` in the map search bar.  
+Using exiftool or any similar tool, try to find where the kidnappers took the image they attached to their document. What is the name of the street?
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+Using exiftool or any similar tool, try to find where the kidnappers took the image they attached to their document. What is the name of the street?
