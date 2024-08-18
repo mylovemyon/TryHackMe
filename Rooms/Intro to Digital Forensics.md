@@ -69,5 +69,5 @@ exiftoolを実行すると色々な各Exifタグを確認できる。
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_5.png" width="50%" height="50%">  
 「`exiftool ファイル名 -Exifタグ名`」で今回は「GPSPosition」をフィルタする。  
 しかしこのままの出力だとGoogleMapで検索できないフォーマットなので、ExifTool変換を抑制する「`-n`」オプションをつけた出力結果を検索する。  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_6.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_6.png" width="100%" height="100%">  
 GoogleMapで「51.5144175116667 -0.0940929233333333」を検索すると「Milk Street」と判明した！
