@@ -31,16 +31,16 @@
     「`impacket-secretsdump` -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス -outputfile 出力ファイル名」  
     DCSync権限を持つドメインユーザを使用して、各ドメインユーザのNTハッシュやKerberosキーをダンプできる。
 - [John the Ripper](https://github.com/openwall/john) (kali〇, C)  
-  - 「`john` --wordlist=/usr/share/wordlists/rockyou.txt "Hashファイル" --format=Hash方式」  
-    「`john` "Hashファイル名" --show」クラック済み結果を表示（もしくは`/home/kali/.john/.john.pot`に解析結果がある）
+  - 「`john` --wordlist=/usr/share/wordlists/rockyou.txt Hashファイル名 --format=Hash方式」  
+    「`john` Hashファイル名 --show」クラック済み結果を表示（もしくは`/home/kali/.john/.john.pot`に解析結果がある）
   - 「`john` --list=formats」全フォーマットを表示  
     「--format=Raw-MD5」MD5ハッシュ, 「--format=nt」NTハッシュ
   - johnで解析するためのパスワード抽出
-    - 「`zip2john` "zipファイル" > "出力ファイル"」johnで解析できるようにZIPパスワードを出力  
-    - 「`rar2john` "rarファイル" > "出力ファイル"」johnで解析できるようにRARパスワードを出力  
-    - 「`ssh2john` "SSH秘密鍵ファイル" > "出力ファイル"」johnで解析できるようにSSH秘密鍵を出力
-    - 上記３つを実行後、「`john` --wordlist=/usr/share/wordlists/rockyou.txt "出力ファイル"」でクラック可能
-  - 「john --single "Hashファイル" --format=Hash方式」SingleCrackモード（あんま使わん）  
+    - 「`zip2john` zipファイル名 > 出力ファイル名」johnで解析できるようにZIPパスワードを抽出  
+    - 「`rar2john` rarファイル名 > 出力ファイル名」johnで解析できるようにRARパスワードを抽出  
+    - 「`ssh2john` SSH秘密鍵ファイル名 > 出力ファイル名」johnで解析できるようにSSH秘密鍵を抽出
+    - 上記３つを実行後、「`john` --wordlist=/usr/share/wordlists/rockyou.txt 出力ファイル名」でクラック可能
+  - 「john --single Hashファイル --format=Hash方式」SingleCrackモード（あんま使わん）  
     Hashファイルは`文字列:ハッシュ`形式。文字列を変換しながらHashクラックを行う。
   - 「sudo `unshadow` /etc/passwd /etc/shadow」  
     Johnで /etc/shadow をクラックするためのフォーマット作成
