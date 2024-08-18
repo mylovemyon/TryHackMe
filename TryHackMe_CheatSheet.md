@@ -8,14 +8,14 @@
 - ftp (kali〇, ELF)  
   「ftp IPアドレス -a」Anonymousログオン
 - [GoBuster](https://github.com/OJ/gobuster) (kali〇, Go)  
-  「`gobuster` -u URL -w wordlist dir」URL配下のコンテンツをWordlistを用いて探索
+  「`gobuster` -u URL -w wordlist名 dir」URL配下のコンテンツをWordlistを用いて探索
 - gpg (kali〇, ELF)    
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」GPGファイルを復号
 - [hashcat](https://github.com/hashcat/hashcat) (kali〇, C)  
-  「`hashcat` -a 0 -m 値 Hashファイル Wordlist」  
+  「`hashcat` -a 0 -m 値 Hashファイル名 Wordlist名」  
   「-a 0 」は辞書攻撃、「-m 値」はハッシュ形式（-m 13100 は「$krb5tgs」、-m 18200 は「$krb5asrep」）
 - [hashID](https://github.com/psypanda/hashID) (kali〇, python)  
-  「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperでのフォーマットも確認できる）
+  「`hashid` --john Hashファイル名」（--johnで、JohnTheRipperでのフォーマットも確認できる）
 - [impacket](https://github.com/fortra/impacket) (Kali〇, python)  
   impacket-〇〇以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる
   - GetNPUsers  
