@@ -17,7 +17,7 @@
 - [hashID](https://github.com/psypanda/hashID) (kali〇, python)  
   「`hashid` --john "Hashファイル名"」（--johnで、JohnTheRipperでのフォーマットも確認できる）
 - [impacket](https://github.com/fortra/impacket) (Kali〇, python)  
-  `impacket-〇〇`以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる
+  impacket-〇〇以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる
   - GetNPUsers  
     - 「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名 -outputfile 出力ファイル名」  
       ASREPRoast（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
