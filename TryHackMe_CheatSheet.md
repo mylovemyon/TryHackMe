@@ -75,8 +75,8 @@
 - scp (kali〇, ELF)  
   「scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス」リモート先からダウンロード
 - smbclient (kali〇, ELF)  
-  「`smbcleint` -L IPアドレス or FQDN -U ユーザ名%パスワード」共有フォルダの列挙  
-  「`smbclient` //IPアドレス/共有名 -U ユーザ名%パスワード」共有フォルダにアクセス
+  「`smbcleint` -L "IPアドレス" or "FQDN" -U "ユーザ名"%"パスワード"」共有フォルダの列挙  
+  「`smbclient` //"IPアドレス"/"共有名" -U "ユーザ名"%"パスワード"」共有フォルダにアクセス
 - [SMBMap](https://github.com/ShawnDEvans/smbmap) (kali〇, python)  
   「`smbmap` -H "IPアドレス" -u "ユーザ名" -p "パスワード"」共有フォルダの列挙（smbclientと比べフォルダ権限まで確認できる）
 - SSH  
