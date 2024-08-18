@@ -66,12 +66,12 @@
 - [Rubeus](https://github.com/GhostPack/Rubeus) (kali×, C#)  
   攻撃対象のWindowsマシンで実行する、Post-Exploitationのイメージ  
   - 「`Rubeus.exe` harvest /interval:秒数」指定した秒数間、TGTを収集する  
-  - 「`Rubeus.exe` kerberoast /nowrap /outfile:出力ファイル」  
+  - 「`Rubeus.exe` kerberoast /nowrap /outfile:出力ファイル名」  
     Kerberoasting（取得したユーザのSPNに対応したアカウントのTGSを取得できる）を実行（nowrapは改行なしで結果出力）  
     TGSは「`hashcat` -a 0 -m 13100 TGSファイル名 Passwordリスト」でクラックできる（JohnではTGSをサポートしてない）
-  - 「`Rubeus.exe` asreproast /format:hashcat /outfile:出力ファイル」  
+  - 「`Rubeus.exe` asreproast /format:hashcat /outfile:出力ファイル名」  
     ASREPRoast（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
-    ASREPは「`hashcat` -a 0 -m 18200 ASREPファイル Passwordリスト」でクラックできる（Johnでもクラックできる）
+    ASREPは「`hashcat` -a 0 -m 18200 ASREPファイル名 Passwordリスト」でクラックできる（Johnでもクラックできる）
 - scp (kali〇, ELF)  
   「scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス」リモート先からダウンロード
 - smbclient (kali〇, ELF)  
