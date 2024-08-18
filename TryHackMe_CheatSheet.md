@@ -71,7 +71,8 @@
     TGSは「`hashcat` -a 0 -m 13100 TGSファイル名 Passwordリスト」でクラックできる（JohnではTGSをサポートしてない）
   - 「`Rubeus.exe` asreproast /format:hashcat /outfile:出力ファイル名」  
     ASREPRoast（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
-    ASREPは「`hashcat` -a 0 -m 18200 ASREPファイル名 Passwordリスト」でクラックできる（Johnでもクラックできる）
+    TGTは「hashcat -a 0 -m 18200 TGTファイル名 Passwordリスト」でクラックできる  
+    （Johnでは「john --wordlist=Passwordリスト名 TGTファイル名」クラックできる）
 - scp (kali〇, ELF)  
   「scp SSHユーザ名@IPアドレス:/リモートパス ローカルパス」リモート先からダウンロード
 - smbclient (kali〇, ELF)  
