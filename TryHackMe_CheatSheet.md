@@ -62,7 +62,7 @@
   - Skeleton Key  
     「misc::skeleton」ドメコンのメモリ上にマスタパスワードを挿入し、AD認証をバイパスする。
 - [pdfinfo](https://github.com/howtomakeaturn/pdfinfo) (kali×, PHP)  
-  「`pdfinfo` "PDFファイル名"」PDFメタデータの確認
+  「`pdfinfo` PDFファイル名」PDFメタデータの確認
 - [Rubeus](https://github.com/GhostPack/Rubeus) (kali×, C#)  
   攻撃対象のWindowsマシンで実行する、Post-Exploitationのイメージ  
   - 「`Rubeus.exe` harvest /interval:秒数」指定した秒数間、TGTを収集する  
