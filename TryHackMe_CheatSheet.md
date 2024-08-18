@@ -5,8 +5,9 @@
   「`enum4linux` IPアドレス」
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
   「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」WinRM経由でログインできる。
+- [exitool](https://github.com/exiftool/exiftool) (kali×, Perl)
 - ftp (kali〇, ELF)  
-  「ftp IPアドレス -a」Anonymousログオン
+  「`ftp` IPアドレス -a」Anonymousログオン
 - [GoBuster](https://github.com/OJ/gobuster) (kali〇, Go)  
   「`gobuster` -u URL -w wordlist名 dir」URL配下のコンテンツをWordlistを用いて探索
 - gpg (kali〇, ELF)    
