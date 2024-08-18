@@ -63,7 +63,7 @@ If you take the above coordinates and search one of the online maps, you will le
 Using exiftool or any similar tool, try to find where the kidnappers took the image they attached to their document. What is the name of the street?
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
-Using exiftool or any similar tool, try to find where the kidnappers took the image they attached to their document. What is the name of the street?
+Using exiftool or any similar tool, try to find where the kidnappers took the image they attached to their document. What is the name of the street?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_4.png" width="25%" height="25%">  
 exiftoolを実行すると色々な各Exifタグを確認できる。  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_5.png" width="25%" height="25%">  
