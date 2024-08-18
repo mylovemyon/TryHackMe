@@ -78,7 +78,7 @@
   「`smbcleint` -L IPアドレス or FQDN -U ユーザ名%パスワード」共有フォルダの列挙  
   「`smbclient` //IPアドレス/共有名 -U ユーザ名%パスワード」共有フォルダにアクセス
 - [SMBMap](https://github.com/ShawnDEvans/smbmap) (kali〇, python)  
-  「`smbmap` -H IPアドレス -u ユーザ名 -p パスワード」共有フォルダの列挙（smbclientと比べフォルダ権限まで確認できる）
+  「`smbmap` -H "IPアドレス" -u "ユーザ名" -p "パスワード"」共有フォルダの列挙（smbclientと比べフォルダ権限まで確認できる）
 - SSH  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
   - sshkeygen
