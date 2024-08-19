@@ -6,7 +6,8 @@
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
   「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」WinRM経由でログインできる。
 - [exitool](https://github.com/exiftool/exiftool) (kali×, Perl)  
-  「exiftool ファイル名 -Exifタグ名」任意のExif情報をフィルタ 
+  「`exiftool` ファイル名 -Exifタグ名」任意のExif情報をフィルタ  
+  位置情報をGoogleMapで検索するときは「-n」オプションの出力を検索にかけると良い
 - ftp (kali〇, ELF)  
   「`ftp` IPアドレス -a」Anonymousログオン
 - [GoBuster](https://github.com/OJ/gobuster) (kali〇, Go)  
