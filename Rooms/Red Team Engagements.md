@@ -20,3 +20,37 @@ The specifics of the approach will depend on a case-by-case basis of the engagem
 Client objectives will also affect the engagement's general rules of engagement and scope.  
 These topics will be expanded upon in Task 6.  
 The client objectives only set a basic definition of the client's goals of the engagement. The specific engagement plans will expand upon the client objectives and determine the specifics of the engagement. Engagement plans will be covered later within this room.
+
+The next keystone to a precise and transparent engagement is a well-defined scope. The scope of an engagement will vary by organization and what their infrastructure and posture look like. A client's scope will typically define what you cannot do or target; it can also include what you can do or target. While client objectives can be discussed and determined along with the providing team, a scope should only be set by the client. In some cases the red team may discuss a grievance of the scope if it affects an engagement. They should have a clear understanding of their network and the implications of an assessment. The specifics of the scope and the wording will always look different, below is an example of what verbiage may look like within a client's scope.  
+- No exfiltration of data.
+- Production servers are off-limits.
+- 10.0.3.8/18 is out of scope.
+- 10.0.0.8/20 is in scope.
+- System downtime is not permitted under any circumstances.
+- Exfiltration of PII is prohibited.
+
+When analyzing a client's objectives or scopes from a red team perspective, it is essential to understand the more profound meaning and implications. When analyzing, you should always have a dynamic understanding of how your team would approach the problems/objectives. If needed, you should write your engagement plans or start them from only a bare reading of the client objectives and scope.
+
+Below is an example of the client objectives of a mature organization with a strong security posture.  
+Example 1 - Global Enterprises:  
+Objectives:
+1. Identify system misconfigurations and network weaknesses.  
+    1. Focus on exterior systems.
+2. Determine the effectiveness of endpoint detection and response systems.
+3. Evaluate overall security posture and response.
+    1. SIEM and detection measures.
+    2. Remediation.
+    3.  Segmentation of DMZ and internal servers.
+4. Use of white cards is permitted depending on downtime and length.
+5. Evaluate the impact of data exposure and exfiltration.
+
+Scope:  
+1. System downtime is not permitted under any circumstances.
+    1. Any form of DDoS or DoS is prohibited.
+    2. Use of any harmful malware is prohibited; this includes ransomware and other variations.
+2. Exfiltration of PII is prohibited. Use arbitrary exfiltration data.
+3. Attacks against systems within 10.0.4.0/22 are permitted.
+4. Attacks against systems within 10.0.12.0/22 are prohibited.
+5. Bean Enterprises will closely monitor interactions with the DMZ and critical/production systems.
+    1. Any interaction with "*.bethechange.xyz" is prohibited.
+    2. All interaction with "*.globalenterprises.thm" is permitted.
