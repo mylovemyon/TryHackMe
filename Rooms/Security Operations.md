@@ -43,3 +43,18 @@ Other services by the SOC include cyber security training. Many data breaches an
 ### Example Scenario
 One role in a SOC is the SOC analyst. A SOC analyst is responsible for network security monitoring and log management. Let’s consider the following scenario. While monitoring the network traffic, a SOC analyst notices a particular DNS query repeating every minute. This behaviour is not that of a user browsing the Internet, and every precisely one minute, they are making a new DNS query.  
 The SOC analyst checks the source of the DNS query and identifies the cause as one laptop on the network. They isolate it and inspect it for signs of infection; they discover a process (program) using DNS to communicate with a malicious server. Soon, they find out that the computer was infected after visiting a malicious website by reviewing the computer logs. As a result, the laptop began communicating with a malicious server by hiding the messages in DNS queries. The laptop is cleaned, and threat hunting starts to ensure that no other computers are infected.
+
+
+## Practical Example of SOC
+We use a firewall to stop an ongoing attack in this task. A firewall is a device that inspects network packets entering and leaving a network or a system. The most basic types of firewalls inspect:
+- Source and destination IP addresses: An IP address is a logical address that allows you to communicate over the Internet. One analogy is the postal address; for example, a company needs a valid postal address to send and receive parcels. Think of the IP packet as a mail parcel.
+- Source and destination port numbers (where applicable): A computer has an IP address; furthermore, each program on the computer needs a port number to communicate over the network. Back to our analogy, a port number would be similar to a room number within a company.
+
+| Source IP Address	| Destination IP Address | Source Port |	Destination Port	| Action |
+-|- | - | - | -
+| 172.16.4.1 |	10.10.10.41 |	ANY |	80 |	PASS |
+| 172.16.8.1 |	10.10.10.81 |	ANY |	23 |	DROP |
+
+The above two rules dictate the following:
+- All IP packets from the source IP address 172.16.4.1 to the destination IP address 10.10.10.41 to the destination port number 80 will be allowed; hence PASS.
+- All IP packets from the source IP address 172.16.8.1 to the destination IP address 10.10.10.81 to the destination port number 23 will be blocked; hence DROP.
