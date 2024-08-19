@@ -78,3 +78,14 @@ Since this is a red team-oriented room, we will focus on the responsibilities of
 | Red Team Operator	| Executes assignments delegated by team leads. Interpret and analyse engagement plans from team leads. |
 
 As with most red team functions, each team and company will have its own structure and roles for each team member. The above table only acts as an example of the typical responsibilities of each role.
+
+
+## Engagement Structure
+A core function of the red team is adversary emulation. While not mandatory, it is commonly used to assess what a real adversary would do in an environment using their tools and methodologies. The red team can use various cyber kill chains to summarize and assess the steps and procedures of an engagement.  
+The blue team commonly uses cyber kill chains to map behaviors and break down an adversaries movement. The red team can adapt this idea to map adversary TTPs (Tactics, Techniques, and Procedures) to components of an engagement.  
+Many regulation and standardization bodies have released their cyber kill chain. Each kill chain follows roughly the same structure, with some going more in-depth or defining objectives differently. Below is a small list of standard cyber kill chains.
+- [Lockheed Martin Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
+- [Unified Kill Chain](https://unifiedkillchain.com/)
+- [Varonis Cyber Kill Chain](https://www.varonis.com/blog/cyber-kill-chain)
+- [Active Directory Attack Cycle](https://github.com/infosecn1nja/AD-Attack-Defense)
+- [MITRE ATT&CK Framework](https://attack.mitre.org/)
