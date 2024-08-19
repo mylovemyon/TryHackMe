@@ -103,3 +103,12 @@ Components of the kill chain are broken down in the table below.
 | Installation | Install malware or other tooling	| Mimikatz, Rubeus, etc. |
 | Command & Control	| Control the compromised asset from a remote central controller | Empire, Cobalt Strike, etc. |
 | Actions on Objectives |	Any end objectives: ransomware, data exfiltration, etc. | Conti, LockBit2.0, etc. |
+
+
+## Overview of a Red Team Engagement
+All the things we have discussed come together when performing a red team engagement. To better understand how the components and stakeholders interact, we will analyse a simplified engagement example. Navigate to the green “View Site” button to continue.  
+Notice how the Cyber Kill Chain naturally aligns with the exercise: We start with a recon phase where we gather as much intel as we can about our target, followed by weaponization and delivery by sending a phishing email with a malicious attachment, continued by exploitation and installation phases when using local exploits to elevate privileges on BOB-PC and then installing tools on compromised hosts to dump password hashes and perform lateral movement, to finish with actions on objectives where a connection to our target is finally made.
+
+
+## Conclusion
+A simplified overview of Red Team Engagements has been provided in this room. The main concepts, components and stakeholders have been introduced to gain a first understanding of such exercises. In the rooms that follow you will learn all of the planning behind a real engagement, as well as a lot of cool techniques a real attacker would use along the way, including how to use threat intelligence to your advantage, evade security mechanisms present in any modern host, perform lateral movement and try to avoid detection at all costs.
