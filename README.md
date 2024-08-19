@@ -52,6 +52,8 @@
   Intro to Digital Forensics | Security Operations
 - [Introduction to Offensive Security](https://tryhackme.com/module/introduction-to-offensive-security)  
   Web Application Security | Operating System Security | Network Security
+- [Red Team Fundamentals](https://tryhackme.com/module/red-team-fundamentals)  
+  Red Team Fundamentals | Red Team Engagements | Red Team Threat Intel | Red Team OPSEC | Intro to C2
 - [Threat Emulation](https://tryhackme.com/module/threat-emulation-old)  
   Attacktive Directory | Attacking Kerberos
 
