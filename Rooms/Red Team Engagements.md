@@ -78,3 +78,6 @@ Each RoE structure will be determined by the client and red team and can vary in
 
 When analyzing the document, it is important to remember that it is only a summary, and its purpose is to be a legal document. Future and more in-depth planning are required to expand upon the RoE and client objectives.  
 For this task we will use a shortened document adapted from [redteam.guide](https://redteam.guide/docs/templates/roe_template/)
+
+
+## Campaign Planning
