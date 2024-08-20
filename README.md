@@ -1,14 +1,6 @@
 # TryHackMe
 ## Rooms
-- Attacktive Directory  
-  `enum4linux`でのDomain名取得, ADのデフォルトのTLDは`.local`  
-  `Kerbrute`によるWordlistを用いたドメイン内ユーザの列挙  
-  `impacket-GetNPUsers`によるASREPRoasting（事前認証を必要としないユーザのTGTチケットを取得する攻撃）  
-  `impacket-secretsdump`による`DRSUAPI`を介した全ドメインユーザのNTLM・Kerberosキーの取得  
-  TGT（$krb5asrep）をJohnでクラック  
-  `smbclient`や`SMBMap`によるShareの列挙・接続  
-  `Evil-WinRM`によるWinRM接続
-- Atacking Kerberos  
+- Attacking Kerberos  
   Kerberosの仕組み  
   `Kerbrute`によるWordlistを用いたドメイン内ユーザの列挙  
   `Rubeus`によるTGTの収集、BruteForce・PasswordSpray、Kerberoasting、ASREPRoasting  
@@ -17,6 +9,14 @@
   `impacket-secretsdump`によるDCSync攻撃での全ドメインユーザのNTハッシュの取得  
   TGS（$krb5tgs）をHashcatでクラック（Johnではクラック不可）、TGT（$krb5asrep）をJohnやHashcatでクラック  
   `mimikatz`による「Pass the Ticket」、「Golden/Silver Ticket」、「Skeleton Key」
+- Attacktive Directory  
+  `enum4linux`でのDomain名取得, ADのデフォルトのTLDは`.local`  
+  `Kerbrute`によるWordlistを用いたドメイン内ユーザの列挙  
+  `impacket-GetNPUsers`によるASREPRoasting（事前認証を必要としないユーザのTGTチケットを取得する攻撃）  
+  `impacket-secretsdump`による`DRSUAPI`を介した全ドメインユーザのNTLM・Kerberosキーの取得  
+  TGT（$krb5asrep）をJohnでクラック  
+  `smbclient`や`SMBMap`によるShareの列挙・接続  
+  `Evil-WinRM`によるWinRM接続
 - Careers in Cyber
 - Encryption - Crypto 101  
   `ssh-keygen`, `ssh2john`でSSH秘密鍵のパスワードをJohnで解析するために抽出, `gpg`コマンド  
