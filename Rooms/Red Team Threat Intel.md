@@ -25,3 +25,14 @@ These cyber frameworks will collect known TTPs and categorize them based on vary
 Once a targeted adversary is selected, the goal is to identify all TTPs categorized with that chosen adversary and map them to a known cyber kill chain. This concept is covered further in the next task.  
 Leveraging TTPs is used as a planning technique rather than something a team will focus on during engagement execution. Depending on the size of the team, a CTI team or threat intelligence operator may be employed to gather TTPs for the red team. During the execution of an engagement, the red team will use threat intelligence to craft tooling, modify traffic and behavior, and emulate the targeted adversary. This concept is covered further in task 5.  
 Overall the red team consumes threat intelligence to analyze and emulate the behaviors of adversaries through collected TTPs and IOCs.
+
+
+## The TIBER-EU Framework
+TIBER-EU (Threat Intelligence-based Ethical Red Teaming) is a common framework developed by the European Central Bank that centers around the use of threat intelligence.  
+From the [ECB TIBER-EU white paper](https://www.ecb.europa.eu/pub/pdf/other/ecb.tiber_eu_framework.en.pdf), "The Framework for Threat Intelligence-based Ethical Red Teaming (TIBER-EU) enables European and national authorities to work with financial infrastructures and institutions (hereafter referred to collectively as 'entities') to put in place a programme to test and improve their resilience against sophisticated cyber attacks."
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Inte_1" width="50%" height="50%">  
+The main difference between this framework and others is the "Testing" phase that requires threat intelligence to feed the red team's testing.  
+This framework encompasses a best practice rather than anything actionable from a red team perspective.  
+There are several public white papers and documents if you are interested in reading about this framework further,
+- https://www.ecb.europa.eu/pub/pdf/other/ecb.tiber_eu_framework.en.pdf
+- https://www.crest-approved.org/membership/tiber-eu/
