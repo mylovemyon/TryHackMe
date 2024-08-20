@@ -30,9 +30,25 @@ Overall the red team consumes threat intelligence to analyze and emulate the beh
 ## The TIBER-EU Framework
 TIBER-EU (Threat Intelligence-based Ethical Red Teaming) is a common framework developed by the European Central Bank that centers around the use of threat intelligence.  
 From the [ECB TIBER-EU white paper](https://www.ecb.europa.eu/pub/pdf/other/ecb.tiber_eu_framework.en.pdf), "The Framework for Threat Intelligence-based Ethical Red Teaming (TIBER-EU) enables European and national authorities to work with financial infrastructures and institutions (hereafter referred to collectively as 'entities') to put in place a programme to test and improve their resilience against sophisticated cyber attacks."
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Inte_1" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_1.png" width="50%" height="50%">  
 The main difference between this framework and others is the "Testing" phase that requires threat intelligence to feed the red team's testing.  
 This framework encompasses a best practice rather than anything actionable from a red team perspective.  
 There are several public white papers and documents if you are interested in reading about this framework further,
 - https://www.ecb.europa.eu/pub/pdf/other/ecb.tiber_eu_framework.en.pdf
 - https://www.crest-approved.org/membership/tiber-eu/
+
+
+## TTP Mapping
+TTP Mapping is employed by the red cell to map adversaries' collected TTPs to a standard cyber kill chain. Mapping TTPs to a kill chain aids the red team in planning an engagement to emulate an adversary.  
+To begin the process of mapping TTPs, an adversary must be selected as the target. An adversary can be chosen based on,
+1. Target Industry
+2. Employed Attack Vectors
+3. Country of Origin
+4. Other Factors
+
+As an example for this task, we have decided to use [APT 39](https://attack.mitre.org/groups/G0087/), a cyber-espionage group run by the Iranian ministry, known for targeting a wide variety of industries.  
+We will use the Lockheed Martin cyber kill chain as our standard cyber kill chain to map TTPs.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_2.png" width="50%" height="50%">  
+The first cyber framework we will be collecting TTPs from is [MITRE ATT&CK](https://attack.mitre.org/). If you are not familiar with MITRE ATT&CK, it provides IDs and descriptions of categorized TTPs. For more information about MITRE and how to use ATT&CK, check out the [MITRE room](https://tryhackme.com/room/mitre).  
+ATT&CK provides a basic summary of a group's collected TTPs. We can use [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) to help us visualize each TTP and categorize its place in the kill chain. Navigator visualizes the ATT&CK chain with the adversaries' designated TTPs highlighted under the corresponding sub-section.  
+To use the ATT&CK Navigator: navigate to the groups summary page, next to "Techniques Used," navigate to "ATT&CK Navigator Layers," from the dropdown navigate to "view." An ATT&CK Navigator layer should have opened with the selected group's TTPs highlighted in a new tab.
