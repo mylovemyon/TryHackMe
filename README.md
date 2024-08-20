@@ -41,7 +41,9 @@
   `history`コマンドによるPassword窃取、NCSCの[100,000 most common passwords](https://www.ncsc.gov.uk/blog-post/passwords-passwords-everywhere)
 - Red Team Engagements
 - Red Team Fundamentals  
-- [REDTEAM.GUIDE](https://redteam.guide/)、[Unified Kill Chain](https://unifiedkillchain.com/)
+  [REDTEAM.GUIDE](https://redteam.guide/)、[Unified Kill Chain](https://unifiedkillchain.com/)
+- Red Team Threat Intel  
+  [OST Map](https://intezer.com/ost-map/)
 - Security Operations
 - Web Application Security
 
