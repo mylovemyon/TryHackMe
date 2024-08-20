@@ -40,7 +40,8 @@
 - Operating System Security  
   `history`コマンドによるPassword窃取、NCSCの[100,000 most common passwords](https://www.ncsc.gov.uk/blog-post/passwords-passwords-everywhere)
 - Red Team Engagements
-- Red Team Fundamentals
+- Red Team Fundamentals  
+- [REDTEAM.GUIDE](https://redteam.guide/)、[Unified Kill Chain](https://unifiedkillchain.com/)
 - Security Operations
 - Web Application Security
 
