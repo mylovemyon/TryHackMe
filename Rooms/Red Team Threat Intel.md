@@ -91,3 +91,4 @@ Read the above and use MITRE ATT&CK Navigator to answer the questions below usin
 How many Command and Control techniques are employed by Carbanak?　　
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_4.png" width="75%" height="75%">  
 [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)に移動して、「Create Net Layer」の「Enterprise」を選択  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_5.png" width="100%" height="100%">  
