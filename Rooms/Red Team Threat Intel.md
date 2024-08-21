@@ -30,7 +30,7 @@ Overall the red team consumes threat intelligence to analyze and emulate the beh
 ## The TIBER-EU Framework
 TIBER-EU (Threat Intelligence-based Ethical Red Teaming) is a common framework developed by the European Central Bank that centers around the use of threat intelligence.  
 From the [ECB TIBER-EU white paper](https://www.ecb.europa.eu/pub/pdf/other/ecb.tiber_eu_framework.en.pdf), "The Framework for Threat Intelligence-based Ethical Red Teaming (TIBER-EU) enables European and national authorities to work with financial infrastructures and institutions (hereafter referred to collectively as 'entities') to put in place a programme to test and improve their resilience against sophisticated cyber attacks."
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_1.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_1.png" width="75%" height="75%">  
 The main difference between this framework and others is the "Testing" phase that requires threat intelligence to feed the red team's testing.  
 This framework encompasses a best practice rather than anything actionable from a red team perspective.  
 There are several public white papers and documents if you are interested in reading about this framework further,
@@ -52,3 +52,35 @@ We will use the Lockheed Martin cyber kill chain as our standard cyber kill chai
 The first cyber framework we will be collecting TTPs from is [MITRE ATT&CK](https://attack.mitre.org/). If you are not familiar with MITRE ATT&CK, it provides IDs and descriptions of categorized TTPs. For more information about MITRE and how to use ATT&CK, check out the [MITRE room](https://tryhackme.com/room/mitre).  
 ATT&CK provides a basic summary of a group's collected TTPs. We can use [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) to help us visualize each TTP and categorize its place in the kill chain. Navigator visualizes the ATT&CK chain with the adversaries' designated TTPs highlighted under the corresponding sub-section.  
 To use the ATT&CK Navigator: navigate to the groups summary page, next to "Techniques Used," navigate to "ATT&CK Navigator Layers," from the dropdown navigate to "view." An ATT&CK Navigator layer should have opened with the selected group's TTPs highlighted in a new tab.
+Going through the Navigator layer, we can assign various TTPs we want to employ during the engagement. Below is a compiled kill chain with mapped TTPs for APT39.
+1. Reconnaissance:
+    - No identified TTPs, use internal team methodology
+2. Weaponization:
+    - Command and Scripting Interpreter
+      - PowerShell
+      - Python
+      - VBA
+    - User executed malicious attachments
+3. Delivery:
+    - Exploit Public-Facing Applications
+    - Spearphishing
+4. Exploitation:
+    - Registry modification
+    - Scheduled tasks
+    - Keylogging
+    - Credential dumping
+5. Installation:
+    - Ingress tool transfer
+    - Proxy usage
+6. Command & Control:
+    - Web protocols (HTTP/HTTPS)
+    - DNS
+7. Actions on Objectives
+    - Exfiltration over C2
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_3.png" width="75%" height="75%">
+MITRE ATT&CK will do most of the work needed, but we can also supplement threat intelligence information with other platforms and frameworks. Another example of a TTP framework is [OST Map](https://www.intezer.com/ost-map/).
+OST Map provides a visual map to link multiple threat actors and their TTPs.  
+Other open-source and enterprise threat intelligence platforms can aid red teamers in adversary emulation and TTP mapping, such as,
+- Mandiant Advantage
+- Ontic
+- CrowdStrike Falcon
