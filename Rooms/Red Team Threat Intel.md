@@ -78,9 +78,16 @@ Going through the Navigator layer, we can assign various TTPs we want to employ 
 7. Actions on Objectives
     - Exfiltration over C2
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_3.png" width="75%" height="75%">
-MITRE ATT&CK will do most of the work needed, but we can also supplement threat intelligence information with other platforms and frameworks. Another example of a TTP framework is [OST Map](https://www.intezer.com/ost-map/).
+
+MITRE ATT&CK will do most of the work needed, but we can also supplement threat intelligence information with other platforms and frameworks. Another example of a TTP framework is [OST Map](https://www.intezer.com/ost-map/).  
 OST Map provides a visual map to link multiple threat actors and their TTPs.  
 Other open-source and enterprise threat intelligence platforms can aid red teamers in adversary emulation and TTP mapping, such as,
 - Mandiant Advantage
 - Ontic
 - CrowdStrike Falcon
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+Read the above and use MITRE ATT&CK Navigator to answer the questions below using a Carbanak layer.  
+How many Command and Control techniques are employed by Carbanak?　　
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_4.png" width="75%" height="75%">  
+[ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)に移動して、「Create Net Layer」の「Enterprise」を選択  
