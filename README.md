@@ -43,7 +43,7 @@
 - Red Team Fundamentals  
   [REDTEAM.GUIDE](https://redteam.guide/)、[Unified Kill Chain](https://unifiedkillchain.com/)
 - Red Team Threat Intel  
-  [OST Map](https://intezer.com/ost-map/)
+  [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)による脅威グループのTTPマッピング、[OST Map](https://intezer.com/ost-map/)
 - Security Operations
 - Web Application Security
 
