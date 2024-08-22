@@ -88,7 +88,6 @@ Other open-source and enterprise threat intelligence platforms can aid red teame
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 Read the above and use MITRE ATT&CK Navigator to answer the questions below using a Carbanak layer.  
-How many Command and Control techniques are employed by Carbanak?　　
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_4.png" width="75%" height="75%">  
 [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)に移動して、「Create Net Layer」の「Enterprise」を選択  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_5.png" width="100%" height="100%">  
@@ -100,5 +99,12 @@ How many Command and Control techniques are employed by Carbanak?　　
 ３の「Technique Controls」の、４をクリックすると選択Techniqueの色を変更できる。
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_7.png" width="100%" height="100%">  
 ５の「Layer Controls」の、６ではSubtechniqueの表示を有効にできる。  
-（「expand subtechniques」と「expand annotated subtechniques」の２つあるが、後者の方が選択したSubtechniqueのみを表示するので見やすい
-　上写真は後者）
+（「expand subtechniques」と「expand annotated subtechniques」の２つあるが、後者の方が選択したSubtechniqueのみを表示するので見やすい、上写真は後者）
+
+What signed binary did Carbanak use for defense evasion?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_8.png" width="25%" height="25%">  
+それでは先程設定したNavigatorを使用して、署名済みバイナリを探す。  
+Defensive Evasionで「Rundll32」が使用されていることが分かった。
+
+
+## Other Red Team Applications of CTI
