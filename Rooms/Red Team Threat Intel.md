@@ -119,7 +119,7 @@ CTI can also be used during engagement execution, emulating the adversary's beha
 
 The first behavioral use of CTI we will showcase is C2 (Command & Control) traffic manipulation. A red team can use CTI to identify adversaries' traffic and modify their C2 traffic to emulate it.
 
-An example of a red team modifying C2 traffic based on gathered CTI is malleable profiles. A malleable profile allows a red team operator to control multiple aspects of a C2's listener traffic.  
+An example of a red team modifying C2 traffic based on gathered CTI is [malleable profiles](https://www.cobaltstrike.com/help-malleable-c2). A malleable profile allows a red team operator to control multiple aspects of a C2's listener traffic.  
 Information to be implemented in the profile can be gathered from ISACs and collected IOCs or packet captures, including,
 - Host Headers
 - POST URIs
