@@ -96,3 +96,5 @@ How many Command and Control techniques are employed by Carbanak?　　
 右にタブが表示され２の「Threat Groups」から「Carbanak」が選択できる。  
 選択すると、その脅威グループに該当するTechniqueの色が変わる（緑枠）。  
 また右上の赤下線では、今回選択されたTechniqueの数が表示される。  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_6.png" width="100%" height="100%">  
+３の「Technique Controls」の、４をクリックすると選択Techniqueの色を変更できる。
