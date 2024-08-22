@@ -135,3 +135,36 @@ An example of this could be an adversary using a custom dropper. The red team ca
 - Tampering with file signatures and IOCs
 
 Intelligence and tools gathered from behavioral threat intelligence can aid a red team in preparing the specific tools they will use to action planned TTPs.
+
+
+## Creating a Threat Intel Driven Campaign
+A threat-intel-driven campaign will take all knowledge and topics previously covered and combine them to create a well-planned and researched campaign.  
+The task flow in this room logically follows the same path you would take as a red team to begin planning a campaign,
+1. Identify framework and general kill chain
+2. Determine targeted adversary
+3. Identify adversary's TTPs and IOCs
+4. Map gathered threat intelligence to a kill chain or framework
+5. Draft and maintain needed engagement documentation
+6. Determine and use needed engagement resources (tools, C2 modification, domains, etc.)
+
+In this task, we will be walking through a red team's thought process from beginning to end of planning a threat-intel-driven campaign.  
+The hardest part of planning a threat-intel-driven campaign can be mapping two different cyber frameworks. To make this process simpler we have provided a basic table comparing the Lockheed Martin Cyber Kill Chain and the MITRE ATT&CK framework.
+| Cyber Kill Chain | MITRE ATT&CK |
+-|-
+| Recon | Reconnaissance |
+| Weaponization | Execution |
+| Delivery | Initial Access |
+| Exploitation | Initial Access |
+| Installation | Persistence / Defense Evasion |
+| Command & Control	| Command and Control |
+| Actions on Objectives | Exfiltration / Impact |
+
+To begin working through this task, download the required resources and launch the static site attached to this task.  
+Your team has already decided to use the Lockheed Martin cyber kill chain to emulate [APT 41](https://attack.mitre.org/groups/G0096/) as the adversary that best fits the client's objectives and scope.
+
+
+## Conclusion
+When planning an engagement, it is essential to note the significance of adversary emulation and how threat intelligence can aid you in identifying adversaries and their behaviors.  
+Each red team will have its methodology of collecting and digesting threat intelligence in the real world. This room covered basic ground-level knowledge of varying concepts commonly applied to a red team scenario.  
+When planning an engagement, remember that it is crucial to look at scenarios from all perspectives: offensive, defensive, and the adversary's.  
+Threat intelligence allows us as the red team to look deeper into an adversary's behavior by using the blue team's methodology to our advantage.
