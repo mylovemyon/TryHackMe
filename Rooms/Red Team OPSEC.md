@@ -10,7 +10,7 @@ The OPSEC process has five steps:
 3. Analyse vulnerabilities
 4. Assess risks
 5. Apply appropriate countermeasures
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20OPSEC_2.png" width="75%" height="75%">  
 
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20OPSEC_2.png" width="50%" height="50%">  
 If the adversary discovers that you are scanning their network with Nmap (the blue team in our case), they should easily be able to discover the IP address used. For instance, if you use this same IP address to host a phishing site, it won’t be very difficult for the blue team to connect the two events and attribute them to the same actor.  
 OPSEC is not a solution or a set of rules; OPSEC is a five-step process to deny adversaries from gaining access to any critical information (defined in Task 2). We will dive into each step and see how we can improve OPSEC as part of our red team operations.
