@@ -100,4 +100,5 @@ How many Command and Control techniques are employed by Carbanak?　　
 ３の「Technique Controls」の、４をクリックすると選択Techniqueの色を変更できる。
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_7.png" width="100%" height="100%">  
 ５の「Layer Controls」の、６ではSubtechniqueの表示を有効にできる。  
-（「expand subtechniques」と「expand annotated subtechniques」の２つあるが、後者の方が選択Subtechniqueのみを表示するので見やすい）。
+（「expand subtechniques」と「expand annotated subtechniques」の２つあるが、後者の方が選択したSubtechniqueのみを表示するので見やすい
+　上写真は後者）
