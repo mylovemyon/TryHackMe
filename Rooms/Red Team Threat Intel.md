@@ -92,3 +92,7 @@ How many Command and Control techniques are employed by Carbanak?　　
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_4.png" width="75%" height="75%">  
 [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)に移動して、「Create Net Layer」の「Enterprise」を選択  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_5.png" width="100%" height="100%">  
+１の「Selection Controls」をクリックし、右上の「Search & Malti Select」をクリック。  
+右にタブが表示され２の「Threat Groups」から「Carbanak」が選択できる。  
+選択すると、その脅威グループに該当するTechniqueの色が変わる（緑枠）。  
+また右上の赤下線では、今回選択されたTechniqueの数が表示される。  
