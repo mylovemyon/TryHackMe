@@ -127,3 +127,26 @@ The diagram above depicts how C2 profiles work:
 
 Because HTTPS requests are encrypted, extracting specific headers (ex: X-C2-Server, or Host) may be impossible. By using C2 Profiles, we may be able to hide our C2 server from the prying eyes of a Security Analyst. For more information on how C2 profiles can be powerful, see this blog post on Understanding [Malleable C2 Profiles for Cobalt Strike](https://blog.zsec.uk/cobalt-strike-profiles/).
 In task 7, we will explain and explore another technique called "Redirectors". We will gain hands-on experience configuring Metasploit and Apache 2 to demonstrate how a redirector is set up.
+
+
+## Common C2 Frameworks
+### Common C2 Frameworks
+Throughout your journey, you may encounter many different C2 Frameworks; we will discuss a few popular C2 Frameworks that are widely used by Red Teamers and Adversaries alike. We will be dividing this into two sections:
+- Free
+- Premium/Paid
+
+You may ask some questions like “Why would I use a premium or paid C2 framework?”, and this is an excellent question. Premium/Paid C2 frameworks usually are less likely to be detected by Anti-Virus vendors. This is not to say that it's impossible to be detected, just that open-source C2 projects are generally well understood, and signatures can be easily developed.  
+Usually, premium C2 frameworks generally have more advanced post-exploitation modules, pivoting features, and even feature requests that open-source software developers may sometimes not fulfill. For example, one feature Cobalt Strike offers that most other C2 frameworks do not is the ability to open a VPN tunnel from a beacon. This can be a fantastic feature if a Proxy does not work well in your specific situation. You must do your research to find out what will work best for your team.
+
+### Free C2 Frameworks
+#### Metasploit
+The [Metasploit Framework](https://www.metasploit.com/), developed and maintained by Rapid7, is one of the most popular Exploitation and Post Exploitation frameworks (C2) that is publicly available and is installed on most penetration testing distributions.
+#### Armitage
+[Armitage](https://web.archive.org/web/20211006153158/http://www.fastandeasyhacking.com/) is an extension of the Metasploit Framework - it adds a Graphical user interface and is written in Java, and is incredibly similar to Cobalt Strike. This is because they were both developed by Raphael Mudge. Armitage offers an easy way to enumerate and visualize all of your targets. Aside from looking a lot like Cobalt Strike, it even offers some unique features. One of the most popular can be found in the “Attacks” menu; This feature is known as the Hail Mary attack, which attempts to run all exploits for the services running on a specific workstation. Armitage really is “Fast and Easy Hacking”.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_7.png" width="100%" height="100%">
+#### Powershell Empire/Starkiller
+[Powershell Empire](https://bc-security.gitbook.io/empire-wiki/) and [Starkiller](https://github.com/BC-SECURITY/Starkiller) is another incredibly popular C2 originally created by Harmjoy, Sixdub, and Enigma0x3 from Veris Group. Currently, the project has been discontinued and has been picked up by the BC Security team (Cx01N, Hubbl3, and _Vinnybod). Empire features agents written in various languages compatible with multiple platforms, making it an incredibly versatile C2. For more information on Empire, we recommend you take a look at the Powershell Empire room.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_8.png" width="100%" height="100%">
+#### Covenant
+[Covenant](https://github.com/cobbr/Covenant) by Ryan Cobb is the last free C2 Framework we will be covering - By far, it is one of the most unique C2 Frameworks being written in C#. Unlike Metasploit/Armitage, It’s primarily used for post-exploitation and lateral movement with HTTP, HTTPS, and SMB listeners with highly customizable agents.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_9.png" width="100%" height="100%">
