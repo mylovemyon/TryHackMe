@@ -99,3 +99,23 @@ The diagram above shows how hosts within a restricted network segment call back 
 2. The Victim in the non-restricted network segment calls back to the C2 Server over a standard beacon.
 3. The C2 Server then sends commands back to the Victim in the non-restricted network segment.
 4. The Victim in the non-restricted network segment then forwards the C2 instructions to the hosts in the restricted segment.
+
+### Facing the world 
+One important obstacle that all Red Teamers must overcome is placing infrastructure in plain view. There are many different methods to do this; one of the most popular methods is called "Domain Fronting".
+#### Domain Fronting
+Domain Fronting utilizes a known, good host (for example) Cloudflare. Cloudflare runs a business that provides enhanced metrics on HTTP connection details as well as caching HTTP connection requests to save bandwidth.  Red Teamers can abuse this to make it appear that a workstation or server is communicating with a known, trusted IP Address. Geolocation results will show wherever the nearest Cloudflare server is, and the IP Address will show as ownership to Cloudflare.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_5.png" width="75%" height="75%">  
+The diagram above depicts how Domain Fronting works:
+1. The C2 Operator has a domain that proxies all requests through Cloudflare. 
+2. The Victim beacons out to the C2 Domain.
+3. Cloudflare proxies the request, then looks at the Host header and relays the traffic to the correct server.
+4. The C2 Server then responds to Cloudflare with the C2 Commands.
+5. The Victim then receives the command from Cloudflare.
+#### C2 Profiles
+The next technique goes by several names by several different products, "NGINX Reverse Proxy", "Apache Mod_Proxy/Mod_Rewrite",  "Malleable HTTP C2 Profiles", and many others. However, they are all more or less the same. All of the Proxy features more or less allow a user to control specific elements of the incoming HTTP request. Let's say an incoming connection request has an "X-C2-Server" header; we could explicitly extract this header using the specific technology that is at your disposal (Reverse Proxy, Mod_Proxy/Rewrite, Malleable C2 Profile, etc.) and ensure that your C2 server responds with C2 based responses. Whereas if a normal user queried the HTTP Server, they might see a generic webpage. This is all dependent on your configuration.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_6.png" width="75%" height="75%">  
+The diagram above depicts how C2 profiles work:
+1. The Victim beacons out to the C2 Server with a custom header in the HTTP request, while a SOC Analyst has a normal HTTP Request
+2. The requests are proxied through Cloudflare
+3. The C2 Server receives the request and looks for the custom header, and then evaluates how to respond based on the C2 Profile.
+4. The C2 Server responds to the client and responds to the Analyst/Compromised device.
