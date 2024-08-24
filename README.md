@@ -43,7 +43,7 @@
 - Red Team Fundamentals  
   [REDTEAM.GUIDE](https://redteam.guide/)、[Unified Kill Chain](https://unifiedkillchain.com/)
 - Red Team OPSEC  
-  [Pentoo](https://pentoo.github.io/)
+  [Pentoo](https://pentoo.github.io/)というペネトレ用のLinux
 - Red Team Threat Intel  
   [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)による脅威グループのTTPマッピング、[OST Map](https://intezer.com/ost-map/)
 - Security Operations
