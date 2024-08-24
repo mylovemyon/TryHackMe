@@ -124,3 +124,6 @@ The diagram above depicts how C2 profiles work:
 2. The requests are proxied through Cloudflare
 3. The C2 Server receives the request and looks for the custom header, and then evaluates how to respond based on the C2 Profile.
 4. The C2 Server responds to the client and responds to the Analyst/Compromised device.
+
+Because HTTPS requests are encrypted, extracting specific headers (ex: X-C2-Server, or Host) may be impossible. By using C2 Profiles, we may be able to hide our C2 server from the prying eyes of a Security Analyst. For more information on how C2 profiles can be powerful, see this blog post on Understanding [Malleable C2 Profiles for Cobalt Strike](https://blog.zsec.uk/cobalt-strike-profiles/).
+In task 7, we will explain and explore another technique called "Redirectors". We will gain hands-on experience configuring Metasploit and Apache 2 to demonstrate how a redirector is set up.
