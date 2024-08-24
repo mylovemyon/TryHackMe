@@ -68,7 +68,7 @@ The steps for establishing C2 beaconing with a Stageless payload are as follows:
 2. The beaconing to the C2 Server begins
 #### Staged Payloads
 Staged payloads require a callback to the C2 server to download additional parts of the C2 agent. This is commonly referred to as a “Dropper” because it is “Dropped” onto the victim machine to download the second stage of our staged payload. This is a preferred method over stageless payloads because a small amount of code needs to be written to retrieve the additional parts of the C2 agent from the C2 server. It also makes it easier to obfuscate code to bypass Anti-Virus programs.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_3.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_3.png" width="75%" height="75%">  
 The steps for establishing C2 beaconing with a Staged payload are as follows:  
 1. The Victim downloads and executes the Dropper
 2. The Dropper calls back to the C2 Server for Stage 2
@@ -79,7 +79,7 @@ The steps for establishing C2 beaconing with a Staged payload are as follows:
 ### Payload Formats
 As you may know, Windows PE files (Executables) are not the only way to execute code on a system. Some C2 Frameworks support payloads in various other formats, for example:
 - PowerShell Scripts
-- Which may contain C# Code and may be compiled and executed with the Add-Type commandlet
+  - Which may contain C# Code and may be compiled and executed with the Add-Type commandlet
 - HTA Files
 - JScript Files
 - Visual Basic Application/Scripts
@@ -88,3 +88,14 @@ As you may know, Windows PE files (Executables) are not the only way to execute 
 and many more. For more information on various other payload formats, you should review the Weaponization room in the Initial Access module.
 
 ### Modules
+Modules are a core component of any C2 Framework; they add the ability to make agents and the C2 server more flexible. Depending on the C2 Framework, scripts must be written in different languages. Cobalt Strike has “Aggressor Scripts”, which are written in the “Aggressor Scripting Language”. PowerShell Empire has support for multiple languages, Metasploit’s Modules are written in Ruby, and many others are written in many other languages.
+#### Post Exploitation Modules
+Post Exploitation modules are simply modules that deal with anything after the initial point of compromise, this could be as simple as running SharpHound.ps1 to find paths of lateral movement, or it could be as complex as dumping LSASS and parsing credentials in memory. For more information on Post Exploitation, refer to the Post Exploitation Basics room.
+#### Pivoting Modules
+One of the last major components of a C2 Framework is its pivoting modules, making it easier to access restricted network segments within the C2 Framework. If you have Administrative Access on a system, you may be able to open up an “SMB Beacon”, which can enable a machine to act as a proxy via the SMB protocol. This may allow machines in a restricted network segment to communicate with your C2 server.
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_4.png" width="75%" height="75%">  
+The diagram above shows how hosts within a restricted network segment call back to the C2 Server:
+1. The Victims call back to an SMB named pipe on another Victim in a non-restricted network segment.
+2. The Victim in the non-restricted network segment calls back to the C2 Server over a standard beacon.
+3. The C2 Server then sends commands back to the Victim in the non-restricted network segment.
+4. The Victim in the non-restricted network segment then forwards the C2 instructions to the hosts in the restricted segment.
