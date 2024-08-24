@@ -156,7 +156,7 @@ The [Metasploit Framework](https://www.metasploit.com/), developed and maintaine
 
 ### Paid C2 Frameworks
 #### Cobalt Strike
-Cobalt Strike by Help Systems (Formerly created by Raphael Mudge) is arguably one of the most famous Command and Control frameworks next to Metasploit. Much like Artimage, it is written in Java and designed to be as flexible as possible. For more information, see Cobalt Strike’s Video Training Page. It offers additional insight into both Red Team Operations and the Framework by Raphael Mudge himself.  
+[Cobalt Strike](https://www.cobaltstrike.com/) by Help Systems (Formerly created by Raphael Mudge) is arguably one of the most famous Command and Control frameworks next to Metasploit. Much like Artimage, it is written in Java and designed to be as flexible as possible. For more information, see Cobalt Strike’s [Video Training Page](https://www.youtube.com/playlist?list=PLcjpg2ik7YT6H5l9Jx-1ooRYpfvznAInJ). It offers additional insight into both Red Team Operations and the Framework by Raphael Mudge himself.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_11.png" width="100%" height="100%">
 #### Brute Ratel
 [Brute Ratel](https://bruteratel.com/) by Chetan Nayak or Paranoid Ninja is a Command and Control framework marketed as a “Customizable Command and Control Center” or “C4” framework that provides a true adversary simulation-like experience with being a unique C2 framework. For more information about the Framework, the author has provided a [Video Training Page](https://bruteratel.com/tabs/tutorials/) that demonstrates many of the capabilities within the framework.  
