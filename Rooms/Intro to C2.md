@@ -161,3 +161,6 @@ The [Metasploit Framework](https://www.metasploit.com/), developed and maintaine
 #### Brute Ratel
 [Brute Ratel](https://bruteratel.com/) by Chetan Nayak or Paranoid Ninja is a Command and Control framework marketed as a “Customizable Command and Control Center” or “C4” framework that provides a true adversary simulation-like experience with being a unique C2 framework. For more information about the Framework, the author has provided a [Video Training Page](https://bruteratel.com/tabs/tutorials/) that demonstrates many of the capabilities within the framework.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_12.jpeg" width="100%" height="100%">
+
+### Other C2 Frameworks
+For a more comprehensive list of C2 Frameworks and their capabilities, check out the [“C2 Matrix”](https://howto.thec2matrix.com/), a project maintained by Jorge Orchilles and Bryson Bort. It has a far more comprehensive list of almost all C2 Frameworks that are currently available. We highly recommend that after this room, you go check it out and explore some of the other C2 Frameworks that were not discussed in this room. 
