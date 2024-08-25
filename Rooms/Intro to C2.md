@@ -278,15 +278,18 @@ Next up, you can double click your exploit of choice, or drag and drop the explo
 Eternal Blue Exploit  Module Information  
 After clicking "Launch", you will notice a new "Exploit" tab open up. Armitage will run all of the regular checks that Metasploit normally does. In the case of Eternal Blue, it ran the standard check script followed by the exploit script until it got a successful shell. It's worth noting that by default in this Exploit, it chose a Bind shell. Make sure you fully read the exploit information and options to see if a Bind Shell or a Reverse Shell is an option.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_38.png" width="100%" height="100%">  
+A Successful Exploitation Attempt from Armitage  
+After you receive your shell, right-click on the host and select "Interact". This will open a standard shell you're familiar with. In order to get a Meterpreter shell, we recommend that you run the multi/manage/shell_to_meterpreter module.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_39.png" width="100%" height="100%">  
 Compromised Host in Armitage  
 Practice Time  
 Now that you have learned how to exploit hosts using Armitage, you will now get to practice your skills by hacking the virtual machine by using Metasploit and Armitage. There are multiple exploit paths that you may be able to follow. We encourage you to explore the various exploit paths you may be able to find in order to gain a better understanding of exploitation and post-exploitation modules in Metasploit and Armitage. As a reminder, Armitage is just Metasploit with a GUI; all the same exploits exist and are categorized the same way.
 #### Solution
 If you are having difficulties with compromising the machine, here's a step-by-step guide to compromise the VM with Metasploit. If you would like to use Armitage, use this guide that shows step-by-step instructions. Now onto Metasploit!  
 Our first step is to launch Metasploit:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_39.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_40.png" width="75%" height="75%">  
 Now that we have exploited the Virtual Machine and have achieved System level access, we can use the hashdump command to retrieve the users NTLM hashes:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_40.png" width="50%" height="50%">  
-All that is left is to now retrieve the flags in the user's Home folders:  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_41.png" width="50%" height="50%">  
+All that is left is to now retrieve the flags in the user's Home folders:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_42.png" width="50%" height="50%">  
 And that's all there is to it! You have successfully compromised Ted's PC.
