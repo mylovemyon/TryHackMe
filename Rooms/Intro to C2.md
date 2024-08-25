@@ -285,9 +285,9 @@ Compromised Host in Armitage
 Practice Time  
 Now that you have learned how to exploit hosts using Armitage, you will now get to practice your skills by hacking the virtual machine by using Metasploit and Armitage. There are multiple exploit paths that you may be able to follow. We encourage you to explore the various exploit paths you may be able to find in order to gain a better understanding of exploitation and post-exploitation modules in Metasploit and Armitage. As a reminder, Armitage is just Metasploit with a GUI; all the same exploits exist and are categorized the same way.
 #### Solution
-If you are having difficulties with compromising the machine, here's a step-by-step guide to compromise the VM with Metasploit. If you would like to use Armitage, use this guide that shows step-by-step instructions. Now onto Metasploit!  
+If you are having difficulties with compromising the machine, here's a step-by-step guide to compromise the VM with Metasploit. If you would like to use Armitage, use this [guide that shows step-by-step](https://drive.google.com/file/d/1u-YmWl7cx3tO2vVjon0EtOGLXVCak2SJ/view?usp=sharing) instructions. Now onto Metasploit!  
 Our first step is to launch Metasploit:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_40.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_40.png" width="50%" height="50%">  
 Now that we have exploited the Virtual Machine and have achieved System level access, we can use the hashdump command to retrieve the users NTLM hashes:  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_41.png" width="50%" height="50%">  
 All that is left is to now retrieve the flags in the user's Home folders:  
