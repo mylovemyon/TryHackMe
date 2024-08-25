@@ -238,3 +238,18 @@ After clicking "Reverse," a new menu will open up, prompting you to configure so
 After pressing enter, a new pane will open up, confirming that your listener has been created. This should look like the standard Metasploit exploit/multi/handler module.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_30.png" width="50%" height="50%">  
 After setting up a listener, you can generate a standard windows/meterpreter/reverse_tcp reverse shell using MSFvenom and set the LHOST to the Armitage server to receive callbacks to our Armitage server. 
+#### Getting a Callback
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_31.png" width="50%" height="50%">  
+After generating the windows/meterpreter/reverse_tcp using MSFVenom, we can transfer the payload to a target machine and execute it. After a moment or two, you should receive a callback from the machine.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_32.png" width="50%" height="50%">
+
+### Listener Type
+As previously mentioned, standard reverse shell listeners are not the only ones that exist; there are many varieties that use many different protocols; however, there are a few common ones that we will cover, these being the following:
+### Standard Listener - 
+These often communicate directly over a raw TCP or UDP socket, sending commands in cleartext. Metasploit has full support for generic listeners.
+#### HTTP/HTTPS Listeners - 
+These often front as some sort of Web Server and use techniques like Domain Fronting or Malleable C2 profiles to mask a C2 server. When specifically communicating over HTTPS, it's less likely for communications to be blocked by an NGFW. Metasploit has full support for HTTP/HTTPS listeners.
+#### DNS Listener -
+DNS Listeners are a popular technique specifically used in the exfiltration stage where additional infrastructure is normally required to be set up, or at the very least, a Domain Name must be purchased and registered, and a public NS server must be configured. It is possible to set up DNS C2 operations in Metasploit with the help of additional tools. For more information, see this "[Meterpreter over DNS](https://2017.zeronights.org/wp-content/uploads/materials/ZN17_SintsovAndreyanov_MeterpreterReverseDNS.pdf)" presentation by Alexey Sintsov and Maxim Andreyanov. These are often very useful for bypassing Network Proxies.
+#### SMB Listener - 
+Communicating via SMB named pipes is a popular method of choice, especially when dealing with a restricted network; it often enables more flexible pivoting with multiple devices talking to each other and only one device reaching back out over a more common protocol like HTTP/HTTPS. Metasploit has support for Named Pipes.
