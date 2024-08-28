@@ -355,3 +355,19 @@ Next, we need to set up OverrideLHOST - This value will be your redirector's IP 
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_53.png" width="50%" height="50%">  
 After this has all been set up, running your Meterpreter Reverse Shell should now proxy all communications through your Redirector! For awareness, the diagram below is how our Redirector is set up in our lab; as a reminder, in engagements, you will want to use multiple hosts and DNS records instead of IP Addresses.   
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_54.png" width="50%" height="50%">  
+
+
+## Wrapping Up
+### Recap
+In this room, you hopefully learned a lot about Command and Control frameworks and will be able to take the knowledge you gained within this room and apply it in the real world. At the end of the day, almost everyone in Red Team Ops uses a Command and Control Framework. It's an essential part of every Red Teamer's toolkit, and we encourage you to go out and explore various C2 frameworks that were not covered or mentioned in this room.
+
+### How to Choose a C2 Framework
+After finishing this room, you may be left with some questions, and hopefully, one of them is "How do I know what C2 Framework to choose in my Red Team Operations". There is no right or wrong answer for this, just a few general questions that you should answer first:
+- What are your goals?
+- Do you have a budget?
+- Do you need something highly customizable?
+- Is off-the-shelf AV Evasion necessary?
+- Do you need the ability to create your own modules/scripts?
+- Is built-in reporting necessary for you?
+
+You should then take that information to the [C2 Matrix spreadsheet](https://docs.google.com/spreadsheets/d/1b4mUxa6cDQuTV2BPC6aA-GR4zGZi0ooPYtBe4IgPsSc/edit#gid=0) and narrow your selection based on the questions above. If you find a Premium C2 Framework that meets your criteria, it is highly recommended you request an evaluation/trial to find out if that C2 Framework works best for you.
