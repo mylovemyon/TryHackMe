@@ -293,3 +293,16 @@ Now that we have exploited the Virtual Machine and have achieved System level ac
 All that is left is to now retrieve the flags in the user's Home folders:  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_42.png" width="50%" height="50%">  
 And that's all there is to it! You have successfully compromised Ted's PC.
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+とういことで本タスクで、Armitageを使用して攻撃したかったが今現在Armitageの開発はやってないらしく（[Webサイト](http://www.fastandeasyhacking.com.)も消滅、WeybackMachineで確認すると2021年以降に消滅していた。）、KaliLinuxで実行するとエラーがでた。  
+なのでおとなしく、Msfconsoleを使います（なんかArmitageの開発者はCobalto Strikeに移ったらしいね）
+
+What is the Administrator's NTLM hash?  
+What is Ted's NTLM Hash?  
+What flag can be found after gaining Administrative access to the PC?  
+What flag can be found after gaining access to Ted's user account?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_43.png" width="50%" height="50%">  
+説明ではEternalBlueを使って攻撃しているので真似します。  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_44.png" width="50%" height="50%">  
+成功したので、設問のAnswerをゲット！
