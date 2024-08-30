@@ -24,6 +24,8 @@
 - Hashing - Crypto 101  
   `hashID`でハッシュ識別, `JohntheRipper`でクラック, [CrackStation](https://crackstation.net/)・[hashes.com](https://hashes.com/en/decrypt/hash)でクラック  
   Linuxのパスワードが保存される/etc/shadowの標準フォーマットは`$format$rounds$salt$hash`、$formatでHash形式が分かる
+- Intro to C2  
+  [C2Matrix](https://howto.thec2matrix.com/), msfconsoleとApacheを使用したC2リダイレクト
 - Intro to Defensive Security
 - Intro to Digital Forensics  
   `pdfinfo`によるPDFメタデータの確認、`exiftool`によるGPS情報などのEXIFの確認
