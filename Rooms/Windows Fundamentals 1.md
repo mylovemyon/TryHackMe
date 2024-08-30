@@ -42,6 +42,6 @@ Under Display settings, you can make changes to the screen's resolution and orie
 Note: In a Remote Desktop session, some of the display settings will be disabled.   
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_4.png" width="50%" height="50%">  
 You can also change the wallpaper by selecting Personalize.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_5.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_5.png" width="25%" height="25%">  
 Under Personalize, you can change the background image to the Desktop, change fonts, themes, color scheme, etc.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_6.png" width="50%" height="50%">  
