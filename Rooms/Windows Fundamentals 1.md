@@ -38,9 +38,10 @@ The desktop is where you will have shortcuts to programs, folders, files, etc. T
 The look and feel of the desktop can be changed to suit your liking. By right-clicking anywhere on the desktop, a context menu will appear. This menu will allow you to change the sizes of the desktop icons, specify how you want to arrange them, copy/paste items to the desktop, and create new items, such as a folder, shortcut, or text document.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_2.png" width="25%" height="25%">  
 Under Display settings, you can make changes to the screen's resolution and orientation. In case you have multiple computer screens, you can make configurations to the multi-screen setup here.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_3.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_3.png" width="25%" height="25%">  
 Note: In a Remote Desktop session, some of the display settings will be disabled.   
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_4.png" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_4.png" width="50%" height="50%">  
 You can also change the wallpaper by selecting Personalize.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_5.png" width="50%" height="50%">  
 Under Personalize, you can change the background image to the Desktop, change fonts, themes, color scheme, etc.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_6.png" width="50%" height="50%">  
