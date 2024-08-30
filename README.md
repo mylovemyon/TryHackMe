@@ -65,6 +65,8 @@
   Red Team Fundamentals | Red Team Engagements | Red Team Threat Intel | Red Team OPSEC | Intro to C2
 - [Threat Emulation](https://tryhackme.com/module/threat-emulation-old)  
   Attacktive Directory | Attacking Kerberos
+- [Windows Fundamentals](https://tryhackme.com/module/windows-fundamentals)  
+  Windows Fundamentals 1 | Windows Fundamentals 2 | Windows Fundamentals 3
 
 
 ## Learning Paths
