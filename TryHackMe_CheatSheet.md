@@ -5,7 +5,7 @@
   「`enum4linux` IPアドレス」
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
   「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」WinRM経由でログインできる。
-- [exitool](https://github.com/exiftool/exiftool) (kali×, Perl)  
+- [exifool](https://github.com/exiftool/exiftool) (kali×, Perl)  
   「`exiftool` ファイル名 -Exifタグ名」任意のExif情報をフィルタ  
   位置情報をGoogleMapで検索するときは「-n」オプションの出力を検索にかけると良い
 - ftp (kali〇, ELF)  
@@ -88,17 +88,25 @@
 - SSH  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
   - sshkeygen
+
 ## Linux
 ### Command
 - 「`sed` -i '1s/^/文字列' ファイル名」 ファイルの１行目（`1s`）先頭に文字列を追加（改行なし）
 ### Preference
 - 「`sudo sed -i '$a10.10.253.185 spookysec.local' /etc/hosts`」を実行しHOSTSファイルを編集
 - `$format$rounds$salt$hash` /etc/shadowのフォーマット、`$format`でハッシュ種別が分かる
+
 ## BookMark
-- [CrackStation](https://crackstation.net/)
-- [hashes.com](https://hashes.com/en/decrypt/hash)
-- [hash_identifier](https://hashes.com/en/tools/hash_identifier)
+- [CrackStation](https://crackstation.net/)  
+  hashクラック
+- [hashes.com](https://hashes.com/en/decrypt/hash)  
+  hashクラック
+- [hash_identifier](https://hashes.com/en/tools/hash_identifier)  
+  hash識別
+
+## Link
 - [SecLists](https://github.com/danielmiessler/SecLists)
 - [RsaCtfTool](https://github.com/Ganapati/RsaCtfTool)
 - [rsatool](https://github.com/ius/rsatool)
 - https://github.com/infosecn1nja/AD-Attack-Defense
+
