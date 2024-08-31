@@ -57,7 +57,7 @@
   `UserAccountControlSettings`(ユーザアカウント制御の設定), `compmgmt`(コンピュータの管理)  
   `perfmon`(パフォーマンスモニター), `msinfo32`(システム情報)  
   `resmon`(リソースモニター), `regedit`(レジストリエディター)  
-  [ss64](https://ss64.com/)
+  [ss64](https://ss64.com/) ← LinuxやCMD・Powershellコマンド詳細を確認できる
 
 
 ## Modules
