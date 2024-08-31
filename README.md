@@ -50,8 +50,8 @@
   [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)による脅威グループのTTPマッピング、[OST Map](https://intezer.com/ost-map/)
 - Security Operations
 - Web Application Security
-- Windows Fundamentals 1
-  `lusrmgr.msc`(ローカルユーザとグループ)
+- Windows Fundamentals 1  
+  `lusrmgr.msc`(Local User and Group Management)
 
 
 ## Modules
