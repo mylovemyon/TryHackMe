@@ -55,7 +55,7 @@
 - Windows Fundamentals 2  
   `msconfig`(システム構成) , `taskmgr`(タスクマネージャー) , `control`(コントロールパネル)  
   `UserAccountControlSettings`(ユーザアカウント制御の設定), `compmgmt`(コンピュータの管理)  
-  `perfmon`(パフォーマンスモニター)
+  `perfmon`(パフォーマンスモニター), `msinfo32`(システム情報)
 
 
 ## Modules
