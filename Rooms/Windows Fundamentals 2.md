@@ -150,7 +150,7 @@ In the Overview tab, Resmon has four sections:
 
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_26.png" width="75%" height="75%">  
 The same four sections have corresponding tabs across the top. See below.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_27.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_27.png" width="25%" height="25%">  
 Note that each tab has additional information for each. An image is shown below for each tab.  
 CPU  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_28.png" width="75%" height="75%">  
@@ -161,7 +161,8 @@ Disk
 Network  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_31.png" width="75%" height="75%">  
 Although not captured in any of the images above, Resource Monitor has a pane at the far right. This pane shows a graphical view in real-time for each section.  
+
 Note: The information displayed in Resource Monitor will be different for you compared to the images above.
 
 
-## 
+## Command Prompt
