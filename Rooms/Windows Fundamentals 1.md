@@ -72,7 +72,7 @@ Some of the components are enabled and visible by default. The Toolbar (6), for 
 If you're like me and want to disable some of these components, you can right-click on Taskbar to bring up a context menu that will allow you to make changes.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_14.png" width="25%" height="25%">  
 Any apps/programs, folders, files, etc., that you open/start will appear in the taskbar.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_15.png" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_15.png" width="50%" height="50%">  
 Hovering over the icon will provide a preview thumbnail, along with a tooltip. This  tooltip is handy if you have many apps/programs open, such as Google Chrome, and you wish to find which instance of Google Chrome is the one you need to bring in to focus.  
 When you close any of these items, they will disappear from the taskbar (unless you explicitly pinned it to the taskbar).  
 
@@ -80,4 +80,6 @@ When you close any of these items, they will disappear from the taskbar (unless 
 The Notification Area, which is typically located at the bottom right of the Windows screen, is where the date and time are displayed. Other icons possibly visible in this area is the volume icon, network/wireless icon, to name a few. Icons can be either added or removed from the Notification Area in Taskbar settings.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_16.png" width="25%" height="25%">  
 From there, scroll down to the Notification Area section to make changes.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_16.png" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_17.png" width="25%" height="25%">  
+Here are Microsoft's brief documents for the [Start Menu](https://support.microsoft.com/en-us/windows/see-what-s-on-the-start-menu-a8ccb400-ad49-962b-d2b1-93f453785a13) and  [Notification Area](https://support.microsoft.com/en-us/windows/customize-the-taskbar-notification-area-e159e8d2-9ac5-b2bd-61c5-bb63c1d437c3#WindowsVersion=Windows_10).  
+Tip: You can right-click any folder, file, app/program, or icon to view more information or perform other actions on the clicked item. 
