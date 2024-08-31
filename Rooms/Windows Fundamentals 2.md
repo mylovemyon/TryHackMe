@@ -174,9 +174,9 @@ Even though the GUI is the primary way to interact with the operating system, a 
 In this task, we'll only cover a few commands that a computer user can run in the command prompt to obtain information about the computer system.  
 Let's start with a few simple commands, such as `hostname` and `whoami`.  
 The command hostname will output the computer name.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_32.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_32.png" width="25%" height="25%">  
 The command whoami will output the name of the logged-in user.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_33.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_33.png" width="25%" height="25%">  
 Next, let's look at some commands that are useful when troubleshooting.  
 A command used often is `ipconfig`. This command will show the network address settings for the computer.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_34.png" width="50%" height="50%">  
