@@ -135,3 +135,33 @@ Another method to view environment variables is Control Panel > System and Secur
 The detour is over. Let's redirect our attention back to msinfo32 and pick up where we left off.  
 Towards the very bottom of this utility, there is a search bar. Please give it a go. Select Components and search for IP address.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_25.png" width="75%" height="75%">  
+
+
+## Resource Monitor
+We're continuing with Tools that are available through the System Configuration panel.  
+What is Resource Monitor (`resmon`)?  
+Per Microsoft, "Resource Monitor displays per-process and aggregate CPU, memory, disk, and network usage information, in addition to providing details about which processes are using individual file handles and modules. Advanced filtering allows users to isolate the data related to one or more processes (either applications or services), start, stop, pause, and resume services, and close unresponsive applications from the user interface. It also includes a process analysis feature that can help identify deadlocked processes and file locking conflicts so that the user can attempt to resolve the conflict instead of closing an application and potentially losing data."  
+As some of the other tools mentioned in this room, this utility is geared primarily to advanced users who need to perform advanced troubleshooting on the computer system.  
+In the Overview tab, Resmon has four sections:
+- CPU
+- Disk
+- Network
+- Memory
+
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_26.png" width="75%" height="75%">  
+The same four sections have corresponding tabs across the top. See below.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_27.png" width="75%" height="75%">  
+Note that each tab has additional information for each. An image is shown below for each tab.  
+CPU  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_28.png" width="75%" height="75%">  
+Memory  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_29.png" width="75%" height="75%">  
+Disk  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_30.png" width="75%" height="75%">  
+Network  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_31.png" width="75%" height="75%">  
+Although not captured in any of the images above, Resource Monitor has a pane at the far right. This pane shows a graphical view in real-time for each section.  
+Note: The information displayed in Resource Monitor will be different for you compared to the images above.
+
+
+## 
