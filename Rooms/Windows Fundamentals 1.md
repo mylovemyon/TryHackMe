@@ -66,3 +66,18 @@ Note: The white letters match the letter headings.
 Apps/programs can be added to this Start Menu section by right-clicking the app/program and selecting Pin to Start. See below.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_12.png" width="25%" height="25%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_13.png" width="25%" height="25%">  
+
+### The Taskbar
+Some of the components are enabled and visible by default. The Toolbar (6), for example, was enabled for demonstration purposes.  
+If you're like me and want to disable some of these components, you can right-click on Taskbar to bring up a context menu that will allow you to make changes.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_14.png" width="25%" height="25%">  
+Any apps/programs, folders, files, etc., that you open/start will appear in the taskbar.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_15.png" width="25%" height="25%">  
+Hovering over the icon will provide a preview thumbnail, along with a tooltip. This  tooltip is handy if you have many apps/programs open, such as Google Chrome, and you wish to find which instance of Google Chrome is the one you need to bring in to focus.  
+When you close any of these items, they will disappear from the taskbar (unless you explicitly pinned it to the taskbar).  
+
+### The Notification Area
+The Notification Area, which is typically located at the bottom right of the Windows screen, is where the date and time are displayed. Other icons possibly visible in this area is the volume icon, network/wireless icon, to name a few. Icons can be either added or removed from the Notification Area in Taskbar settings.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_16.png" width="25%" height="25%">  
+From there, scroll down to the Notification Area section to make changes.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_16.png" width="25%" height="25%">  
