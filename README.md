@@ -56,7 +56,8 @@
   `msconfig`(システム構成) , `taskmgr`(タスクマネージャー) , `control`(コントロールパネル)  
   `UserAccountControlSettings`(ユーザアカウント制御の設定), `compmgmt`(コンピュータの管理)  
   `perfmon`(パフォーマンスモニター), `msinfo32`(システム情報)  
-  `resmon`(リソースモニター)
+  `resmon`(リソースモニター), `regedit`(レジストリエディター)  
+  [ss64](https://ss64.com/)
 
 
 ## Modules
