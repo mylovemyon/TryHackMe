@@ -97,7 +97,7 @@ NTFS addresses many of the limitations of the previous file systems; such as:
 - Encryption ([Encryption File](https://docs.microsoft.com/en-us/windows/win32/fileio/file-encryption) System or EFS)
 
 If you're running Windows, what is the file system your Windows installation is using? You can check the Properties (right-click) of the drive your operating system is installed on, typically the C drive (C:\).  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_18.gif" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_18.gif" width="50%" height="50%">  
 You can read Microsoft's official documentation on FAT, HPFS, and NTFS [here](https://docs.microsoft.com/en-us/troubleshoot/windows-client/backup-and-storage/fat-hpfs-and-ntfs-file-systems).  
 Let's speak briefly on some features that are specific to NTFS.  
 On NTFS volumes, you can set permissions that grant or deny access to files and folders.  
@@ -110,7 +110,7 @@ The permissions are:
 - Write
 
 The below image lists the meaning of each permission on how it applies to a file and a folder. (credit [Microsoft](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/bb727008(v=technet.10)?redirectedfrom=MSDN))  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_19.png" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_19.png" width="50%" height="50%">  
 How can you view the permissions for a file or folder?
 - Right-click the file or folder you want to check for permissions.
 - From the context menu, select Properties.
@@ -118,7 +118,7 @@ How can you view the permissions for a file or folder?
 - In the Group or user names list, select the user, computer, or group whose permissions you want to view.
 
 In the below image, you can see the permissions for the Users group for the Windows folder.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_20.png" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_20.png" width="50%" height="50%">  
 Refer to the Microsoft documentation to get a better understanding of the NTFS permissions for Special Permissions.  
 Another feature of NTFS is Alternate Data Streams (ADS).  
 Alternate Data Streams (ADS) is a file attribute specific to Windows NTFS (New Technology File System).  
