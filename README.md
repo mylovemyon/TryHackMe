@@ -53,7 +53,7 @@
 - Windows Fundamentals 1  
   `lusrmgr.msc`(ローカルユーザとグループ)
 - Windows Fundamentals 2  
-  `msconfig`(システム構成) , `taskmgr`(タスクマネージャー) 
+  `msconfig`(システム構成) , `taskmgr`(タスクマネージャー) , `control`(コントロールパネル), `UserAccountControlSettings`(ユーザアカウント制御の設定)
 
 
 ## Modules
