@@ -223,4 +223,23 @@ If you're unclear which to open if you wish to change a setting, use the Start m
 In the example below, the search was 'wallpaper.' Notice that few results were returned.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_39.png" width="50%" height="50%">  
 If we click on the Best match, a window to the Settings menu appears to make changes to the wallpaper.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_40.png" width="30%" height="30%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_40.png" width="50%" height="50%">  
+
+
+## Task Manager
+The last subject that will be touched on in this module is the Task Manager.  
+The Task Manager provides information about the applications and processes currently running on the system. Other information is also available, such as how much CPU and RAM are being utilized, which falls under Performance.  
+You can access the Task Manager by right-clicking the taskbar.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_41.png" width="25%" height="25%">  
+Task Manager will open in Simple View and won't show much information.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_42.png" width="25%" height="25%">  
+Click on More details, and the view changes.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_43.png" width="50%" height="50%">  
+You can refer to this [blog post](https://www.howtogeek.com/405806/windows-task-manager-the-complete-guide/) for more detailed information about the Task Manager.  
+
+
+## Conclusion
+Again, this was a generic overview of the Windows OS.  
+There are intermediate and advanced topics for each topic (task) that was covered in this room.  
+Hence, Task 9 ended with a detailed blog post explaining the Task Manager in great detail.  
+In future modules, we'll cover topics like the Windows folder, the management console, security tools (Windows Defender, Windows Firewall, etc.), to name a few. 
