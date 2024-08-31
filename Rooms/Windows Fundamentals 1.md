@@ -173,10 +173,13 @@ Each user profile will have the same folders; a few of them are:
 - Pictures
 
 Another way to access this information, and then some, is using Local User and Group Management.  
-Right-click on the Start Menu and click Run. Type `lusrmgr`.msc. See below  
+Right-click on the Start Menu and click Run. Type `lusrmgr.msc`. See below  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_29.gif" width="50%" height="50%">  
 Note: The Run Dialog Box allows us to open items quickly.  
 Back to lusrmgr, you should see two folders: Users and Groups.  
 If you click on Groups, you see all the names of the local groups along with a brief description for each group.  
 Each group has permissions set to it, and users are assigned/added to groups by the Administrator. When a user is assigned to a group, the user inherits the permissions of that group. A user can be assigned to multiple groups.  
 Note: If you click on Add someone else to this PC from Other users, it will open Local Users and Management. 
+
+
+## User Account Control
