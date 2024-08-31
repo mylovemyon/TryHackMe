@@ -44,4 +44,25 @@ Note: In a Remote Desktop session, some of the display settings will be disabled
 You can also change the wallpaper by selecting Personalize.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_5.png" width="25%" height="25%">  
 Under Personalize, you can change the background image to the Desktop, change fonts, themes, color scheme, etc.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_6.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_6.png" width="50%" height="50%">
+
+### The Start Menu
+In previous versions of Windows, the word Start was visible at the bottom left corner of the desktop GUI. In modern versions of Windows, such as Windows 10, the word 'Start' doesn't appear anymore, but rather a Windows Logo is shown instead. Even though the look of the Start Menu has changed, its overall purpose is the same.  
+The Start Menu provides access to all the apps/programs, files, utility tools, etc., that are most useful.  
+Clicking on the Windows logo, the Start Menu will open. The Start Menu is broken up into sections. See below.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_7.png" width="50%" height="50%">  
+1.This section of the Start Menu provides quick shortcuts to actions that you can perform with your account or login session, such as making changes to your user account, lock your screen, or signing out of your account. Other shortcuts specific to your account are your Documents (document icon) folder and Pictures folder (pictures icon). Lastly, the gear/cog icon will take you to the Settings screen, and the power icon will allow you to Disconnect from a Remote Desktop session, shut down the computer, or restart the computer.  
+In the below image, you can see what each of the icons represents. To expand this section, click on the icon that resembles a hamburger at the top.
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_8.png" width="50%" height="50%">  
+2.This section will show all Recently added apps/programs at the top and all the installed apps/programs (that are configured to appear in the Start Menu). In this section, you'll also see the apps/programs will be listed in alphabetical order. Each letter will have its own section. See below.
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_9.png" width="50%" height="50%">  
+In the above image, the first box is where the recently added apps/programs will appear. The second box is where all the installed apps/programs will appear.  
+Note: In your VM, Google Chrome will not show up as a Recently Added program anymore.  
+If you have a LONG list of installed apps/programs, you can jump to a particular section in the list by clicking on the letter headings to launch an alphabet grid. See below.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_10.png" width="50%" height="50%">  
+Note: The white letters match the letter headings.   
+3.The right side of the Start Menu is where you will find icons for specific apps/programs or utilities. These icons are known as tiles. Some tiles are added to this section by default. If you right-click any of the tiles, you guessed it; a menu will appear to allow you to perform more actions on the selected tile; such as resizing the tile, unpinning from Start Menu, view its Properties, etc. See below.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_11.png" width="50%" height="50%">  
+Apps/programs can be added to this Start Menu section by right-clicking the app/program and selecting Pin to Start. See below.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_12.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_13.png" width="50%" height="50%">  
