@@ -55,7 +55,7 @@ UserAccountControlSettings.exe
 ## Computer Management
 We're continuing with Tools that are available through the System Configuration panel.  
 The Computer Management (`compmgmt`) utility has three primary sections: System Tools, Storage, and Services and Applications.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_8.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_8.png" width="25%" height="25%">
 
 ### System Tools
 Let's start with Task Scheduler. Per Microsoft, with Task Scheduler, we can create and manage common tasks that our computer will carry out automatically at the times we specify.  
@@ -64,16 +64,16 @@ To create a basic task, click on Create Basic Task under Actions (right pane).
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_9.png" width="25%" height="25%">  
 Next is Event Viewer.  
 Event Viewer allows us to view events that have occurred on the computer. These records of events can be seen as an audit trail that can be used to understand the activity of the computer system. This information is often used to diagnose problems and investigate actions executed on the system.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_10.png" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_10.png" width="50%" height="50%">  
 Event Viewer has three panes.
 1. The pane on the left provides a hierarchical tree listing of the event log providers. (as shown in the image above)
 2. The pane in the middle will display a general overview and summary of the events specific to a selected provider.
 3. The pane on the right is the actions pane.
 
 There are five types of events that can be logged. Below is a table from [docs.microsoft.com](https://docs.microsoft.com/en-us/windows/win32/eventlog/event-types) providing a brief description for each.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_11.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_11.png" width="75%" height="75%">  
 The standard logs are visible under Windows Logs. Below is a table from [docs.microsoft.com](https://docs.microsoft.com/en-us/windows/win32/eventlog/eventlog-key) providing a brief description for each.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_12.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_12.png" width="75%" height="75%">  
 For more information about Event Viewer and Event Logs, please refer to the Windows Event Log room.  
 Shared Folders is where you will see a complete list of shares and folders shared that others can connect to.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_13.png" width="50%" height="50%">  
@@ -86,4 +86,4 @@ In Performance, you'll see a utility called Performance Monitor (`perfmon`).
 Perfmon is used to view performance data either in real-time or from a log file. This utility is useful for troubleshooting performance issues on a computer system, whether local or remote.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_14.png" width="50%" height="50%">  
 Device Manager allows us to view and configure the hardware, such as disabling any hardware attached to the computer.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_15.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_15.png" width="25%" height="25%">  
