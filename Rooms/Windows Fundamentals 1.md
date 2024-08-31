@@ -202,3 +202,25 @@ Double-click the program, and you'll see the UAC prompt. Notice that the built-i
 After some time, if a password is not entered, the UAC prompt disappears, and the program does not install.  
 This feature reduces the likelihood of malware successfully compromising your system. You can read more about [UAC](https://docs.microsoft.com/en-us/windows/security/identity-protection/user-account-control/how-user-account-control-works) here.  
 
+
+## Settings and the Control Panel
+On a Windows system, the primary locations to make changes are the Settings menu and the Control Panel.  
+For a long time, the Control Panel has been the go-to location to make system changes, such as adding a printer, uninstall a program, etc.  
+The Settings menu was introduced in Windows 8, the first Windows operating system catered to touch screen tablets, and is still available in Windows 10. As a matter of fact, the Settings menu is now the primary location a user goes to if they are looking to change the system.  
+There are similarities and differences between the two menus. Below are screenshots of each.  
+Settings:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_34.png" width="35%" height="35%">  
+Control Panel:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_35.png" width="50%" height="50%">  
+Note: The icons for Settings might be different in the version of Windows on your personal device.  
+Both can be accessed from the Start Menu. See below.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_36.png" width="50%" height="50%">  
+Control Panel is the menu where you will access more complex settings and perform more complex actions. In some cases, you can start in Settings and end up in the Control Panel.  
+For example, in Settings, click on Network & Internet. From here, click on Change adapter options.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_37.png" width="30%" height="30%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_38.png" width="50%" height="50%">  
+If you're unclear which to open if you wish to change a setting, use the Start menu and search for it.  
+In the example below, the search was 'wallpaper.' Notice that few results were returned.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_39.png" width="50%" height="50%">  
+If we click on the Best match, a window to the Settings menu appears to make changes to the wallpaper.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_40.png" width="30%" height="30%">  
