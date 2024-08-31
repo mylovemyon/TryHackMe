@@ -140,3 +140,43 @@ One of the many folders is System32.
 The System32 folder holds the important files that are critical for the operating system.  
 You should proceed with extreme caution when interacting with this folder. Accidentally deleting any files or folders within System32 can render the Windows OS inoperational. Read more about this action [here](https://www.howtogeek.com/346997/what-is-the-system32-directory-and-why-you-shouldnt-delete-it/).  
 Note: Many of the tools that will be covered in the Windows Fundamentals series reside within the System32 folder.
+
+
+## User Accounts, Profiles, and Permissions
+User accounts can be one of two types on a typical local Windows system: Administrator & Standard User.  
+The user account type will determine what actions the user can perform on that specific Windows system.
+- An Administrator can make changes to the system: add users, delete users, modify groups, modify settings on the system, etc.
+- A Standard User can only make changes to folders/files attributed to the user & can't perform system-level changes, such as install programs.
+
+You are currently logged in as an Administrator. There are several ways to determine which user accounts exist on the system.  
+One way is to click the Start Menu and type Other User. A shortcut to System Settings > Other users should appear.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_23.png" width="25%" height="25%">  
+If you click on it, a Settings window should now appear. See below.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_24.png" width="25%" height="25%">  
+Since you're the Administrator, you see an option to Add someone else to this PC.  
+Note: A Standard User will not see this option.  
+Click on the local user account. More options should appear: Change account type and Remove.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_25.png" width="25%" height="25%">  
+Click on Change account type. The value in the drop-down box (or the highlighted value if you click the drop-down) is the current account type.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_26.png" width="25%" height="25%">  
+When a user account is created, a profile is created for the user. The location for each user profile folder will fall under is C:\Users.  
+For example, the user profile folder for the user account Max will be C:\Users\Max.  
+The creation of the user's profile is done upon initial login. When a new user account logs in to a local system for the first time, they'll see several messages on the login screen. One of the messages, User Profile Service, sits on the login screen for a while, which is at work creating the user profile. See below.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_27.png" width="25%" height="25%">  
+Once logged in, the user will see a dialog box similar to the one below (again), indicating that the profile is in creation.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_28.png" width="25%" height="25%">  
+Each user profile will have the same folders; a few of them are:
+- Desktop
+- Documents
+- Downloads
+- Music
+- Pictures
+
+Another way to access this information, and then some, is using Local User and Group Management.  
+Right-click on the Start Menu and click Run. Type `lusrmgr`.msc. See below  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%201_29.gif" width="50%" height="50%">  
+Note: The Run Dialog Box allows us to open items quickly.  
+Back to lusrmgr, you should see two folders: Users and Groups.  
+If you click on Groups, you see all the names of the local groups along with a brief description for each group.  
+Each group has permissions set to it, and users are assigned/added to groups by the Administrator. When a user is assigned to a group, the user inherits the permissions of that group. A user can be assigned to multiple groups.  
+Note: If you click on Add someone else to this PC from Other users, it will open Local Users and Management. 
