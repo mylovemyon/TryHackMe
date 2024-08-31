@@ -95,3 +95,27 @@ Note: Real-time protection is turned off in the attached VM to decrease the chan
 Tip: You can perform on-demand scans on any file/folder by right-clicking the item and selecting 'Scan with Microsoft Defender'.  
 The below image was taken from another Windows device to show this feature.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_9.png" width="25%" height="25%">
+
+
+## Firewall & network protection
+What is a firewall?  
+Per Microsoft, "Traffic flows into and out of devices via what we call ports. A firewall is what controls what is - and more importantly isn't - allowed to pass through those ports. You can think of it like a security guard standing at the door, checking the ID of everything that tries to enter or exit".  
+The below image will reflect what you will see when you navigate to Firewall & network protection.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_10.png" width="35%" height="35%">  
+Note: Each network may have different status icons for you.  
+What is the difference between the 3 (Domain, Private, and Public)?  
+Per Microsoft, "Windows Firewall offers three firewall profiles: domain, private and public".
+- Domain - The domain profile applies to networks where the host system can authenticate to a domain controller.
+- Private - The private profile is a user-assigned profile and is used to designate private or home networks.
+- Public - The default profile is the public profile, used to designate public networks such as Wi-Fi hotspots at coffee shops, airports, and other locations.
+
+If you click on any firewall profile, another screen will appear with two options: turn the firewall on/off and block all incoming connections.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_11.png" width="35%" height="35%">  
+Warning: Unless you are 100% confident in what you are doing, it is recommended that you leave your Windows Defender Firewall enabled.  
+Allow an app through firewall  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_12.png" width="35%" height="35%">  
+You can view what the current settings for any firewall profile are. In the above image, several apps have access in the Private and/or Public firewall profile. Some of the apps will provide additional information if it's available via the Details button.  
+Advanced Settings  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_13.png" width="35%" height="35%">  
+Configuring the Windows Defender Firewall is for advanced Windows users. Refer to the following Microsoft documentation on best practices here.  
+Tip: Command to open the Windows Defender Firewall is `WF.msc`.
