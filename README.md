@@ -51,7 +51,9 @@
 - Security Operations
 - Web Application Security
 - Windows Fundamentals 1  
-  `lusrmgr.msc`(Local User and Group Management)
+  `lusrmgr.msc`(ローカルユーザとグループ)
+- Windows Fundamentals 2  
+  ``  
 
 
 ## Modules
