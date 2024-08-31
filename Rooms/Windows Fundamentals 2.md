@@ -221,5 +221,5 @@ Refer to the following Microsoft documentation [here](https://docs.microsoft.com
 Recall that the tasks covered in this room were some of the tools that can launch from MSConfig.  
 Throughout the room, commands and shortcuts were shared for the utilities. This means you don't have to launch MSConfig to run these utilities.  
 You can also run some of these utilities directly from the Start Menu. See below where some of these utilities can be found.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_41.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_41.png" width="25%" height="25%">  
 Some of the tools listed in MSConfig that weren't mentioned in this room were either covered in Windows Fundamentals 1 or were left for you to explore on your own.
