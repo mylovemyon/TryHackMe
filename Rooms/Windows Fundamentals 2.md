@@ -200,3 +200,26 @@ So, if you wish to see the help information for net user , the command is `net h
 You can use the same command to view the help information for other useful net sub-commands, such as localgroup, use, share, and session.  
 Refer to the following link to see a comprehensive list of commands you can execute in the command prompt [here](https://ss64.com/nt/).
 
+
+## Registry Editor
+We're continuing with Tools that are available through the System Configuration panel.  
+The Windows Registry (per Microsoft) is a central hierarchical database used to store information necessary to configure the system for one or more users, applications, and hardware devices.  
+The registry contains information that Windows continually references during operation, such as:
+- Profiles for each user
+- Applications installed on the computer and the types of documents that each can create
+- Property sheet settings for folders and application icons
+- What hardware exists on the system
+- The ports that are being used.
+
+Warning: The registry is for advanced computer users. Making changes to the registry can affect normal computer operations.  
+There are various ways to view/edit the registry. One way is to use the Registry Editor (`regedit`).  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_40.png" width="50%" height="50%">  
+Refer to the following Microsoft documentation [here](https://docs.microsoft.com/en-us/troubleshoot/windows-server/performance/windows-registry-advanced-users) to learn more about the Windows Registry.  
+
+
+## Conclusion
+Recall that the tasks covered in this room were some of the tools that can launch from MSConfig.  
+Throughout the room, commands and shortcuts were shared for the utilities. This means you don't have to launch MSConfig to run these utilities.  
+You can also run some of these utilities directly from the Start Menu. See below where some of these utilities can be found.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%202_41.png" width="50%" height="50%">  
+Some of the tools listed in MSConfig that weren't mentioned in this room were either covered in Windows Fundamentals 1 or were left for you to explore on your own.
