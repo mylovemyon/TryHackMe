@@ -73,7 +73,7 @@ Threat history
 
 Warning: Allow an item to run that has been identified as a threat only if you are 100% sure of what you are doing.  
 Next is Virus & threat protection settings.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_8.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_8.png" width="35%" height="35%">
 
 ### Virus & threat protection settings
 Manage settings 
@@ -84,7 +84,7 @@ Manage settings
 - Exclusions - Windows Defender Antivirus won't scan items that you've excluded.
 - Notifications - Windows Defender Antivirus will send notifications with critical information about the health and security of your device.
 
-Warning: Excluded items could contain threats that make your device vulnerable. Only use this option if you are 100% sure of what you are doing. 
+Warning: Excluded items could contain threats that make your device vulnerable. Only use this option if you are 100% sure of what you are doing.  
 Virus & threat protection updates
 - Check for updates - Manually check for updates to update Windows Defender Antivirus definitions.
 
@@ -94,4 +94,4 @@ Ransomware protection
 Note: Real-time protection is turned off in the attached VM to decrease the chances of performance issues. Since the VM can't reach the Internet and there aren't any threats in the VM, this is safe to do. Real-time protection should definitely be enabled in your personal Windows devices unless you have a 3rd party product that provides the same protection. Ensure it's always up-to-date and enabled.  
 Tip: You can perform on-demand scans on any file/folder by right-clicking the item and selecting 'Scan with Microsoft Defender'.  
 The below image was taken from another Windows device to show this feature.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_9.png" width="50%" height="50">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_9.png" width="25%" height="25%">
