@@ -135,3 +135,22 @@ Windows Defender SmartScreen helps protect your device by checking for unrecogni
 Exploit protection is built into Windows 10 (and, in our case, Windows Server 2019) to help protect your device against attacks.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_16.png" width="35%" height="35%">  
 Warning: Unless you are 100% confident in what you are doing, it is recommended that you leave the default settings. 
+
+
+## Device security
+Even though you'll probably never change any of these settings, for completion's sake, it will be covered briefly.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_17.png" width="35%" height="35%">  
+Core isolation  
+Memory Integrity - Prevents attacks from inserting malicious code into high-security processes.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_18.png" width="35%" height="35%">  
+Warning: Unless you are 100% confident in what you are doing, it is recommended that you leave the default settings.  
+The below images are from another machine to show another security feature that should be available in a personal Windows 10 device.  
+Security processor  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_19.png" width="35%" height="35%">  
+Below are the Security processor details.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_20.png" width="35%" height="35%">  
+What is the Trusted Platform Module (TPM)?  
+Per Microsoft, "Trusted Platform Module (TPM) technology is designed to provide hardware-based, security-related functions. A TPM chip is a secure crypto-processor that is designed to carry out cryptographic operations. The chip includes multiple physical security mechanisms to make it tamper-resistant, and malicious software is unable to tamper with the security functions of the TPM".
+
+
+## BitLocker
