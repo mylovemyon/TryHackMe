@@ -64,6 +64,10 @@
 
 
 ## Modules
+- [Compromising Active Directory](https://tryhackme.com/module/hacking-active-directory)  
+  Active Directory Basics | Breaching Active Directory | Enumerating Active Directory |  
+  Lateral Movement and Pivoting | Exploiting Active Directory | Persisting Active Directory |  
+  Credentials Harvesting
 - [Cryptography](https://tryhackme.com/module/cryptography)  
   Hashing - Crypto 101 | John The Ripper | Encription - Cripto 101
 - [Introduction to Cyber Security](https://tryhackme.com/module/introduction-to-cyber-security)  
