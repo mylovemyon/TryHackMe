@@ -19,7 +19,7 @@ We can use these techniques on a security assessment either by targeting systems
 ### Connecting to the Network
 #### AttackBox
 If you are using the Web-based AttackBox, you will be connected to the network automatically if you start the AttackBox from the room's page. You can verify this by running the ping command against the IP of the THMDC.za.tryhackme.com host. We do still need to configure DNS, however. Windows Networks use the Domain Name Service (DNS) to resolve hostnames to IPs. Throughout this network, DNS will be used for the tasks. You will have to configure DNS on the host on which you are running the VPN connection. In order to configure our DNS, run the following command:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directorys_1.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_1.png" width="50%" height="50%">  
 Remember to replace $THMDCIP with the IP of THMDC in your network diagram. You can test that DNS is working by running:  
 `nslookup thmdc.za.tryhackme.com`  
 This should resolve to the IP of your DC.  
