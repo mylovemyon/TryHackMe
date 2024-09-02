@@ -154,3 +154,26 @@ Per Microsoft, "Trusted Platform Module (TPM) technology is designed to provide 
 
 
 ## BitLocker
+What is BitLocker?  
+Per Microsoft, "BitLocker Drive Encryption is a data protection feature that integrates with the operating system and addresses the threats of data theft or exposure from lost, stolen, or inappropriately decommissioned computers".  
+On devices with TPM installed, BitLocker offers the best protection.  
+Per Microsoft, "BitLocker provides the most protection when used with a Trusted Platform Module (TPM) version 1.2 or later. The TPM is a hardware component installed in many newer computers by the computer manufacturers. It works with BitLocker to help protect user data and to ensure that a computer has not been tampered with while the system was offline".  
+Refer to the official Microsoft documentation to learn more about BitLocker [here](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-overview).  
+Note: The BitLocker feature is not included in the attached VM.
+
+
+## Volume Shadow Copy Service
+Per [Microsoft](https://docs.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service), the Volume Shadow Copy Service (VSS) coordinates the required actions to create a consistent shadow copy (also known as a snapshot or a point-in-time copy) of the data that is to be backed up.  
+Volume Shadow Copies are stored on the System Volume Information folder on each drive that has protection enabled.  
+If VSS is enabled (System Protection turned on), you can perform the following tasks from within advanced system settings.
+- Create a restore point
+- Perform system restore
+- Configure restore settings
+- Delete restore points
+
+From a security perspective, malware writers know of this Windows feature and write code in their malware to look for these files and delete them. Doing so makes it impossible to recover from a ransomware attack unless you have an offline/off-site backup.  
+If you wish to configure Shadow Copies within the attached VM, see below.  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_21.png" width="35%" height="35%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Windows%20Fundamentals%203_22.png" width="35%" height="35%">  
+
+## 
