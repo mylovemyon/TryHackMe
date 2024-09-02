@@ -60,7 +60,7 @@
   [ss64](https://ss64.com/) ← LinuxやCMD・Powershellコマンド詳細を確認できる
 - Windows Fundamentals 3  
   [Microsoft Security Update Guide](https://msrc.microsoft.com/update-guide), `control /name Microsoft.WindowsUpdate`  
-  `wf.msc`(Windows Defender ファイアウォール)
+  `wf.msc`(Windows Defender ファイアウォール), [LOLBAS](https://lolbas-project.github.io/)
 
 
 ## Modules
