@@ -1,10 +1,10 @@
-## Introduction to Defensive Security
+## Task 1 Introduction to Defensive Security
 Offensive security focuses on one thing: breaking into systems. Breaking into systems might be achieved through exploiting bugs, abusing insecure setups, and taking advantage of unenforced access control policies, among other things. Red teams and penetration testers specialize in offensive security.  
 Defensive security is somewhat the opposite of offensive security, as it is concerned with two main tasks:  
-1.Preventing intrusions from occurring  
-2.Detecting intrusions when they occur and responding properly  
-Blue teams are part of the defensive security landscape.
+1. Preventing intrusions from occurring
+2. Detecting intrusions when they occur and responding properly
 
+Blue teams are part of the defensive security landscape.  
 Some of the tasks that are related to defensive security include:  
 - User cyber security awareness: Training users about cyber security helps protect against various attacks that target their systems.
 - Documenting and managing assets: We need to know the types of systems and devices that we have to manage and protect properly.
@@ -20,7 +20,7 @@ In this room, we cover:
 - Malware Analysis
 
 
-## Areas of Defensive Security
+## Task 2 Areas of Defensive Security
 In this task, we will cover two main topics related to defensive security:
 - Security Operations Center (SOC), where we cover Threat Intelligence
 - Digital Forensics and Incident Response (DFIR), where we also cover Malware Analysis
@@ -44,7 +44,6 @@ This section is about Digital Forensics and Incident Response (DFIR), and we wil
 - Digital Forensics
 - Incident Response
 - Malware Analysis
-
 #### Digital Forensics
 Forensics is the application of science to investigate crimes and establish facts. With the use and spread of digital systems, such as computers and smartphones, a new branch of forensics was born to investigate related crimes: computer forensics, which later evolved into, digital forensics.  
 In defensive security, the focus of digital forensics shifts to analyzing evidence of an attack and its perpetrators and other areas such as intellectual property theft, cyber espionage, and possession of unauthorized content. Consequently, digital forensics will focus on different areas such as:  
@@ -52,7 +51,6 @@ In defensive security, the focus of digital forensics shifts to analyzing eviden
 - System memory: If the attacker is running their malicious program in memory without saving it to the disk, taking a forensic image (low-level copy) of the system memory is the best way to analyze its contents and learn about the attack.
 - System logs: Each client and server computer maintains different log files about what is happening. Log files provide plenty of information about what happened on a system. Some traces will be left even if the attacker tries to clear their traces.
 - Network logs: Logs of the network packets that have traversed a network would help answer more questions about whether an attack is occurring and what it entails.
-
 #### Incident Response
 An incident usually refers to a data breach or cyber attack; however, in some cases, it can be something less critical, such as a misconfiguration, an intrusion attempt, or a policy violation. Examples of a cyber attack include an attacker making our network or systems inaccessible, defacing (changing) the public website, and data breach (stealing company data). How would you respond to a cyber attack? Incident response specifies the methodology that should be followed to handle such a case. The aim is to reduce damage and recover in the shortest time possible. Ideally, you would develop a plan ready for incident response.  
 The four major phases of the incident response process are:  
@@ -60,7 +58,6 @@ The four major phases of the incident response process are:
 2. Detection and Analysis: The team has the necessary resources to detect any incident; moreover, it is essential to further analyze any detected incident to learn about its severity.
 3. Containment, Eradication, and Recovery: Once an incident is detected, it is crucial to stop it from affecting other systems, eliminate it, and recover the affected systems. For instance, when we notice that a system is infected with a computer virus, we would like to stop (contain) the virus from spreading to other systems, clean (eradicate) the virus, and ensure proper system recovery.
 4. Post-Incident Activity: After successful recovery, a report is produced, and the learned lesson is shared to prevent similar future incidents.
-
 #### Malware Analysis
 Malware stands for malicious software. Software refers to programs, documents, and files that you can save on a disk or send over the network. Malware includes many types, such as:  
 - Virus is a piece of code (part of a program) that attaches itself to a program. It is designed to spread from one computer to another; moreover, it works by altering, overwriting, and deleting files once it infects a computer. The result ranges from the computer becoming slow to unusable.
@@ -72,7 +69,7 @@ Malware analysis aims to learn about such malicious programs using various means
 2. Dynamic analysis works by running the malware in a controlled environment and monitoring its activities. It lets you observe how the malware behaves when running.
 
 
-## Practical Example of Defensive Security
+## Task 3 Practical Example of Defensive Security
 What would be a typical task that you will be doing as a security analyst? Click on “View Site” to follow along until you get the flag. (If this is your first time obtaining flags, a flag can be seen as a string of text you receive once you accomplish a task. An example flag is FLAG{WORDS_AND_MORE}.)  
 You are part of a Security Operations Center (SOC) responsible for protecting a bank. This bank’s SOC uses a Security Information and Event Management (SIEM) system. A SIEM gathers security-related information and events from various sources and presents them via one system. For instance, you would be notified if there is a failed login attempt or a login attempt from an unexpected geographic location. Moreover, with the advent of machine learning, a SIEM might detect unusual behavior, such as a user logging in at 3 AM when he usually logs in only during work hours.  
 In this exercise, we will interact with a SIEM to monitor the different events on our network and systems in real-time. Some of the events are typical and harmless; others might require further intervention from us. Find the event flagged in red, take note of it, and click on it for further inspection.  
