@@ -44,7 +44,7 @@ This page allows an attacker to steal money from any bank account, which is a cr
 Transfer $2000 from the bank account 2276, to your account (account number 8881).  
 ----------------------------------------Answer the questions below----------------------------------------  
 上の説明で、GoBusterで「bank-transfer」のサイトを見つけたのでそのサイトで現金送金できた  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Offensive%20Security_2.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Offensive%20Security_2.png" width="25%" height="25%">
 
 
 ## Task 3 Careers in cyber security
