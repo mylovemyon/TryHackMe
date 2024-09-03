@@ -121,7 +121,7 @@ John can be very particular about the formats it needs data in to be able to wor
 `unshadow [path to passwd] [path to shadow]`  
 `unshadow` - Invokes the unshadow tool  
 `[path to passwd]` - The file that contains the copy of the /etc/passwd file you've taken from the target machine  
-`[path to shadow]` - The file that contains the copy of the /etc/shadow file you've taken from the target machine
+`[path to shadow]` - The file that contains the copy of the /etc/shadow file you've taken from the target machine  
 Example Usage:  
 unshadow local_passwd local_shadow > unshadowed.txt  
 Note on the files  
