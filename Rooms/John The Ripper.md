@@ -47,7 +47,7 @@ To install Jumbo John the Ripper on Windows, you just need to download and insta
 As we explained in the first task, in order to dictionary attack hashes, you need a list of words that you can hash and compare, unsurprisingly this is called a wordlist. There are many different wordlists out there, a good collection to use can be found in the [SecLists](https://github.com/danielmiessler/SecLists) repository. There are a few places you can look for wordlists on your attacking system of choice, we will quickly run through where you can find them.
 
 ### Parrot, Kali and AttackBox
-On Parrot, Kali and TryHackMe's AttackBox- you can find a series of amazing wordlists in the /usr/share/wordlists directory.
+On Parrot, Kali and TryHackMe's AttackBox- you can find a series of amazing wordlists in the `/usr/share/wordlists` directory.
 
 ### RockYou
 For all of the tasks in this room, we will be using the infamous rockyou.txt wordlist- which is a very large common password wordlist, obtained from a data breach on a website called rockyou.com in 2009. If you are not using any of the above distributions, you can get the rockyou.txt wordlist from the SecLists repository under the `/Passwords/Leaked-Databases` subsection. You may need to extract it from .tar.gz format, using `tar xvzf rockyou.txt.tar.gz.`
