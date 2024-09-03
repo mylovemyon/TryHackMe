@@ -1,6 +1,7 @@
-## John who?
+## Task 1 John who?
 Welcome  
 John the Ripper is one of the most well known, well-loved and versatile hash cracking tools out there. It combines a fast cracking speed, with an extraordinary range of compatible hash types. This room will assume no previous knowledge, so we must first cover some basic terms and concepts before we move into practical hash cracking.
+
 ### What are Hashes?
 A hash is a way of taking a piece of data of any length and  representing it in another form that is a fixed length. This masks the original value of the data. This is done by running the original data through a hashing algorithm. There are many popular hashing algorithms, such as MD4,MD5, SHA1 and NTLM. Lets try and show this with an example:  
 If we take "polo", a string of 4 characters- and run it through an MD5 hashing algorithm, we end up with an output of: b53759f3ce692de7aff1b5779d3964da a standard 32 character MD5 hash.  
@@ -19,7 +20,7 @@ Even though the algorithm itself is not feasibly reversible. That doesn't mean t
 This process is called a dictionary attack and John the Ripper, or John as it's commonly shortened to, is a tool to allow you to conduct fast brute force attacks on a large array of different hash types.
 
 
-## Setting up John the Ripper
+## Task 2 Setting up John the Ripper
 ### Setting Up John The Ripper
 John the Ripper is supported on many different Operating Systems, not just Linux Distributions. As a note before we go through this, there are multiple versions of John, the standard "core" distribution, as well as multiple community editions- which extend the feature set of the original John distribution. The most popular of these distributions is the "Jumbo John"- which we will be using specific features of later.
 
@@ -41,7 +42,7 @@ If you wish to build the package from source to meet your system requirements, y
 To install Jumbo John the Ripper on Windows, you just need to download and install the zipped binary for either 64 bit systems or for 32 bit systems.
 
 
-## Wordlists
+## Task 3 Wordlists
 ### Wordlists
 As we explained in the first task, in order to dictionary attack hashes, you need a list of words that you can hash and compare, unsurprisingly this is called a wordlist. There are many different wordlists out there, a good collection to use can be found in the [SecLists](https://github.com/danielmiessler/SecLists) repository. There are a few places you can look for wordlists on your attacking system of choice, we will quickly run through where you can find them.
 
@@ -52,7 +53,7 @@ On Parrot, Kali and TryHackMe's AttackBox- you can find a series of amazing word
 For all of the tasks in this room, we will be using the infamous rockyou.txt wordlist- which is a very large common password wordlist, obtained from a data breach on a website called rockyou.com in 2009. If you are not using any of the above distributions, you can get the rockyou.txt wordlist from the SecLists repository under the `/Passwords/Leaked-Databases` subsection. You may need to extract it from .tar.gz format, using `tar xvzf rockyou.txt.tar.gz.`
 
 
-## Cracking Basic Hashes
+## Task 4 Cracking Basic Hashes
 ### Cracking Basic Hashes
 There are multiple ways to use John the Ripper to crack simple hashes, we're going to walk through a few, before moving on to cracking some ourselves.
 
@@ -94,7 +95,7 @@ What is the cracked value of hash1.txt?
 MD5でクラック成功！
 
 
-## Cracking Windows Authentication Hashes
+## Task 5 Cracking Windows Authentication Hashes
 ### Cracking Windows Hashes
 Now that we understand the basic syntax and usage of John the Ripper- lets move on to cracking something a little bit more difficult, something that you may even want to attempt if you're on a real Penetration Test or Red Team engagement. Authentication hashes are the hashed versions of passwords that are stored by operating systems, it is sometimes possible to crack them using the brute-force methods that we're using. To get your hands on these hashes, you must often already be a privileged user- so we will explain some of the hashes that we plan on cracking as we attempt them.
 
@@ -111,7 +112,7 @@ What is the cracked value of this password?
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_2.png" width="50%" height="50%">
 
 
-## Cracking /etc/shadow Hashes
+## Task 6 Cracking /etc/shadow Hashes
 ### Cracking Hashes from /etc/shadow
 The /etc/shadow file is the file on Linux machines where password hashes are stored. It also stores other information, such as the date of last password change and password expiration information. It contains one entry per line for each user or user account of the system. This file is usually only accessible by the root user- so in order to get your hands on the hashes you must have sufficient privileges, but if you do- there is a chance that you will be able to crack some of the hashes.
 
@@ -151,7 +152,7 @@ yescriptはPasswordCrackに強いらしく、実際にRockyou.txtで辞書攻撃
 今回は事前に知っているパスワード一つを使用して、Johnでクラックしてみた。（Johnはyescriptをサポートしていないらしく、crypt総当たり攻撃しないといけない）
 
 
-## Single Crack Mode
+## Task 7 Single Crack Mode
 ### Single Crack Mode
 So far we've been using John's wordlist mode to deal with brute forcing simple., and not so simple hashes. But John also has another mode, called Single Crack mode. In this mode, John uses only the information provided in the username, to try and work out possible passwords heuristically, by slightly changing the letters and numbers contained within the username.
 
@@ -191,7 +192,7 @@ hashidでハッシュフォーマットを識別した後、JohnでSingleクラ�
 無事MD5でクラック成功！
 
 
-## Custom Rules
+## Task 8 Custom Rules
 ### What are Custom Rules?
 As we journeyed through our exploration of what John can do in Single Crack Mode- you may have some ideas about what some good mangling patterns would be, or what patterns your passwords often use- that could be replicated with a certain mangling pattern. The good news is you can define your own sets of rules, which John will use to dynamically create passwords. This is especially useful when you know more information about the password structure of whatever your target is.
 
@@ -243,7 +244,7 @@ Jumbo John already comes with a large list of custom rules, which contain modifi
 Now, time for you to have a go!
 
 
-## Cracking Password Protected Zip Files
+## Task 9 Cracking Password Protected Zip Files
 ### Cracking a Password Protected Zip File
 Yes! You read that right. We can use John to crack the password on password protected Zip files. Again, we're going to be using a separate part of the john suite of tools to convert the zip file into a format that John will understand, but for all intents and purposes, we're going to be using the syntax that you're already pretty familiar with by now.
 
@@ -270,7 +271,7 @@ What is the contents of the flag inside the zip file?
 zip2johnでパスワードを出力した後、Johnでクラック成功！
 
 
-## Cracking Password Protected RAR Archives
+## Task 10 Cracking Password Protected RAR Archives
 ### Cracking a Password Protected RAR Archive
 We can use a similar process to the one we used in the last task to obtain the password for rar archives. If you aren't familiar, rar archives are compressed files created by the Winrar archive manager. Just like zip files they compress a wide variety of folders and files.
 
@@ -288,7 +289,7 @@ rar2john rarfile.rar > rar_hash.txt
 Once again, we're then able to take the file we output from rar2john in our example use case called "rar_hash.txt" and, as we did with zip2john we can feed it directly into John..  
 `john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt`  
 
-`Practical`
+### Practical
 Now have a go at cracking the attached "secure" rar file!
 
 ----------------------------------------Answer the questions below----------------------------------------  
@@ -296,7 +297,7 @@ What is the contents of the flag inside the zip file?
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_7.png" width="50%" height="50%">  
 
 
-## Cracking SSH Keys with John
+## Task 11 Cracking SSH Keys with John
 ### Cracking SSH Key Passwords
 Okay, okay I hear you, no more file archives! Fine! Let's explore one more use of John that comes up semi-frequently in CTF challenges. Using John to crack the SSH private key password of id_rsa files. Unless configured otherwise, you authenticate your SSH login using a password. However, you can configure key-based authentication, which lets you use your private key, id_rsa, as an authentication key to login to a remote machine over SSH. However, doing so will often require a password- here we will be using John to crack this password to allow authentication over SSH using the key.
 
@@ -322,5 +323,5 @@ What is the SSH private key password?
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_8.png" width="50%" height="50%">  
 
 
-## Further Reading
+## Task 12 Further Reading
 Thank you for completing this room on John the Ripper! I hope you've learnt a lot along the way. I'm sure by now you understand the basic principles and the pattern that there is to using John with even the most obscure supported hashes. I'd recommend checking out the Openwall Wiki [here](https://www.openwall.com/john/) for more information about using John, and advice, updates or news about the tool.
