@@ -54,7 +54,7 @@ Trust us; you can do it! Just take a look at some people who have used TryHackMe
 - Paul went from a construction worker to a security engineer. [Read more](https://tryhackme.com/resources/blog/construction-worker-to-security-engineer-how-paul-used-tryhackme-to-land-his-first-job-in-security).
 - Kassandra went from a music teacher to a security professional. [Read more](https://tryhackme.com/resources/blog/the-teacher-becomes-the-student).
 - Brandon used TryHackMe while at school to get his first job in cyber. [Read more](https://tryhackme.com/resources/blog/brandons-success-story).
-- 
+
 ### What careers are there?
 The cyber careers room goes into more depth about the different careers in cyber. However, here is a short description of a few offensive security roles:  
 - Penetration Tester - Responsible for testing technology products for finding exploitable security vulnerabilities.
