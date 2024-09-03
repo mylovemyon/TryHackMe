@@ -101,7 +101,7 @@ Now that we understand the basic syntax and usage of John the Ripper- lets move 
 
 ### NTHash / NTLM
 NThash is the hash format that modern Windows Operating System machines will store user and service passwords in. It's also commonly referred to as "NTLM" which references the previous version of Windows format for hashing passwords known as "LM", thus "NT/LM".  
-A little bit of history, the NT designation for Windows products originally meant "New Technology", and was used- starting with Windows NT, to denote products that were not built up from the MS-DOS Operating System. Eventually, the "NT" line became the standard Operating System type to be released by Microsoft and the name was dropped, but it still lives on in the names of some Microsoft technologies.   
+A little bit of history, the NT designation for Windows products originally meant "New Technology", and was used- starting with [Windows NT](https://en.wikipedia.org/wiki/Windows_NT), to denote products that were not built up from the MS-DOS Operating System. Eventually, the "NT" line became the standard Operating System type to be released by Microsoft and the name was dropped, but it still lives on in the names of some Microsoft technologies.   
 You can acquire NTHash/NTLM hashes by dumping the SAM database on a Windows machine, by using a tool like Mimikatz or from the Active Directory database: NTDS.dit. You may not have to crack the hash to continue privilege escalation- as you can often conduct a "pass the hash" attack instead, but sometimes hash cracking is a viable option if there is a weak password policy.
 
 ### Practical
@@ -109,7 +109,7 @@ Now that you know the theory behind it, see if you can use the techniques we pra
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the cracked value of this password?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_2.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_2.png" width="75%" height="75%">
 
 
 ## Task 6 Cracking /etc/shadow Hashes
