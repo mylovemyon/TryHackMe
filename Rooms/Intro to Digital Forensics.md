@@ -66,7 +66,7 @@ The PDF metadata clearly shows that it was created using MS Word for Office 365 
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 Using pdfinfo, find out the author of the attached PDF file, ransom-letter.pdf.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_2.png" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_1.png" width="25%" height="25%">  
 「Author」の行で「Ann Gree Shepherd」と確認！
 
 ### Photo EXIF Data
@@ -88,10 +88,10 @@ Using exiftool or any similar tool, try to find where the kidnappers took the im
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 Using exiftool or any similar tool, try to find where the kidnappers took the image they attached to their document. What is the name of the street?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_4.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_2.png" width="50%" height="50%">  
 exiftoolを実行すると色々な各Exifタグを確認できる。  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_5.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_3.png" width="50%" height="50%">  
 「`exiftool ファイル名 -Exifタグ名`」で今回は「GPSPosition」をフィルタする。  
 しかしこのままの出力だとGoogleMapで検索できないフォーマットなので、ExifTool変換を抑制する「`-n`」オプションをつけた出力結果を検索する。  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_6.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20Digital%20Forensics_4.png" width="100%" height="100%">  
 GoogleMapで「51.5144175116667 -0.0940929233333333」を検索すると「Milk Street」と判明した！
