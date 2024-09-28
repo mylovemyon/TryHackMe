@@ -100,7 +100,7 @@ Rubeus is already compiled and on the target machine.
 Harvesting gathers tickets that are being transferred to the KDC and saves them for use in other attacks such as the pass the ticket attack.  
 1.) cd Downloads - navigate to the directory Rubeus is in  
 2.) `Rubeus.exe harvest /interval:30` - This command tells Rubeus to harvest for TGTs every 30 seconds  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_05.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_05.png" width="65%" height="65%">
 
 ### Brute-Forcing / Password-Spraying w/ Rubeus -
 Rubeus can both brute force passwords as well as password spray user accounts. When brute-forcing passwords you use a single user account and a wordlist of passwords to see which password works for that given user account. In password spraying, you give a single password such as Password1 and "spray" against all found user accounts in the domain to find which one may have that password.  
@@ -116,10 +116,10 @@ Be mindful of how you use this attack as it may lock you out of the network depe
 `Rubeus`はWindows用のツールらしい（GitHubからソースコードをとってコンパイルして使わんといかん、メンディー）  
 タスク頭で提供されたSSHアカウントでWindowsにログインしてRubeusで攻撃した。（RubeusはPost-Exploitation用っぽい）  
 Which domain controller do we get a ticket for when harvesting tickets?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_07.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_07.png" width="65%" height="65%">  
 「`Rubeus.exe harvest /intercal:30`」で、30秒間のTGTチケット収集結果を確認すると、「CONTROLLER-1」が確認できた。  
 Which domain admin do we get a ticket for when harvesting tickets?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_08.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_08.png" width="65%" height="65%">  
 同様に。「Administrator」がAdminとして確認できた。
 
 
@@ -131,7 +131,7 @@ I have already taken the time to put Rubeus on the machine for you, it is locate
 ### Kerberoasting w/ Rubeus - 
 1.) cd Downloads - navigate to the directory Rubeus is in  
 2.) `Rubeus.exe kerberoast` This will dump the Kerberos hash of any kerberoastable users  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_09.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_09.png" width="65%" height="65%">  
 copy the hash onto your attacker machine and put it into a .txt file so we can crack it with hashcat  
 I have created a modified rockyou wordlist in order to speed up the process download it [here](https://github.com/Cryilllic/Active-Directory-Wordlists/blob/master/Pass.txt)  
 3.) `hashcat -m 13100 -a 0 hash.txt Pass.txt` - now crack that hash
@@ -181,7 +181,7 @@ During pre-authentication, the users hash will be used to encrypt a timestamp th
 ### Dumping KRBASREP5 Hashes w/ Rubeus -
 1.) cd Downloads - navigate to the directory Rubeus is in  
 2.) `Rubeus.exe` asreproast - This will run the AS-REP roast command looking for vulnerable users and then dump found vulnerable user hashes.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_14.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_14.png" width="65%" height="65%">  
 
 ### Crack those Hashes w/ hashcat - 
 1.) Transfer the hash from the target machine over to your attacker machine and put the hash into a txt file  
@@ -197,7 +197,7 @@ Use the same wordlist that you downloaded in task 4
 ----------------------------------------Answer the questions below--------------------------------------------------  
 Which User is vulnerable to AS-REP Roasting?  
 What is the User's Password?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_16.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_16.png" width="75%" height="75%">  
 「`Rubeus.exe asreproast /format:hashcat /outfile:出力ファイル名`」で事前認証が無効のユーザのTGTチケットを取得できた。  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_17.png" width="50%" height="50%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_18.png" width="100%" height="100%">  
