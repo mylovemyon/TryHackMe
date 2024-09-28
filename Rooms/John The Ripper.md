@@ -271,7 +271,7 @@ What is the contents of the flag inside the zip file?
 zip2johnでパスワードを出力した後、Johnでクラック成功！
 
 
-## Task 10 Cracking Password Protected RAR Archives
+## Cracking Password Protected RAR Archives
 ### Cracking a Password Protected RAR Archive
 We can use a similar process to the one we used in the last task to obtain the password for rar archives. If you aren't familiar, rar archives are compressed files created by the Winrar archive manager. Just like zip files they compress a wide variety of folders and files.
 
