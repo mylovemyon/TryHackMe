@@ -1,4 +1,4 @@
-## Task 1 Key Terms
+## Key Terms
 Before we start, we need to get some jargon out of the way.  
 Read these, and take in as much as you can. We'll expand on some of them later in the room.  
 Plaintext - Data before encryption or hashing, often text but not always as it could be a photograph or other file instead.  
@@ -9,7 +9,7 @@ Cryptanalysis - Attacking cryptography by finding a weakness in the underlying m
 This room will likely involve some research. Get good at using search engines, it's crucial to infosec.
 
 
-## Task 2 What is a hash function?
+## What is a hash function?
 ### What's a hash function?  
 Hash functions are quite different from encryption. There is no key, and it’s meant to be impossible (or very very difficult) to go from the output back to the input.  
 A hash function takes some input data of any size, and creates a summary or "digest" of that data. The output is a fixed size. It’s hard to predict what the output will be for any input and vice versa. Good hashing algorithms will be (relatively) fast to compute, and slow to reverse (Go from output and determine input). Any small change in the input data (even a single bit) should cause a large change in the output.  
@@ -23,7 +23,7 @@ A hash collision is when 2 different inputs give the same output. Hash functions
 MD5 and SHA1 have been attacked, and made technically insecure due to engineering hash collisions. However, no attack has yet given a collision in both algorithms at the same time so if you use the MD5 hash AND the SHA1 hash to compare, you will see they’re different. The MD5 collision example is available from https://www.mscs.dal.ca/~selinger/md5collision/ and details of the SHA1 Collision are available from https://shattered.io/. Due to these, you shouldn't trust either algorithm for hashing passwords or data.
 
 
-## Task 3 Uses for hashing
+## Uses for hashing
 ### What can we do with hashing?
 Hashing is used for 2 main purposes in Cyber Security. To verify integrity of data (More on that later), or for verifying passwords.
 
@@ -43,7 +43,7 @@ To protect against rainbow tables, we add a salt to the passwords. The salt is r
 The salt is added to either the start or the end of the password before it’s hashed, and this means that every user will have a different password hash even if they have the same password. Hash functions like bcrypt and sha512crypt handle this automatically. Salts don’t need to be kept private.
 
 
-## Task 4 Recognising password hashes
+## Recognising password hashes
 Automated hash recognition tools such as https://pypi.org/project/hashID/ exist, but they are unreliable for many formats. For hashes that have a prefix, the tools are reliable. Use a healthy combination of context and tools.  If you found the hash in a web application database, it's more likely to be md5 than NTLM. Automated hash recognition tools often get these hash types mixed up, which highlights the importance of learning yourself.  
 Unix style password hashes are very easy to recognise, as they have a prefix. The prefix tells you the hashing algorithm used to generate the hash. The standard format is `$format$rounds$salt$hash`.  
 Windows passwords are hashed using NTLM, which is a variant of md4. They're visually identical to md4 and md5 hashes, so it's very important to use context to work out the hash type.  
@@ -60,7 +60,7 @@ A great place to find more hash formats and password prefixes is the hashcat exa
 For other hash types, you'll normally need to go by length, encoding or some research into the application that generated them. Never underestimate the power of research.
 
 
-## Task 5 Password Cracking
+## Password Cracking
 We've already mentioned rainbow tables as a method to crack hashes that don't have a salt, but what if there's a salt involved?  
 You can't "decrypt" password hashes. They're not encrypted. You have to crack the hashes by hashing a large number of different inputs (often rockyou, these are the possible passwords), potentially adding the salt if there is one and comparing it to the target hash. Once it matches, you know what the password was. Tools like Hashcat and John the Ripper are normally used for this.
 
@@ -81,7 +81,7 @@ Crack this hash: $2a$06$7yoU3Ng8dHTXphAg913cyO6Bjs3K5lBnwq5FJyA6d01pMSrddr1ZG
 hashidで確認すると「bcrypt」だったので、Johnで辞書攻撃をするとクラック成功！
 
 
-## Task 6 Hashing for integrity checking
+## Hashing for integrity checking
 ### Integrity Checking
 Hashing can be used to check that files haven't been changed. If you put the same data in, you always get the same data out. If even a single bit changes, the hash will change a lot. This means you can use it to check that files haven't been modified or to make sure that they have downloaded correctly. You can also use hashing to find duplicate files, if two pictures have the same hash then they are the same picture.
 
