@@ -247,7 +247,7 @@ Your fellow Red Team Operators will use the IP Address to connect to your Armita
 Your fellow Red Team Operators will use the Shared Password to access your Armitage server.
 #### Armitage -
 This is the file you will be using to connect to the Armitage Teamserver. Upon executing the binary, a new prompt will open up, displaying connection information and your username (this should be treated as a nickname, not a username for authentication) and password.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_13.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_13.png" width="25%" height="25%">  
 Modify the Host IP Address to whatever you set in the previous step, "Starting Armitage's Team Server".
 
 ### Preparing our Environment
