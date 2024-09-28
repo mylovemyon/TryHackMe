@@ -69,12 +69,58 @@ We were hired to check the security of a certain company. When we visited our cl
 The first time we connect to a server over SSH, we will get a warning about the server’s authenticity and SSH key. We need to answer “Are you sure you want to continue connecting (yes/no)?” with yes.  
 Please note the following when entering the password over SSH. When you log in via SSH, you won't see that you are typing the password. In other words, when you are typing the SSH password, you won't see stars, dots, or any indicator on the screen that the password is being typed. However, the system still receives the password you are entering.  
 The interaction on the AttackBox’s terminal is shown below.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Operating%20System%20Security_1.png" width="50%" height="50%">  
+```
+user@AttackBox# ssh sammie@MACHINE_IP
+The authenticity of host 'MACHINE_IP (MACHINE_IP)' can't be established.
+ECDSA key fingerprint is SHA256:IFP+sTfHTDm72Ta2zfK9XjKASr30+ya4ic/ApEIziio.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'MACHINE_IP' (ECDSA) to the list of known hosts.
+sammie@MACHINE_IP's password: 
+Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-100-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue  1 Mar 13:20:32 UTC 2022
+
+  System load:  0.03              Processes:              216
+  Usage of /:   51.8% of 6.53GB   Users logged in:        1
+  Memory usage: 17%               IPv4 address for ens33: MACHINE_IP
+  Swap usage:   0%
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+0 updates can be applied immediately.
+
+
+Last login: Tue Mar  1 09:46:11 2022 from MACHINE_IP
+```
 Amazing! It worked! Let’s confirm that we are logged in as Sammie using the `whoami` (who am I?) command, which should return `sammie`.  
 To list the files in the current directory, we can use `ls`, short for list. This command will show all the files in the current directory unless they are hidden.  
 If you want to display the contents of any text file, you can use the command `cat FILENAME`, short for concatenate. This command will print the contents of the file on the screen.  
 In the terminal below, we see the usage of the four commands: `ssh`, `whoami`, `ls`, and `cat`. Please follow along from the AttackBox’s terminal.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Operating%20System%20Security_2.png" width="50%" height="50%">  
+```
+cuser@AttackBox# ssh sammie@MACHINE_IP
+sammie@MACHINE_IP's password:
+Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-100-generic x86_64)
+
+[...]
+
+Last login: Tue Mar  1 14:45:53 2022 from 10.20.30.1
+sammie@beginner-os-security:~$ whoami
+sammie
+sammie@beginner-os-security:~$ ls
+country.txt  draft.md  icon.png  password.txt  profile.jpg
+sammie@beginner-os-security:~$ cat draft.md 
+# Operating System Security
+
+Reusing passwords means that your password for other sites becomes exposed if one service is hacked.
+sammie@beginner-os-security:~$
+```
 In our brief introduction to Linux, the last command that we will cover is `history`. This command prints the commands used by the user.  
 We have learned about two other usernames that can access the attached machine. They are:  
 johnny  
@@ -87,6 +133,6 @@ We know that both of these users have little regard for cybersecurity best pract
 Based on the top 7 passwords, let’s try to find Johnny’s password. What is the password for the user `johnny`?  
 Once you are logged in as Johnny, use the command `history` to check the commands that Johnny has typed. We expect Johnny to have mistakenly typed the `root` password instead of a command. What is the root password?  
 While logged in as Johnny, use the command `su - root` to switch to the `root` account. Display the contents of the file `flag.txt` in the root directory. What is the content of the file?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Operating%20System%20Security_3.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Operating%20System%20Security_1.png" width="50%" height="50%">  
 johnのPasswordは「abc123」と簡単に推測できるものだった。  
 Historyコマンドで「su - root」のパスワードである「happyHack!NG」を発見したので、Rootにログインできた。
