@@ -388,7 +388,7 @@ Before letting you go off on your own, we're going to demonstrate how to exploit
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_24.png" width="50%" height="50%">  
 Armitage submenu of Hosts -> Nmap Scan -> Quick Scan  
 After selecting "Quick scan", a new option will pop up; this will prompt you to enter the IP Address range you would like to scan. You should enter the IP Address of the deployed Virtual machine in this box.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_25.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_25.png" width="35%" height="35%">  
 Input menu of "Enter Scan Range" with the IP Address VICTIM_MACHINE  
 After pressing "Ok", and waiting a moment or two, you should see a new tab open up called "nmap" and a new machine display in the "Workspace" window. In the "nmap" tab, you will see the raw scan results.
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_26.png" width="100%" height="100%">  
