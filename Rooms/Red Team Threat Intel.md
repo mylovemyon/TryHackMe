@@ -30,7 +30,7 @@ Overall the red team consumes threat intelligence to analyze and emulate the beh
 ## The TIBER-EU Framework
 TIBER-EU (Threat Intelligence-based Ethical Red Teaming) is a common framework developed by the European Central Bank that centers around the use of threat intelligence.  
 From the [ECB TIBER-EU white paper](https://www.ecb.europa.eu/pub/pdf/other/ecb.tiber_eu_framework.en.pdf), "The Framework for Threat Intelligence-based Ethical Red Teaming (TIBER-EU) enables European and national authorities to work with financial infrastructures and institutions (hereafter referred to collectively as 'entities') to put in place a programme to test and improve their resilience against sophisticated cyber attacks."
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_1.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_01.png" width="75%" height="75%">  
 The main difference between this framework and others is the "Testing" phase that requires threat intelligence to feed the red team's testing.  
 This framework encompasses a best practice rather than anything actionable from a red team perspective.  
 There are several public white papers and documents if you are interested in reading about this framework further,
@@ -48,7 +48,7 @@ To begin the process of mapping TTPs, an adversary must be selected as the targe
 
 As an example for this task, we have decided to use [APT 39](https://attack.mitre.org/groups/G0087/), a cyber-espionage group run by the Iranian ministry, known for targeting a wide variety of industries.  
 We will use the Lockheed Martin cyber kill chain as our standard cyber kill chain to map TTPs.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_2.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_02.png" width="50%" height="50%">  
 The first cyber framework we will be collecting TTPs from is [MITRE ATT&CK](https://attack.mitre.org/). If you are not familiar with MITRE ATT&CK, it provides IDs and descriptions of categorized TTPs. For more information about MITRE and how to use ATT&CK, check out the [MITRE room](https://tryhackme.com/room/mitre).  
 ATT&CK provides a basic summary of a group's collected TTPs. We can use [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) to help us visualize each TTP and categorize its place in the kill chain. Navigator visualizes the ATT&CK chain with the adversaries' designated TTPs highlighted under the corresponding sub-section.  
 To use the ATT&CK Navigator: navigate to the groups summary page, next to "Techniques Used," navigate to "ATT&CK Navigator Layers," from the dropdown navigate to "view." An ATT&CK Navigator layer should have opened with the selected group's TTPs highlighted in a new tab.
@@ -77,7 +77,7 @@ Going through the Navigator layer, we can assign various TTPs we want to employ 
     - DNS
 7. Actions on Objectives
     - Exfiltration over C2
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_3.png" width="75%" height="75%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_03.png" width="75%" height="75%">
 
 MITRE ATT&CK will do most of the work needed, but we can also supplement threat intelligence information with other platforms and frameworks. Another example of a TTP framework is [OST Map](https://www.intezer.com/ost-map/).  
 OST Map provides a visual map to link multiple threat actors and their TTPs.  
@@ -88,21 +88,21 @@ Other open-source and enterprise threat intelligence platforms can aid red teame
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 Read the above and use MITRE ATT&CK Navigator to answer the questions below using a Carbanak layer.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_4.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_04.png" width="75%" height="75%">  
 [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)に移動して、「Create Net Layer」の「Enterprise」を選択  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_5.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_05.png" width="100%" height="100%">  
 １の「Selection Controls」をクリックし、右上の「Search & Malti Select」をクリック。  
 右にタブが表示され２の「Threat Groups」から「Carbanak」が選択できる。  
 選択すると、その脅威グループに該当するTechniqueの色が変わる（緑枠）。  
 また右上の赤下線では、今回選択されたTechniqueの数が表示される。  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_6.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_06.png" width="100%" height="100%">  
 ３の「Technique Controls」の、４をクリックすると選択Techniqueの色を変更できる。
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_7.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_07.png" width="100%" height="100%">  
 ５の「Layer Controls」の、６ではSubtechniqueの表示を有効にできる。  
 （「expand subtechniques」と「expand annotated subtechniques」の２つあるが、後者の方が選択したSubtechniqueのみを表示するので見やすい、上写真は後者）
 
 What signed binary did Carbanak use for defense evasion?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_8.png" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Threat%20Intel_08.png" width="25%" height="25%">  
 それでは先程設定したNavigatorを使用して、署名済みバイナリを探す。  
 Defensive Evasionで「Rundll32」が使用されていることが分かった。
 
