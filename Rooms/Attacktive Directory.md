@@ -44,7 +44,7 @@ Notes: Flags for each user account are available for submission. You can retriev
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 What is the NetBIOS-Domain Name of the machine?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_1.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_01.png" width="50%" height="50%">  
 `enum4linux IPアドレス`でスキャンして確認できた。  
 
 What invalid TLD do people commonly use for their Active Directory Domain?  
@@ -61,9 +61,9 @@ For this box, a modified [User List](https://raw.githubusercontent.com/Sq00ky/at
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 What notable account is discovered?   
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_2.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_02.png" width="50%" height="50%">  
 Nmapで3389が開いているのを確認したため、`-sC`でスクリプトスキャンするとドメインを確認できた。  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_3.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_03.png" width="50%" height="50%">  
 [User List](https://raw.githubusercontent.com/Sq00ky/attacktive-directory-tools/master/userlist.txt)をWgetして「`./kerbrute userenum -d ドメイン名 --dc ドメコンIP Wordlists名`」でドメイン内のユーザを発見できる。  
 wordlistは70000以上あったのでめっちゃ時間かかるので、途中で中断。  
 問題で聞かれている怪しいユーザは、svc-admin と backup らしい。
@@ -81,7 +81,7 @@ Remember:  Impacket may also need you to use a python version >=3.7. In the Atta
 We have two user accounts that we could potentially query a ticket from. Which user account can you query a ticket from with no password?  
 `svc-admin`が怪しいらしい。  
 Now crack the hash with the modified password list provided, what is the user accounts password?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_4.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_04.png" width="100%" height="100%">  
 `python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py -format john -no-pass -dc-ip ドメコンIP ドメイン名/ユーザ名`で
 事前認証(AS-req)が無効であるユーザのTGTチケットを取得することができた。  
 その後、 [Password List](https://raw.githubusercontent.com/Sq00ky/attacktive-directory-tools/master/passwordlist.txt)をWgetして、Johnでクラック成功！
@@ -94,13 +94,13 @@ With a user's account credentials we now have significantly more access within t
 ----------------------------------------Answer the questions below--------------------------------------------------  
 What utility can we use to map remote SMB shares?  
 There is one particular share that we have access to that contains a text file. Which share is it?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_5.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_05.png" width="75%" height="75%">  
 「`smbclient -L IPアドレス or FQDN -U ユーザ名%パスワード`」でShareを列挙できる。（-Lオプション）  
 「`smbclient //IPアドレス/共有名 -U ユーザ名%パスワード`」で共有にアクセス、怪しいファイルを発見・ダウンロードできた。  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_6.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_06.png" width="50%" height="50%">  
 ちなみに「`smbmap -H IPアドレス -u ユーザ名 -p パスワード`」でもShareの列挙ができる。  
 Decoding the contents of the file, what is the full contents?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_7.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_07.png" width="75%" height="75%">  
 エンコードされてぽいので、Cybercherfの「Magic」でそれっぽいのを探してみるとBase64で文字列を発見した。
 
 
@@ -115,7 +115,7 @@ What method allowed us to dump NTDS.DIT?
 （DRSUAPI）はADオブジェクトのReplicationに使用されるRPCプロトコル。  
 ちなみに「`ntds.dit`」はADのアカウントクレデンシャルが格納されている。  
 What is the Administrators NTLM hash?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_8.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_08.png" width="50%" height="50%">  
 「`impacket-secretsdump -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス`」で`ntds.dit`を介したドメインユーザのパスワードハッシュの列挙ができる。  
 AdministratorのNTハッシュも無事取得した！
 
@@ -125,7 +125,7 @@ Submit the flags for each user account. They can be located on each user's deskt
 If you enjoyed this box, you may also enjoy my [blog post](https://blog.spookysec.net/kerberos-abuse/)!
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_9.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacktive%20Directory_09.png" width="75%" height="75%">  
 AdministratorのNTハッシュを使用して、`evil-winrm`でWinRMアクセスをする。  
 svc-admin  
 backup  
