@@ -16,7 +16,7 @@ Vulnerability Assessments
 This is the simplest form of security assessment, and its main objective is to identify as many vulnerabilities in as many systems in the network as possible. To this end, concessions may be made to meet this goal effectively. For example, the attacker's machine may be allowlisted on the available security solutions to avoid interfering with the vulnerability discovery process. This makes sense since the objective is to look at every host on the network and evaluate its security posture individually while providing the most information to the company about where to focus its remediation efforts.  
 To summarize, a vulnerability assessment focuses on scanning hosts for vulnerabilities as individual entities so that security deficiencies can be identified and effective security measures can be deployed to protect the network in a prioritized manner. Most of the work can be done with automated tools and performed by operators without requiring much technical knowledge.  
 As an example, if you were to run a vulnerability assessment over a network, you would normally try to scan as many of the hosts as possible, but wouldn't actually try exploiting any vulnerabilities at all:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_1.png" width="75%" height="75%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_01.png" width="75%" height="75%">
 
 ### Penetration Tests
 On top of scanning every single host for vulnerabilities, we often need to understand how they impact our network as a whole. Penetration tests add to vulnerability assessments by allowing the pentester to explore the impact of an attacker on the overall network by doing additional steps that include:  
@@ -25,12 +25,12 @@ On top of scanning every single host for vulnerabilities, we often need to under
 
 Penetration tests might start by scanning for vulnerabilities just as a regular vulnerability assessment but provide further information on how an attacker can chain vulnerabilities to achieve specific goals. While its focus remains on identifying vulnerabilities and establishing measures to protect the network, it also considers the network as a whole ecosystem and how an attacker could profit from interactions between its components.  
 If we were to perform a penetration test using the same example network as before, on top of scanning all of the hosts on the network for vulnerabilities we would try confirm if they can be exploited in order to show the impact an attacker could have on the network: 
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_2.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_02.png" width="75%" height="75%">  
 By analyzing how an attacker could move around our network, we also gain a basic insight on possible security measure bypasses and our ability to detect a real threat actor to a certain extent, limited because the scope of a penetration test is usually extensive and Penetration testers don't care much about being loud or generating lots of alerts on security devices since time constraints on such projects often requires us to check the network in a short time.
 
 ### Advanced Persistent Threats and why Regular Pentesting is not Enough
 While the conventional security engagements we have mentioned cover the finding of most technical vulnerabilities, there are limitations on such processes and the extent to which they can effectively prepare a company against a real attacker. Such limitations include:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_3.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_03.png" width="50%" height="50%">  
 As a consequence, some aspects of penetration tests might significantly differ from a real attack, like:
 - Penetration tests are LOUD: Usually, pentesters won't put much effort into trying to go undetected. Unlike real attackers, they don't mind being easy to detect, as they have been contracted to find as many vulnerabilities as they can in as many hosts as possible.
 - Non-technical attack vectors might be overlooked: Attacks based on social engineering or physical intrusions are usually not included in what is tested.
@@ -46,7 +46,7 @@ To keep up with the emerging threats, red team engagements were designed to shif
 Red teaming is a term borrowed from the military. In military exercises, a group would take the role of a red team to simulate attack techniques to test the reaction capabilities of a defending team, generally known as blue team, against known adversary strategies. Translated into the world of cybersecurity, red team engagements consist of emulating a real threat actor's Tactics, Techniques and Procedures (`TTPs`) so that we can measure how well our blue team responds to them and ultimately improve any security controls in place.  
 Every red team engagement will start by defining clear goals, often referenced as crown jewels or flags, ranging from compromising a given critical host to stealing some sensitive information from the target. Usually, the blue team won't be informed of such exercises to avoid introducing any biases in their analysis. The red team will do everything they can to achieve the goals while remaining undetected and evading any existing security mechanisms like firewalls, antivirus, EDR, IPS and others. Notice how on a red team engagement, not all of the hosts on a network will be checked for vulnerabilities. A real attacker would only need to find a single path to its goal and is not interested in performing noisy scans that the blue team could detect.  
 Taking the same network as before, on a red team engagement where the goal is to compromise the intranet server, we would plan for a way to reach our objective while interacting as little as possible with other hosts. Meanwhile, the blue team's capacity to detect and respond accordingly to the attack can be evaluated:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_4.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_04.png" width="75%" height="75%">  
 It is important to note that the final objective of such exercises should never be for the red team to "beat" the blue team, but rather simulate enough TTPs for the blue team to learn to react to a real ongoing threat adequately. If needed, they could tweak or add security controls that help to improve their detection capabilities.  
 Red team engagements also improve on regular penetration tests by considering several attack surfaces:
 - Technical Infrastructure: Like in a regular penetration test, a red team will try to uncover technical vulnerabilities, with a much higher emphasis on stealth and evasion.
@@ -69,7 +69,7 @@ There are several factors and people involved within a red team engagement. Ever
 
 Definitions are sourced from [redteam.guide](https://redteam.guide/docs/definitions/).  
 These teams or cells can be broken down further into an engagement hierarchy.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_5.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_05.png" width="50%" height="50%">  
 Since this is a red team-oriented room, we will focus on the responsibilities of the red cell. Below is a table outlining the roles and responsibilities of members of the red team.  
 | Role | Purpose |
 -|-
@@ -92,7 +92,7 @@ Many regulation and standardization bodies have released their cyber kill chain.
 
 In this room, we will commonly reference the "Lockheed Martin Cyber Kill Chain." It is a more standardized kill chain than others and is very commonly used among red and blue teams.  
 The Lockheed Martin kill chain focuses on a perimeter or external breach. Unlike other kill chains, it does not provide an in-depth breakdown of internal movement. You can think of this kill chain as a summary of all behaviors and operations present.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_6.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Red%20Team%20Fundamentals_06.png" width="50%" height="50%">  
 Components of the kill chain are broken down in the table below.  
 | Technique |	Purpose |	Examples |
 -|-|-
