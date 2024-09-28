@@ -1,4 +1,4 @@
-## Task 1 Introduction to Defensive Security
+## Introduction to Defensive Security
 Offensive security focuses on one thing: breaking into systems. Breaking into systems might be achieved through exploiting bugs, abusing insecure setups, and taking advantage of unenforced access control policies, among other things. Red teams and penetration testers specialize in offensive security.  
 Defensive security is somewhat the opposite of offensive security, as it is concerned with two main tasks:  
 1. Preventing intrusions from occurring
@@ -20,7 +20,7 @@ In this room, we cover:
 - Malware Analysis
 
 
-## Task 2 Areas of Defensive Security
+## Areas of Defensive Security
 In this task, we will cover two main topics related to defensive security:
 - Security Operations Center (SOC), where we cover Threat Intelligence
 - Digital Forensics and Incident Response (DFIR), where we also cover Malware Analysis
@@ -69,7 +69,7 @@ Malware analysis aims to learn about such malicious programs using various means
 2. Dynamic analysis works by running the malware in a controlled environment and monitoring its activities. It lets you observe how the malware behaves when running.
 
 
-## Task 3 Practical Example of Defensive Security
+## Practical Example of Defensive Security
 What would be a typical task that you will be doing as a security analyst? Click on “View Site” to follow along until you get the flag. (If this is your first time obtaining flags, a flag can be seen as a string of text you receive once you accomplish a task. An example flag is FLAG{WORDS_AND_MORE}.)  
 You are part of a Security Operations Center (SOC) responsible for protecting a bank. This bank’s SOC uses a Security Information and Event Management (SIEM) system. A SIEM gathers security-related information and events from various sources and presents them via one system. For instance, you would be notified if there is a failed login attempt or a login attempt from an unexpected geographic location. Moreover, with the advent of machine learning, a SIEM might detect unusual behavior, such as a user logging in at 3 AM when he usually logs in only during work hours.  
 In this exercise, we will interact with a SIEM to monitor the different events on our network and systems in real-time. Some of the events are typical and harmless; others might require further intervention from us. Find the event flagged in red, take note of it, and click on it for further inspection.  
