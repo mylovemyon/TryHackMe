@@ -117,7 +117,7 @@ SSH keys are an excellent way to “upgrade” a reverse shell, assuming the use
 
 ----------------------------------------Answer the questions below----------------------------------------  
 Crack the password with John The Ripper and rockyou, what's the passphrase for the key?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Encryption%20-%20Crypto%20101_1.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Encryption%20-%20Crypto%20101_01.png" width="50%" height="50%">  
 ssh2johnでSSH秘密鍵をJohnでクラックできるように整形し、その後Johnでクラック成功！
 
 
@@ -151,7 +151,7 @@ AES is complicated to explain, and doesn’t seem to come up as often. If you’
 
 ----------------------------------------Answer the questions below----------------------------------------  
 You have the private key, and a file encrypted with the public key. Decrypt the file. What's the secret word?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Encryption%20-%20Crypto%20101_2.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Encryption%20-%20Crypto%20101_02.png" width="50%" height="50%">  
 gpgキーをインポートした後に、メッセージを開くことができた。
 
 
