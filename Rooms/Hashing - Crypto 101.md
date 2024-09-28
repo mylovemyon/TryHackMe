@@ -77,7 +77,7 @@ I'll provide the hashes. Crack them. You can choose how. You'll need to use onli
 
 ----------------------------------------Answer the questions below----------------------------------------  
 Crack this hash: $2a$06$7yoU3Ng8dHTXphAg913cyO6Bjs3K5lBnwq5FJyA6d01pMSrddr1ZG  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Hashing%20-%20Crypto%20101.png" width="100%" height="100">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Hashing%20-%20Crypto%20101.png" width="100%" height="100%">  
 hashidで確認すると「bcrypt」だったので、Johnで辞書攻撃をするとクラック成功！
 
 
