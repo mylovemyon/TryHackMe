@@ -56,7 +56,7 @@ You may see penetration testing referred to as pentesting and ethical hacking. A
 - Evaluate and report on insights, recommending actions for attack prevention
 
 
-## Task 8 Red Teamer
+## Red Teamer
 Red teamers share similarities to penetration testers, with a more targeted job role. Penetration testers look to uncover many vulnerabilities across systems to keep cyber-defence in good standing, whilst red teamers are enacted to test the company's detection and response capabilities. This job role requires imitating cyber criminals' actions, emulating malicious attacks, retaining access, and avoiding detection. Red team assessments can run for up to a month, typically by a team external to the company. They are often best suited to organisations with mature security programs in place.
 ### Responsibilities
 - Emulate the role of a threat actor to uncover exploitable vulnerabilities, maintain access and avoid detection
@@ -64,5 +64,5 @@ Red teamers share similarities to penetration testers, with a more targeted job 
 - Evaluate and report on insights, with actionable data for companies to avoid real-world instances
 
 
-## Task 9 Quiz
+## Quiz
 This room has provided you with a general overview of the different careers in cyber security. Don't forget that you can [leverage online training to land your dream job](https://tryhackme.com/resources/blog/online-training-for-careers) in cyber security. To find out which cyber security role suits you best, try our fun quiz, which you can access by clicking the "View Site" button on the right.
