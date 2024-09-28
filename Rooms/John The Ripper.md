@@ -91,7 +91,7 @@ Now you know the syntax, modifiers and methods to crack basic hashes, try it you
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the cracked value of hash1.txt?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_1.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_01.png" width="50%" height="50%">  
 MD5でクラック成功！
 
 
@@ -109,7 +109,7 @@ Now that you know the theory behind it, see if you can use the techniques we pra
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the cracked value of this password?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_2.png" width="75%" height="75%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_02.png" width="75%" height="75%">
 
 
 ## Task 6 Cracking /etc/shadow Hashes
@@ -142,11 +142,11 @@ Now, see if you can follow the process to crack the password hash of the root us
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the root password?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_3.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_03.png" width="75%" height="75%">  
 `$6`はSHA512なのでそれでクラック成功！  
 
 おまけ  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_4.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_04.png" width="50%" height="50%">  
 KaliLinuxのユーザ「Kali」をCrackChallenge！Shadowファイルを確認すると「$y」で、これは「yescript」らしい。  
 yescriptはPasswordCrackに強いらしく、実際にRockyou.txtで辞書攻撃してみてもめちゃめちゃ時間がかかった。（クラックできなかった）  
 今回は事前に知っているパスワード一つを使用して、Johnでクラックしてみた。（Johnはyescriptをサポートしていないらしく、crypt総当たり攻撃しないといけない）
@@ -186,7 +186,7 @@ Now you're familiar with the Syntax for John's single crack mode, download the a
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is Joker's password?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_5.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_05.png" width="50%" height="50%">  
 今回は辞書攻撃でなく、ユーザ名に類似してるであろうパスワードをSingleクラックモードでクラックする。  
 hashidでハッシュフォーマットを識別した後、JohnでSingleクラックモードでクラックするためにSedコマンドでファイルの形式を変更する。  
 無事MD5でクラック成功！
@@ -267,7 +267,7 @@ Now have a go at cracking the attached "secure" zip file!
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the contents of the flag inside the zip file?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_6.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_06.png" width="50%" height="50%">  
 zip2johnでパスワードを出力した後、Johnでクラック成功！
 
 
@@ -294,7 +294,7 @@ Now have a go at cracking the attached "secure" rar file!
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the contents of the flag inside the zip file?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_7.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_07.png" width="50%" height="50%">  
 
 
 ## Task 11 Cracking SSH Keys with John
@@ -320,7 +320,7 @@ Now I'd like you to crack the hash of the id_rsa file that's attached to this ta
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the SSH private key password?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_8.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_08.png" width="50%" height="50%">  
 
 
 ## Task 12 Further Reading
