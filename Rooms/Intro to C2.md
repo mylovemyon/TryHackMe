@@ -247,7 +247,8 @@ Your fellow Red Team Operators will use the IP Address to connect to your Armita
 Your fellow Red Team Operators will use the Shared Password to access your Armitage server.
 #### Armitage -
 This is the file you will be using to connect to the Armitage Teamserver. Upon executing the binary, a new prompt will open up, displaying connection information and your username (this should be treated as a nickname, not a username for authentication) and password.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_16.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_13.png" width="50%" height="50%">
+Modify the Host IP Address to whatever you set in the previous step, "Starting Armitage's Team Server".
 
 ### Preparing our Environment
 Before we can launch Armitage, we must do a few pre-flight checks to ensure Metasploit is configured properly. Armitage relies heavily on Metasploit's Database functionality, so we must start and initialize the database before launching Armitage. In order to do so, we must execute the following commands:  
@@ -315,13 +316,13 @@ root@kali$ cd /opt/armitage/release/unix && ./armitage
 [*] Creating a default reverse handler... 0.0.0.0:8836
 ```
 When operating a C2 Framework, you never want to expose the management interface publicly; You should always listen on a local interface, never a public-facing one. This complicates access for fellow operators. Fortunately, there is an easy solution for this. For operators to gain access to the server, you should create a new user account for them and enable SSH access on the server, and they will be able to SSH port forward TCP/55553.  Armitage explicitly denies users listening on 127.0.0.1; this is because it is essentially a shared Metasploit server with a "Deconfliction Server" that when multiple users are connecting to the server, you're not seeing everything that your other users are seeing. With Armitage, you must listen on your tun0/eth0 IP Address.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_21.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_14.png" width="50%" height="50%">  
 Modify the Host IP Address to whatever you set in the previous step, "Starting Armitage's Team Server".  
 After clicking "Connect", you will be prompted to enter a nickname. You can set this to whatever you like; only your fellow Red Team Operators will see it.
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_22.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_15.png" width="50%" height="50%">  
 Armitage's UI to put in a custom nickname  
 After a moment or two, the Armitage UI should open up, until we start interacting with remote systems; it will look bare. In the next upcoming task, we will be exploiting a vulnerable virtual machine to get you more accustomed to the Armitage UI and how it can be used.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_23.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_16.png" width="100%" height="100%">  
 Now that Armitage is set up and working correctly, in the next task, we will learn more about securely accessing Armitage (as described above), creating listeners, various listener types, generating payloads, and much more!
 
 
@@ -330,14 +331,14 @@ Now that Armitage is set up and working correctly, in the next task, we will lea
 Now that we have a general idea of how to set up a C2 Server, we will go over some basic operational details that you should know when accessing your C2 Server. It's important to note that you are not required to perform any actions in this task - This is meant to gain general experience and familiarity with Command and Control Frameworks.
 #### Basic Operational Security
 We briefly touched on this in the last section; You should never have your C2 management interface directly accessible. This is primarily for you to improve operational security. It can be incredibly easy to fingerprint C2 servers. For example, in versions prior to 3.13, Cobalt Strike C2 servers were able to be identified by an extra space (\x20) at the end of the HTTP Response. Using this tactic, many Blue Teamers could fingerprint all of the Cobalt Strike C2 servers publicly accessible. For more information on fingerprinting and identifying Cobalt Strike C2 Servers, check out this posted on the [Recorded Future blog](https://www.recordedfuture.com/cobalt-strike-servers/).  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_24.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_17.png" width="50%" height="50%">  
 Screenshot from a Hex Editor depicting the extra space at the end of an HTTP Response  
 The point in mentioning this is that you want to reduce your operational security risk as much as possible. If this means not having the management interface for your C2 server publicly accessible, then, by all means, you should do it.
 #### Accessing your Remote C2 Server that's Listening Locally
 This section will be focusing on how to securely access your C2 server by SSH port-forwarding; if you have port-forwarded with SSH before, feel free to skip over this section, you may not learn anything new. For those unfamiliar, SSH port-forwarding allows us to either host resources on a remote machine by forwarding a local port to the remote server, or allows us to access local resources on the remote machine we are connecting to.  In some circumstances, this may be for circumventing Firewalls.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_25.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_18.png" width="75%" height="75%">  
 Or, in our instance, this could be done for operational security reasons.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_26.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_19.png" width="75%" height="75%">  
 Now that we have a better understanding of why we want to SSH port forward, let's go over the how.
 In our C2 set up from Task 4, our Teamserver is listening on localhost on TCP/55553. In order to access Remote port 55553, we must set up a Local port-forward to forward our local port to the remote Teamserver server. We can do this with the -L flag on our SSH client:  
 ```
@@ -349,11 +350,11 @@ Now that we have an SSH remote port forward set up, you can now connect to your 
 We highly recommend putting firewall rules in place for C2 servers that must listen on a public interface so only the intended users can access your C2 server. There are various ways to do this. If you are hosting Cloud infrastructure, you can set up a Security Group or use a host-based firewall solution like UFW or IPTables.
 #### Creating a Listener in Armitage
 Next, we're going to move onto a topic that all C2 servers have - this being listener creation. To stay on topic, we will demonstrate how to set up a basic listener with Armitage then explore some of the other theoretical listeners you may encounter in various other C2 Frameworks. Let's create a basic Meterpreter Listener running on TCP/31337. To start, click on the Armitage dropdown and go over to the "Listeners" section; you should see three options, Bind, Reverse, and set LHOST. Bind refers to Bind Shells; you must connect to these hosts. Reverse refers to standard Reverse Shells; this is the option we will be using.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_28.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_20.png" width="50%" height="50%">  
 After clicking "Reverse," a new menu will open up, prompting you to configure some basic details about the listener, specifically what port you want to listen on and what listener type you would like to select. There are two options you can choose from, "Shell" or "Meterpreter". Shell refers to a standard netcat-style reverse shell, and Meterpreter is the standard Meterpreter reverse shell.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_29.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_21.png" width="50%" height="50%">  
 After pressing enter, a new pane will open up, confirming that your listener has been created. This should look like the standard Metasploit exploit/multi/handler module.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_30.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_22.png" width="50%" height="50%">  
 After setting up a listener, you can generate a standard windows/meterpreter/reverse_tcp reverse shell using MSFvenom and set the LHOST to the Armitage server to receive callbacks to our Armitage server. 
 #### Getting a Callback
 ```
@@ -366,7 +367,7 @@ Final size of exe file: 73802 bytes
 Saved as: shell.exe
 ```
 After generating the windows/meterpreter/reverse_tcp using MSFVenom, we can transfer the payload to a target machine and execute it. After a moment or two, you should receive a callback from the machine.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_32.png" width="100%" height="100%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_23.png" width="100%" height="100%">
 
 ### Listener Type
 As previously mentioned, standard reverse shell listeners are not the only ones that exist; there are many varieties that use many different protocols; however, there are a few common ones that we will cover, these being the following:
@@ -384,28 +385,28 @@ Communicating via SMB named pipes is a popular method of choice, especially when
 ### Sample Exploit
 #### Host Enumeration with Armitage
 Before letting you go off on your own, we're going to demonstrate how to exploit a sample Virtual Machine. First, we will execute a port scan within Armitage by going to the "Hosts" section, hovering over "Nmap Scan", and selecting "Quick Scan".  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_33.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_24.png" width="50%" height="50%">  
 Armitage submenu of Hosts -> Nmap Scan -> Quick Scan  
 After selecting "Quick scan", a new option will pop up; this will prompt you to enter the IP Address range you would like to scan. You should enter the IP Address of the deployed Virtual machine in this box.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_34.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_25.png" width="50%" height="50%">  
 Input menu of "Enter Scan Range" with the IP Address VICTIM_MACHINE  
 After pressing "Ok", and waiting a moment or two, you should see a new tab open up called "nmap" and a new machine display in the "Workspace" window. In the "nmap" tab, you will see the raw scan results.
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_35.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_26.png" width="100%" height="100%">  
 Results from the Nmap port-scan  
 Now that you have learned how to execute a basic port scan, try to execute various other scans against the target and see what additional information you may retrieve from a host.  
 Hint: A Comprehensive Scan will grab banners, enumerate software versions, enumerate OS versions, and much more!
 #### Exploitation with Armitage
 Next up, we're going to show off exploitation with Armitage; our victim in our example is a Windows 7 machine (more specifically, Blue). This machine is vulnerable to the classic exploit "Eternal  Blue".  To find this, we will focus on the far right tab with folders, we will expand the "Exploit" dropdown, then find the "Windows" dropdown, then the "SMB" dropdown, then you will see all of the exploits.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_36.png" width="25%" height="25%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_27.png" width="25%" height="25%">  
 Listing all the exploits within Armitage  
 Next up, you can double click your exploit of choice, or drag and drop the exploit onto the host, and a new window will open up. Clicking "launch" will fire off the exploit.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_37.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_28.png" width="75%" height="75%">  
 Eternal Blue Exploit  Module Information  
 After clicking "Launch", you will notice a new "Exploit" tab open up. Armitage will run all of the regular checks that Metasploit normally does. In the case of Eternal Blue, it ran the standard check script followed by the exploit script until it got a successful shell. It's worth noting that by default in this Exploit, it chose a Bind shell. Make sure you fully read the exploit information and options to see if a Bind Shell or a Reverse Shell is an option.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_38.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_29.png" width="100%" height="100%">  
 A Successful Exploitation Attempt from Armitage  
 After you receive your shell, right-click on the host and select "Interact". This will open a standard shell you're familiar with. In order to get a Meterpreter shell, we recommend that you run the multi/manage/shell_to_meterpreter module.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_39.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_30.png" width="100%" height="100%">  
 Compromised Host in Armitage  
 Practice Time  
 Now that you have learned how to exploit hosts using Armitage, you will now get to practice your skills by hacking the virtual machine by using Metasploit and Armitage. There are multiple exploit paths that you may be able to follow. We encourage you to explore the various exploit paths you may be able to find in order to gain a better understanding of exploitation and post-exploitation modules in Metasploit and Armitage. As a reminder, Armitage is just Metasploit with a GUI; all the same exploits exist and are categorized the same way.
@@ -458,9 +459,9 @@ What is the Administrator's NTLM hash?
 What is Ted's NTLM Hash?  
 What flag can be found after gaining Administrative access to the PC?  
 What flag can be found after gaining access to Ted's user account?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_43.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_31.png" width="50%" height="50%">  
 説明ではEternalBlueを使って攻撃しているので真似します。  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_44.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_32.png" width="50%" height="50%">  
 成功したので、設問のAnswerをゲット！
 
 
@@ -472,11 +473,11 @@ As you may have guessed, Metasploit itself is not that great of a C2 server for 
 #### What is a Redirector?
 Before we dive into configuring a Redirector, first, what is it? A Redirector is exactly as it sounds. It's a server that "Redirects" HTTP/HTTPS requests based on information within the HTTP Request body. In production systems, you may see a "Redirector" in the form of a Load Balancer. This server often runs Apache 2 or NGINX. For this lab, we will be leveraging Apache and some of its modules to build a Redirector.  
 Jumping back into Metasploit, we can set up some basic configurations on Metasploit to allow for more advanced configurations, in this task; we will be setting up a Redirector. Usually, this configuration is set up on multiple hosts; the purpose of this is to hide the true Command and Control server. The diagram below illustrates how communications between a victim and a C2 server happen.
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_45.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_33.png" width="50%" height="50%">  
 Illustration of a C2 and Redirector with victims calling back  
 Usually, when you have a C2 callback, you may set the callback host to a Domain, let's say admin.tryhackme.com. It's very common for your C2 Server to get reported, when a user files a complaint. Usually, the server gets taken down fairly quickly. It can sometimes be as little as 3 hours and as much as 24. Setting up a redirector ensures that any information you may have collected during the engagement is safe and sound.  
 But how does this stop the C2 Server from being taken down? Surely if someone fingerprinted Cobalt Strike on your C2 Server, someone would file a complaint, and it would get taken down. This is true, so you should set up a Firewall to only allow communication to and from your redirector(s) to mitigate any potential risks.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_46.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_34.png" width="50%" height="50%">  
 Illustration of how a C2 Server and a Redirector should interact
 #### How is a Redirector Setup?
 Before we dive into configuring a redirector, we must first understand how one is set up; we will be aligning this to the tools we have available, which are Metasploit and Apache2. In Apache, we will be leveraging a module called "mod_rewrite" (or the Rewrite module). This module allows us to write rules to forward requests to internal or external hosts on a server based on specific HTTP headers or content. We will need to use several modules to configure our Redirector. The following modules must be enabled:
@@ -550,7 +551,7 @@ Final size of exe file: 73802 bytes
 Saved as: shell.exe
 ```
 After generating the modified executable and transferring it to a victim, open up Wireshark on your host and use the HTTP filter to only view HTTP requests. After it's started capturing packets, execute the binary on the victim system. You will notice an HTTP request come in with our modified User-Agent.  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_50.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_35.png" width="100%" height="100%">  
 
 Packet Capture of the modified HTTP Payload with Meterpreter  
 Now that we have a field we can control in the HTTP Request, let's create an Apache2 mod_rewrite rule that filters on the user agent "NotMeterpreter" and forward it to our Metasploit C2 Server.
@@ -629,7 +630,7 @@ msf6 exploit(multi/handler) > run
 [*] Meterpreter session 3 opened (127.0.0.1:8080 -> 127.0.0.1 ) at 2022-02-11 02:09:24 -0500
 ```
 After this has all been set up, running your Meterpreter Reverse Shell should now proxy all communications through your Redirector! For awareness, the diagram below is how our Redirector is set up in our lab; as a reminder, in engagements, you will want to use multiple hosts and DNS records instead of IP Addresses.   
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_54.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_36.png" width="50%" height="50%">  
 
 
 ## Wrapping Up
