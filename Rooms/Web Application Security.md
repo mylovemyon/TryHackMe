@@ -18,7 +18,7 @@ The image below shows searching for an item on an online shopping site. In the s
 2. The web application queries (searches) the products database for the submitted keywords.
 3. The product database returns the search results matching the provided keywords to the web application.
 4. The web application formats the results as a friendly web page and returns them to the user.
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Web%20Application%20Security_1.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Web%20Application%20Security_01.png" width="50%" height="50%">
 
 From the user’s perspective, they will only access an elegant online shop where all the technical infrastructure is hidden.  
 Many companies offer bug bounty programs. A bug bounty program allows the company to offer a reward for anyone who discovers a security vulnerability (weakness) in the company’s systems. The main condition is that the found vulnerability is within the bug bounty scope and rules. Among many others, Google, Microsoft, and Facebook have bug bounty programs. Discovering a bug can earn you from a few hundred USD to tens of thousands of USD, depending on the severity of the vulnerability, i.e., the weakness you discovered.
@@ -26,7 +26,7 @@ Many companies offer bug bounty programs. A bug bounty program allows the compan
 
 ## Web Application Security Risks
 Let’s say that you want to buy an item from an online shop. There are certain functions that you would expect to be able to do on this web application. Most straightforwardly, the online order might go as follows:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Web%20Application%20Security_2.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Web%20Application%20Security_02.png" width="50%" height="50%">  
 There are a few main categories of common attacks against web applications. Consider the following steps and related attacks.  
 - Log in at the website: The attacker can try to discover the password by trying many words. The attacker would use a long list of passwords with an automated tool to test them against the login page.
 - Search for the product: The attacker can attempt to breach the system by adding specific characters and codes to the search term. The attacker’s objective is for the target system to return data it should not or execute a program it should not.
