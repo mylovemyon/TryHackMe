@@ -35,7 +35,8 @@ To understand how Kerberos authentication works you first need to understand wha
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_02.png" width="50%" height="50%">
 
 ### Kerberos Authentication Overview -
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_03.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_03.png" width="50%" height="50%">
+
 AS-REQ - 1.) The client requests an Authentication Ticket or Ticket Granting Ticket (TGT).  
 AS-REP - 2.) The Key Distribution Center verifies the client and sends back an encrypted TGT.  
 TGS-REQ - 3.) The client sends the encrypted TGT to the Ticket Granting Server (TGS) with the Service Principal Name (SPN) of the service the client wants to access.  
