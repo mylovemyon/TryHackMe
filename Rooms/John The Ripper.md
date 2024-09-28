@@ -91,7 +91,7 @@ Now you know the syntax, modifiers and methods to crack basic hashes, try it you
 
 ----------------------------------------Answer the questions below----------------------------------------  
 What is the cracked value of hash1.txt?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_01.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/John%20The%20Ripper_01.png" width="50%" height="50%">  
 MD5でクラック成功！
 
 
