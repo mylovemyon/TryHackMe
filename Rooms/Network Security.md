@@ -124,7 +124,6 @@ Congratulations! You now have complete control over the target server. Let’s c
 1. `pwd`, short for print working directory, to see where we are in the system. We are in the `/root` directory.
 2. `ls` to list the files. We notice a flag.txt.
 3. Use `cat flag.txt` to answer the second question in this task.
-
 ```
 root@AttackBox# pwd
 /root
@@ -140,7 +139,6 @@ Because we are logged in as root, we have full access to all files, including ot
 4. `pwd` to confirm that we are at `/home/librarian`.
 5. `ls` shows that `librarian` has a single file `flag.txt`.
 6. We can print the text file contents using `cat flag.txt. Use this to answer the third question in this task.
-
 ```
 root@AttackBox# cd /home
 root@AttackBox# ls
