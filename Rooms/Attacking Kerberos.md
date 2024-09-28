@@ -26,16 +26,16 @@ Kerberos is the default authentication service for Microsoft Windows domains. It
 
 ### AS-REQ w/ Pre-Authentication In Detail - 
 The AS-REQ step in Kerberos authentication starts when a user requests a TGT from the KDC. In order to validate the user and create a TGT for the user, the KDC must follow these exact steps. The first step is for the user to encrypt a timestamp NT hash and send it to the AS. The KDC attempts to decrypt the timestamp using the NT hash from the user, if successful the KDC will issue a TGT as well as a session key for the user.
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_1.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_01.png" width="50%" height="50%">
 
 ### Service Ticket Contents - 
 To understand how Kerberos authentication works you first need to understand what these tickets contain and how they're validated. A service ticket contains two portions: the service provided portion and the user-provided portion. I'll break it down into what each portion contains.
 - Service Portion: User Details, Session Key, Encrypts the ticket with the service account NTLM hash.
 - User Portion: Validity Timestamp, Session Key, Encrypts with the TGT session key.
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_2.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_02.png" width="50%" height="50%">
 
 ### Kerberos Authentication Overview -
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_3.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_03.png" width="50%" height="50%">  
 AS-REQ - 1.) The client requests an Authentication Ticket or Ticket Granting Ticket (TGT).  
 AS-REP - 2.) The Key Distribution Center verifies the client and sends back an encrypted TGT.  
 TGS-REQ - 3.) The client sends the encrypted TGT to the Ticket Granting Server (TGS) with the Service Principal Name (SPN) of the service the client wants to access.  
@@ -79,7 +79,7 @@ Enumerating users allows you to know which user accounts are on the target domai
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 How many total users do we enumerate?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_4.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_04.png" width="50%" height="50%">  
 「`./kerburute userenum -d ドメイン名 --dc ドメコンIP Wordlist名 -o 出力ファイル`」で[UserList](https://github.com/Cryilllic/Active-Directory-Wordlists/blob/master/User.txt)を使用して列挙すると、10個のユーザを確認！  
 （名前解決のための`/etc/hosts`ファイルを編集していない場合、`--dc`オプションはIPアドレスが必須になる。）
 
@@ -99,7 +99,7 @@ Rubeus is already compiled and on the target machine.
 Harvesting gathers tickets that are being transferred to the KDC and saves them for use in other attacks such as the pass the ticket attack.  
 1.) cd Downloads - navigate to the directory Rubeus is in  
 2.) `Rubeus.exe harvest /interval:30` - This command tells Rubeus to harvest for TGTs every 30 seconds  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_5.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_05.png" width="50%" height="50%">
 
 ### Brute-Forcing / Password-Spraying w/ Rubeus -
 Rubeus can both brute force passwords as well as password spray user accounts. When brute-forcing passwords you use a single user account and a wordlist of passwords to see which password works for that given user account. In password spraying, you give a single password such as Password1 and "spray" against all found user accounts in the domain to find which one may have that password.  
@@ -108,17 +108,17 @@ Before password spraying with Rubeus, you need to add the domain controller doma
 `echo 10.10.24.3 CONTROLLER.local >> C:\Windows\System32\drivers\etc\hosts`  
 1.) cd Downloads - navigate to the directory Rubeus is in  
 2.) `Rubeus.exe brute /password:Password1 /noticket` - This will take a given password and "spray" it against all found users then give the .kirbi TGT for that user  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_6.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_06.png" width="50%" height="50%">  
 Be mindful of how you use this attack as it may lock you out of the network depending on the account lockout policies.
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 `Rubeus`はWindows用のツールらしい（GitHubからソースコードをとってコンパイルして使わんといかん、メンディー）  
 タスク頭で提供されたSSHアカウントでWindowsにログインしてRubeusで攻撃した。（RubeusはPost-Exploitation用っぽい）  
 Which domain controller do we get a ticket for when harvesting tickets?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_8.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_07.png" width="50%" height="50%">  
 「`Rubeus.exe harvest /intercal:30`」で、30秒間のTGTチケット収集結果を確認すると、「CONTROLLER-1」が確認できた。  
 Which domain admin do we get a ticket for when harvesting tickets?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_7.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_08.png" width="50%" height="50%">  
 同様に。「Administrator」がAdminとして確認できた。
 
 
@@ -130,7 +130,7 @@ I have already taken the time to put Rubeus on the machine for you, it is locate
 ### Kerberoasting w/ Rubeus - 
 1.) cd Downloads - navigate to the directory Rubeus is in  
 2.) `Rubeus.exe kerberoast` This will dump the Kerberos hash of any kerberoastable users  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_9.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Attacking%20Kerberos_09.png" width="50%" height="50%">  
 copy the hash onto your attacker machine and put it into a .txt file so we can crack it with hashcat  
 I have created a modified rockyou wordlist in order to speed up the process download it [here](https://github.com/Cryilllic/Active-Directory-Wordlists/blob/master/Pass.txt)  
 3.) `hashcat -m 13100 -a 0 hash.txt Pass.txt` - now crack that hash
