@@ -162,6 +162,6 @@ Let’s summarize what we have done in this task to get `root` access on the tar
 What is the password in the secret.txt file?  
 What is the content of the flag.txt in the /root directory?  
 What is the content of the flag.txt in the /home/librarian directory?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_8.png" width="40%" height="40%">
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_9.png" width="40%" height="40%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_2.png" width="40%" height="40%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_3.png" width="40%" height="40%">  
 上記の要領と同じように「`ftp IPアドレス -a`」でAnonymousログオンでRootパスワード発見、SSHログインでフラグを発見
