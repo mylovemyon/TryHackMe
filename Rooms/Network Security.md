@@ -16,7 +16,7 @@ According to the [Cost of a Data Breach Report 2021](https://newsroom.ibm.com/20
 
 ## Methodology
 Every “operation” requires some form of planning to achieve success. If you are interested in wildlife photography, you cannot just grab a camera and head to the jungle unless you don’t care about the outcome. For a safe and successful wildlife photography tour, you would need to learn more about the animals you want to shoot with your camera. This includes the habits of the animals and the dangers to avoid. The same would apply to a military operation against a target or breaking into a target network.
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_1.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_01.png" width="50%" height="50%">  
 Breaking into a target network usually includes a number of steps. According to [Lockheed Martin](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html), the Cyber Kill Chain has seven steps:  
 1. Recon: Recon, short for reconnaissance, refers to the step where the attacker tries to learn as much as possible about the target. Information such as the types of servers, operating system, IP addresses, names of users, and email addresses, can help the attack’s success.
 2. Weaponization: This step refers to preparing a file with a malicious component, for example, to provide the attacker with remote access.
@@ -162,6 +162,6 @@ Let’s summarize what we have done in this task to get `root` access on the tar
 What is the password in the secret.txt file?  
 What is the content of the flag.txt in the /root directory?  
 What is the content of the flag.txt in the /home/librarian directory?  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_2.png" width="40%" height="40%">
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_3.png" width="40%" height="40%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_02.png" width="40%" height="40%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Network%20Security_03.png" width="40%" height="40%">  
 上記の要領と同じように「`ftp IPアドレス -a`」でAnonymousログオンでRootパスワード発見、SSHログインでフラグを発見
