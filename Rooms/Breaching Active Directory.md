@@ -125,3 +125,8 @@ Using these parameters, we should get a few valid credentials pairs from our pas
 [*] Password spray attack completed, [X] valid credential pairs found
 ```
 Using a combination of OSINT and NetNTLM password spraying, we now have our first valid credentials pairs that could be used to enumerate AD further!
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+What is the username of the third valid credential pair found by the password spraying script?  
+How many valid credentials pairs were found by the password spraying script?  
+
