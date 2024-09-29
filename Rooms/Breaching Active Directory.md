@@ -72,14 +72,14 @@ New Technology LAN Manager (NTLM) is the suite of security protocols used to aut
 
 NetNTLM, also often referred to as Windows Authentication or just NTLM Authentication, allows the application to play the role of a middle man between the client and AD. All authentication material is forwarded to a Domain Controller in the form of a challenge, and if completed successfully, the application will authenticate the user.  
 This means that the application is authenticating on behalf of the user and not authenticating the user directly on the application itself. This prevents the application from storing AD credentials, which should only be stored on a Domain Controller. This process is shown in the diagram below:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_2.png" width="50%" height="50%">
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_1.png" width="50%" height="50%">
 
 ### Brute-force Login Attacks
 As mentioned in Task 2, these exposed services provide an excellent location to test credentials discovered using other means. However, these services can also be used directly in an attempt to recover an initial set of valid AD credentials. We could perhaps try to use these for brute force attacks if we recovered information such as valid email addresses during our initial red team recon.  
 Since most AD environments have account lockout configured, we won't be able to run a full brute-force attack. Instead, we need to perform a password spraying attack. Instead of trying multiple different passwords, which may trigger the account lockout mechanism, we choose and use one password and attempt to authenticate with all the usernames we have acquired. However, it should be noted that these types of attacks can be detected due to the amount of failed authentication attempts they will generate.  
 You have been provided with a list of usernames discovered during a red team OSINT exercise. The OSINT exercise also indicated the organisation's initial onboarding password, which seems to be "Changeme123". Although users should always change their initial password, we know that users often forget. We will be using a custom-developed script to stage a password spraying against the web application hosted at this URL: http://ntlmauth.za.tryhackme.com.  
 Navigating to the URL, we can see that it prompts us for Windows Authentication credentials:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_3.png" width="35%" height="35%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_2.png" width="35%" height="35%">  
 Note: Firefox's Windows Authentication plugin is incredibly prone to failure. If you want to test credentials manually, Chrome is recommended.  
 We could use tools such as [Hydra](https://github.com/vanhauser-thc/thc-hydra) to assist with the password spraying attack. However, it is often better to script up these types of attacks yourself, which allows you more control over the process. A base python script has been provided in the task files that can be used for the password spraying attack. The following function is the main component of the script:
 ```python
