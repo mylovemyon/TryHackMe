@@ -130,3 +130,5 @@ Using a combination of OSINT and NetNTLM password spraying, we now have our firs
 What is the username of the third valid credential pair found by the password spraying script?  
 How many valid credentials pairs were found by the password spraying script?  
 
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_03.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_04.png" width="75%" height="75%">
