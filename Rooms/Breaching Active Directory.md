@@ -194,3 +194,10 @@ You will however have to configure your own rogue LDAP server on the AttackBox a
 sudo dpkg-reconfigure -p low slapd
 ```
 Make sure to press <No> when requested if you want to skip server configuration:
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_12.png" width="35%" height="35%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_13.png" width="35%" height="35%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_14.png" width="35%" height="35%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_15.png" width="35%" height="35%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_16.png" width="35%" height="35%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_17.png" width="35%" height="35%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_18.png" width="35%" height="35%">  
