@@ -136,7 +136,7 @@ How many valid credentials pairs were found by the password spraying script?
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_06.png" width="75%" height="75%">  
 このタスクで説明されている通りに、用意されたPythonでWebサイトの認証にPasswordSprayを実施。  
 しかしせっかくなのでHydraでも同じようにやってみる。  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_07.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_07.png" width="50%" height="50%">  
 用意されたPythonと同じ結果になった。問題で聞かれている有効な認証情報は４つと分かった。
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_08.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_08.png" width="35%" height="35%">  
 有効な認証情報でWebサイトにログイン成功した！
