@@ -272,3 +272,9 @@ listening on eth1, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 ```
 Also, note that password11 is an example. The password for your service will be different. You may have to press the "Test Settings" button a couple of times before the TCPdump will return data since we are performing the attack over a VPN connection.  
 Now we have another set of valid AD credentials! By using an LDAP pass-back attack and downgrading the supported authentication mechanism, we could intercept the credentials in cleartext.
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_19.png" width="75%" height="75%">  
+What is the password associated with the svcLDAP account?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_20.png" width="100%" height="100%">  
+このタスクの説明通りに実施すると、平文のパスワードが確認できた。
