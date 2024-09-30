@@ -140,3 +140,47 @@ How many valid credentials pairs were found by the password spraying script?
 用意されたPythonと同じ結果になった。問題で聞かれている有効な認証情報は４つと分かった。
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_08.png" width="35%" height="35%">  
 有効な認証情報でWebサイトにログイン成功した！
+
+
+## LDAP Bind Credentials
+### LDAP
+Another method of AD authentication that applications can use is Lightweight Directory Access Protocol (LDAP) authentication. LDAP authentication is similar to NTLM authentication. However, with LDAP authentication, the application directly verifies the user's credentials. The application has a pair of AD credentials that it can use first to query LDAP and then verify the AD user's credentials.  
+LDAP authentication is a popular mechanism with third-party (non-Microsoft) applications that integrate with AD. These include applications and systems such as:
+- Gitlab
+- Jenkins
+- Custom-developed web applications
+- Printers
+- VPNs
+
+If any of these applications or services are exposed on the internet, the same type of attacks as those leveraged against NTLM authenticated systems can be used. However, since a service using LDAP authentication requires a set of AD credentials, it opens up additional attack avenues. In essence, we can attempt to recover the AD credentials used by the service to gain authenticated access to AD. The process of authentication through LDAP is shown below:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_09.png" width="50%" height="50%">  
+If you could gain a foothold on the correct host, such as a Gitlab server, it might be as simple as reading the configuration files to recover these AD credentials. These credentials are often stored in plain text in configuration files since the security model relies on keeping the location and storage configuration file secure rather than its contents. Configuration files are covered in more depth in Task 7.
+
+### LDAP Pass-back Attacks
+However, one other very interesting attack can be performed against LDAP authentication mechanisms, called an LDAP Pass-back attack. This is a common attack against network devices, such as printers, when you have gained initial access to the internal network, such as plugging in a rogue device in a boardroom.  
+LDAP Pass-back attacks can be performed when we gain access to a device's configuration where the LDAP parameters are specified. This can be, for example, the web interface of a network printer. Usually, the credentials for these interfaces are kept to the default ones, such as admin:admin or admin:password. Here, we won't be able to directly extract the LDAP credentials since the password is usually hidden. However, we can alter the LDAP configuration, such as the IP or hostname of the LDAP server. In an LDAP Pass-back attack, we can modify this IP to our IP and then test the LDAP configuration, which will force the device to attempt LDAP authentication to our rogue device. We can intercept this authentication attempt to recover the LDAP credentials.
+
+### Performing an LDAP Pass-back
+There is a network printer in this network where the administration website does not even require credentials. Navigate to http://printer.za.tryhackme.com/settings.aspx to find the settings page of the printer:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_10.png" width="50%" height="50%">  
+Using browser inspection, we can also verify that the printer website was at least secure enough to not just send the LDAP password back to the browser:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_11.png" width="50%" height="50%">  
+So we have the username, but not the password. However, when we press test settings, we can see that an authentication request is made to the domain controller to test the LDAP credentials. Let's try to exploit this to get the printer to connect to us instead, which would disclose the credentials. To do this, let's use a simple Netcat listener to test if we can get the printer to connect to us. Since the default port of LDAP is 389, we can use the following command:  
+```
+nc -lvp 389
+```
+Note that if you use the AttackBox, the you should first disable slapd using service slapd stop. Then, we can alter the Server input box on the web application to point to our IP and press Test Settings.  
+Your IP will be your VPN IP and will either be a 10.50.x.x IP or 10.51.x.x IP.  You can use ip a to list all interfaces. Please make sure to use this as your IP, otherwise you will not receive a connection back. Please also make note of the interface for this IP, since you will need it later in the task.  
+You should see that we get a connection back, but there is a slight problem:
+```
+[thm@thm]$ nc -lvp 389
+listening on [any] 389 ...
+10.10.10.201: inverse host lookup failed: Unknown host
+connect to [10.10.10.55] from (UNKNOWN) [10.10.10.201] 49765
+0?DC?;
+?
+?x
+ objectclass0?supportedCapabilities
+```
+You may require more than one try to receive a connection back but it should respond within 5 seconds. The supportedCapabilities response tells us we have a problem. Essentially, before the printer sends over the credentials, it is trying to negotiate the LDAP authentication method details. It will use this negotiation to select the most secure authentication method that both the printer and the LDAP server support. If the authentication method is too secure, the credentials will not be transmitted in cleartext. With some authentication methods, the credentials will not be transmitted over the network at all! So we can't just use normal Netcat to harvest the credentials. We will need to create a rogue LDAP server and configure it insecurely to ensure the credentials are sent in plaintext.
+
