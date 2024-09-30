@@ -193,11 +193,17 @@ You will however have to configure your own rogue LDAP server on the AttackBox a
 ```
 sudo dpkg-reconfigure -p low slapd
 ```
-Make sure to press <No> when requested if you want to skip server configuration:
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_12.png" width="35%" height="35%">  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_13.png" width="35%" height="35%">  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_14.png" width="35%" height="35%">  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_15.png" width="35%" height="35%">  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_16.png" width="35%" height="35%">  
+Make sure to press <No> when requested if you want to skip server configuration:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_12.png" width="50%" height="50%">  
+For the DNS domain name, you want to provide our target domain, which is za.tryhackme.com:
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_13.png" width="75%" height="75%">  
+Use this same name for the Organisation name as well:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_14.png" width="50%" height="50%">  
+Provide any Administrator password:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_15.png" width="50%" height="50%">  
+Select MDB as the LDAP database to use:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_16.png" width="75%" height="75%">  
+For the last two options, ensure the database is not removed when purged:
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_17.png" width="35%" height="35%">  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_18.png" width="35%" height="35%">  
+Move old database files before a new one is created:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_18.png" width="50%" height="50%">  
