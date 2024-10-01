@@ -18,8 +18,8 @@
   `smbclient`や`SMBMap`によるShareの列挙・接続  
   `Evil-WinRM`によるWinRM接続
 - Breaching Active Directory  
-  system-resolve
-  [HaveIBeenPwned](https://haveibeenpwned.com/)、[DeHashed](https://www.dehashed.com/)
+  [HaveIBeenPwned](https://haveibeenpwned.com/)、[DeHashed](https://www.dehashed.com/)で侵害されたメールを確認できる
+  
 - Careers in Cyber
 - Encryption - Crypto 101  
   `ssh-keygen`, `ssh2john`でSSH秘密鍵のパスワードをJohnで解析するために抽出, `gpg`コマンド  
