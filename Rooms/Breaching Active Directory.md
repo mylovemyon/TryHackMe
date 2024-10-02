@@ -334,4 +334,5 @@ What is the username associated with the challenge that was captured?
 What is the value of the cracked password associated with the challenge that was captured?　　
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_25.png" width="50%" height="50%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_26.png" width="100%" height="100%">  
-`hashcat -a 0 -m 5600 Hashファイル名 Passwordリスト名`で本タスクのPasswordリストを使用して先程のNTLMハッシュをクラックできた。「FPassword1!」
+`hashcat -a 0 -m 5600 Hashファイル名 Passwordリスト名`で本タスクのPasswordリストを使用して先程のNTLMハッシュをクラックできた。  
+（「-m 5600」は「NetNTLMv2」）「FPassword1!」
