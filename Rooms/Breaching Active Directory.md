@@ -409,3 +409,10 @@ PS C:\Users\THM\Documents\am0> Get-FindCredentials -WimFile pxeboot.wim
 >>>> >>>> UserPassword = <password>
 ```
 As you can see, powerpxe was able to recover the AD credentials. We now have another set of AD credentials that we can use!
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_29.png" width="75%" height="75%">  
+What is the username associated with the account that was stored in the PXE Boot image?  
+What is the password associated with the account that was stored in the PXE Boot image?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_30.png" width="50%" height="50%">  
+このタスクの説明通りに実施すると、BootImageのユーザ・パスワードが確認できた。
