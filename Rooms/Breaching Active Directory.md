@@ -325,8 +325,8 @@ If you want to try this type of attack in action, head over to the Holo Network.
 
 ----------------------------------------Answer the questions below--------------------------------------------------  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_22.png" width="75%" height="75%">  
-What is the username associated with the challenge that was captured?
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_23.png" width="50%" height="50%">  
-`sudo responder -I インタフェース名`でNTLMの通信をインターセプト  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_24.png" width="50%" height="50%">  
+What is the username associated with the challenge that was captured?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_23.png" width="35%" height="35%">  
+`sudo responder -I インタフェース名`でローカル内のNTLM通信のインターセプトを開始  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_24.png" width="100%" height="100%">  
 10分後ぐらいに、SMBv2のNTLMチャレンジをポイズニングできた
