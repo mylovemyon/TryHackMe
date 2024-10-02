@@ -329,4 +329,7 @@ What is the username associated with the challenge that was captured?
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_23.png" width="35%" height="35%">  
 `sudo responder -I インタフェース名`でローカル内のNTLM通信のインターセプトを開始  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_24.png" width="100%" height="100%">  
-10分後ぐらいに、SMBv2のNTLMチャレンジをポイズニングできた
+10分後ぐらいに、SMBv2のNTLMチャレンジをポイズニングできた  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_25.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_26.png" width="100%" height="100%">  
+`hashcat -a 0 -m 5600 Hashファイル名 Passwordリスト名`で本タスクのPasswordリストを使用して先程のNTLMハッシュをクラックできた。「FPassword1!」
