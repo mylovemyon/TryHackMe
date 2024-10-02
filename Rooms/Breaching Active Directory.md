@@ -320,5 +320,13 @@ In some instances, however, we can take this a step further by trying to relay t
 - Since we technically don't yet have an AD foothold, some guesswork is involved into what accounts will have permissions on which hosts. If we had already breached AD, we could perform some initial enumeration first, which is usually the case.
 
 This is why blind relays are not usually popular. Ideally, you would first breach AD using another method and then perform enumeration to determine the privileges associated with the account you have compromised. From here, you can usually perform lateral movement for privilege escalation across the domain. However, it is still good to fundamentally under how a relay attack works, as shown in the diagram below:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_21.png" width="100%" height="100%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_21.png" width="75%" height="75%">  
 If you want to try this type of attack in action, head over to the Holo Network. We will also come back to this one in future AD Rooms.  
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_22.png" width="75%" height="75%">  
+What is the username associated with the challenge that was captured?
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_23.png" width="50%" height="50%">  
+`sudo responder -I インタフェース名`でNTLMの通信をインターセプト  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_24.png" width="50%" height="50%">  
+10分後ぐらいに、SMBv2のNTLMチャレンジをポイズニングできた
