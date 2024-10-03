@@ -456,7 +456,7 @@ To read the database file, we will use a tool called sqlitebrowser. We can open 
 thm@thm:# sqlitebrowser ma.db
 ```
 Using sqlitebrowser, we will select the Browse Data option and focus on the AGENT_REPOSITORIES table:  
-<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_31.png" width="50%" height="50%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_31.png" width="75%" height="75%">  
 We are particularly interested in the second entry focusing on the DOMAIN, AUTH_USER, and AUTH_PASSWD field entries. Make a note of the values stored in these entries. However, the AUTH_PASSWD field is encrypted. Luckily, McAfee encrypts this field with a known key. Therefore, we will use the following old python2 script to decrypt the password. The script has been provided as a downloadable task file or on the AttackBox, it can be found in the /root/Rooms/BreachingAD/task7/ directory.  
 Note: The tool we will use here is quite old. It uses Python v2 and relies on an old crypto library. If you cannot get the script to work on your own VM, please make use of the AttackBox. However, there has been a recent update to the application to ensure that it works on Python3 as well, you can download the latest version here: https://github.com/funoverip/mcafee-sitelist-pwd-decryption  
 You will have to unzip the mcafee-sitelist-pwd-decryption.zip file:
@@ -470,3 +470,11 @@ Crypted password   : <AUTH PASSWD VALUE>
 Decrypted password : <Decrypted Pasword>
 ```
 We now once again have a set of AD credentials that we can use for further enumeration! This is just one example of recovering credentials from configuration files. If you are ever able to gain a foothold on a host, make sure to follow a detailed and refined methodology to ensure that you recover all loot from the host, including credentials and other sensitive information that can be stored in configuration files.
+
+----------------------------------------Answer the questions below--------------------------------------------------  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_32.png" width="75%" height="75%">  
+What is the username of the AD account associated with the McAfee service?  
+What is the password of the AD account associated with the McAfee service?  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_33.png" width="75%" height="75%">  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_34.png" width="75%" height="75%">  
+このタスクの説明通りに実施すると、ma.db内のユーザ・パスワードが確認できた。
