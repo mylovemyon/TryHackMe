@@ -90,7 +90,8 @@
 - SSH  
   SSH秘密鍵の権限は600か700でないとSSH鍵認証できない
   - sshkeygen
-- [tcpdump](https://github.com/the-tcpdump-group/tcpdump)
+- [tcpdump](https://github.com/the-tcpdump-group/tcpdump)  
+  「sudo `tcpdump` -SX -i インタフェース名 tcp port ポート番号」でTCP通信をHexとASCII形式で見れる
 
 ## Linux
 ### Command
