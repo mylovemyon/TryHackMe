@@ -18,7 +18,7 @@
   「`hashcat` -a 0 -m 値 Hashファイル名 Wordlist名」  
   「-a 0 」は辞書攻撃、「-m 値」はハッシュ形式（-m 13100 は「$krb5tgs」、-m 18200 は「$krb5asrep」）
 - [hashID](https://github.com/psypanda/hashID) (kali〇, python)  
-  「`hashid` --john Hashファイル名」（--johnで、JohnTheRipperでのフォーマットも確認できる）
+  「`hashid` -j Hashファイル名」（-jで、JohnTheRipperのフォーマット・-mでHashCatのフォーマットも確認できる）
 - [impacket](https://github.com/fortra/impacket) (Kali〇, python)  
   impacket-〇〇以外に、`python3 /usr/share/doc/python3-impacket/examples/〇〇.py`でも実行できる
   - GetNPUsers  
