@@ -4,13 +4,13 @@
 - [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) (kali〇, Perl)  
   「`enum4linux` IPアドレス」
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
-  「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」WinRM経由でログインできる。
+  「`evil-winrm` --ip IPアドレス --user ユーザ名 --hash NTハッシュ」WinRM経由でログインできる。
 - [exifool](https://github.com/exiftool/exiftool) (kali×, Perl)  
   「`exiftool` ファイル名 -Exifタグ名」任意のExif情報をフィルタ  
   位置情報をGoogleMapで検索するときは「-n」オプションの出力を検索にかけると良い
 - ftp (kali〇, ELF)  
   「`ftp` IPアドレス -a」Anonymousログオン
-- [GoBuster](https://github.com/OJ/gobuster) (kali〇, Go)  
+- [GoBuster](https://github.com/OJ/gobuster) (kali×, Go)  
   「`gobuster` -u URL -w wordlist名 dir」URL配下のコンテンツをWordlistを用いて探索
 - gpg (kali〇, ELF)    
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」GPGファイルを復号
