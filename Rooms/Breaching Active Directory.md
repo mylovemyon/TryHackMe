@@ -478,7 +478,7 @@ What is the password of the AD account associated with the McAfee service?
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_33.png" width="75%" height="75%">  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_34.png" width="75%" height="75%">  
 このタスクの説明通りに実施すると、ma.db内のユーザ・パスワードが確認できた。
-
+ちなみにパスワードを復元できる事象は、CVE-2022-1257っぽい
 
 ## Conclusion
 A significant amount of attack avenues can be followed to breach AD. We covered some of those commonly seen being used during a red team exercise in this network. Due to the sheer size of the attack surface, new avenues to recover that first set of AD credentials are constantly being discovered. Building a proper enumeration methodology and continuously updating it will be required to find that initial pair of credentials.
