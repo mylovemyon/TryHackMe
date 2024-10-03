@@ -20,8 +20,9 @@
 - Breaching Active Directory  
   [HaveIBeenPwned](https://haveibeenpwned.com/)、[DeHashed](https://www.dehashed.com/)で侵害されたメールを確認できる  
   `hydra`によるNTLMパスワードスプレー、攻撃者の`OpenLDAP`を使用したLdap Pass-back  
-  `Responder`によるNTLMv2の受信・`hashcat`による辞書クラック
-  `powerpxe`によるBCDファイルからPXEブートイメージの場所を取得・そのイメージからクレデンシャルの窃取
+  `Responder`によるNTLMv2の受信・`hashcat`による辞書クラック  
+  `powerpxe`によるBCDファイルからPXEブートイメージの場所を取得・そのイメージからクレデンシャルの窃取  
+  `sqlitebrowser`によるMcAfeeの「ma.db」内のユーザのパスキー取得、`mcafee_sitelist_pwd_decrypt.py`によるパスワード復元
 - Careers in Cyber
 - Encryption - Crypto 101  
   `ssh-keygen`, `ssh2john`でSSH秘密鍵のパスワードをJohnで解析するために抽出, `gpg`コマンド  
