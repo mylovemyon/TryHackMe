@@ -93,7 +93,9 @@
 ### Command
 - 「`sed` -i '1s/^/文字列' ファイル名」 ファイルの１行目（`1s`）先頭に文字列を追加（改行なし）
 ### Preference
-- 「`sudo sed -i '$a10.10.253.185 spookysec.local' /etc/hosts`」を実行しHOSTSファイルを編集
+- 「sudo `sed` -i '$a10.10.253.185 spookysec.local' /etc/hosts」を実行しHOSTSファイルを編集
+- 「/etc/resolve.conf」はNetworkManagerが管理しているため、Viなどで編集しても元に戻る  
+  Nameサーバを指定したい場合は、GUIのNetworkManagerから設定する
 - `$format$rounds$salt$hash` /etc/shadowのフォーマット、`$format`でハッシュ種別が分かる
 
 ## BookMark
@@ -105,8 +107,3 @@
   hash識別
 
 ## Link
-- [SecLists](https://github.com/danielmiessler/SecLists)
-- [RsaCtfTool](https://github.com/Ganapati/RsaCtfTool)
-- [rsatool](https://github.com/ius/rsatool)
-- https://github.com/infosecn1nja/AD-Attack-Defense
-
