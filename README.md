@@ -18,7 +18,8 @@
   `smbclient`や`SMBMap`によるShareの列挙・接続  
   `Evil-WinRM`によるWinRM接続
 - Breaching Active Directory  
-  [HaveIBeenPwned](https://haveibeenpwned.com/)、[DeHashed](https://www.dehashed.com/)で侵害されたメールを確認できる
+  [HaveIBeenPwned](https://haveibeenpwned.com/)、[DeHashed](https://www.dehashed.com/)で侵害されたメールを確認できる  
+  `hydra`によるNTLMパスワードスプレー、攻撃者の`OpenLDAP`を使用したLdap Pass-back
 - Careers in Cyber
 - Encryption - Crypto 101  
   `ssh-keygen`, `ssh2john`でSSH秘密鍵のパスワードをJohnで解析するために抽出, `gpg`コマンド  
