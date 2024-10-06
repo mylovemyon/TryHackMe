@@ -73,7 +73,7 @@
 - [PowerPXE](https://github.com/wavestone-cdt/powerpxe) (kal×, Powershell)  
   Windows上のPowershellで「Import-Module .\PowerPXE.ps1」でスクリプトをインポートして  
   MDTサーバからTFTP経由でBCDファイルを取得・「Get-WimFile -bcdFile "BCDファイル名"」でPXEブートイメージの場所を取得  
-  「Get-FindCredentials -WimFile PXEブートイメージ名」でクレデンシャルを取得  
+  MDTサーバからTFTP経由で先程の場所から取得・「Get-FindCredentials -WimFile PXEブートイメージ名」でクレデンシャルを取得  
   ※細部はBreaching Active Directoryを参照
 - [Responder](https://github.com/lgandx/Responder) (kali〇, python)  
   「sudo `responder` -I インタフェース名」でNTLM通信を中継・NTLMハッシュの取得
