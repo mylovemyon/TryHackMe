@@ -16,7 +16,7 @@
   「`gpg` --import "GPG鍵(拡張子.key)"」→「`gpg` -d "メッセージファイル(拡張子.gpg)"」GPGファイルを復号
 - [hashcat](https://github.com/hashcat/hashcat) (kali〇, C)  
   「`hashcat` -a 0 -m 値 Hashファイル名 Wordlist名」  
-  「-a 0 」は辞書攻撃、「-m 値」はハッシュ形式（-m 13100 は「$krb5tgs」、-m 18200 は「$krb5asrep」）
+  「-a 0 」は辞書攻撃、「-m 値」はハッシュ形式（-m 13100 は「$krb5tgs」、-m 18200 は「$krb5asrep」、-m 5600は「NTLMv2-SSP」）
 - [hashID](https://github.com/psypanda/hashID) (kali〇, python)  
   「`hashid` -j Hashファイル名」（-jで、JohnTheRipperのフォーマット・-mでHashCatのフォーマットも確認できる）
 - [hydra](https://github.com/vanhauser-thc/thc-hydra) (kali〇,C)  
