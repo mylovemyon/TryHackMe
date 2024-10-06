@@ -525,7 +525,7 @@ You can launch the target machine attached to this room to replicate the example
 Once you have entered the context of a module using the use command followed by the module name, as seen earlier, you will need to set parameters. The most common parameters you will use are listed below. Remember, based on the module you use, additional or different parameters may need to be set. It is good practice to use the show options command to list the required parameters.  
 All parameters are set using the same command syntax:  
 set PARAMETER_NAME VALUE  
-Before we proceed, remember always to check the msfconsole prompt to ensure you are in the right context. When dealing with Metasploit, you may see five different prompts:
+Before we proceed, remember always to check the msfconsole prompt to ensure you are in the right context. When dealing with Metasploit, you may see five different prompts:  
 The regular command prompt: You can not use Metasploit commands here.
 ```
 root@ip-10-10-XX-XX:~#
