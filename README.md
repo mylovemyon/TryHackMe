@@ -46,6 +46,7 @@
 - Metasploit: Introduction  
   `msfconsole`でMetasploitを起動  
   Payloadでは、「shell_reverse_tcp」はSingle、「shell/reverse_tcp」はStagedと見分けることができる
+  Moduleには各ランクがある
 - Network Security  
   `FTP`のAnonymousログオン
 - Operating System Security  
