@@ -71,8 +71,8 @@
 - [pdfinfo](https://github.com/howtomakeaturn/pdfinfo) (kali×, PHP)  
   「`pdfinfo` PDFファイル名」PDFメタデータの確認
 - [PowerPXE](https://github.com/wavestone-cdt/powerpxe) (kal×, Powershell)  
-  Windows上のPowershellで「Import-Module .\PowerPXE.ps1」でスクリプトをインポートして、  
-  「Get-WimFile -bcdFile "BCDファイル名"」でPXEブートイメージの場所を取得  
+  Windows上のPowershellで「Import-Module .\PowerPXE.ps1」でスクリプトをインポートして  
+  MDTサーバからTFTP経由で取得したBCDファイルを「Get-WimFile -bcdFile "BCDファイル名"」でPXEブートイメージの場所を取得  
   「Get-FindCredentials -WimFile PXEブートイメージ名」でクレデンシャルを取得  
   ※細部はBreaching Active Directoryを参照
 - [Responder](https://github.com/lgandx/Responder) (kali〇, python)  
