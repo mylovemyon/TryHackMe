@@ -290,7 +290,7 @@ msf6 > use exploit/windows/smb/ms17_010_eternalblue
 [*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
 msf6 exploit(windows/smb/ms17_010_eternalblue) >
 ```
-The module to be used can also be selected with the `use` command followed by the number at the beginning of the search result line.  
+The module to be used can also be selected with the use command followed by the number at the beginning of the search result line.  
 While the prompt has changed, you will notice we can still run the commands previously mentioned. This means we did not "enter" a folder as you would typically expect in an operating system command line.
 ```
 msf6 exploit(windows/smb/ms17_010_eternalblue) > ls
@@ -375,7 +375,7 @@ You can leave the context using the `back` command.
 msf6 exploit(windows/smb/ms17_010_eternalblue) > back
 msf6 >
 ```
-Further information on any module can be obtained by typing the `info` command within its context.
+Further information on any module can be obtained by typing the info command within its context.
 ```
 msf6 exploit(windows/smb/ms17_010_eternalblue) > info
 
