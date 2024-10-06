@@ -4,7 +4,7 @@
 - [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) (kali〇, Perl)  
   「`enum4linux` IPアドレス」
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
-  「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」WinRM経由でログインできる。
+  「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」WinRM経由でログインできる
 - [exifool](https://github.com/exiftool/exiftool) (kali×, Perl)  
   「`exiftool` ファイル名 -Exifタグ名」任意のExif情報をフィルタ  
   位置情報をGoogleMapで検索するときは「-n」オプションの出力を検索にかけると良い
@@ -36,7 +36,7 @@
     TGSは「hashcat -a 0 -m 13100 TGSファイル名 Passwordリスト」でクラックできる（JohnではTGSをサポートしてない）
   - secretsdump  
     「`impacket-secretsdump` -just-dc ドメイン名/ユーザ名:パスワード@IPアドレス -outputfile 出力ファイル名」  
-    DCSync権限を持つドメインユーザを使用して、各ドメインユーザのNTハッシュやKerberosキーをダンプできる。
+    DCSync権限を持つドメインユーザを使用して、各ドメインユーザのNTハッシュやKerberosキーをダンプできる
 - [John the Ripper](https://github.com/openwall/john) (kali〇, C)  
   - 「`john` --wordlist=/usr/share/wordlists/rockyou.txt Hashファイル名 --format=Hash方式」  
     「`john` Hashファイル名 --show」クラック済み結果を表示（もしくは`/home/kali/.john/.john.pot`に解析結果がある）
@@ -48,7 +48,7 @@
     - 「`ssh2john` SSH秘密鍵ファイル名 > 出力ファイル名」johnで解析できるようにSSH秘密鍵を抽出
     - 上記３つを実行後、「`john` --wordlist=/usr/share/wordlists/rockyou.txt 出力ファイル名」でクラック可能
   - 「john --single Hashファイル --format=Hash方式」SingleCrackモード（あんま使わん）  
-    Hashファイルは「文字列:ハッシュ」形式。文字列を変換しながらHashクラックを行う。
+    Hashファイルは「文字列:ハッシュ」形式。文字列を変換しながらHashクラックを行う
   - 「sudo `unshadow` /etc/passwd /etc/shadow」  
     Johnで /etc/shadow をクラックするためのフォーマット作成
 - [Kerbrute](https://github.com/ropnop/kerbrute) (kali×, Go)
@@ -67,10 +67,12 @@
     「sekurlsa::tickets /export」.kiribiチケットが現在地にエクスポート  
     「kerberos::ptt .kiribiチケット名」→「klist」でキャッシュされたチケットを表示で攻撃の成功を確認
   - Skeleton Key  
-    「misc::skeleton」ドメコンのメモリ上にマスタパスワードを挿入し、AD認証をバイパスする。
+    「misc::skeleton」ドメコンのメモリ上にマスタパスワードを挿入し、AD認証をバイパスする
 - [pdfinfo](https://github.com/howtomakeaturn/pdfinfo) (kali×, PHP)  
   「`pdfinfo` PDFファイル名」PDFメタデータの確認
 - [PowerPXE](https://github.com/wavestone-cdt/powerpxe) (kal×, Powershell)
+  Windows上のPowershellで「Import-Modlue .\PowerPXE.ps1」でスクリプトをインポートして、
+  「Get-WimFile -bcdFile "BCDファイル名"」でPXEブートイメージの場所を取得
 - [Responder](https://github.com/lgandx/Responder) (kali〇, python)  
   「sudo `responder` -I インタフェース名」でNTLM通信を中継・NTLMハッシュの取得
 - [Rubeus](https://github.com/GhostPack/Rubeus) (kali×, C#)  
