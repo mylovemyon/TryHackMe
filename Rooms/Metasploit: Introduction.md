@@ -485,3 +485,36 @@ Another essential piece of information returned is in the “rank” column. Exp
 | AverageRanking | The exploit is generally unreliable or difficult to exploit, but has a success rate of 50% or more for common platforms. |
 | LowRanking | The exploit is nearly impossible to exploit (under 50% success rate) for common platforms. |
 | ManualRanking | The exploit is unstable or difficult to exploit and is basically a DoS (15% success rate or lower). This ranking is also used when the module has no use unless specifically configured by the user (e.g.: exploit/unix/webapp/php_eval). |
+
+Source: https://github.com/rapid7/metasploit-framework/wiki/Exploit-Ranking  
+You can direct the search function using keywords such as type and platform.  
+For example, if we wanted our search results to only include auxiliary modules, we could set the type to auxiliary. The screenshot below shows the output of the search type:auxiliary telnet command.
+```
+msf6 > search type:auxiliary telnet
+
+Matching Modules
+================
+
+   #   Name                                                Disclosure Date  Rank    Check  Description
+   -   ----                                                ---------------  ----    -----  -----------
+   0   auxiliary/admin/http/dlink_dir_300_600_exec_noauth  2013-02-04       normal  No     D-Link DIR-600 / DIR-300 Unauthenticated Remote Command Execution
+   1   auxiliary/admin/http/netgear_r6700_pass_reset       2020-06-15       normal  Yes    Netgear R6700v3 Unauthenticated LAN Admin Password Reset
+   2   auxiliary/dos/cisco/ios_telnet_rocem                2017-03-17       normal  No     Cisco IOS Telnet Denial of Service
+   3   auxiliary/dos/windows/ftp/iis75_ftpd_iac_bof        2010-12-21       normal  No     Microsoft IIS FTP Server Encoded Response Overflow Trigger
+   4   auxiliary/scanner/ssh/juniper_backdoor              2015-12-20       normal  No     Juniper SSH Backdoor Scanner
+   5   auxiliary/scanner/telnet/brocade_enable_login                        normal  No     Brocade Enable Login Check Scanner
+   6   auxiliary/scanner/telnet/lantronix_telnet_password                   normal  No     Lantronix Telnet Password Recovery
+   7   auxiliary/scanner/telnet/lantronix_telnet_version                    normal  No     Lantronix Telnet Service Banner Detection
+   8   auxiliary/scanner/telnet/satel_cmd_exec             2017-04-07       normal  No     Satel Iberia SenNet Data Logger and Electricity Meters Command Injection Vulnerability
+   9   auxiliary/scanner/telnet/telnet_encrypt_overflow                     normal  No     Telnet Service Encryption Key ID Overflow Detection
+   10  auxiliary/scanner/telnet/telnet_login                                normal  No     Telnet Login Check Scanner
+   11  auxiliary/scanner/telnet/telnet_ruggedcom                            normal  No     RuggedCom Telnet Password Generator
+   12  auxiliary/scanner/telnet/telnet_version                              normal  No     Telnet Service Banner Detection
+   13  auxiliary/server/capture/telnet                                      normal  No     Authentication Capture: Telnet
+
+
+Interact with a module by name or index, for example use 13 or use auxiliary/server/capture/telnet
+
+msf6 >
+```
+Please remember that exploits take advantage of a vulnerability on the target system and may always show unexpected behavior. A low-ranking exploit may work perfectly, and an excellent ranked exploit may not, or worse, crash the target system.
