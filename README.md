@@ -43,6 +43,9 @@
   `/etc/john/john.conf`でCustomルールの確認・作成・Wordlistsの拡張  
   `unshadow`による/etc/passwdと/etc/shadowのCombine   
   [hash_identifier](https://hashes.com/en/tools/hash_identifier)というWebサイトでハッシュ識別, [SecLists](https://github.com/danielmiessler/SecLists)
+- Metasploit: Introduction
+  `msfconsole`でMetasploitを起動
+  Payloadでは、「shell_reverse_tcp」はSingle、「shell/reverse_tcp」はStagedと見分けることができる
 - Network Security  
   `FTP`のAnonymousログオン
 - Operating System Security  
