@@ -55,6 +55,8 @@
   - install  
     GitHub上のReleaseからLinuxバイナリをインストール
   - 「`./kerbrute` userenum -d ドメイン名 --dc ドメコンIP Wordlists名 -o 出力ファイル名」Domainユーザの列挙
+- [mcafee-sitelist-pwd-decryption](https://github.com/funoverip/mcafee-sitelist-pwd-decryption) (kali×, python)  
+  CVE-2022-1257を悪用して、C:/ProgramData/McAfee/Agent/DB/ma.dbからPassword復元
 - [mimikatz](https://github.com/gentilkiwi/mimikatz) (kali〇, C)  
   「privilege::debug」→「[output '20' OK]」でAdministrator権限であるか確認
   - Golden/Silver Ticket Attacks  
