@@ -246,7 +246,7 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 rtt min/avg/max/mdev = 1.335/1.335/1.335/0.000 ms
 msf6 >
 ```
-It will support most Linux commands, including clear (to clear the terminal screen), but will not allow you to use some features of a regular command line (e.g. does not support output redirection), as seen below.
+It will support most Linux commands, including `clear` (to clear the terminal screen), but will not allow you to use some features of a regular command line (e.g. does not support output redirection), as seen below.
 ```
 msf6 > help > help.txt
 [-] No such command
@@ -290,7 +290,7 @@ msf6 > use exploit/windows/smb/ms17_010_eternalblue
 [*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
 msf6 exploit(windows/smb/ms17_010_eternalblue) >
 ```
-The module to be used can also be selected with the use command followed by the number at the beginning of the search result line.  
+The module to be used can also be selected with the `use` command followed by the number at the beginning of the search result line.  
 While the prompt has changed, you will notice we can still run the commands previously mentioned. This means we did not "enter" a folder as you would typically expect in an operating system command line.
 ```
 msf6 exploit(windows/smb/ms17_010_eternalblue) > ls
@@ -370,12 +370,12 @@ Compatible Payloads
 ```
 If used from the msfconsole prompt, the show command will list all modules.  
 The use and show options commands we have seen so far are identical for all modules in Metasploit.  
-You can leave the context using the back command.
+You can leave the context using the `back` command.
 ```
 msf6 exploit(windows/smb/ms17_010_eternalblue) > back
 msf6 >
 ```
-Further information on any module can be obtained by typing the info command within its context.
+Further information on any module can be obtained by typing the `info` command within its context.
 ```
 msf6 exploit(windows/smb/ms17_010_eternalblue) > info
 
