@@ -44,9 +44,8 @@
   `unshadow`による/etc/passwdと/etc/shadowのCombine   
   [hash_identifier](https://hashes.com/en/tools/hash_identifier)というWebサイトでハッシュ識別, [SecLists](https://github.com/danielmiessler/SecLists)
 - Metasploit: Introduction  
-  `msfconsole`でMetasploitを起動  
+  `msfconsole`でMetasploitを起動、Moduleには各ランクがある  
   Payloadでは、「shell_reverse_tcp」はSingle、「shell/reverse_tcp」はStagedと見分けることができる
-  Moduleには各ランクがある
 - Network Security  
   `FTP`のAnonymousログオン
 - Operating System Security  
