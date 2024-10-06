@@ -70,6 +70,7 @@
     「misc::skeleton」ドメコンのメモリ上にマスタパスワードを挿入し、AD認証をバイパスする。
 - [pdfinfo](https://github.com/howtomakeaturn/pdfinfo) (kali×, PHP)  
   「`pdfinfo` PDFファイル名」PDFメタデータの確認
+- [PowerPXE](https://github.com/wavestone-cdt/powerpxe) (kal×, Powershell)
 - [Responder](https://github.com/lgandx/Responder) (kali〇, python)  
   「sudo `responder` -I インタフェース名」でNTLM通信を中継・NTLMハッシュの取得
 - [Rubeus](https://github.com/GhostPack/Rubeus) (kali×, C#)  
