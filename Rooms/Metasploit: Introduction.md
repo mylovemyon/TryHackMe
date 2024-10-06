@@ -192,3 +192,96 @@ post/
 12 directories, 0 files
 ```
 If you wish to familiarize yourself further with these modules, you can find them under the modules folder of your Metasploit installation. For the AttackBox these are under /opt/metasploit-framework/embedded/framework/modules
+
+
+## Msfconsole
+﻿As previously mentioned, the console will be your main interface to the Metasploit Framework. You can launch it using the msfconsole command on your AttackBox terminal or any system the Metasploit Framework is installed on.
+```
+root@ip-10-10-220-191:~# msfconsole 
+                                                  
+
+                 _---------.
+             .' #######   ;."
+  .---,.    ;@             @@`;   .---,..
+." @@@@@'.,'@@            @@@@@',.'@@@@ ".
+'-.@@@@@@@@@@@@@          @@@@@@@@@@@@@ @;
+   `.@@@@@@@@@@@@        @@@@@@@@@@@@@@ .'
+     "--'.@@@  -.@        @ ,'-   .'--"
+          ".@' ; @       @ `.  ;'
+            |@@@@ @@@     @    .
+             ' @@@ @@   @@    ,
+              `.@@@@    @@   .
+                ',@@     @   ;           _____________
+                 (   3 C    )     /|___ / Metasploit! \
+                 ;@'. __*__,."    \|--- \_____________/
+                  '(.,...."/
+
+
+       =[ metasploit v6.0                         ]
++ -- --=[ 2048 exploits - 1105 auxiliary - 344 post       ]
++ -- --=[ 562 payloads - 45 encoders - 10 nops            ]
++ -- --=[ 7 evasion                                       ]
+
+Metasploit tip: Search can apply complex filters such as search cve:2009 type:exploit, see all the filters with help search
+
+msf6 >
+```
+Once launched, you will see the command line changes to msf6 (or msf5 depending on the installed version of Metasploit). The Metasploit console (msfconsole) can be used just like a regular command-line shell, as you can see below. The first command is ls which lists the contents of the folder from which Metasploit was launched using the msfconsole command.  
+It is followed by a ping sent to Google's DNS IP address (8.8.8.8). As we operate from the AttackBox, which is Linux we had to add the -c 1 option, so only a single ping was sent. Otherwise, the ping process would continue until it is stopped using `CTRL+C`.
+```
+msf6 > ls
+[*] exec: ls
+
+burpsuite_community_linux_v2021_8_1.sh	Instructions  Scripts
+Desktop					Pictures      thinclient_drives
+Downloads				Postman       Tools
+msf6 > ping -c 1 8.8.8.8
+[*] exec: ping -c 1 8.8.8.8
+
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=109 time=1.33 ms
+
+--- 8.8.8.8 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 1.335/1.335/1.335/0.000 ms
+msf6 >
+```
+It will support most Linux commands, including clear (to clear the terminal screen), but will not allow you to use some features of a regular command line (e.g. does not support output redirection), as seen below.
+```
+msf6 > help > help.txt
+[-] No such command
+msf6 >
+```
+While on the subject, the help command can be used on its own or for a specific command. Below is the help menu for the set command we will cover soon.
+```
+msf6 > help set
+Usage: set [option] [value]
+
+Set the given option to value.  If value is omitted, print the current value.
+If both are omitted, print options that are currently set.
+
+If run from a module context, this will set the value in the module's
+datastore.  Use -g to operate on the global datastore.
+
+If setting a PAYLOAD, this command can take an index from `show payloads'.
+
+msf6 >
+```
+You can use the history command to see commands you have typed earlier.
+```
+msf6 > history
+1  use exploit/multi/http/nostromo_code_exec
+2  set lhost 10.10.16.17
+3  set rport 80
+4  options
+5  set rhosts 10.10.29.187
+6  run
+7  exit
+8  exit -y
+9  version
+10  use exploit/multi/script/web_delivery
+```
+An important feature of msfconsole is the support of tab completion. This will come in handy later when using Metasploit commands or dealing with modules. For example, if you start typing he and press the tab key, you will see it auto-completes to help.  
+Msfconsole is managed by context; this means that unless set as a global variable, all parameter settings will be lost if you change the module you have decided to use. In the example below, we have used the ms17_010_eternalblue exploit, and we have set parameters such as RHOSTS. If we were to switch to another module (e.g. a port scanner), we would need to set the RHOSTS value again as all changes we have made remained in the context of the ms17_010_eternalblue exploit.  
+Let us look at the example below to have a better understanding of this feature. We will use the MS17-010 “Eternalblue” exploit for illustration purposes.  
+Once you type the `use exploit/windows/smb/ms17_010_eternalblue` command, you will see the command line prompt change from msf6 to “msf6 exploit(windows/smb/ms17_010_eternalblue)”. The "EternalBlue" is an exploit allegedly developed by the U.S. National Security Agency (N.S.A.) for a vulnerability affecting the SMBv1 server on numerous Windows systems. The SMB (Server Message Block) is widely used in Windows networks for file sharing and even for sending files to printers. EternalBlue was leaked by the cybercriminal group "Shadow Brokers" in April 2017. In May 2017, this vulnerability was exploited worldwide in the WannaCry ransomware attack.
