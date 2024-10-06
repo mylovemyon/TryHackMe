@@ -479,8 +479,8 @@ Another essential piece of information returned is in the “rank” column. Exp
 | Ranking | Description |
 -|-
 | ExcellentRanking | The exploit will never crash the service. This is the case for SQL Injection, CMD execution, RFI, LFI, etc. No typical memory corruption exploits should be given this ranking unless there are extraordinary circumstances (WMF Escape()). |
-| GreatRanking | The exploit has a default target AND either auto-detects the appropriate target or uses an application-specific return address AFTER a version check.
-GoodRanking	The exploit has a default target and it is the “common case” for this type of software (English, Windows 7 for a desktop app, 2012 for server, etc). Exploit does not auto-detect the target. |
+| GreatRanking | The exploit has a default target AND either auto-detects the appropriate target or uses an application-specific return address AFTER a version check. |
+| GoodRanking | The exploit has a default target and it is the “common case” for this type of software (English, Windows 7 for a desktop app, 2012 for server, etc). Exploit does not auto-detect the target. |
 | NormalRanking | The exploit is otherwise reliable, but depends on a specific version that is not the “common case” for this type of software and can’t (or doesn’t) reliably autodetect. |
 | AverageRanking | The exploit is generally unreliable or difficult to exploit, but has a success rate of 50% or more for common platforms. |
 | LowRanking | The exploit is nearly impossible to exploit (under 50% success rate) for common platforms. |
