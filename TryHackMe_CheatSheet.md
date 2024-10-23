@@ -1,6 +1,4 @@
 ## Tools
-- [CyberChef](https://github.com/gchq/CyberChef)  
-  「Magic」可読可能な文字列に変換してくれる
 - [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) (kali〇, Perl)  
   「`enum4linux` IPアドレス」
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
