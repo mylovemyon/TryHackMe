@@ -1,6 +1,4 @@
 ## Tools
-- [enum4linux](https://github.com/CiscoCXSecurity/enum4linux) (kali〇, Perl)  
-  「`enum4linux` IPアドレス」
 - [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) (kali〇, Ruby)  
   「`evil-winrm` -i IPアドレス -u ユーザ名 -H NTハッシュ」WinRM経由でログインできる
 - [exifool](https://github.com/exiftool/exiftool) (kali×, Perl)  
